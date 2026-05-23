@@ -36,7 +36,7 @@ images = {
 }
 
 map_img = '<figure class="image-left" style="width: 38%; margin-bottom: 20px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Seven_United_Netherlands_Janssonius_1658.jpg/960px-Seven_United_Netherlands_Janssonius_1658.jpg" alt="1658 Map"><figcaption class="caption">1658年聯省共和國地圖，清晰可見當時的須德海與低地國錯綜複雜的水路地貌</figcaption></figure>\\n'
-version_badge = '<div style="text-align: center; color: #718096; margin-top: -15px; margin-bottom: 25px; font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;"><span style="background-color: #ebf8ff; color: #2b6cb0; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; border: 1px solid #bee3f8;">內容版本：1.0</span></div>\\n'
+version_badge = '<div style="text-align: center; color: #718096; margin-top: -15px; margin-bottom: 25px; font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;"><span style="background-color: #ebf8ff; color: #2b6cb0; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; border: 1px solid #bee3f8;">內容版本：1.1</span></div>\\n'
 html_body = re.sub(r'(<h1.*?>.*?</h1>)', r'\1\n' + version_badge + map_img, html_body, count=1)
 
 for prefix, (url, caption) in images.items():
