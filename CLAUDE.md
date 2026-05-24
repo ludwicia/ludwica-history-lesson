@@ -29,7 +29,8 @@
      * **手機版 (Width < 800px)**：單欄式，左側目錄隱藏，中間 H2 章節轉為點擊摺疊展開，右側轉為底部懸浮摺疊欄。
 2. **精準修改與文繞圖 (Surgical Changes & Image Wrap)**：
    * 修改 `build_html_md.py` 時，應使用精準修改工具，只調整必要代碼，保留原有的 Markdown 預處理邏輯（Word 單行換行修復機制）。
-   * 若新增歷史圖片，應將圖片與圖說登錄於 `images` 字典中，並確保圖片套用 `<figure class="image-left">` 浮動樣式以維持高質感文繞圖（Text Wrap）效果。
+   * 若新增歷史圖片，應將圖片與圖說登錄於相關列表中，並確保圖片套用 `<figure class="image-left">` 浮動樣式以維持高質感文繞圖（Text Wrap）效果。
+   * **本地圖片優先**：新增圖片時，應將原圖下載存放至 `images/` 資料夾中，並使用相對路徑載入（且務必加上 `loading="lazy"`）。嚴禁直接外部連結（Hotlinking）Wikimedia 或其他圖庫的高畫質原圖，以免使用者載入網頁時觸發 HTTP 429 請求過多限制導致破圖。
 3. **極簡優先 (Simplicity First)**：
    * 堅持使用 Vanilla JavaScript 與 Vanilla CSS 進行開發，除非使用者要求，否則不引入外部繁重的框架或程式庫。
 4. **目標驅動 (Goal-Driven)**：
