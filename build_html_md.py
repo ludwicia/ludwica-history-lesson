@@ -45,30 +45,30 @@ def process_markdown(file_path, image_replacements, content_version, main_img_ht
 
 # Page 1 (Holland) Config
 file_p1 = r'帝國海洋、金融先驅與當代政治僵局：荷蘭建國史、東印度公司興衰與當代地緣政經轉型研究報告.md'
-map_p1 = '<figure class="image-left" style="width: 38%; margin-bottom: 20px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Seven_United_Netherlands_Janssonius_1658.jpg/960px-Seven_United_Netherlands_Janssonius_1658.jpg" alt="1658 Map" loading="lazy"><figcaption class="caption">1658年聯省共和國地圖，清晰可見當時的須德海與低地國錯綜複雜的水路地貌</figcaption></figure>\n'
+map_p1 = '<figure class="image-left" style="width: 38%; margin-bottom: 20px;"><img src="images/img_12_960px-Seven_United_Netherlands_Janssonius_1658.jpg" alt="1658 Map" loading="lazy"><figcaption class="caption">1658年聯省共和國地圖，清晰可見當時的須德海與低地國錯綜複雜的水路地貌</figcaption></figure>\n'
 images_p1 = [
-    (r'(<h2.*?>1\..*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/9/93/Map_of_Seventeen_Provinces_of_Low_Germanie_%28Zeventien_Provincien_der_Nederlanden%29_1626.jpg', '十六世紀的低地十七省地圖，描繪了當時受哈布斯堡王朝統治的疆域'),
-    (r'(<h2.*?>2\..*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Flag_of_the_Dutch_East_India_Company.svg/960px-Flag_of_the_Dutch_East_India_Company.svg.png', '荷蘭東印度公司（VOC）旗幟，象徵金融革命與全球貿易擴張'),
-    (r'(<h2.*?>3\..*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Fort_Zeelandia%2C_Anping_District%2C_Tainan_City_%28Taiwan%29.jpg/960px-Fort_Zeelandia%2C_Anping_District%2C_Tainan_City_%28Taiwan%29.jpg', '荷蘭統治台灣時期的熱蘭遮城 (Fort Zeelandia)'),
-    (r'(<h2.*?>4\..*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg/960px-La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg', '林布蘭名作《夜巡》，荷蘭黃金時代藝術巔峰'),
-    (r'(<h2.*?>5\..*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Joannes_van_Deutecum_-_Leo_Belgicus_1650_-_published_by_Claes_Jansz_Visscher_Amsterdam.jpg/960px-Joannes_van_Deutecum_-_Leo_Belgicus_1650_-_published_by_Claes_Jansz_Visscher_Amsterdam.jpg', '低地國家的獅子地圖 (Leo Belgicus)，象徵早期與神聖羅馬帝國的地緣淵源'),
-    (r'(<h2.*?>6\..*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Sint_Eustatius_from_ISS.jpg/960px-Sint_Eustatius_from_ISS.jpg', '聖尤斯特歇斯島，美國獨立戰爭期間最重要的軍火走私樞紐'),
-    (r'(<h2.*?>7\..*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Johan_Heinrich_Neuman_-_Johan_Rudolf_Thorbecke.jpg/960px-Johan_Heinrich_Neuman_-_Johan_Rudolf_Thorbecke.jpg', '約翰·魯道夫·托爾貝克（1848年憲法起草者，荷蘭民主奠基人）'),
-    (r'(<h2.*?>8\..*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bundesarchiv_Bild_146-2005-0003%2C_Rotterdam%2C_Zerst%C3%B6rungen.jpg/960px-Bundesarchiv_Bild_146-2005-0003%2C_Rotterdam%2C_Zerst%C3%B6rungen.jpg', '1940年遭德軍殘酷轟炸摧毀的鹿特丹'),
-    (r'(<h2.*?>9\..*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Friedenspalast_Den_Haag_%28100MP%29.jpg/960px-Friedenspalast_Den_Haag_%28100MP%29.jpg', '位於海牙的和平宮，象徵當代荷蘭作為全球國際司法之都'),
-    (r'(<h2.*?>10\..*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Den_Haag_Binnenhof_02.jpg/960px-Den_Haag_Binnenhof_02.jpg', '荷蘭國會大廈 (Binnenhof)，象徵高度協商與妥協的政治文化')
+    (r'(<h2.*?>1\..*?</h2>)', 'images/img_00_Map_of_Seventeen_Provinces_of_Low_German.jpg', '十六世紀的低地十七省地圖，描繪了當時受哈布斯堡王朝統治的疆域'),
+    (r'(<h2.*?>2\..*?</h2>)', 'images/img_16_960px-Flag_of_the_Dutch_East_India_Company.svg.png', '荷蘭東印度公司（VOC）旗幟，象徵金融革命與全球貿易擴張'),
+    (r'(<h2.*?>3\..*?</h2>)', 'images/img_14_960px-Fort_Zeelandia__Anping_District__T.jpg', '荷蘭統治台灣時期的熱蘭遮城 (Fort Zeelandia)'),
+    (r'(<h2.*?>4\..*?</h2>)', 'images/img_15_960px-La_ronda_de_noche__por_Rembrandt_v.jpg', '林布蘭名作《夜巡》，荷蘭黃金時代藝術巔峰'),
+    (r'(<h2.*?>5\..*?</h2>)', 'images/img_03_960px-Joannes_van_Deutecum_-_Leo_Belgicu.jpg', '低地國家的獅子地圖 (Leo Belgicus)，象徵早期與神聖羅馬帝國的地緣淵源'),
+    (r'(<h2.*?>6\..*?</h2>)', 'images/img_08_960px-Sint_Eustatius_from_ISS.jpg', '聖尤斯特歇斯島，美國獨立戰爭期間最重要的軍火走私樞紐'),
+    (r'(<h2.*?>7\..*?</h2>)', 'images/img_07_960px-Johan_Heinrich_Neuman_-_Johan_Rudo.jpg', '約翰·魯道夫·托爾貝克（1848年憲法起草者，荷蘭民主奠基人）'),
+    (r'(<h2.*?>8\..*?</h2>)', 'images/img_05_960px-Bundesarchiv_Bild_146-2005-0003__R.jpg', '1940年遭德軍殘酷轟炸摧毀的鹿特丹'),
+    (r'(<h2.*?>9\..*?</h2>)', 'images/img_09_960px-Friedenspalast_Den_Haag__100MP_.jpg', '位於海牙的和平宮，象徵當代荷蘭作為全球國際司法之都'),
+    (r'(<h2.*?>10\..*?</h2>)', 'images/img_01_960px-Den_Haag_Binnenhof_02.jpg', '荷蘭國會大廈 (Binnenhof)，象徵高度協商與妥協的政治文化')
 ]
 
 # Page 2 (USA) Config
 file_p2 = r'第一階段：三個世界的交會與前哥倫布時期的美洲（1607年以前）.md'
-map_p2 = '<figure class="image-left" style="width: 38%; margin-bottom: 20px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Cahokia_Monks_Mound.jpg/960px-Cahokia_Monks_Mound.jpg" alt="Cahokia Mounds" loading="lazy"><figcaption class="caption">卡霍基亞莫恩克斯土丘（Monks Mound）遠眺，前哥倫布時期繁榮的密西西比河流域社會核心遺跡</figcaption></figure>\n'
+map_p2 = '<figure class="image-left" style="width: 38%; margin-bottom: 20px;"><img src="images/img_10_960px-Cahokia_Monks_Mound.jpg" alt="Cahokia Mounds" loading="lazy"><figcaption class="caption">卡霍基亞莫恩克斯土丘（Monks Mound）遠眺，前哥倫布時期繁榮的密西西比河流域社會核心遺跡</figcaption></figure>\n'
 images_p2 = [
-    (r'(<h2.*?>一、.*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/b/bf/Cliff_Palace_-_Mesa_Verde_National_Park.jpg', '梅薩維德國家公園的懸崖宮殿，展現普韋布洛人高超的石造建築技術'),
-    (r'(<h2.*?>二、.*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Caravela_Redonda.jpg', '大航海時代的葡萄牙輕快帆船（Caravel），支撐起遠洋探索的技術革命'),
-    (r'(<h2.*?>三、.*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Landing_of_Columbus.jpg', '哥倫布登陸美洲想像圖，開啟了改變全球生態與人類社會結構的哥倫布大交換'),
-    (r'(<h3.*?>2\..*?</h3>)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Castillo_de_San_Marcos_Fort_Panorama.jpg/960px-Castillo_de_San_Marcos_Fort_Panorama.jpg', '位於佛羅里達的聖馬科斯城堡，北美洲最古老的歐洲磚石要塞，象徵西班牙的早期霸權'),
-    (r'(<h3.*?>3\..*?</h3>)', 'https://upload.wikimedia.org/wikipedia/commons/8/87/John_White_-_La_Virginea_Pars%2C_map_of_the_E_coast_of_N_America_from_Chesapeake_bay_to_Cape_Lookout%2C_1906%2C0509.1.3.jpg', '約翰·懷特約於1585年繪製的北美海岸地圖《La Virginea Pars》，記錄了早期對北美地理的探索與拓荒'),
-    (r'(<h3.*?>4\..*?</h3>)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Elizabeth_I_%28Armada_Portrait%29.jpg/960px-Elizabeth_I_%28Armada_Portrait%29.jpg', '伊麗莎白一世著名的「無敵艦隊畫像」（Armada Portrait），象徵擊敗西班牙霸權的地緣政治重大轉折點')
+    (r'(<h2.*?>一、.*?</h2>)', 'images/img_04_Cliff_Palace_-_Mesa_Verde_National_Park.jpg', '梅薩維德國家公園的懸崖宮殿，展現普韋布洛人高超的石造建築技術'),
+    (r'(<h2.*?>二、.*?</h2>)', 'images/img_06_Caravela_Redonda.jpg', '大航海時代的葡萄牙輕快帆船（Caravel），支撐起遠洋探索的技術革命'),
+    (r'(<h2.*?>三、.*?</h2>)', 'images/img_02_Landing_of_Columbus.jpg', '哥倫布登陸美洲想像圖，開啟了改變全球生態與人類社會結構的哥倫布大交換'),
+    (r'(<h3.*?>2\..*?</h3>)', 'images/img_17_960px-Castillo_de_San_Marcos_Fort_Panorama.jpg', '位於佛羅里達的聖馬科斯城堡，北美洲最古老的歐洲磚石要塞，象徵西班牙的早期霸權'),
+    (r'(<h3.*?>3\..*?</h3>)', 'images/img_11_John_White_-_La_Virginea_Pars__map_of_th.jpg', '約翰·懷特約於1585年繪製的北美海岸地圖《La Virginea Pars》，記錄了早期對北美地理的探索與拓荒'),
+    (r'(<h3.*?>4\..*?</h3>)', 'images/img_13_960px-Elizabeth_I__Armada_Portrait_.jpg', '伊麗莎白一世著名的「無敵艦隊畫像」（Armada Portrait），象徵擊敗西班牙霸權的地緣政治重大轉折點')
 ]
 
 print("Processing Page 1 (Holland)...")
