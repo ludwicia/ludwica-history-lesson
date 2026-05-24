@@ -754,7 +754,8 @@ portal_template = """<!DOCTYPE html>
         }
         
         // Update URL hash state
-        if (window.location.hash.substring(1) !== pageId) {
+        const currentHash = window.location.hash.substring(1);
+        if (!currentHash.startsWith(pageId)) {
             window.history.pushState(null, null, '#' + pageId);
         }
     }
@@ -938,14 +939,33 @@ portal_template = """<!DOCTYPE html>
     }
 
     // 8. Hash routing listener
+    // 8. Hash routing listener
     function handleHashRouting() {
         const hash = window.location.hash.substring(1);
-        if (hash === 'page01' || hash === 'page02') {
-            if (hash !== activePageId) {
-                switchPage(hash);
+        
+        if (!hash) {
+            if (activePageId !== 'page01') switchPage('page01');
+            return;
+        }
+
+        if (hash.startsWith('page02')) {
+            if (activePageId !== 'page02') {
+                switchPage('page02');
+                setTimeout(() => {
+                    const target = document.getElementById(hash);
+                    if (target) target.scrollIntoView();
+                }, 50);
+            }
+        } else if (hash.startsWith('page01')) {
+            if (activePageId !== 'page01') {
+                switchPage('page01');
+                setTimeout(() => {
+                    const target = document.getElementById(hash);
+                    if (target) target.scrollIntoView();
+                }, 50);
             }
         } else {
-            switchPage('page01');
+            if (activePageId !== 'page01') switchPage('page01');
         }
     }
     
