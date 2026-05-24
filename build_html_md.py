@@ -770,7 +770,8 @@ portal_template = """<!DOCTYPE html>
         
         const headings = activePage.querySelectorAll('h2, h3');
         headings.forEach((h, index) => {
-            if (!h.id) h.id = pageId + '-heading-' + index;
+            // Always prefix with pageId to avoid cross-page collision and enable hash routing
+            h.id = pageId + '-heading-' + index;
             const link = document.createElement('a');
             link.href = '#' + h.id;
             link.innerText = h.innerText;
@@ -938,7 +939,6 @@ portal_template = """<!DOCTYPE html>
         footerHeader.addEventListener('click', toggleFooter);
     }
 
-    // 8. Hash routing listener
     // 8. Hash routing listener
     function handleHashRouting() {
         const hash = window.location.hash.substring(1);
