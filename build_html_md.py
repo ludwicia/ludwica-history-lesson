@@ -38,14 +38,14 @@ def process_markdown(file_path, image_replacements, content_version, main_img_ht
 
     # Substitute specific headings with images for high-end text wrap
     for pattern, url, caption in image_replacements:
-        img_html = f'\n<figure class="image-left"><img src="{url}" alt="{caption}"><figcaption class="caption">{caption}</figcaption></figure>\n'
+        img_html = f'\n<figure class="image-left"><img src="{url}" alt="{caption}" loading="lazy"><figcaption class="caption">{caption}</figcaption></figure>\n'
         html_body = re.sub(pattern, r'\1' + img_html, html_body, count=1)
 
     return html_body
 
 # Page 1 (Holland) Config
 file_p1 = r'帝國海洋、金融先驅與當代政治僵局：荷蘭建國史、東印度公司興衰與當代地緣政經轉型研究報告.md'
-map_p1 = '<figure class="image-left" style="width: 38%; margin-bottom: 20px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Seven_United_Netherlands_Janssonius_1658.jpg/960px-Seven_United_Netherlands_Janssonius_1658.jpg" alt="1658 Map"><figcaption class="caption">1658年聯省共和國地圖，清晰可見當時的須德海與低地國錯綜複雜的水路地貌</figcaption></figure>\n'
+map_p1 = '<figure class="image-left" style="width: 38%; margin-bottom: 20px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Seven_United_Netherlands_Janssonius_1658.jpg/960px-Seven_United_Netherlands_Janssonius_1658.jpg" alt="1658 Map" loading="lazy"><figcaption class="caption">1658年聯省共和國地圖，清晰可見當時的須德海與低地國錯綜複雜的水路地貌</figcaption></figure>\n'
 images_p1 = [
     (r'(<h2.*?>1\..*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/9/93/Map_of_Seventeen_Provinces_of_Low_Germanie_%28Zeventien_Provincien_der_Nederlanden%29_1626.jpg', '十六世紀的低地十七省地圖，描繪了當時受哈布斯堡王朝統治的疆域'),
     (r'(<h2.*?>2\..*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Flag_of_the_Dutch_East_India_Company.svg/960px-Flag_of_the_Dutch_East_India_Company.svg.png', '荷蘭東印度公司（VOC）旗幟，象徵金融革命與全球貿易擴張'),
@@ -61,7 +61,7 @@ images_p1 = [
 
 # Page 2 (USA) Config
 file_p2 = r'第一階段：三個世界的交會與前哥倫布時期的美洲（1607年以前）.md'
-map_p2 = '<figure class="image-left" style="width: 38%; margin-bottom: 20px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Cahokia_Monks_Mound.jpg/960px-Cahokia_Monks_Mound.jpg" alt="Cahokia Mounds"><figcaption class="caption">卡霍基亞莫恩克斯土丘（Monks Mound）遠眺，前哥倫布時期繁榮的密西西比河流域社會核心遺跡</figcaption></figure>\n'
+map_p2 = '<figure class="image-left" style="width: 38%; margin-bottom: 20px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Cahokia_Monks_Mound.jpg/960px-Cahokia_Monks_Mound.jpg" alt="Cahokia Mounds" loading="lazy"><figcaption class="caption">卡霍基亞莫恩克斯土丘（Monks Mound）遠眺，前哥倫布時期繁榮的密西西比河流域社會核心遺跡</figcaption></figure>\n'
 images_p2 = [
     (r'(<h2.*?>一、.*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/b/bf/Cliff_Palace_-_Mesa_Verde_National_Park.jpg', '梅薩維德國家公園的懸崖宮殿，展現普韋布洛人高超的石造建築技術'),
     (r'(<h2.*?>二、.*?</h2>)', 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Caravela_Redonda.jpg', '大航海時代的葡萄牙輕快帆船（Caravel），支撐起遠洋探索的技術革命'),
