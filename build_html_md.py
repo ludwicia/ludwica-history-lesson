@@ -84,6 +84,13 @@ portal_template = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gemini 的歷史課 - 雙課堂動態門戶</title>
+    <meta name="description" content="Gemini的簡單歷史課，帶你深入了解荷蘭建國史、東印度公司與前哥倫布時期美洲歷史。專為歷史專題研究與報告打造的精緻歷史長文。">
+    <meta name="keywords" content="歷史, 歷史課, 荷蘭史, 東印度公司, 美國史, 大航海時代, Gemini, 歷史專題">
+    <meta property="og:title" content="Gemini 的歷史課 - 雙課堂動態門戶">
+    <meta property="og:description" content="Gemini的簡單歷史課，帶你深入了解荷蘭建國史、東印度公司與前哥倫布時期美洲歷史。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ludwicia.github.io/gemini-history-lesson/">
+    <meta property="og:image" content="https://ludwicia.github.io/gemini-history-lesson/history_banner_bg.png">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root { 
@@ -957,5 +964,30 @@ final_html = final_html.replace('__HTML_BODY_PAGE02__', html_body_p2)
 print("Writing build output to index.html...")
 with open(r'index.html', 'w', encoding='utf-8') as f:
     f.write(final_html)
+
+# Generate sitemap.xml for SEO
+sitemap_content = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ludwicia.github.io/gemini-history-lesson/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>"""
+
+with open(r'sitemap.xml', 'w', encoding='utf-8') as f:
+    f.write(sitemap_content)
+print("Generated sitemap.xml")
+
+# Generate robots.txt for SEO
+robots_content = """User-agent: *
+Allow: /
+
+Sitemap: https://ludwicia.github.io/gemini-history-lesson/sitemap.xml
+"""
+
+with open(r'robots.txt', 'w', encoding='utf-8') as f:
+    f.write(robots_content)
+print("Generated robots.txt")
 
 print("Done! Site successfully built as dynamic double-lesson portal.")
