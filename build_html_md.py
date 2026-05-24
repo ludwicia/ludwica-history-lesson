@@ -672,6 +672,11 @@ portal_template = """<!DOCTYPE html>
                         🖼️ 文中圖片來源：<a href="https://commons.wikimedia.org/" target="_blank" style="color: #718096;">Wikimedia Commons</a>。<br>
                         📜 本文採用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hant" target="_blank" style="color: #718096;">CC BY-SA 4.0</a> 授權。
                     </div>
+                    <hr style="border: none; border-top: 1px dashed #cbd5e0; margin: 8px 0;">
+                    <div style="font-size: 0.7rem; color: #718096; text-align: left; line-height: 1.6; display: flex; flex-direction: column; gap: 4px;">
+                        <span>👁️ 本站總瀏覽量：<span id="busuanzi_value_site_pv" style="font-weight: 600; color: var(--primary-color);">--</span> 次</span>
+                        <span>👤 本站總訪客數：<span id="busuanzi_value_site_uv" style="font-weight: 600; color: var(--primary-color);">--</span> 人</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -940,6 +945,7 @@ portal_template = """<!DOCTYPE html>
     window.addEventListener('DOMContentLoaded', handleHashRouting);
 </script>
 
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>"""
 
