@@ -479,8 +479,10 @@ portal_template = """<!DOCTYPE html>
             
             .footer-version-col {
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 justify-content: center;
+                overflow-y: auto;
+                padding-right: 5px;
             }
             
             .version-card {
