@@ -987,7 +987,8 @@ with open(r'index.html', 'w', encoding='utf-8') as f:
     f.write(final_html)
 
 # Generate sitemap.xml for SEO
-sitemap_content = """<?xml version="1.0" encoding="UTF-8"?>
+sitemap_content = """\
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ludwicia.github.io/gemini-history-lesson/</loc>
@@ -996,7 +997,7 @@ sitemap_content = """<?xml version="1.0" encoding="UTF-8"?>
   </url>
 </urlset>"""
 
-with open(r'sitemap.xml', 'w', encoding='utf-8') as f:
+with open(r'sitemap.xml', 'w', encoding='utf-8', newline='\n') as f:
     f.write(sitemap_content)
 print("Generated sitemap.xml")
 
