@@ -713,7 +713,7 @@ portal_template = """<!DOCTYPE html>
     };
 
     // 2. Navigation Page Switching
-    let activePageId = 'page01';
+    let activePageId = null;
     let searchableElements = [];
 
     function switchPage(pageId) {
