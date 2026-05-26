@@ -71,11 +71,24 @@ images_p2 = [
     (r'(<h3.*?>4\..*?</h3>)', 'images/img_13_960px-Elizabeth_I__Armada_Portrait_.jpg', '伊麗莎白一世著名的「無敵艦隊畫像」（Armada Portrait），象徵擊敗西班牙霸權的地緣政治重大轉折點')
 ]
 
+# Page 3 (Hussite Wars) Config
+file_p3 = r'信仰衝突、軍事變革與波希米亞國家認同：胡斯戰爭的歷史脈絡、演進特徵與深遠影響研究報告.md'
+map_p3 = '<figure class="image-left" style="width: 38%; margin-bottom: 20px;"><img src="images/hussite_wars_main.png" alt="Hussite Wars" loading="lazy"><figcaption class="caption">捷克歷史藝術家 Luděk Marold 著名巨作《利帕尼戰役全景圖》（Maroldovo panorama bitvy u Lipan），生動重現了這場終結激進派的史詩決戰</figcaption></figure>\n'
+images_p3 = [
+    (r'(<h2.*?>一、.*?</h2>)', 'images/jan_hus_preaching.png', '1563年布拉格印製的《胡斯講道集》（Postilla）中極具歷史意義的木刻版畫，記錄了揚·胡斯向波希米亞平民大眾宣教的經典場景'),
+    (r'(<\/p>\s*<p>1414年，神聖羅馬帝國國王西吉斯蒙德)', 'images/jan_hus_execution.jpg', '歷史文獻插圖：上方描繪揚·胡斯在康斯坦茨被戴上寫有「異端首領」主教冠押赴火刑，下方描繪信徒用手推車收集其骨灰撒入萊茵河以防遺骨成為聖物，出自著名的《康斯坦茨公會議編年史》（Chronik des Konstanzer Konzils）'),
+    (r'(<h2.*?>三、.*?</h2>)', 'images/hussite_crusade_battle.png', '源自15世紀末捷克國寶級手稿《耶拿法典》（Jena Codex）的著名插圖，展現高舉聖杯紅旗前仆後繼、行軍禦敵的胡斯派戰士們'),
+    (r'(<h2.*?>四、.*?</h2>)', 'images/hussite_wagenburg.png', '歷史文獻中記載的經典「戰車壘」（Wagenburg）野戰工事與早期火炮協同防禦防線的精細還原圖')
+]
+
 print("Processing Page 1 (Holland)...")
 html_body_p1 = process_markdown(file_p1, images_p1, "1.1", map_p1)
 
 print("Processing Page 2 (USA)...")
 html_body_p2 = process_markdown(file_p2, images_p2, "1.0", map_p2)
+
+print("Processing Page 3 (Hussite)...")
+html_body_p3 = process_markdown(file_p3, images_p3, "1.0", map_p3)
 
 # Full Portal HTML Template
 portal_template = """<!DOCTYPE html>
@@ -84,11 +97,11 @@ portal_template = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="lueGudczLbvVhtRPh-JU6w8b3eu_yu5XCguU6RvfMxY" />
-    <title>Gemini 的歷史課 - 雙課堂動態門戶</title>
-    <meta name="description" content="Gemini的簡單歷史課，帶你深入了解荷蘭建國史、東印度公司與前哥倫布時期美洲歷史。專為歷史專題研究與報告打造的精緻歷史長文。">
-    <meta name="keywords" content="歷史, 歷史課, 荷蘭史, 東印度公司, 美國史, 大航海時代, Gemini, 歷史專題">
-    <meta property="og:title" content="Gemini 的歷史課 - 雙課堂動態門戶">
-    <meta property="og:description" content="Gemini的簡單歷史課，帶你深入了解荷蘭建國史、東印度公司與前哥倫布時期美洲歷史。">
+    <title>Gemini 的歷史課 - 三課堂動態門戶</title>
+    <meta name="description" content="Gemini的簡單歷史課，帶你深入了解荷蘭建國史與東印度公司、前哥倫布時期美洲歷史，以及波希米亞宗教衝突與胡斯戰爭。專為歷史專題研究與報告打造的精緻長文。">
+    <meta name="keywords" content="歷史, 歷史課, 荷蘭史, 東印度公司, 美國史, 宗教戰爭, 胡斯戰爭, 揚胡斯, 捷克歷史, 大航海時代, Gemini, 歷史專題">
+    <meta property="og:title" content="Gemini 的歷史課 - 三課堂動態門戶">
+    <meta property="og:description" content="Gemini的簡單歷史課，帶你深入了解荷蘭建國史、東印度公司、前哥倫布時期美洲歷史，以及波希米亞宗教衝突與胡斯戰爭。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ludwicia.github.io/gemini-history-lesson/">
     <meta property="og:image" content="https://ludwicia.github.io/gemini-history-lesson/history_banner_bg.png">
@@ -101,6 +114,9 @@ portal_template = """<!DOCTYPE html>
             --text-color: #2d3748; 
             --card-bg: #ffffff; 
             --border-color: #e2e8f0; 
+        }
+        .desktop-only {
+            display: inline;
         }
         body { 
             font-family: 'Inter', 'Noto Sans TC', sans-serif; 
@@ -512,17 +528,25 @@ portal_template = """<!DOCTYPE html>
                 font-size: 1.15rem;
             }
             .nav-links {
+                display: flex;
+                flex-wrap: wrap;
                 width: 100%;
-                justify-content: center;
+                justify-content: flex-start;
                 gap: 8px;
             }
             .nav-tab-btn {
                 padding: 6px 12px;
                 font-size: 0.82rem;
-                flex: 1;
-                text-align: center;
+                text-align: left;
                 white-space: nowrap;
-                justify-content: center;
+                justify-content: flex-start;
+                box-sizing: border-box;
+            }
+            #nav-btn-page01, #nav-btn-page02, #nav-btn-page03 {
+                flex: 0 0 calc(50% - 4px);
+            }
+            .desktop-only {
+                display: none;
             }
 
             .layout { display: flex; flex-direction: column; padding: 15px; padding-bottom: 60px; }
@@ -543,6 +567,7 @@ portal_template = """<!DOCTYPE html>
                 gap: 12px;
                 padding: 15px 15px;
                 height: calc(100% - 48px);
+                overflow-y: auto;
             }
             .footer-search-col .sidebar-title {
                 display: none;
@@ -553,10 +578,14 @@ portal_template = """<!DOCTYPE html>
                 padding: 0;
             }
             #searchResults {
-                max-height: 180px;
+                max-height: none;
+                overflow-y: visible;
             }
             .footer-version-col {
-                display: none;
+                display: block;
+                margin-top: 15px;
+                border-top: 1px solid #e2e8f0;
+                padding-top: 15px;
             }
             
             .content-middle { padding: 25px 18px; }
@@ -608,6 +637,7 @@ portal_template = """<!DOCTYPE html>
         <div class="nav-links">
             <a href="#page01" id="nav-btn-page01" class="nav-tab-btn active" style="text-decoration: none;">課堂一：荷蘭建國與地緣政經</a>
             <a href="#page02" id="nav-btn-page02" class="nav-tab-btn" style="text-decoration: none;">課堂二：美國的誕生(一)</a>
+            <a href="#page03" id="nav-btn-page03" class="nav-tab-btn" style="text-decoration: none;">課堂三：<span class="desktop-only">宗教戰爭(一)：</span>胡斯戰爭</a>
         </div>
     </div>
 </nav>
@@ -637,6 +667,11 @@ portal_template = """<!DOCTYPE html>
         <!-- 課堂二：美國早期史 -->
         <div id="course-page02" class="course-page" style="display: none;">
             __HTML_BODY_PAGE02__
+        </div>
+
+        <!-- 課堂三：宗教戰爭(一)：胡斯戰爭 -->
+        <div id="course-page03" class="course-page" style="display: none;">
+            __HTML_BODY_PAGE03__
         </div>
     </main>
 
@@ -670,8 +705,8 @@ portal_template = """<!DOCTYPE html>
             <div class="footer-version-col">
                 <div class="version-card">
                     <div style="font-weight: 600; margin-bottom: 8px; color: var(--primary-color);">📝 版本與課堂宣告</div>
-                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：1.2 (動態雙課堂)</div>
-                    <div style="color: #718096; font-size: 0.75rem;">發布日期：2026-05-24</div>
+                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：2.0 (動態三課堂)</div>
+                    <div style="color: #718096; font-size: 0.75rem;">發布日期：2026-05-26</div>
                     <hr style="border: none; border-top: 1px dashed #cbd5e0; margin: 8px 0;">
                     <div id="dynamic-course-info" style="text-align: left; font-size: 0.8rem; line-height: 1.5;">
                         <!-- Dynamic metadata loaded by JS -->
@@ -707,6 +742,14 @@ portal_template = """<!DOCTYPE html>
         'page02': `
             <div style="color: #4a5568;">
                 <b>📚 當前課堂：</b>美國的誕生(一)<br>
+                <b>🏷️ 內容版本：</b>1.0<br>
+                <b>👤 內容生成：</b>Gemini 深度研究<br>
+                <b>🛠️ 網頁工程：</b>Antigravity 協作
+            </div>
+        `,
+        'page03': `
+            <div style="color: #4a5568;">
+                <b>📚 當前課堂：</b>宗教戰爭(一)：胡斯戰爭<br>
                 <b>🏷️ 內容版本：</b>1.0<br>
                 <b>👤 內容生成：</b>Gemini 深度研究<br>
                 <b>🛠️ 網頁工程：</b>Antigravity 協作
@@ -950,17 +993,10 @@ portal_template = """<!DOCTYPE html>
             return;
         }
 
-        if (hash.startsWith('page02')) {
-            if (activePageId !== 'page02') {
-                switchPage('page02');
-                setTimeout(() => {
-                    const target = document.getElementById(hash);
-                    if (target) target.scrollIntoView();
-                }, 50);
-            }
-        } else if (hash.startsWith('page01')) {
-            if (activePageId !== 'page01') {
-                switchPage('page01');
+        const matchedPage = ['page01', 'page02', 'page03'].find(p => hash.startsWith(p));
+        if (matchedPage) {
+            if (activePageId !== matchedPage) {
+                switchPage(matchedPage);
                 setTimeout(() => {
                     const target = document.getElementById(hash);
                     if (target) target.scrollIntoView();
@@ -982,6 +1018,7 @@ portal_template = """<!DOCTYPE html>
 # Merge compiled markdown contents into template
 final_html = portal_template.replace('__HTML_BODY_PAGE01__', html_body_p1)
 final_html = final_html.replace('__HTML_BODY_PAGE02__', html_body_p2)
+final_html = final_html.replace('__HTML_BODY_PAGE03__', html_body_p3)
 
 # Write to file
 print("Writing build output to index.html...")
@@ -1014,4 +1051,4 @@ with open(r'robots.txt', 'w', encoding='utf-8') as f:
     f.write(robots_content)
 print("Generated robots.txt")
 
-print("Done! Site successfully built as dynamic double-lesson portal.")
+print("Done! Site successfully built as dynamic triple-lesson portal.")
