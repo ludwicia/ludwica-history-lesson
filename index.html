@@ -98,6 +98,68 @@
             box-shadow: 0 4px 12px rgba(0, 85, 164, 0.2);
         }
         
+        /* Dropdown Styles */
+        .nav-group {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .nav-group-title {
+            color: #4a5568;
+            font-weight: 600;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-group-title:hover {
+            color: var(--primary-color);
+            background: rgba(0, 85, 164, 0.05);
+        }
+        .dropdown-arrow {
+            font-size: 0.7em;
+            transition: transform 0.3s ease;
+        }
+        .nav-group:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+        
+        @media (min-width: 801px) {
+            .nav-dropdown {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                min-width: 200px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                border: 1px solid rgba(255,255,255,0.2);
+                border-radius: 8px;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(10px);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1000;
+            }
+            .nav-group:hover .nav-dropdown {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(5px);
+            }
+            .nav-dropdown .nav-tab-btn {
+                width: 100%;
+                text-align: left;
+                justify-content: flex-start;
+            }
+        }
+        
         /* Banner Styles */
         .site-banner {
             width: 100%;
@@ -436,9 +498,31 @@
             }
             .nav-links {
                 display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            .nav-group {
+                flex-direction: column;
+                width: 100%;
+                align-items: flex-start;
+            }
+            .nav-group-title {
+                padding-left: 0;
+                color: var(--primary-color);
+                border-bottom: 2px solid var(--secondary-color);
+                width: 100%;
+                border-radius: 0;
+                margin-bottom: 8px;
+                padding-bottom: 5px;
+            }
+            .nav-group-title:hover { background: none; }
+            .dropdown-arrow { display: none; }
+            .nav-dropdown {
+                display: flex;
                 flex-wrap: wrap;
                 width: 100%;
-                justify-content: flex-start;
                 gap: 8px;
             }
             .nav-tab-btn {
@@ -448,8 +532,6 @@
                 white-space: nowrap;
                 justify-content: flex-start;
                 box-sizing: border-box;
-            }
-            #nav-btn-page01, #nav-btn-page02, #nav-btn-page03 {
                 flex: 0 0 calc(50% - 4px);
             }
             .desktop-only {
@@ -541,9 +623,23 @@
 <nav class="top-nav">
     <div class="nav-container">
         <div class="nav-links">
-            <a href="#page01" id="nav-btn-page01" class="nav-tab-btn active" style="text-decoration: none;">荷蘭建國與地緣政經</a>
-            <a href="#page02" id="nav-btn-page02" class="nav-tab-btn" style="text-decoration: none;">美國的誕生(一)</a>
-            <a href="#page03" id="nav-btn-page03" class="nav-tab-btn" style="text-decoration: none;">宗教戰爭(一)：胡斯戰爭</a>
+            <!-- 歷史專題 -->
+            <div class="nav-group">
+                <div class="nav-group-title">歷史專題 <span class="dropdown-arrow">▼</span></div>
+                <div class="nav-dropdown">
+                    <a href="#page01" id="nav-btn-page01" class="nav-tab-btn active" style="text-decoration: none;">荷蘭建國與地緣政經</a>
+                    <a href="#page02" id="nav-btn-page02" class="nav-tab-btn" style="text-decoration: none;">美國的誕生(一)</a>
+                    <a href="#page03" id="nav-btn-page03" class="nav-tab-btn" style="text-decoration: none;">宗教戰爭(一)：胡斯戰爭</a>
+                </div>
+            </div>
+            
+            <!-- 歷史文件 -->
+            <div class="nav-group">
+                <div class="nav-group-title">歷史文件 <span class="dropdown-arrow">▼</span></div>
+                <div class="nav-dropdown">
+                    <a href="javascript:void(0)" class="nav-tab-btn disabled" style="text-decoration: none; cursor: not-allowed; opacity: 0.6;">即將推出</a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
