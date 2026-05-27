@@ -103,8 +103,8 @@ portal_template = """<!DOCTYPE html>
     <meta property="og:title" content="Ludwica 的簡單歷史課 - 三課堂動態門戶">
     <meta property="og:description" content="Ludwica 的簡單歷史課，帶你深入了解荷蘭建國史、東印度公司、前哥倫布時期美洲歷史，以及波希米亞宗教衝突與胡斯戰爭。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ludwicia.github.io/gemini-history-lesson/">
-    <meta property="og:image" content="https://ludwicia.github.io/gemini-history-lesson/history_banner_bg.png">
+    <meta property="og:url" content="https://ludwicia.github.io/ludwica-history-lesson/">
+    <meta property="og:image" content="https://ludwicia.github.io/ludwica-history-lesson/history_banner_bg.png">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root { 
