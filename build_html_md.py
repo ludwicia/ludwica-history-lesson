@@ -43,6 +43,57 @@ def process_markdown(file_path, image_replacements, content_version, main_img_ht
 
     return html_body
 
+def process_3col_document(file_path, content_version):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            text = f.read()
+    except Exception as e:
+        return f"<p>Error loading document: {e}</p>"
+
+    # Split by '---'
+    blocks = text.split('---')
+    
+    html = f'''
+    <div style="text-align: center; color: #718096; margin-top: 10px; margin-bottom: 25px; font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span style="background-color: #ebf8ff; color: #2b6cb0; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; border: 1px solid #bee3f8;">內容版本：{content_version}</span>
+    </div>
+    <div class="doc-3col-container">
+        <div class="doc-3col-header">
+            <div class="doc-col-title">原文 (德文)</div>
+            <div class="doc-col-title">譯文 (中文)</div>
+            <div class="doc-col-title">解釋 (筆記)</div>
+        </div>
+    '''
+    
+    for block in blocks:
+        block = block.strip()
+        if not block: continue
+        
+        if "**原文**" in block and "**譯文**" in block:
+            parts = block.split("**譯文**")
+            original_part = parts[0].replace("**原文**", "").strip()
+            translated_part = parts[1].strip()
+            
+            original_text = markdown.markdown(original_part)
+            translated_text = markdown.markdown(translated_part)
+            
+            html += f'''
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original">{original_text}</div>
+                <div class="doc-col doc-translation">{translated_text}</div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            '''
+        else:
+            html += f'''
+            <div class="doc-3col-row full-width-row" style="grid-template-columns: 1fr;">
+                <div class="doc-col" style="grid-column: 1 / -1;">{markdown.markdown(block)}</div>
+            </div>
+            '''
+            
+    html += "</div>"
+    return html
+
 # Page 1 (Holland) Config
 file_p1 = r'帝國海洋、金融先驅與當代政治僵局：荷蘭建國史、東印度公司興衰與當代地緣政經轉型研究報告.md'
 map_p1 = '<figure class="image-left" style="width: 38%; margin-bottom: 20px;"><img src="images/img_12_960px-Seven_United_Netherlands_Janssonius_1658.jpg" alt="1658 Map" loading="lazy"><figcaption class="caption">1658年聯省共和國地圖，清晰可見當時的須德海與低地國錯綜複雜的水路地貌</figcaption></figure>\n'
@@ -89,6 +140,10 @@ html_body_p2 = process_markdown(file_p2, images_p2, "1.0", map_p2)
 
 print("Processing Page 3 (Hussite)...")
 html_body_p3 = process_markdown(file_p3, images_p3, "1.0", map_p3)
+
+print("Processing Page 4 (Golden Bull)...")
+file_p4 = r'4.金璽詔書.md'
+html_body_p4 = process_3col_document(file_p4, "1.0")
 
 # Full Portal HTML Template
 portal_template = """<!DOCTYPE html>
@@ -368,8 +423,67 @@ portal_template = """<!DOCTYPE html>
         }
         
         .course-page {
-            animation: contentFadeIn 0.4s ease-in-out;
+            animation: fadeIn 0.4s ease;
         }
+        
+        /* 3-Column Document Layout */
+        .layout.doc-mode {
+            grid-template-columns: 1fr !important;
+            max-width: 1400px;
+        }
+        .layout.doc-mode .sidebar-left { display: none !important; }
+        .layout.doc-mode .sidebar-right { display: none !important; }
+        
+        .doc-3col-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+        .doc-3col-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            position: sticky;
+            top: 70px;
+            background: var(--card-bg);
+            z-index: 10;
+            font-size: 1.05rem;
+            text-align: center;
+        }
+        .doc-3col-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            border-bottom: 1px dashed #e2e8f0;
+            padding-bottom: 15px;
+        }
+        .doc-col {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+        .doc-original {
+            background: #f7fafc;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: 'Times New Roman', serif;
+            border-left: 3px solid #a0aec0;
+        }
+        .doc-translation {
+            padding: 12px;
+        }
+        .doc-explanation {
+            background: #fffff0;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px dashed #ecc94b;
+        }
+        
         @keyframes contentFadeIn {
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
@@ -736,6 +850,19 @@ portal_template = """<!DOCTYPE html>
             }
             
             th, td { padding: 6px 8px; font-size: 0.8rem; }
+            
+            /* Mobile 3-Column Document Layout */
+            .doc-3col-header { display: none; }
+            .doc-3col-row {
+                grid-template-columns: 1fr !important;
+                gap: 12px;
+                border-bottom: 2px solid var(--primary-color);
+                padding-bottom: 20px;
+                margin-bottom: 10px;
+            }
+            .doc-original::before { content: "原文："; font-weight: bold; color: var(--primary-color); display: block; margin-bottom: 8px; font-family: sans-serif; }
+            .doc-translation::before { content: "譯文："; font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 8px; }
+            .doc-explanation::before { content: "解釋筆記："; font-weight: bold; color: #d69e2e; display: block; margin-bottom: 8px; }
         }
     </style>
 </head>
@@ -763,7 +890,7 @@ portal_template = """<!DOCTYPE html>
             <div class="nav-group">
                 <div class="nav-group-title">歷史文件 <span class="dropdown-arrow">▼</span></div>
                 <div class="nav-dropdown">
-                    <a href="javascript:void(0)" class="nav-tab-btn disabled" style="text-decoration: none; cursor: not-allowed; opacity: 0.6;">即將推出</a>
+                    <a href="#page04" id="nav-btn-page04" class="nav-tab-btn" style="text-decoration: none;">神聖羅馬帝國：金璽詔書</a>
                 </div>
             </div>
         </div>
@@ -801,6 +928,11 @@ portal_template = """<!DOCTYPE html>
         <div id="course-page03" class="course-page" style="display: none;">
             __HTML_BODY_PAGE03__
         </div>
+
+        <!-- 歷史文件一：金璽詔書 -->
+        <div id="course-page04" class="course-page" style="display: none;">
+            __HTML_BODY_PAGE04__
+        </div>
     </main>
 
     <!-- Right Sidebar / Floating Footer: Search & Version -->
@@ -833,7 +965,7 @@ portal_template = """<!DOCTYPE html>
             <div class="footer-version-col">
                 <div class="version-card">
                     <div style="font-weight: 600; margin-bottom: 8px; color: var(--primary-color);">📝 版本與課堂宣告</div>
-                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：3.0 (雙層導覽與響應式選單)</div>
+                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：3.1 (雙層導覽與三欄式對照文件)</div>
                     <div style="color: #718096; font-size: 0.75rem;">發布日期：2026-05-28</div>
                     <hr style="border: none; border-top: 1px dashed #cbd5e0; margin: 8px 0;">
                     <div id="dynamic-course-info" style="text-align: left; font-size: 0.8rem; line-height: 1.5;">
@@ -882,6 +1014,14 @@ portal_template = """<!DOCTYPE html>
                 <b>👤 內容生成：</b>AI 深度研究<br>
                 <b>🛠️ 網頁工程：</b>Antigravity 協作
             </div>
+        `,
+        page04: `
+            <div style="font-size: 0.85rem; color: #4a5568; line-height: 1.6;">
+                <b>📚 當前文件：</b>神聖羅馬帝國：金璽詔書<br>
+                <b>🏷️ 內容版本：</b>1.0<br>
+                <b>👤 內容生成：</b>AI 深度研究<br>
+                <b>🛠️ 網頁工程：</b>Antigravity 協作
+            </div>
         `
     };
 
@@ -891,6 +1031,14 @@ portal_template = """<!DOCTYPE html>
 
     function switchPage(pageId) {
         activePageId = pageId;
+        
+        // Handle full-width doc mode
+        const layout = document.querySelector('.layout');
+        if (pageId === 'page04') {
+            layout.classList.add('doc-mode');
+        } else {
+            layout.classList.remove('doc-mode');
+        }
         
         // Update active tab buttons
         document.querySelectorAll('.nav-tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -1136,7 +1284,7 @@ portal_template = """<!DOCTYPE html>
             return;
         }
 
-        const matchedPage = ['page01', 'page02', 'page03'].find(p => hash.startsWith(p));
+        const matchedPage = ['page01', 'page02', 'page03', 'page04'].find(p => hash.startsWith(p));
         if (matchedPage) {
             if (activePageId !== matchedPage) {
                 switchPage(matchedPage);
@@ -1162,6 +1310,7 @@ portal_template = """<!DOCTYPE html>
 final_html = portal_template.replace('__HTML_BODY_PAGE01__', html_body_p1)
 final_html = final_html.replace('__HTML_BODY_PAGE02__', html_body_p2)
 final_html = final_html.replace('__HTML_BODY_PAGE03__', html_body_p3)
+final_html = final_html.replace('__HTML_BODY_PAGE04__', html_body_p4)
 
 # Write to file
 print("Writing build output to index.html...")

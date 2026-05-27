@@ -275,8 +275,67 @@
         }
         
         .course-page {
-            animation: contentFadeIn 0.4s ease-in-out;
+            animation: fadeIn 0.4s ease;
         }
+        
+        /* 3-Column Document Layout */
+        .layout.doc-mode {
+            grid-template-columns: 1fr !important;
+            max-width: 1400px;
+        }
+        .layout.doc-mode .sidebar-left { display: none !important; }
+        .layout.doc-mode .sidebar-right { display: none !important; }
+        
+        .doc-3col-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+        .doc-3col-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            position: sticky;
+            top: 70px;
+            background: var(--card-bg);
+            z-index: 10;
+            font-size: 1.05rem;
+            text-align: center;
+        }
+        .doc-3col-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            border-bottom: 1px dashed #e2e8f0;
+            padding-bottom: 15px;
+        }
+        .doc-col {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+        .doc-original {
+            background: #f7fafc;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: 'Times New Roman', serif;
+            border-left: 3px solid #a0aec0;
+        }
+        .doc-translation {
+            padding: 12px;
+        }
+        .doc-explanation {
+            background: #fffff0;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px dashed #ecc94b;
+        }
+        
         @keyframes contentFadeIn {
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
@@ -643,6 +702,19 @@
             }
             
             th, td { padding: 6px 8px; font-size: 0.8rem; }
+            
+            /* Mobile 3-Column Document Layout */
+            .doc-3col-header { display: none; }
+            .doc-3col-row {
+                grid-template-columns: 1fr !important;
+                gap: 12px;
+                border-bottom: 2px solid var(--primary-color);
+                padding-bottom: 20px;
+                margin-bottom: 10px;
+            }
+            .doc-original::before { content: "原文："; font-weight: bold; color: var(--primary-color); display: block; margin-bottom: 8px; font-family: sans-serif; }
+            .doc-translation::before { content: "譯文："; font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 8px; }
+            .doc-explanation::before { content: "解釋筆記："; font-weight: bold; color: #d69e2e; display: block; margin-bottom: 8px; }
         }
     </style>
 </head>
@@ -670,7 +742,7 @@
             <div class="nav-group">
                 <div class="nav-group-title">歷史文件 <span class="dropdown-arrow">▼</span></div>
                 <div class="nav-dropdown">
-                    <a href="javascript:void(0)" class="nav-tab-btn disabled" style="text-decoration: none; cursor: not-allowed; opacity: 0.6;">即將推出</a>
+                    <a href="#page04" id="nav-btn-page04" class="nav-tab-btn" style="text-decoration: none;">神聖羅馬帝國：金璽詔書</a>
                 </div>
             </div>
         </div>
@@ -1486,6 +1558,1759 @@
 <p>儘管胡斯派教會在波希米亞和平存在了近兩個世紀，但地緣政治的風暴依然在1618年再度降臨。神聖羅馬帝國哈布斯堡王朝皇帝斐迪南二世推行強硬的逆宗教改革政策，直接引發了「第二次布拉格拋窗事件」與三十年戰爭的爆發。1620年11月8日，在布拉格郊外的白山戰役（Battle of White Mountain）中，缺乏訓練的捷克新教貴族聯軍在哈布斯堡帝國軍隊的打擊下，在兩小時內全線潰敗。</p>
 <p>白山之戰的慘敗，終結了波希米亞自胡斯戰爭以來享有的宗教自由與政治自治權，捷克本土貴族階層被肉體消滅或流放，天主教被宣布為唯一合法信仰，捷克社會進入了長達150年之久的「黑暗時代」。然而，正如歷史所昭示的那樣，胡斯派所倡導的「真理與自由意識」已深深刻入捷克民族的文化基因。當一戰結束、奧匈帝國解體，捷克斯洛伐克共和國於1918年宣告誕生之際，建國之父馬薩里克總統將胡斯重新奉為國家精神的最高豐碑，而胡斯的遺言「真理終將得勝」被正式書寫於總統府的旗幟之上，昭示著這一中世紀平民與信仰革命的遺產，跨越數百年時空，依然在現代歐洲的歷史記憶中熊熊燃燒。</p>
         </div>
+
+        <!-- 歷史文件一：金璽詔書 -->
+        <div id="course-page04" class="course-page" style="display: none;">
+            
+    <div style="text-align: center; color: #718096; margin-top: 10px; margin-bottom: 25px; font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <span style="background-color: #ebf8ff; color: #2b6cb0; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; border: 1px solid #bee3f8;">內容版本：1.0</span>
+    </div>
+    <div class="doc-3col-container">
+        <div class="doc-3col-header">
+            <div class="doc-col-title">原文 (德文)</div>
+            <div class="doc-col-title">譯文 (中文)</div>
+            <div class="doc-col-title">解釋 (筆記)</div>
+        </div>
+    
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>﻿金璽詔書(德)</p>
+<h1>對照翻譯</h1>
+<blockquote>
+<p><strong>全文大意</strong>：這份《黃金詔書》是神聖羅馬帝國的基礎法律文件，確立了皇帝與諸侯的權力結構、選舉制度，並詳細界定了各階層（包括諸侯、貴族、市民）的權利與義務。</p>
+</blockquote>
+<h2>譯名對照</h2>
+<ul>
+<li>Wikisource → 维基文库</li>
+<li>Deutschland → 德国</li>
+<li>Greifswald → 格赖夫斯瓦尔德</li>
+<li>Kaiser → 凱撒 (德國)</li>
+<li>Des → D♭ (音名)</li>
+</ul>
+<p>Goldene Bulle (Frankfurter Übersetzung)</p></div>
+                <div class="doc-col doc-translation"><p>黃金詔書（法蘭克福譯本）</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Editionsrichtlinien:</p></div>
+                <div class="doc-col doc-translation"><p>編輯準則：</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>Die Editionsrichtlinien beruhen auf Wikisource:Editionsrichtlinien</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>編輯準則基於維基文庫：編輯準則</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>Der einführende Text von Altmann wird übernommen.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>採用 Altmann 的引言文本。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>Die Anmerkungen von Altmann werden übernommen.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>採用 Altmann 的註釋。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>Die mit einem kleinen o überschriebenen Buchstaben im Druck werden durch Hochstellen des Buchstaben transkribiert: uo</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>在印刷體中被小寫o覆蓋的字母，將透過將該字母提高（上標）的方式進行轉寫：uo。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Alle redaktionellen Texte dieses Projektes stehen unter der Lizenz CC-BY-SA 2.0 Deutschland</p></div>
+                <div class="doc-col doc-translation"><p>本專案的所有編輯文本均受 CC-BY-SA 2.0 德國授權。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[107] II. Die alte Frankfurter Deutsche Uebersetzung der Goldenen Bulle Kaiser Karls IV. Von Bibliothekar und Privatdocent Dr. Wilh. Altmann in Greifswald.</p></div>
+                <div class="doc-col doc-translation"><p>[107] II. 查理四世皇帝《黃金詔書》的舊法蘭克福德語譯本（由格賴夫斯瓦爾德的圖書館員兼私人講師威爾赫姆·阿爾特曼博士提供，威爾赫·阿爾特曼博士所撰）。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Da eine officielle gleichartige deutsche Uebersetzung der G. B. nicht existirt und auch nie existirt hat, so konnte es für mich nicht zweifelhaft sein, dass ich die älteste unter den zahlreichen Uebersetzungen zum Abdruck zu bringen hatte. Als solche muss nach den eingehenden Untersuchungen Harnacks (Das Kurfürstencollegium bis zur Mitte des 14. Jahrhunderts S. 182 ff.), auf welche ich hier verweisen kann, die im Frankfurter Stadtarchive befindliche angesehen werden, welche [108] in der äusseren Form den Originalausfertigungen sehr ähnlich ist, aber, da sie unbesiegelt ist, keine officielle Geltung beanspruchen kann. Wenn Harnack nach Mittheilungen des damaligen frankfurtischen Stadtarchivars versichern konnte, dass die Handschrift dieser Uebersetzung diejenige eines in den siebziger Jahren des 14.</p></div>
+                <div class="doc-col doc-translation"><p>由於《黃金詔書》沒有官方的、同類型的德文譯本，而且從未存在過，因此我認為我必須將眾多譯本中最古老的一份進行複印，這一點是毋庸置疑的。根據我在此引用的哈納克（Harnack）的深入研究（《選帝侯議會至十四世紀中葉》第182頁及後續頁），這份存放在法蘭克福市檔案館的譯本必須被視為此類譯本。它[108]在外部形式上與原始副本非常相似，但由於它沒有封蠟，因此無法主張官方效力。哈納克曾根據當時法蘭克福市檔案館員的報告保證，這份譯本的筆跡是屬於十四世紀七十年代的。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Jahrhunderts noch häufig bemerkbaren Frankfurter Schreibers ist und somit nicht aus der Reichskanzlei stammt, so glaube ich unten bei Cap. 19 nachweisen zu können, dass diese Uebersetzung spätestens vor Mai 1365 entstanden sein muss; auch liegt ihr nicht, wie die Capitelüberschriften erkennen lassen, das Exemplar der G. B. zu Grunde, welches die Stadt Frankfurt im Jahre 1366 vom Kaiser erworben hat. Der folgende Abdruck schliesst sich aufs Engste an die Handschrift[1] an, doch sind grosse Anfangsbuchstaben nur nach Punkten gesetzt, i und j, u und v, welche in der Hds. willkürlich durcheinandergehen, geschieden worden. Betreffs der Interpunction, Satzabtheilung u. s. w. folge ich der Ausgabe in: „Ausgewählte Urkunden zur Erläuterung der Verfassungsgeschichte Deutschlands im Mittelalter. Herausgegeben von Wilh. Altmann und E. Bernheim. 2. Auflage.</p></div>
+                <div class="doc-col doc-translation"><p>這份手稿是當時在法蘭克福常見的書寫風格，並非來自帝國秘書處，因此我認為可以在第19章證明，這份譯本最遲必須在1365年5月之前產生；而且，正如章節標題所顯示，它並非是法蘭克福市在1366年從凱撒 (德國) 那裡獲得的《黃金詔書》範本。接下來的複印件與手稿[1]極為相似，但由於手稿中大寫字母僅以點號標記，即 i 和 j、u 和 v，這些字母在手稿中是隨意混用的，因此我將其分開了。關於標點符號、句法劃分等問題，我遵循了以下出版物：維爾赫姆·阿特曼（Wilh. Altmann）和埃里希·伯恩海姆（E. Bernheim）編纂的《中世紀德國憲法史選集文件》。第二版。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>1895.“ Da der Uebersetzer die vielen eingeschalteten Sätze und Participialconstructionen des Originals vielfach, auch durch Umstellungen, zu vermeiden gesucht hat, so ist die Uebersetzung oft viel deutlicher und erleichtert mitunter die Interpretation; möchte sie in den Kreisen, an die ich bei der Herausgabe gedacht habe, Eingang finden. [I. Theil. Die Nürnberger Gesetze.] In[2] namen der heiligin undeilsamen drivaltekeit seleclich amen. Karle der firde mit gunste gotlichir miltekeit Romischir keisir allezit merer und konig zuo Beheim. Des dingis zuo [109] ewegem gedenckin.</p></div>
+                <div class="doc-col doc-translation"><p>1895年。「由於譯者試圖避免原文中許多嵌入式句式和分詞結構，甚至透過重排語序，因此譯文往往更加清晰，有時也簡化了詮釋；我希望它能在我出版時所考慮的圈子中得到接納。[第一部：紐倫堡法典。] 奉至聖不分割的三位一體之名，祈求。卡爾（查理）以神聖慈悲之恩，成為羅馬皇帝、至高君主與國王。為此事物永恆銘記。」</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Ein iegelich rich, daz in yme selbir zurdeilit ist, daz wird zurstorit; wan sine fursten sint wordin der diebe gesellin, darumb hat got mittin undir sie gemisebit eynen swindeldin geist, daz sie stalpin[3] an dem mittem dage alse in dem finstern, und hat ir kirtzstal[4] bewegit von siner stat, und sint blint und furer der blinden; und wer in den finstern get, der stossit sicb, und mit blindem gedancke begent sie vil meindat, die in der deiluonge geschehint. Sage, duo hochfard, wye mochtest du an Lucefer han gerichtzit, bettest duo zurdrennuonge nit zuo helfe gehabit? Sage, duo nideger dufil, wie hettest duo Adam uz dem paradyse geworffin, hettest duo in nit von gehorsam gescheiden? Sage, duo unkuschekeit, wie mochtest du Throya han gestorit, hettest duo frauwe Lenen nit von erem manne gescheidin?</p></div>
+                <div class="doc-col doc-translation"><p>任何徇私的法官，必將遭審判；當其君主淪為盜賊的同夥時，上帝便在他們之中植入了惑亂的靈魂，使他們在白日中仍如夜色般跌倒，並從其位置上移走了短劍，使他們成為盲人與盲者的導引者；凡在黑暗中跌倒者，必會踉蹌，並以盲目的心智遭遇許多在分裂之中發生的事。請說，你們這些高貴之人，怎能審判路西法，卻不習慣於幫助黑暗呢？請說，你們這些卑微之人，怎能將亞當逐出伊甸園，卻不曾與順從分離呢？請說，你們這些不潔之人，怎能毀滅特洛伊，卻不曾與丈夫分離呢？</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Sage, zorn, wie kundest du daz Romische gemeyne gut[5] zuostorit han, hedest du nit von der zweyunge Pompii und Julii zusamene gereißit den strit mit scharpin swertin bit uf daz gedirme? Suondir[6] du, haz cristinlichis keisirdums, daz von gode ist gestirckit glich der heiligin undeillichin drivaltikeit mit den gotlicbin dogenden glaube zuvirsicht und minne, des fullemuont[7] uff daz allircristenlichiste rich seleclich ist befestint, hastu dich mit diure altin virgift als ein slange meyndedeclichin bekotzit an die keisirliche win-rebe und an die nesten gledir des keisirdummys, so dye sule zuquetzschit weren, daz du den bu des keisirdumis zumale fellig mechtist; manigfelteclich hastu zweyunge geleit undir die sobin kurfursten des heiligin richis, durch die als durch sebin luchtinde kirtzluchtir daz heilige keisirduom sal herluchtit werdin in eynekeit des sebingebinden[8] geistis.</p></div>
+                <div class="doc-col doc-translation"><p>你說，憤怒啊，你如何了解羅馬的共同福祉？你難道沒有親眼見過，龐培和凱撒這兩位將領，曾以銳利之劍在世間撕裂紛爭嗎？你否認那由神所建立的基督教帝國嗎？它如同神聖而無限的三位一體，以神性崇拜的信仰、信賴與愛而奠定，在最基督教的王國上精神中得以確立？你是否以蛇的姿態，用你古老的本性，侵蝕了帝國的生命之藤與根基？如此，你便能摧毀帝國的根本。你多次將某人置於神聖帝國的選帝侯之下，而藉由他們，神聖帝國將在七重精神的統一中獲得榮耀。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>In druoen[9] wan[10] wir von amptes wegin, von dem wir gebruchen keisirliche wirdekeit, schuldig sin zuo begegen kuonftigem schadin der zurdeilunge missehelle undir den kurfursten, in der zal wir auch [sint] alse ein konig von Beheim, von zweyn sachin, beide von keisirduom und von recht der kure, der wir gewon-lichin nutzen: so han wir in unserm uffin hofe zuo Nurenberg, da alle kurfursten geistlich und werntlich by uns sassin mit zallichir menige andern fursten grefin baneren frien edelen [110] und der stede uf dem stule keisirlichir almechtekeit, gezerit mit keisirlichir ymfeln wat[11] und krone, mit sedegemme baoradin muode von fullenkomenheit keisirlichis gewaltis gemacht gesetzit und mit keisirlichem bekanteniße bestedigit die nach-geschrebenen gesetze, recht zuo schuoren[12] und zuo fuoren einbir-keit undir den kurfursten und ein eynmuoge wal inzulegene und auch zuo furbeslißin den zuogang der vorgenant virsmehit zurdrennunge und manigirhande schadin, die daruz nochfulgent.</p></div>
+                <div class="doc-col doc-translation"><p>我們因職務之故，對於分配權力給選帝侯，若未能預防可能發生的損害，負有責任。選帝侯的數量，我們亦視為波希米亞國王。我們有兩項事宜，皆與帝國及選帝侯的權利有關，即我們在紐倫堡帝國議會中，所有精神和世俗的選帝侯，與眾多其他選帝侯、貴族一同聚集，並在帝國權力的寶座上，裝飾著帝國的紋章和皇冠，並以完整的帝國權力鑄造了這本法典，並以帝國的認可予以確認，其中載有以下法律，旨在保障選帝侯的團結，並為選帝侯的選舉提供一個統一的途徑，同時也旨在防止上述選帝侯在分配權力時，發生任何隨之而來的損害。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Dis ist geschehin[13] anno domini 1356 indiccione nona 4. idus januarii in deme zehinden jare unsir riche und in deine irstin jare des keisirdummys.</p></div>
+                <div class="doc-col doc-translation"><p>此事件發生於主曆一三五六年，第九任期，一月四日，亦是吾等統治的第十年，以及帝國統治的第一年。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Wie daz geleit sulle sin der kurfursten.</p></div>
+                <div class="doc-col doc-translation"><p>選帝侯應如何參與該次集會。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[1] Wir setzin von sichirm wißen von fullenkommener keisirlichir gewalt und bestedegen mit desem keisirlichim ge-bode, so wanne und wie dickewie hienach notdurfft uffstet in geschichte, ein Romischin konig zuo welin zuo eyme kunfftigen keisir, und die kurfursten nach altir labelichir gewonheit zuo der kur sullin farin, so ist ein iegelichir kurfurste, ob iz und wan iz an in gemudit[14] wird, schuldeg zu geleidin eynen iegelichin sinen medekurfursten adir ir boten, die sie darzu sendent, durch ir lant gebiede und stede und auch furbas, so sie ver-riste mögen, und ane geverde geleide lihin gein der stat, da die wale geschehin sal, und hin wedirumb zuo varen by der pene meynneidis und virluste siner stymme, die er zuo der zyt an der kure habin sulte; und setzin, daz er adir sie in die buße zuo stunt gefallin sin, die adir der an dem vorgenant geleide sumig sint adir daz geleide freveliche widdirsprechint.</p></div>
+                <div class="doc-col doc-translation"><p>我們規定，既然我們已確知至高無上的皇帝權力，並依據這份皇帝的法令，無論在歷史上何時何地，一位羅馬國王都必須在選舉會議中選出一位未來的皇帝，而選帝侯則必須依照古老的慣例前往選舉會議，因此，每一位選帝侯，無論何時何地被召集，都負有義務要派遣他各自的選帝侯同僚以及他們的使者，透過其領地、城市，以及所有城鎮，來行使他們的權力，並必須在選舉將會舉行的城市，以及返回到各自的領地時，謹慎地處理他們的安全通行權（安全護送），這些安全通行權（安全護送）應當在他們出席選舉會議期間保持；並規定，如果他們違背誓言的處罰，並剝奪他在該次選舉中的選票。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[2] Darubir setzen wir und gebiedin andirn fursten ge-meinlichin, wie sie genant sin, die gelehint sin von deme heiligen Romischen riche, und auch allin grefin landishern rittern knechten edel und unedel burgeren und gemeynen und allen insesses der bürge und stede und allen steden des heiligen richis, daz sie zuo der seibin zit, so man die kur duon sal eyns [111] Romischin konigis zuo eyme kunfftigen keisir, eynen iegelichin kurfursten, so ers an sie forderd, adir sine boten, die er zuo der kuor sendit, sullen geleidin durch ir gebiede und so sie ferste mogen, alse vor bedacht ist, ane alle geverde.</p></div>
+                <div class="doc-col doc-translation"><p>因此，我們同時規定並命令所有被稱為「神聖羅馬帝國」的選帝侯，以及所有領地貴族、騎士、僕從、貴賤市民、以及神聖帝國所有城鎮和定居點的居民，在選舉時間，當他們需選出一位羅馬國王作為未來的皇帝、一位選帝侯時，應當聽從他們派遣的使者，通過他們的領地，並在他們能夠控制的範圍內，按照既定方式，提供所有必要的支持。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Wer auch die vorgeschrebin unsir gesetze frebeliche ubirginge, der sal zuo stunt in die vorgenant buße gefallin sin: alle fursten und grefin landishern edel rittere knechte und alle wolegeborne, dye daweddir dunt, dye fallin in quot meyneydes und virlust allir leen, die sie von deine heiligen riche hant, und andir lehin, von weme sis hant, und als irs gutis, wo sie iz hant; alle burgir und gemeinde, die sich virmeßynt darweddir zuo dunde, die sint gelich meyneydig und darzu sint sie allir ire recht friheit priviligia und gnadin, die sie von dem heiligen riche hant, gentzlich beraubit, und ir lip und ir gut fellit in keisirliche achte.</p></div>
+                <div class="doc-col doc-translation"><p>凡有違背規定之法律者，應受前述罰款：所有諸侯、領地貴族、世襲騎士、僕從，以及所有世襲者，若犯下罪行，將失去他們從神聖帝國獲得的所有領地，以及從他人擁有的其他資產，以及他們所擁有的所有財產；所有市民和公社，若做出違規行為，則將失去他們所有權利、自由、特權和恩典，這些皆是從神聖帝國獲得的，並將他們的生命和財產置於皇帝的監視之下。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Und ubir die seibin, die wir von nuo dirre zit mit gedat als auch danne[15] berauben von allim irrem rechtin, ist eyme yegelichin herleibit anzugriffen ungefrebilt mit eygin gewalt ane gerichte unde anzuogriff[16] eins ieclichin ampt-mannis, und sullen darumb keine buße fochtin von deine riche adir von iemanne, umb daz sie begriffin werdin, daz sie weddir eyn gemeyne gut[17], uffinbere und des heiligin richis gesetze und wirdekeit und auch wedir eigin ere und heil also groß ding frefeliche gehindird hant und auch als wedirspenische ungehorsam ungetrewe alse buslich und ungetrewelichin hant gedan.</p></div>
+                <div class="doc-col doc-translation"><p>關於我們自此開始，以及先前所頒布的上述人等，將剝奪他們所有權利；任何犯下這些罪行的人，皆可被其自身權力，以及各級官員自由地逮捕和審判，他們無需畏懼來自帝國或任何人的懲罰，前提是他們損害了共同利益、神聖帝國的法律與尊嚴，或嚴重妨礙了自身及神聖的重大事務，並且其行為屬於叛逆、不服從、背信、有罪或不忠。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[3] Wir setzin und gebiedin, daz burger und gemeynne den vorgenant kurfursten, so sie iz von in fordern, schuldig sin zuo virkeiffin und schaffin, daz man yn virkeiffe spise, so ir und iren boten und irs fulkys notdurfft, noch gemeyme lauffe und werd, so sie farn zuo der stat, da man die kur begen sal, unde auch, so sie von dannen farin; zuo den vor- geschreben dingen sal niemans kein geverde legin; wer andirs darweddir dete, so wullen wir, daz er mit der gedede falle in die buße, die in dem vorgesetzen widdir burgir und gemeinne von uns uzgekundit sint.</p></div>
+                <div class="doc-col doc-translation"><p>我們規定並命令，當上述選帝侯被召集時，公民和民眾有義務出席並聚集，以便他們、他們的使者以及全體民眾的需求，能遵循群眾的引導，前往舉行選舉的城鎮，以及若他們離開該處。任何人不得妨礙上述事宜；若有人違背此規定，我們命令他將因此行為而受到先前已向公民和民眾公布的罰款。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Welchir herubir von fursten grefin landisherren rittern burgern und gemeynnen eyme kurfursten, so er ferit zuo der kure eynen Romischen konig zuuo kiesin adir, [112] so er von dannen ferit, fintliche hude[18] furmachit adir sicb virmissit loge zuo legen adir sie adir etlicbeme undir in an sinre adir sinre lude lip adir gut anegriffit, anebetrubit adir ir vorgenant badin[19] (sie beischin geleide adir nit), den urteilen wir furfallin an der gedat in die vorgenant buße mit allin gesellin siner bosheit, also zu wise[20], daz iecliche persone in die buße falle, die wir nach undirscheit der personen hievor han uf-gesetzit.</p></div>
+                <div class="doc-col doc-translation"><p>凡是從選帝侯、領地貴族、騎士、市民和公民中選出一位選帝侯的人，如果他前往選舉，選出一位羅馬國王，而從此之後，他對他人發動了戰爭，或對其盟友進行了攻擊，或對其領地（不包括其附屬領地）進行了侵犯，那麼我們裁定他應受先前規定的懲罰，並連同他所有的罪惡一起受罰，也就是說，每個人都應受我們根據各人所制定的懲罰。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[4] Wer auch, daz etzlicbir kurfurste mit etwemme sime mitdekurfursten fintschafft druge und undir in wellichirleye krieg widdirsache adir missehellunge lieffe, die ding sullen in keine wis daweddir sin: eynre sy deme andirn gebunden zuo geleidin und sine boten, die er zuo der seibin kure sendet, mit vorgesatztir wiße by der pene meynneidis und virluste sundir zuo dem male siner stimme in der kure, alse for uzgesprochin ist.</p></div>
+                <div class="doc-col doc-translation"><p>若有任何一位選帝侯與其他選帝侯共同參與某項事宜，而由此引發戰爭或軍事行動，則此等事宜不得由任何一方單方面決定：必須由其所約束的各方，派遣代表前往相關的選帝侯會議，並依照事先約定的方式，在會議中就相關的權利與損失達成共識。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[5] Wellichir auch andir furste grefe landishern ritter knecht edel adir unedel burgir adir gemeynne von den steden mit etlichem kurfursten adir mit me uzsir in widdir würdigen willin dinge adir wilchirleie zweyunge krieg adir missehelle lieffe, doch so sullent die seibin dem seibin adir den seibin kurfursten adir yrin boten, die sie zuo der seibin kure sendin, dar zu farino und her widdirumb zuo komen geleide geben ane alle widdirrede und geverde, alse ir ieclichir sundirlich vir-midin wulle die egenant buße, die von uns uf sie gesprochin sint; und wer darweddir dete, den urteylin wir zuo stunt gefallin in die seibin buße.</p></div>
+                <div class="doc-col doc-translation"><p>此外，若其他選帝侯也徵召地方的騎士、僕人、貴族或平民，以及城鎮的居民，在需要為某位皇帝或某位選帝侯提供軍事服務或參與戰爭時，則他們也必須向各自的選帝侯或他們派往選帝侯會議的使者，提供所有必要的軍備和資糧，如同他們各自承擔的特定罰款一樣；若他們未能如此，我們將判決他們必須繳納該等罰款。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Zuo eyner witern sichirheit und festekeit allir vorgesetz so heißin wir und wullin, daz alle kurfursten und andir fursten grefin landishern edele stede und ir gemeynne bestedegin mit briffin und mit yren eyden alle vorgesetze, und sullin sich, darzuo virbinden mit guten trewin und ane argelist kreffteclichin zuo fullinbrengen. Und wer sich hindirzüge die selben briffe zuo gebin, der fellit mit der dat in die buße, die wir nach undirscheit der personen ieclichim be-sundir uffgelegit hant mit den vorgesetzen.</p></div>
+                <div class="doc-col doc-translation"><p>為確保所有前述各方擁有進一步的保障與穩固，吾等特此宣佈並決議，所有選帝侯、選帝侯、伯爵、選帝侯、貴族、城市及其社群，皆須以文契與誓言，對所有前述各方承諾，並應以誠信與堅決之力來履行此承諾。若有任何人阻礙這些文契的頒發，則該人將受罰款，此罰款即為吾等已針對前述各方，個別所施加的懲罰。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[6] Auch willich kurfurste [adir furste], wilchis ardis adir wirdekeit er ist, lebin beldit von deme heiligin riche, adir [113] grefe landishern adir edel adir der nachkomen adir irben die vor- adir nachgeschrebin unsir keisirlich gesetze und recht nit wullint haltin adir in frefeliche widdirsprechin, ist is, daz her ein kurfurste ist, zuo stunt so sullint die andirn sine medekurfursten den selben furbaz me uz ir geselleschafft sließin, und sal darbin [der] stymme der kure und der kurfursten stat wirdekeit und recht und sal auch nit ingesetzit werdin von der lehin wegin, die er von deme riche heldit.</p></div>
+                <div class="doc-col doc-translation"><p>若有選帝侯（或君主）實為君主，並在神聖羅馬帝國之下生活，卻拒絕遵守先前所載的帝國法律與權利，並以犯罪方式加以違背，則由於其身份為君主，其他共同君主必須將其排除於他們的共同體之外。在此過程中，選帝侯議會與選帝侯的尊嚴及權利必須保持團結，且他亦不得失去其從帝國所擁有的地位與權益。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Abir ein andir furste adir ein edel man, als vor geseit ist, der da missedjit an den seibin unsirn gesetzin, den sal auch glichirwiz nieman in lehin setzin, die er von dem heiligen riche adir von iemans andirs heldit; unde darzü fellit er zu stunt in alle vorgesetzite buße, die sine persone anedreffint. [7] Wie wir doch unvirscheidenlichin wullen und gesetzit han, daz alle fursten greffin landishern edele rittir[21] knecht stede und ir gemeyne virbundin sin daz vorgesprochene geleide zu lihenne eyme iegelichin kurfursten adir sime boten, alse vor geredit ist, so han wir doch ir ieclichem die mynre[22] nit sundirlich geleide und geleidis lude zuogeordenerit, die allir-meist darzuo geschickit sint nach deme gelegir der gegin und stede, alz iz sich zuo hant fullecliche ufinberit mit der nachgeschrebin rede.</p></div>
+                <div class="doc-col doc-translation"><p>任何其他選帝侯或貴族，只要如慣例般遵守我們的七項法律，便不應被任何人置於封臣地位，無論他是從聖羅馬帝國還是從他人的領地而持有該地位；在此情況下，他仍須接受所有涉及其個人的既定稅賦。我們無例外地希望並已規定，所有選帝侯、貴族領地騎士及其共同團體，都應被納入上述選帝侯之列，以協助任何一位選帝侯或其使者，正如先前所述。因此，我們已為各位指定了各自的特定選帝侯及相關選帝侯，他們最適合根據地域和地點來擔任此職，此細節已完整地載於後文。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[8] Zu dem irsten den konig von Beheim ein irtzschenke des heiligin richis sullin geleidin ertzebuschofe von Mentze, Rabin-bergir und Wirtzeburgir buschofe, der burggrefe von Nurenberg; die von Hohinloch, die von Wertheim, Brunecke und von Han-auwe; stede Nurenberg Rotenburg und Windisheim. [9] Den irtzbuschoff von Kollin des heiligin richis irtz-kantzelir durch Lamparten sullint geleidin irtzbischofe von Mentze und von Drere, der paltzgreve von dem Rine, der lanfgreve von Hessin, die [grefen] von Katzinelinbogin, von Nassauwe, von Diestz; item von Ysenburg, von Westirburg, von Ronkel, von Limpburg und von Falkinstein; item stede Wetflar Geilinhusen Fredeberg.</p></div>
+                <div class="doc-col doc-translation"><p>[8] 首先，神聖羅馬帝國的首席宰相應由波西米亞國王授予，其職位包括美因茨大主教、拉賓堡大主教和維茨堡主教，以及紐倫堡城堡伯爵；還有霍欣洛赫的領主、韋特海姆的領主、布魯內克（Brunecke）的領主和漢瑙韋（Han-auwe）的領主；以及紐倫堡、羅滕堡和溫迪斯海姆這三個城鎮。 [9] 神聖羅馬帝國的科林大主教，應透過蘭帕滕（Lamparten）被授予美因茨大主教和德雷雷（Drere）大主教、萊恩（Rine）伯爵、黑森（Hessin）長伯，以及卡茨尼林博根（Katzinelinbogen）的伯爵、納紹韋（Nassauwe）的伯爵、迪斯特（Diestz）的伯爵；此外還有伊森堡（Ysenburg）、西特堡（Westirburg）、隆克爾（Ronkel）、林普堡（Limpburg）和法爾金斯坦（Falkinstein）的領主；以及韋特夫拉爾（Wetflar）、蓋林胡森（Geilinhusen）和弗雷德伯格（Fredeberg）這三個城鎮。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[10] Den irtzbuschoff von Drere irtzkanzelir des heiligin richis durch Welschlant und in dem konigriche von Arlet sullint geleiden der irtzbischof von Mentze, der paltzgreve von Rine; [114] andir werbe der von Spanheim, von Feldentz, von Nassauwe grefen, Ruwegreven, Wildegrefen, von Ysenburg, von Westirburg, von Ronkel, von Limpburg, von Dieschtz, von Katzinelinbogen, von Eppinstein, von Falkinstein; und die stat von Mentze. [11] Den paltzgreven vom Rine ein drossesse des heiligen richis den sal geleidin der buschoff von Mentze.</p></div>
+                <div class="doc-col doc-translation"><p>[10] 神聖帝國的首席宰相，由阿雷特王國及威爾施蘭地區選舉產生，由美因茨大主教和萊茵地區的領邦伯爵共同任命；[11] 此外，還有來自斯潘海姆、費爾登茨、納紹韋的諸侯、魯韋伯爵、威爾德伯爵，以及來自伊森堡、西伊森堡、隆克爾、林普堡、迪斯茨、卡茨尼林博根、埃平斯坦、法爾金斯坦的諸侯，以及美因茨城邦。萊茵地區的領邦伯爵，則由神聖帝國的首席管家選舉，由美因茨主教任命。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[12] Den hirtzaugin von Sassin ein irtzemarschalg des heiligin richis sullin geleidin der konig von Beheim und die irtzebischofe von Mentze und von Medeburg und die bischofe von Babinberg und Wirtzeburg, der margreve von Missin und der lantgreve von Hessin; item die epte von Fulde und von Hirsfelde und der burgreve von Nurenberg; die von Hohinloch, von Wertheim, von Brunecke, von Hanauwe, von Falkinstein; und stede Erfurd Mulhusen Nurenberg Rotinburg und Windisheim. Den margreven von Brannenburg ein irtzkamerer des heiligin richis sullint geleidin alle, die zuonest genant sin, dye den hirtzaugin von Sassin geleidin.</p></div>
+                <div class="doc-col doc-translation"><p>[12] 聖羅馬帝國的繼承者，應授予薩克森（Sassin）的繼承人，包括貝海姆（Beheim）國王、門策（Mentze）和梅德堡（Medeburg）主教、巴賓伯格（Babinberg）和維爾茨堡（Wirtzeburg）主教、米辛（Missin）邊領伯（margreve）以及黑森（Hessin）領伯（lantgreve）；此外，還包括富爾德（Fulde）和希爾斯菲爾德（Hirsfelde）的領主（epte），以及紐倫堡（Nurenberg）的城堡伯（burgreve）；還有霍欣洛赫（Hohinloch）、韋爾特海姆（Wertheim）、布魯內克（Brunecke）、哈瑙韋（Hanauwe）、法爾金斯坦（Falkinstein）的領主；以及作為替代者（sede）的穆爾胡森（Mulhusen）、紐倫堡（Nurenberg）、羅廷堡（Rotinburg）和溫迪斯海姆（Windisheim）。聖羅馬帝國的內務官（irtzkamerer）應授予勃蘭登堡（Brannenburg）邊領伯（margreven）所有被提及的、授予薩克森繼承人權力的諸侯。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[13] Wir wullin und setzin kuntlich, daz ein iegelich kurfurste, der solich geleide wil habin, also zitliche fordere, von den er iz gedenckit zuo heischin, und den weg, den er farin wil, vor virkunde, daz die, wilche darzuo gesetzit sint, daz selbe geleide zuo gebin, und also angemanit werdin, sich zitlichin und bequemelichen darzuo mogen bereidin. [14] Die vorgeschrebin gesetze, die von des geleidis wegin gemacht sint, herluchtin wir, daz man sie also sichirlichin sulle virsten, daz ein iegelichir, der vor genant ist adir villichte nit genant ist, wem iz heim gedihit, daz von eme daz geleide in solichir geschichte gefordirt wird, virbundin sin undir den bußen, die for begriffin sint, daz geleide zuo gebin sundirlich durch sin lant und gebiede und auch furbaz, so er ferste mag, ane argelist.</p></div>
+                <div class="doc-col doc-translation"><p>[13] 我們特此規定，任何希望參與的選帝侯，應當事先向其所屬的領地提出請求，並說明其希望行進的路線，以便那些被指定負責的人員能夠事先安排，並使其能夠在時間上和地點上妥善準備。 [14] 我們宣布，為行進所制定的這些規定，必須被嚴格遵守，任何被提及或未被提及的選帝侯，若其領地被要求提供行進所需之物資，則必須在該領地和區域內，以及在他們所能控制的範圍內，提供這些物資，並必須遵守相關的罰則，否則將被視為惡意行為。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[15] Andir werbe setzin wir und ordeneren, daz der irtzbischoff von Mentze, der dan zuo ziten ist, sal iedem kurfursten besundir die kure virkunden mit sinen botin und mit sinen uffin brieffin; in den brieffin sal uzgeleit sin dag und zil, zusschin den die selbin brieffe zuo den selbin fursten nach gemeyme geduncke komen mogin; die seibin brieffe sullint haldin, daz von dem dage in den brieffen uzgeleit innewendig [115] dreyn den nesten manden sullin alle kurfursten und iegelichir besundir zuo Frankinfurd uf den Meyn geinwurtig sin adir sullint iren guden glauphaftigen badin zuo der seibin zyt und stat sendin mit irm fullin gantzen gewalde mit irin uffin brieffin mit ir iegelichis großem ingesegel besegelt, eynen Romischin konig zuo kiesen zu fuordirn in daz keisirduom.</p></div>
+                <div class="doc-col doc-translation"><p>[15] 我們並規定和命令，美因茨大主教（Mentze）在屆期時，必須透過其使者和信函，特別向每一位選帝侯宣佈選舉事宜；信函中應註明日期和目的地，以便這些信函能按時送達各選帝侯手中；這些信函必須保持，從信函中所註明的日期起，在接下來的兩個月內，所有選帝侯和選帝侯必須特別前往法蘭克福（Frankinfurd）的梅恩（Meyn）地區，並必須帶著他們所有的財富、信函，以及各自印有大印章的信件，在指定的時間和地點，以全部的權力前往，以推選一位羅馬國王進入帝國。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Wie auch und undir wilchir furme die brieffe sullin gemacht sin, und waz wirdekeit an in sulle unvirwendelich behaldin werden, und in waz wise und mosse die kurfursten ir boten zuo der kure sullin sendin und wie sie in den gewalt gebot und procura toria ordenerin sullint, daz findet man geschrebin und clerlich uzgeleit an deme ende dis buchis[23]; und die selbe furme, die danne gebin wird, gebiedin wir und wullen von folkomen keisirlichem gewalt, daz sie also altzuomal gehalten werde.</p></div>
+                <div class="doc-col doc-translation"><p>無論信函應以何種形式製作，以及應如何不可更改地保存，選帝侯應以何種方式派遣使者參與選舉，以及他們應如何履行權力授予和代理職務，皆已在本書末尾詳盡記載；我們規定並希望，所採用的此種形式，將由人民遵循帝國的權威，永遠維持下去。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[16] Wir heißin und setzin, so iz darzu komet, daz des keisirs adir des Romischin konigis dot kuntlich wird in deme bischtum von Mentze, daz der irtzbischoff von Mentze zu stunt innewendig eyns mandis frist, an einandir zuo zelin von dem dage der kuntlichkeit des seibin dotis, kunt duo mit sinen uffin briffin ieclichim kurfursten sundirlich den dot und die vir-kundunge, alse vor geschreben ist; abe nuo der selbe irtzbischoff an der endunge[24] adir virkundunge sumig adir villichte laz were von der zyt darnach in dren manden, alse da abin zuo nest in deme gesetze geordent ist, so sullin die seibin kurfursten von eygeme muode und ungeruoffin umb die dogint irir trewe, von der sie schuldig sin daz heilige rich zuo besorgin, zusamen-komen [in] die vorgenant stat Frankinfurd [zu] kyesen eynen Romischin konig zuo eyme kunftigen keisir.</p></div>
+                <div class="doc-col doc-translation"><p>我們決定並規定，當皇帝或羅馬國王在美因茨主教區（Mentze）舉行加冕儀式時，美因茨大主教必須在一個月內，在七位選帝侯的加冕日期當天，與他們一起，按照書面規定，進行選帝和宣佈相關的決定。但是，如果該大主教在結束加冕儀式後，有任何宣佈的決定可能需要延遲三個月，如法律所規定，那麼七位選帝侯必須自行召集，在法蘭克福（Frankinfurd）舉行會議，以決定一位羅馬國王，作為未來的皇帝。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[17] Iz sal auch ein ieclich kurfurste adir sine botin in der zyt der vorgesprochin kür faren in die egenant stat Frankinfurd nit me dan myt zweinhundirt pherdin geredin, in der zal mag er mit yme furin funfftzig gewapinde adir minre und nit me.</p></div>
+                <div class="doc-col doc-translation"><p>[17] 此外，每位選帝侯在預定召集期間，必須以不超過兩百匹駿馬，並搭配五十名隨從武士，前往法蘭克福（Frankinfurd）這座城邦。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[18] Sundir[25] der kurfurste, der zuo der kure geruffin were und zuo der kure nit queme adir sine rechtliche boten mit [116] sinen affin brieffin mit sime großim ingesegel besegelt, die follin frien gantzin gewalt hiltin eynen Romischin konig zuo kiesen, nit sente adir, ob er queme adir die seibin boden vil-lichte sente, und darnach der furste adir sine botin inweg fare von der kure, und ein Romischer konig zuo eyme kunftigen keisir noch nit gewelit were, und auch nit ließe noch insetzte wirdeclichin eynen waren procurator zu den vorgenant dingen, der sal darbin siner stimme und recht, die er zuo der kure zfi der seibin zit hatte und sie also gelaßin hat.</p></div>
+                <div class="doc-col doc-translation"><p>若選帝侯被召集參加會議，且未攜帶合法使者，或未攜帶蓋有其大印的授權信函出席該會議，則其完全有權力選出一位羅馬國王，而不能讓其出席會議，即使他出席了，之後選帝侯也不能派遣使者離開會議，也不能讓一位羅馬國王被選為未來的皇帝，同時也不能允許任何真正的代理人被任命處理上述事務；他將因此失去他在會議中以及在選帝侯間所擁有的投票權和權利，並被剝奪這些。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[19] Wir setzin auch den burgern von Frankinfurd uf und gebiedin in by der crafft des eydes, den wir in darubir uffsetzin zuo sweren zuo den heiligen, daz sie mit getrueme ernste und sorgsame fliße behudin und beschirmen alle kurfursten und ir iegelichen von ubirfalle des andirn, ob it weddir-wintigest undir in uffstunde, und auch von allen luden mit allem irem fulke, die sie und ir iegelichir in der vorgenant zal der zweir hundird pherde in die stat zuo Frankinfurd ge-furd han; andirs sie fallint in missetat meyneidis und virliesin auch gentzlich alle ir recht friheit wirdekeit gnade und laube, die sie von deme heiligen riche hant; und mit der dat fallen sie in keisirliche achte mit libe und mit guode; und sy von stunt herleibit eyme iegelichen anzuogriffin ungefrevelt mit eygen willen und gewalte ane gerichte die seibin burgir, die wir umb die geschichte von dirre zit alse auch darnach beraubin alle ir recht alse virredir ungetrewin und des richis weddirspenschin; also wer die seibin angriffit, der sal in keine wise fochtin keinirleie buße von deme heiligen riche.</p></div>
+                <div class="doc-col doc-translation"><p>我們也將弗蘭克福特（Frankinfurd）的市民納入其中，並以我們要求他們向神聖帝國宣誓的誓言為依據，要求他們以忠誠、嚴肅和勤勉的態度，保護和捍衛所有選帝侯及其代表，免受外敵的攻擊，無論是在和平時期還是戰時。同時，他們也必須保護所有帶領其及其代表（如前述的兩百匹馬）進入弗蘭克福特城的所有群眾。若他們未能履行此職責，他們將會犯下罪行，並將失去他們從神聖帝國所擁有的所有權利、自由、尊嚴和恩典。他們也將失去皇帝的愛護與善意。從此以後，任何人在未經這些市民同意，僅憑自身意願和武力攻擊任何一位代表，都將被七位市民視為侵犯他們的權利，並背叛帝國的意志。因此，任何攻擊七位代表者的人，都將不會受到神聖帝國的任何寬恕或罰款。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[20] Darubir die burgir von Frankinfurd durch alle die zyt, in der sich geburit ubir die kure zuo dedingen, so sullen sie in keyne wis nyeman in die stat laßin, willichirleie wirdekeit adels adir hirschefte er ist, alleine die kurfursten uzgenomen und ir boten und ir procurator, der ir iegelichir mit zwein hundird perdin sal infaren, alse for gesetzit ist. Were abir, daz nach der kurfursten infard adir in ir gegenwurtekeit sich geburte, daz ieman in der stat funden wurde, des uozfard sullin sie zuo stunt mit den werkin[26] bestellin ane allis virziehin undir allen den bußen, dye dafor ubir sie herzalt sin, und auch in [117] der er crafft des eides, den die burgir darubir sweren aullin zuo den heiligen by der crafft dys geinwurtigen gesetzis, alse dofor uzgeleit ist.</p></div>
+                <div class="doc-col doc-translation"><p>因此，在所有選出選帝侯的期間，弗蘭肯福特（Frankinfurd）的市民不得允許任何人進入城內，除非是那些擁有貴族身份或統治權的人，僅限於選帝侯、他們的僕人和他們的代理人，且他們必須如法規定地騎乘兩百匹馬進入。然而，如果選帝侯已經進入城內，而有人在城內被發現，那麼他必須在城內，按照所有規定，接受所有應付的罰款和懲罰，並且必須以市民向聖徒宣誓的誓言為依據，依據這項神聖法律所規定來執行。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Das andir capitel. [1] Darnach so die kurfursten sint komen in dye stat zuo Frankinfurd, des nesten morgens, so der dag uffget, sullin sie in ir allir geginwurtekeit in santte Bartholomeus kirchin da-selbis dun singin eyne messe von deme heiligen geiste, daz er yn ir hertze irluchte und daz liecht siner crafft in ir sinne gisse, daz sie mit syner helfe gesturit werdin eynen gerechtin gudin und nuotzin menschin kiesin einen Romischin konig zuo eyme konfftigem keisir und zuo heile allin cristin ludin.</p></div>
+                <div class="doc-col doc-translation"><p>另一個章節。當選帝侯們來到弗蘭肯福特城後，在次日清晨，當白晝升起時，他們必須在聖巴多羅繆教堂中，以全部的權威舉行一場聖靈的彌撒，祈求聖靈照亮他們的心靈，並將其力量灌注於他們的思想，使他們能藉著聖靈的幫助，選出一位公正且有能力的男子，作為羅馬的國王，以及未來皇帝，並為整個基督教世界帶來平安。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Do die messe gedan ist, so sullin die kurfursten alle zuo deme altir gen, uf dem dye messe gesungen ist: alda sullint die geistlichin fursten ubir dem ewangelio sancti Johannis „in prineipio erat verbum etc.“, daz daselbis fur sie sal geleit werdin, ir hende mit wirdekeit legen uf ir brust; die wernt-lichin fursten sullint mit irin hendin liplichin daran griffen, die alle mit allem irim gesinde sullin da geinwurtig sten un-gewapint.</p></div>
+                <div class="doc-col doc-translation"><p>當彌撒結束後，所有選帝侯皆必須前往舉行彌撒的祭壇；接著，精神選帝侯必須在聖約翰福音《太初有道》上，將那為他們準備的福音書，以莊嚴的姿態放置於胸前；世俗選帝侯則必須用雙手觸摸它，所有人都必須以莊重、無兵器的姿態站立。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Und der irtzebuschoff von Mentze sal in die furme des eidis gebin und er mit yn und sie mit yme adir der bodin, die nit geinwurtig sin, den eit in Dutschin duon in dese wise: [2] „Ich irtzbischof von Mentze des heiligin richis irtz-kantzelir durch Dutschelant und ein kurfurste sweren zuo desin heiligen ewangeligen, die hie geinwurteclichin fur mir ligin, daz ich uff die druwe, mit der ich gode und deme heiligen Romischin riebe virbundin bin, kiesin nach allir miner be-scheidinheit und virnufft und mit godes helfe kiesin wil ein zitlich houbit er ist im folke, (daz ist ein Romisch konig zuo eyme kunfftigen keysir, der darzuo bequemeliche sy,) alse verre mich mine bescheidinheit und mine sinne wisint, und by der seibin trewe; so wil ich gebin mine stimme und willin und die vorgenant kuore duon ane alle gedinge miede lon adir ge-lobede, adir wilchir wise soliche ding mogen genant werden.</p></div>
+                <div class="doc-col doc-translation"><p>美因茨大主教應當以宣誓的形式發誓，他與他及他們，在非武裝的民眾面前，用德語如此宣誓：「我，聖帝國美因茨大主教，在此向德意志和選帝侯宣誓，向這為我所選的聖福音（聖經）——它在此為我所選——我將憑藉我所有的智慧和理智，並在上帝的幫助下，選擇一位世俗的統治者，他應當在人民中存在（即一位羅馬國王，為未來的皇帝做準備），這是我與上帝和神聖羅馬帝國聯繫的職責。憑藉我的智慧和我的良知，以及我的忠誠；我願以我的聲音和意志，對上述所有條款做出承諾，願這些事能被稱為誓約。」</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Alse helfen mir got und alle heiligen.“ [3] Do der eit von den kurfursten adir irin boten in der vorgenant furme und wise gesworin ist, so sullin sie sich [118] schicken zuo der kure und sullint von der stunt uz der stat zuo Frankinfurd nummer von einandir komen, iz inhabe dan daz merer deil undir in vor gewellt eyn zitlich houbit ein Rom ischin konig cristem fulke zu eim kunftigem keisir; wir-zogin sie daz zuo dunde drißig dage nach einandir zu zelin von dage des gesworin eidis, darnach daz die drißig dage uzsint, sullint sie furbaz me nit eßin dan waßir und brot und sullint in keine wis uz der stat nummer komen, ez sy dan for von in adir von dem meisten deile undir in ein zitlich houbit der heiligin cristenheit irkorn.</p></div>
+                <div class="doc-col doc-translation"><p>願上帝和所有聖徒幫助我。當選帝侯或其使者已按照上述形式和方式宣誓後，他們必須前往選舉地，並按照順序來到法蘭克福城。這是為了選舉一位羅馬基督教人民的世俗君主，成為未來的皇帝；他們必須在宣誓之日起，連續停留三十天。在這三十天期間，他們只能吃水和麵包，不得以任何方式離開城鎮。這對於基督教的世俗統治來說，是最重要的部分。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[4] Nachdeme daz sie adir der merer deil undir in geweht han, die selbe wal sal gehabit sin und behaltin werdin, alse ob sie eynmudeclichin von in allen were geschehin; geschehe iz auch, ob etliche kurfursten adir ire boten durch etliche zit nit geinwurtig werin und sich virspedet adir ge-hindird wurdin und doch quemen, e die vorgenant kur volendit wurde, dem bekennen wir, daz man in zuo der kure laßin sal in dem seibin wesin, in dem sie ist in der zyt siner zuokunfft.</p></div>
+                <div class="doc-col doc-translation"><p>當他們被選出並獲得多數票後，該次選舉應當被維持和保留，如同所有事情一般；即使某些選帝侯及其使者在一段時間內無法前來，或受到阻礙，但當上述選舉完成時，他們仍能前來，我們宣佈，他們應當以他們未來所處的狀態參與此次選舉。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Wan[27] is nuo von altir bewertir und lobelichir gewonheit un-gebrechinlichin bisher gehaltin ist, daz hienach geschrebin stet, darumb so setzin wir und bekennen von fullenkomen keisir-lichin gewalt, daz der, der in forgesatzte wise irkorn wird, zuo eime Romischen konige, so die kure geschehin ist, e er sich keinirleie sache adir gescheffte von krafft des heiligen richis it undirste zuo duone, so sal er allen unde bisundir den kurfursten geistlich und werntlich, von den kuntliche ist, daz sie die nestin gledir sint des heiligin richis, alle ir privileige briefe recht friheit furluhin ding alte gewonheit und wirdekeit, und waz sie von deme riche bis an den dag der kuore gehabit han und besessin, bestedegin und befestin mit sinen besegeltin briefen ane furzog und weddirrede; und die vorgenant stucke sal er in alle hernuwin, nach deme daz er mit keisirlichir imfeln gekronit wird.</p></div>
+                <div class="doc-col doc-translation"><p>如果某人一直以古老且無瑕疵的習慣和美德行事，那麼接下來所寫的內容便適用於他。因此，我們承認完全的帝王權力，即當選舉程序完成時，他成為羅馬國王，如果他沒有任何屬於神聖帝國權力的事物，那麼他將賦予所有選帝侯——無論是精神上還是世俗上，無論他們是神聖帝國的內在組成部分——所有特權文書、權利和自由，以及他們從帝國到舉行選舉之日所擁有的所有事物，並以其蓋章文書作為支持和證明；而上述所有事物，將在當他被帝王冠冕加冕時，全部歸於他。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Die bestedunge sol der herkorn eyme iegelichim kurfursten bisundir duon von irst mit sime koniglicheme namen und darnach undir siner keisirlichin wirdekeit hernuwin; in den dingin sal er dye furstin alle in der gemeyne und ir ieclichin bisundir nummer gehindirn, me er ist sie schuldig gnedeclichin zu fordern ane argelist. [119] [5] In der geschichte, so dry kurfursten geinwurtig adir der boten, die nit geinwurtig sin, den firden undir in adir uz ir geselleschaffte, daz ist ein kurfurste, der geinwurtig adir nit geinwurtig were, zuo eyme Romischin konige irwelten, deme irkennen wir mit gesetze, daz des irwelten stimme, abe er geinwurtig were adir sine boten, ob yme nit geburte geginwurtig zuo sine, volle crafft habe und die zal der kore mere und daz großir deil hersetze glich den andirn kurfursten.</p></div>
+                <div class="doc-col doc-translation"><p>該權力應由每一位選帝侯，以其王室名號和其帝國權威，傳承下去；在這些選帝侯中，每一位在共同和各自的編號中佔有地位，他們有責任要求應得的恩惠。在歷史上，無論是具有權威的選帝侯，還是不具權威的代表，他們所建立的和平與社群，都建立在選帝侯是具備權威或不具備權威的羅馬國王之上。我們以法律認可，無論該國王是否具備權威，或其代表是否非生來就具備權威，他都擁有完全的權力，並且擁有與其他選帝侯同等的國王席位和最大的領地。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz dritte capitel. Von deme sitzin der irtzbischoff von Mentze Dryere unde Kuollen. In namen der heiligen und eilsamen drivaltekeit selicich. Karlus der firde von gunste gotlichir gnade alle zit merer und konig zuo Beheim. Zuo ewigem gehugniße[28] der dinge. Gezirde und ire des heiligen Romischen richis und keisirlichir wirdekeit und dangbir nutz gemeynes gudis füret einmudegir wille der wirdegin herluchtin kurfursten, die alse hohe sule fursichteclichir wisheit den heiligin buo mit sorgsamyr miltekeit [ufrecht haltint], mit der helfe keisirlichis gewaltis recht[29] wird gestirkit, und so sie me mit witer mynne gelichis gunstis mit ein virstrickit sin, so sie me seleclichin uzgißin gemach fruchtberis freden und ruwe allir cristenheit.</p></div>
+                <div class="doc-col doc-translation"><p>第三章。關於美因茨、特里爾和科隆大主教的職權。奉聖潔而恩慈的三位一體之名，奉上帝恩典，榮耀的查理，信仰的捍衛者，永遠的帝王與國王。為神聖羅馬帝國及其帝國權威之制度與權利永恆的榮光，並為共同福祉，為受祝福的選帝侯們的謙卑意願，這些選帝侯們應當以審慎的仁慈來維護神聖律法，並藉由帝國權力的協助來強化正義，如此他們藉由相互的恩惠而團結一致，便能為全基督教世界帶來豐盛的和平與安寧。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Darumb daz undir den wirdegin irtzbischofin von Mentze Kollin und Drere des heiligin richis kurfursten allir krieg und argwan, die undir in mochtin ufsten von deme furgange und umb wirdekeit irs sitzins in keisirlicheme adir in koniglicheme hofe, hienach und furbas me zuo ewigin ziten abesin und sie in geruwigir wise hertzin und gemudis blibinde[30] quemelichir bedrachten mogin mit gemeime gunste und fliße dogintsamer liebe die notdurfft des heiligen richis zuo droste cristim fulke, so setzin wir mit vorbedrachtunge mit allin kurfursten geistlich und werntlich und mit irme rade unde von fullenkomen-heit keisirlichis gewaltis bestedegin wir mit desem gesetze ewecliche zu werin, daz[31] die irtzbischofe mogin und sullen sitzen in allin uffinlichin keisirlichin und königlich in gededen, an gerichte, lehin zuo lihin, zu dissche eßin, in reden und in [120] allin andirn werckin, adir so in geb</p></div>
+                <div class="doc-col doc-translation"><p>因此，在神聖帝國的選帝侯、以及美因茨（Mentze）、科林（Kollin）和德雷（Drere）的各位主教之下，所有在皇帝權力下或涉及其治權合法性的爭端與紛爭，自此以後，將永遠擱置。他們應以謙卑的心志和精神，以共同的恩典和勤勉的愛心，審視神聖帝國及其基督徒人民的需要。故此，我們與所有精神和世俗的選帝侯，並憑藉他們的建議和帝國權力的完備性，特此以本法確立永恆的規定：主教們在所有帝國和王室事務中，在法庭、封地、飲食、言論以及一切其他事務中，都應當擁有審判的權力。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>urit zuosamene komen zuo dedingen umb des richis nuotz und ere: der bischoff von Drere sal gelich geyn des keisirs antzlitze sitzin; der von Mentze aal in sime bischtum und in siner profincien und auch uzwendic siner provincien in allir sinre Dutschen kantzelarien ane in der provincien von Kollin sitzin zuo der rechtin siten des keisirs; der von Kollin sal in sime bischtum und in siner provincien und uzwendic siner provincien in allem Lamparten und Welschlant sitzin zuo der rechtin hant des keisirs.</p></div>
+                <div class="doc-col doc-translation"><p>為顧及帝國之所需與福祉，特規定如下：Drere 主教應與皇帝同等地參與；Mentze 主教應在其教區、在其省份，以及在其兩個省份的所有德意志官廳中，在科林省與皇帝共同參與；Kollin 主教應在其教區、在其省份，以及在其兩個省份的所有倫巴第和羅曼語區中，與皇帝共同參與。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Wir wullen, daz die selbe wise zuo sitzin by allir ordenunge, alse vor ge-sprochin ist, gehaldin werde von den nachkomelingin der vorgenant irtzbiscboffin Kollin Drere und Mentze, daz zu keiner zyt umer me keinerleie zwifil von den dingen ufsten.</p></div>
+                <div class="doc-col doc-translation"><p>我們希望，所有管轄權的安排，應如前所述，由上述世襲主教科林、德雷雷和美因茨的後裔繼承，以確保這些事宜永不產生任何疑慮。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Das IV. capitel. Von[32] deme sitzin allir kurfursten und von dem zdruffin der kurfursten eynen Romischen konig zu kiesin und von den amptin der werntlichen kurfursten keisirlichis hofis et cetera.</p></div>
+                <div class="doc-col doc-translation"><p>第四章。關於所有選帝侯的會席，以及藉由選帝侯選舉一位羅馬國王，還有貴族選帝侯在帝國宮廷等職務事宜。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[1] Hienach setzin wir, wie dicke iz sich heischit von desir stunde und furbaz me, so ein keisirlichir hoff gehaltin wirt, (in iegelichim sitzen zuo rade zuo dyssche und in wilchin andirn stedin, da eyme keisir adir eim Romischin konige mit den kurfursten geburit zuo sitzin,) so sal der konig von Beheim, umb daz er kronit und gesalbit furste ist, allirneste sitzin by dem irtzbischoff, er sy von Mentze adir von Kollin, dem dan zuo zidin ane mittel geburit zuo sitzin by der rechtin sitin des keisirs nach geleginheit der stede und der provincien, alse ir friheit heldit; nach deme konige von Beheim uf die selben siten sal sitzin der paltzgreve von Rine; abir zu dem linketen deil nach dem vorgenant irtzbischof, [dem zu dem linketen deil] ane mittel geburit zu sitzin, sal der hirtzauge von Sassin sitzin, darnach der margreve von Brannenburg.</p></div>
+                <div class="doc-col doc-translation"><p>此後，無論在何時，帝國的宮廷將會舉行，（無論是在任何城市進行議會，或是在其他城市，當皇帝或羅馬國王與選帝侯一同出席時），波希米亞國王，因其已被加冕和選舉，應坐在大主教身旁最前列；無論該大主教是美因茨還是科隆，波希米亞國王應坐在一個中間位置，靠近皇帝的座位，其位置依據各城邦和省份的自由而定；在波希米亞國王之後，萊茵伯爵應坐在同一側；而在前述大主教的左側，應安排一個中間座位，薩森伯爵應在此就座，隨後是布蘭登堡侯。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[2] Andir werbe, wie dicke und wanne daz heilige rich ledig ist, von dannen sal der irtzbischof von Mentze gewalt han, (als iz auch bekant ist, daz er von altir her hat gewalt gehabit die andirn kurfursten, sine gesellin in der kur, mit brieffin by ein heischin, die alle adir die geinwurtig mogen [121] adir wollin sin) und in dem zil der kurfursten by ein ge-sament, so sal der bischoff von Mentze und kein andir stymme innemen undir solichir ordenunge: zuom irstin so sal der irtz-bischoff von Mentze den irtzbischoff von Drere anfragin, dem die irste stimme zugehorit, alse iz von altir herkomen ist; darnach den irtzbischoff von Kollin, dem die wirdekeit und daz ampit zuogehorit, daz er eym Romisch in konige die irste konigliche krone uffsetzit; zum drittin male von deme konige von Beheim, der undir leyenschen furstin von koniglichir wirdekeit den anefang heldit; zum firdin male von deme paltzgreven von Rine, zum funfftin male von deme hirtzaugen von Sassen, zum sestin male von dem margreven von Brannenburg.</p></div>
+                <div class="doc-col doc-translation"><p>當神聖帝國的選舉空缺時，美因茨大主教將擁有權力。正如眾所知，他自古以來就擁有對其他選帝侯的權力，以及對選帝侯在宮廷中，在有書面文件支持下，所有有權利者（[121]）的意志的權力。在選帝侯集會的決議中，美因茨大主教和沒有其他人可以異議，必須遵循此等規定：首先，美因茨大主教將詢問德雷雷大主教，因為根據古老傳統，第一票屬於他；其次，詢問科林大主教，因為他擁有榮譽和職責，他曾為羅馬皇帝戴上第一頂皇冠；第三，詢問貝海姆國王，他作為世俗選帝侯，擁有皇室榮譽的開端；第四，詢問萊恩的伯爵，第五，詢問薩克森公爵，第六，詢問勃蘭登堡的邊疆伯。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>So daz allis geschehin ist, so sullint die vorgenant furstin den bischoff von Mentze irin gesellin wedirumb fragin, daz er in sine meinunge und sinen willen ufinbare. Andir werbe in der hirschafft eins keisirlichin hofis sol der margreve von Brannenburg waßir gebin ubir des keisirs hende adir des Komischin konigis; den drang sal dienen der konig von Behem, daz er doch nit schuldig ist zuo dunde undir siner koniglichir kronen, er wulle iz dan gerne dun von willin; der paltzgreve von dem Rine sal daz irste eßin anedragen, der hirtzauge von Sassin marschalg sal sin ampt dun, als is von altir her ge-wonlich ist.</p></div>
+                <div class="doc-col doc-translation"><p>如此一切事情都發生之後，上述諸侯必須再次詢問美因茨主教的意見與意願。在帝國宮廷事務上，布蘭登堡侯爵應就皇帝的繼承人或波西米亞國王一事給予同意；波西米亞國王應當履行職責，儘管他並非必須依據其王冠來統治，但他願意自願地如此行事；萊茵領伯應提出第一份意見，薩森伯爵應履行其作為軍長的職責，這如同自古以來所慣例的。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Das V. capitel. [1] Wye dicke iz hienach geschicht, daz daz heilige rich ledig stet, so sal der paltzgrafe von dem Rine furmundir sin des heiligin richis von der paltzgreveschafft wegin zuo der hant eins kunftigin Romischin konigis in den landin des Rines und Swabin und in Frenschin gebiede mit gewalt, gerichte zuo haltin, geistliche gabe zu lihin, gulte und gefeile insamen, in lehin zu setzin, eide umb getruwekeit an des heiligin richis stat und in des seibin richis namen zuo inphahin; daz selbe sal doch allis zu siner zit von deme Romischen konige, der darnach herwelit wird, hernuwit werdin; und sal man yme die eide alle von nuwem uffswerin; alleine uzgenomen der furstin lehen und vanlehin, der lyhin und insetz in behaltin wir be- [122] sundir alleine dem keisir adir eyme Romischen konige.</p></div>
+                <div class="doc-col doc-translation"><p>第五章。若聖帝國空缺，則萊茵伯爵應當作為聖帝國的監護人，憑藉其萊茵伯爵的權力，在萊茵、斯瓦比亞及法蘭西領地內，以權力行使司法、授予教會恩賜、徵收稅賦與費用、設立封地、宣誓忠誠於聖帝國，並以七邦之名行事；然而，他的一切權力都將在之後由羅馬國王繼承；所有誓言都必須重新宣誓；但諸侯的封地與次級封地、恩賜與設立，則專屬於皇帝或羅馬國王。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Doch sal der selbe paltzgreve wißin, daz yme uffinlichin virbodin ist alle virandiruonge adir virsetzin des richis gut, die zit er furmundir ist. Der hirtzauge von Sassin sal ein furmundir sin an allin steden, da man Sassin-recht heltit, undir allir wiße und maße, alse dafor uz ist geleit. [2] Und wie doch iz sy von altir gewonheit ynbrocht, als man sprichit, daz ein keisir adir ein Romischir konig in sachin, umb die er hat zuo antwurten vor eynem paltzgraven des Rines, der da ist des heiligin richis ein irtzdrossesse und ein kurfurste, doch so mag der selbe paltzgrafe daz gerichte nirgin andirswo gehaltin dan alleyne in des richis hoff, da der keisir adir der Romische konig gegenwurtig ist.</p></div>
+                <div class="doc-col doc-translation"><p>然而，該地區伯爵亦須知曉，在於他管轄期間，所有關於帝國事務的權力都屬於帝國。薩克森公爵應在所有實行薩克森法律的地區，按照既定的規則和標準擔任選帝侯。雖然自古以來就有習俗，即皇帝或羅馬國王在薩克森，必須向萊茵行宮伯爵回答，而這位伯爵是神聖帝國的領軍者和選帝侯，但該伯爵不得在帝國宮廷以外的任何地方主持審判，而必須在皇帝或羅馬國王駐足的帝國宮廷內進行。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz VI. capitel. Wir setzin ewecliche, wie dicke iz sich furbaz me geburit, daz ein keisirlich hof gehaltin wird, daz die vorgenant kurfursten geistlichin und werntlichin nach der vorgeschrebin ordenunge und wise ir stede zuo der rechtin und linketen hant unvirwandelt haltin, und sal in adir yr keyme in wilchirleie gededin, die in den hof horint, kein andir furste, waz wirdekeit und ardis er sy, in kein wis furgezagin Verden an gen, an sitzin adir an sten und bysundir, daz mit namen der konig von Beheim in der hirschafft solichis hofis en allin und sundir vorgenant stedin und dedin unvirwandellich sal furgen eyme iegelichen andirn konige, in waz friheit adir wirdekeit er her-schinet, der[34] villichte von etzlichir geschichte adir sache gedege darzuo komen adir do sin.</p></div>
+                <div class="doc-col doc-translation"><p>第六章。我們規定，當皇帝的宮廷被設立時，該宮廷應當在精神和世俗上，依照既定的秩序和方式，不變地駐紮於其左右手邊，並且應當在任何地方都不能被移走，除非是那些進入宮廷的貴族。任何其他選帝侯，無論其世俗或土地的權力如何，都不得以任何方式被強行帶走，或在任何地方、任何地點被拘禁，特別是那些在該宮廷的領地內，以「波希米亞國王」之名，擁有該宮廷的全部和獨特的權力，並且在該宮廷內和其領地內，不變地應當服從任何其他國王，無論其擁有何種自由或世俗權力，即使他們可能來自歷史上的某些事件或事宜。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz VII. capitel. Von der fursten nachkomen. [1] Undir den unzellichin sorgin, von den unsir hertze degelich virmudit wird, umb daz selige wesin des heiligin richis, daz wir von gote merer[35] seleclich besitzin, so ist unsir bedrachtin zuofur darzu berichtit, wie die begirliche heilsuom [123] eynnekeit alle zyt undir den kurfursten des heiligin richis stedecliche gruone und ir hertzin in eynekeit lutir minne int-haltin werdin, von deren fursichtekeit der wildin wernt so snellir so lutirlichir zuo rechtir zyt geholffin, und so vil undir den kurfursten kein wersal sich virzuckit und minne lutirlichin wird behut, und virborgin krot ist abegesnedin, so iegelichis recht luthirlichir wird irluchtit.</p></div>
+                <div class="doc-col doc-translation"><p>第七章 關於選帝侯的繼承。 鑑於我們心中持續不斷的無數憂慮，關乎聖帝國的崇高存續，而此帝國乃我們憑藉天恩所擁有，故我們深思熟慮，並在此闡述，所期望的聖潔團結，是如何在所有時間裡，由聖帝國的選帝侯們，在其職責與心中，以愛意和諧地維繫著。藉由他們的警惕，混沌的本性便能如此迅速而充滿愛意地被引導至正確的時機；只要選帝侯之間沒有任何弊端滋生，且愛意團結得以守護，古老的智慧得以維繫，那麼一切的權利便將得到愛意的保障。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Wan nuo gemeinlich lang und breit uffin ist und villichte durch alle die wernit kuntlich, daz die hirluchtin konig von Beheim, paltzgreve des Rines, hirtzauge von Sassin, margreve von Brannenburg von des richis craftt und irre furstendum in der kur eins Romischin konigis zuokunftigen keisirs mit den andirn geistlichin kurfursten rechte stimme und stat habin und eyne mit den andirn gesetzit sint, daz sie ware und riliche[36] kurfursten sint des heiligin richis.</p></div>
+                <div class="doc-col doc-translation"><p>當這些（選帝侯）廣泛且普遍地存在，並且可能受到所有世俗君主所敬畏，而波希米亞國王、萊茵公爵、薩克森伯爵、勃蘭登堡侯等，擁有帝國的權力，並在選舉中與其他精神選帝侯一同，擁有羅馬皇帝的未來君主的權利和地位，並且與其他選帝侯一樣受到法律約束，他們就是神聖帝國的世俗選帝侯。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz[37] nuo it in künftigen ziten materie ergiruonge und missehelle uffsten undir der kurfursten sone adir ir nachkomen von recht stimme adir gewalt zu der kur und alse ein ge-meyne gut mit kunftigem schedelichin virziehin wurde gehin-dird, dem schadin zuo begenen heilsameclich mit gotz helfe, so setzin wir und bekennen in keisirlichem gewalt mit desem gein-wurtigen gesetze ewecliche zu blibin, nachdeme daz dye seibin kurfursten und ir iegelichir dot ist, des recht stimme und crafft zuo kiesin sal fallin an sinen irsten elichin geborin son, der ein leie ist; ob der nit were, so sal die kure frilichin fallin uf des seibin irstin geborin son elich und leie ane weddir-rede eins iegelichen.</p></div>
+                <div class="doc-col doc-translation"><p>當在未來時代，選帝侯和主教需要從選帝侯的子孫中繼承權力，並作為共同的財產，以有利的方式為其子孫帶來利益，並在上帝的幫助下為其帶來益處時，我們以帝國的權力和這份有價值的法律宣誓承諾，將其永久保留。當七位選帝侯和他們的後裔去世時，選舉權和權力將歸屬於他們最年長的嫡出兒子，即繼承人；如果沒有這樣的兒子，則該選帝侯的權力將歸屬於他們最年長的嫡出兒子和繼承人中的一位。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Were abir, daz der selbe irste geborn son von dirre wernde vor virfüre ane knabin-irbin eliche leie, so sal von crafft dis keisirlichis gesetzis recht stimme und gewalt der kure fallin uf den altirn brudir leie, der von warem fedirlichim stamme ist komen, und danach uff des seibin irstin geborn sone; soliche nachkomen[38] sal ewecliche behaltin werden an den irsten geborin sonen und irbin der kurfursten an recht stimme und gewalt vorgenant, doch also ob ein kurfurste adir sin neste geborn son adir andir sine sone leie sturbe, und gedege, daz er ließe knabin-irbin elich leien, die nit follen alt werin, so sal der altste brudir des dodin des seibin dodin kindir furmundir sin und besorgen, biz daz altiste undir den [124] kindern zuo fullim aldir komit; (daz altir achtin wir an eym kurfureten achtzehin jar fullenkomen, und wullin und setzen, daz iz ewecliche also gehaltin werde;) und wanne der altir son zo dem altir komit, so ist der furmundir zuo stunt schuldig umb in zu geben recht stimme und gewalt mit ampt[39] und allis, daz darzuo gehont.</p></div>
+                <div class="doc-col doc-translation"><p>然而，若同一位嫡長子在沒有合法世俗男性繼承人的情況下過世，則此帝國法律所賦予的選舉權與權力，應歸於來自純正父系血脈的長兄，而之後則歸於該長子之子；此等繼承者，應永遠保留選帝侯嫡長子與繼承人的權利與權力。但是，若一位選帝侯逝世，其子或女兒亦逝世，而他留下了一位未成年女兒，則死者之子女的長兄應擔任監護人，並為其提供照護，直至該子女中年長者達到成年之年；（選帝侯的法定成年年齡為十八歲，我們希望並規定，此規定應永遠維持不變；）當長子達到該年齡時，監護人須履行義務，授予其職權、權力以及所有應得之物。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[2] Were iz auch, daz etlichiz des seibin furstendum dem riche ledig wurde, von deme sal der keisir adir Romisch konig, der dan zu den ziden ist, fursehen als von dingen, daz an in und an daz riche mit rechte gefallin ist; alle zit unsirm königliche von Beheim, so iz ledig ist, be haltin [wir] sine friheit recht und gewonheit ubir die kur eins konigis von Beheim, die geschehin sal von den inwonendin des richis, alse ir privileigia haltin und von langir gewonheit gehaltin hant von kristenlichin keisirn und Romischin konigin: den friheit rechtin und gewonheit wullin wir mit desen seibin keisirlichin gesetzen in keyne wis schadebir sin unde nach me wir setzen und virendungin nuo und zuo ewegin künftigen ziten, daz die seibin friheit recht und gewonheit mit allir ir schrift und furme un-zwivellichin mit festekeit irre crafft gehaldin werdin.</p></div>
+                <div class="doc-col doc-translation"><p>此外，若七位諸侯中有人出現空缺，那麼皇帝與羅馬國王（彼時在該地）應當將其視為屬於空缺領地的財產；凡是我們王室來自本土、且獨立自由的，我們在波希米亞國王的領地內保留我們的自由、權利與習俗。這些事宜應當被領地居民視為他們的特權，並且它們自基督教皇帝和羅馬國王以來，一直以長久習俗而存在。我們不願這些七位諸侯的自由、權利與習俗受到這些七部帝國法律的任何損害，我們將其確立於現今及所有將來的時日，使七位諸侯的自由、權利與習俗，在所有文字和形式上，都能得到毋庸置疑、堅固不移的保障。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz VIII. capitel.</p></div>
+                <div class="doc-col doc-translation"><p>第八章</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Alse iz hievor den cristlichin konigin von Beheim unsirn altirn und furfarn und dem konigriche von Beheim und des seibin richis krone gnedeclichin ist virluhin und virhengit von den Romischin keisirn und konigen unsirn furfarn und nach in dem seibin riche von der zit, dawedir hut dis dagis kein gedenckin ist, von labelichir forbeschr ebener gewonheit von langin ziten und mit gewonheit der gebruchinden inbracht ist ane wedirrede und ane alle wedirwurdekeit gehaltin ist, daz kein furste landisherre edel rittir knecht burgman burgir, nachdan[40] kein persone des seibin richis und allis, daz darzuo horit, an weichin enden daz ist, zu keins clagirs ansprache, was wesins wirdekeit adir ardiz der selbe clagir ist, inmoge noch insulle geladin gezogin noch geruffin werdin an keinerleie und yemans andirs gerichte dan alleine vor des konigis von Beheim und des koniglichin hofis richtir adir gericht</p></div>
+                <div class="doc-col doc-translation"><p>既然在先前，神聖羅馬帝國的君主、諸侯，以及帝國的王權，皆由羅馬皇帝和諸侯所授予，並且在帝國的領域內，自從至今沒有任何記載，就沿用自古以來，並被慣例所接受的習俗，具有不可推翻和絕對有效性的規定，即任何諸侯、領地領主、貴族、騎士、僕人、市民或城鎮居民，以及帝國所有相關人員，在任何情況下，都不得向任何其他機構提起訴訟，除非是單獨向帝國君主和皇宮進行審判。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>e: herumb [125] so irnuwin wir und bestedegin wir von sichirm wißin and setzin mit unserm geinwurtigem keisirlichem gesetze mit fullin-komen keisirlichim gewalt die seibin friheit gewonheit und gnade eweclichin stede zuo haldene, ob ieman von den vorgenant, er sy furste landisherre edel rittir knecht burgir burg-man adir gebure adir andir willichirleye vorgenant persone zuo iemans gerichte uzwendig des konigrichis von Beheim geladen wurde wedir die vorgenant friheit gewonheit adir gnade in lastirbere adir schultbere adir virmissthetin sachin adir in welchen andirn geschefftin, zuo wilchir zit daz geschehe: die persone, die also geladin wurde, ist nit schuldig zuo irschinen adir zuo antwurten an gerichte andirs, dan vor geschrebin stet.</p></div>
+                <div class="doc-col doc-translation"><p>因此，我們並依據我們尊貴的帝國法律，以完整的帝國權力，保障七個自由的習慣與恩典，使其永遠得以維護。無論是上述的諸侯、領主、貴族、騎士、僕人、市民或城鎮居民，或任何其他意志自由的個體，若被強制召喚至帝國王國的法庭，則其上述的自由習慣或恩典，在負債、義務或任何其他事務中，在任何時間發生的事情上：被召喚的個體，不須向其他法庭出庭或作答，此為既定之規定。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Ob nu von eim richtir, von weme der gesetzit were adir was gewaltis er were, uzwendig des konigrichis von Beheim wedir den seibin, der nit vor gerichte irschene, in gerichtis wise ge-farn wurde mit urteile, die urteil sie sin undirsprochin adir geendit urteil, eyne adir me, in wilchin sachin adir gescheften daz geschehe adir in waz wise sich geburte, daz die seibin urteil uzgegebin und gekundit wurdin: die laduonge gebot processe und urteil und allis, daz von in in gerichtis wise mage geschehin adir virsucht werdin, daz virnichtin wir allis und duns geutzlichin abe von fullemkomenheit keisirlichis gewaltis.</p></div>
+                <div class="doc-col doc-translation"><p>倘若由某位審判官，無論其權力源自何處，在波希米亞王國內，對那些未曾被傳喚出庭的人，進行司法上的判決，無論該判決是判決或裁決，無論是在何種事項或事務中發生，或以何種方式作出判決和裁決：那麼所有傳喚、命令、訴訟程序和判決，以及所有在司法程序中發生或試圖發生的事情，都必須被完全地排除在帝國權力的範圍之外。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Darzuo legin wir uffinlichin und setzin mit desem keisirlichem gebode vorgenant gewaltis ewecliche zuo werinde, als iz in dem vorgenant riche zuo Beheim fließeclichin gehaltin ist von der zyt, dawedir nieman kein gedencken hat, daz ubiral kein furste landisherre edel rittir knecht burgir burg-man gebure nach kein persone adir in wonende des konigrichis von Beheim, willichirleie wesins wirdekeit adir ardis er sy, sullint sich nummyr beruffen von keime gerichte urteil adir geboden des konigis von Beheim adir sinre richtir unde sullin sich auch nummer beruffin zuo eyme andirn gerichte, waz wedir sie an koniglichem gerichte adir des richis richtir gedan adir gesprochin adir gehaltin ist adir hienoch wiedir sie gesicht adir gesprochin wird.</p></div>
+                <div class="doc-col doc-translation"><p>此外，我們特此藉由這項皇帝的法令，確立了以下權力結構：在上述的帝國領地內，自從沒有人記得起任何統治者、領主、貴族、騎士、僕人、市民或城鎮居民，在帝國王國的任何地方居住之前，他們都必須僅向帝國之王的法庭、判決和命令申訴，並且他們也必須向任何其他法庭申訴，無論該法庭是帝國的法庭、領地的法庭，還是已經進行了審理和聽證的法庭，他們都必須再次出庭接受審理。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Geschicht iz abir, daz etliche beruffunge an gerichte adir uzwendic gerichte geschehen, zu stunt sullin die seibin beruffin mit keynir crafft besten, und die sich beruffin han, sullint wißin, daz sie zuo stunt fallin in buße vir-lustekeit irre sache. [126] Das IX. capitel. Wir setzin mit desem geinwurtigem gesetze ewecliche zuo werinde, daz unsir nachkomen konige zuo Beheim und alle kurfursten geistlich und werntlich mogint han gultgrubin und andir grubin von smedesamen dingin und saltzgrubin, die itzunt fundin sint adir hernach fundin werdin, in deme Beheym-schen rieh adir in landin, die deme seibin riche undirdenig sin mit allin rechtin, alse sie iz bizher gewonliche besessin hant.</p></div>
+                <div class="doc-col doc-translation"><p>既有傳聞，有部分訴請至法庭或特別法庭，但這些訴請若無權柄而提出，則提出者須知，他們將因無據之事而遭受懲罰。[126] 第九章。吾等特此藉此崇高之法律頒布規定，令吾等繼承的波希米亞國王及所有選帝侯，在精神上與物質上，皆可擁有金礦及鐵礦、鹽礦等各種礦藏，無論是現已發現的，抑或將來發現的，這些礦藏皆在波希米亞王國或其所屬領土內，且擁有所有權利，如同他們迄今為止慣常所持有一般。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Sie mogen auch Judin han und zulle nemen, alse iz hievor uffgesetzit ist und mit lobelichir bewertir gewonheit von langin ziten an unsere seligin altirn konige zuo Beheim und an die kurfursten und ir altirn mit virschrebeme lauffe rechtecliche bekant ist zuo behaltin.</p></div>
+                <div class="doc-col doc-translation"><p>他們亦可保護猶太人並徵收關稅（關稅特權），此乃依照先前既定，並依據我們神聖古代波希米亞國王長久以來可嘉的慣例，以及選帝侯與其祖先依循書面法律所知悉並應當維護的權利。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Das X. capitel sagit von den muntzin und andirn gnadin des richis zuo Beheim et cetera[42]. [1] Wir setzin furbaz me, daz die konige zuo Beheim in irme riche und in allin landin, die deme riche zuogehorin, an weichin steden sie wullint, mogint dun muntzin slahin von gulde und silbir undir allir wise und furme, als iz in deme riche zu Beheim uff dise zit in fredesamir stedir besitzunge gehalten ist.</p></div>
+                <div class="doc-col doc-translation"><p>第十章談及帝國的鑄幣權及其他恩典等等。我們規定，皇帝在其領地以及帝國所有土地上，在任何城市，若他願意，可鑄造金幣和銀幣，其形式和方式，應如帝國在和平城市中所持有之情況。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[2] Auch wullin wir mit desim keysirlichem gesetze und unsir gnade ewecliche zuo werinde, daz den kurfursten konigen zuo Beheim herleibit sy von eyme iegelichim fursten hern grefin und andirn luden ein iegelich lant bürge irbe eygin adir gut zuo keiffin und an sich zu gewinnen, in gabe adir in phandis wise uffzuonemen undir gewonlichem gedulde der lande burge irbe eigin adir gut, also zuo emphahin adir keifin eigin für eygin, lehin vur lehin, also daz die konige zuo Beheim von den seibin landin burge irbe eigin und gut deme heiligin Romischin riche virbundin sin zuo gebin und zu dienen sin gewonlich recht. [3] Dis geinwurtige gesetze und gnade streckin wir mit crafft unsirs keisirlichin rechtis zuo allin kurfursten geistlich und werntlich und zuo iren nachkomen und ir elichen irbin mit allir wise und gedinge, alse vor geschrebin ist. [127] Das XI. capitel.</p></div>
+                <div class="doc-col doc-translation"><p>[2] 我們也藉由這份帝國法律與我們的恩典，確立了選帝侯國王在帝國內，每一位選帝侯、公爵及其他選帝侯，都有權利購買和獲得各自的土地、繼承物或財產，以贈予或以抵押的形式取得，並在正常的期限內擁有各自的土地、繼承物或財產，也就是說，可以為自身購買私產，或以租借的形式進行租借，因此，帝國的七個領地選帝侯，對於神聖羅馬帝國而言，擁有和服務的權利是常規的。[3] 我們以我們帝國法律的權力與恩典，將這項重要的法律與恩典延伸至所有世俗和精神的選帝侯，以及他們的後裔，以所有方式和條件，如同前文所載。 [127] 第十一章。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[1] Wir setzin auch, also wir fundin hau, daz in alten gezidin gehaltin ist, daz keine grefin landisherrin edel ge-lehinten dinstman burglude rittir knecht burgir und burg-sessen adir kein persone, in wilchim wesins ardis adir wirde-keit die undirdenig sind den stifften Kollin Mentze und Drere, nit mogint geladen noch beclagin noch bezagin adir geheischen werden zuo iemans anspruche an keim gerichte uzwendig ge-biede der stifte dan alleine fur gerichte der irtzbischof und irin richtirn, und also daz bizher gewesin ist, also sal iz für wirtir ewecliche gehalten sin.</p></div>
+                <div class="doc-col doc-translation"><p>我們亦規定，依據古老法律所載，任何伯爵、領主、貴族、租佃者、僕人、市民、騎士、僕役或城鎮席位之人士，若其土地與地位屬於該基金會（Stiftung）的伯爵、門特佐與德雷雷所管轄，則不得被傳喚、不得被控告，亦不得在任何法庭上被捲入他人的訴訟。該基金會僅歸大主教及其法官的法庭管轄，且此規定應沿用至今，並適用於未來。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Were iz abir, daz die undirdan der vorgenant stiffte weddir unsir dis gebot zu iemans an-sproche wurden geladin an iemans gerichte uzwendig gebiede und gemireke der vorgenant stiffte, in waz sachin das were, umb ere adir umb gut adir gemissthete sache, der ist nit schuldeg zuo irschinen adir den gerichtin zu antwurten; und die selbe ladunge und processe unde alle urteil, wie man sie nennit, die weddir die nit komendin geschehin adir gesprochen werdin von den uzsirn[43] richtirn, und allis, daz daruz gelaufin mag, herkennen wir fur nicht mit dem, so iz geschieht.</p></div>
+                <div class="doc-col doc-translation"><p>然而，如果上述的諸侯（Stifte）被召喚到任何法庭，就某人的訴訟，並被要求在任何法庭上就某事或某物（包括財產或爭議事項）作出回應，而該人並無義務出席或回答法庭，那麼我們將不承認該召喚、訴訟程序以及所有被稱為判決的行為，無論這些判決是由任何法官所作出，以及所有與此相關的一切事宜。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Darzuo legin wir und setzin, daz grefin landisherrin edel gelehinte dinstmanne burgmanne rittir knecht burgir gebure nach keiner-leie persone, die den seibin stifftin undirdenig sint, wilchir-hande wesins wirdekeit adir ardis sie sint, der keime ist her-leibit sich zuo beruffen von den gerichtis wise urteil adir geboten, wie sie genant sint, die wedir sie gesprochen sint adir gesprochin werdin an der irtzbischofe adir irre zitlichin ampt-lude gerichte, aldiewile daz in an den seibin gerichtin rechtis nit virsagit wird, von den sie claginde sint; waz beruffunge hiewedir geschehe, die sal man nit inphahin, und kundin [wir] sie virnicht; abir an gebrestin der gerechtekeit so sy allin vorgenant herleibit, in den sachin yn recht virsagit wird, sich zuo beruffin unde alleine zu keisirlichem hofe und gerichte adir vor des richtirs gehorde, der zu der zit gerichte besetzit in keisirlichim hofe, und fur keinen andirn richtir; waz hiewiddir geschehe, daz sy zuo stunt virnichtit.</p></div>
+                <div class="doc-col doc-translation"><p>因此，我們制定並規定，所有屬於貴族、土地領主、受人尊敬的服務人員、城鎮居民、騎士、僕人、市民的個人，只要他們屬於這七個領地，並且是世襲的，因為他們是世俗和土地上的實體，他們必須根據在主教或地方行政法庭中被判決或被宣判的判決和命令來履行義務。如果這些在七個法庭中沒有得到公正的裁決，則由他們提出訴訟；任何此類訴訟，我們將不予受理，並將其駁回；但如果他們在正義的基礎上，在案件中獲得了公正的裁決，他們有權單獨向皇帝的宮廷和法庭提出訴訟，並在當時駐紮於皇帝宮廷的法官面前進行，而不得向任何其他法官提出；任何此類行為，我們將予以駁回。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[2] Daz selbe gesetze [128] wullin wir mit crafft unsirs geinwurtigen keisirlichis gerichtis geschickit han zuo den herluchtetin werntlichin kurfursten paltzgrave hirtzauge von Sassin und margrafe von Brannenburg und zu irin irbin nachkomen und undirdan fulleclichin undir allir wise und gedinge, also vor gesagit ist[44].</p></div>
+                <div class="doc-col doc-translation"><p>我們以我們神聖帝國的權威，命令諸位受尊崇的選帝侯、薩克森公爵、勃蘭登堡邊境伯（勃蘭登堡侯爵）及其繼承人，遵從並完全遵守這項法律，正如先前所言的那樣。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Das XII. capitel. Von samenunge der kuorfuorsten. Undir den manigfeltigen sorgin eins gemeynnis gutis, in den unsir gedang dicke inzuckit wird, so hat unsir wirdekeit angesehin, daz iz notdurftig sy, daz die kurfursten des heiligin richis, die da sint feste stutzil und unbewegeliche sule des richis, me zuosamene komen, dan bizher gewonheit ist gewesin, zuo sprachin und zuo dedingen von des richis und der wernde heil, alsie durch ferre geleginbeit der lande einre von dem andirn wonende sint, so vil sie baz konen gesagen und mit einandir geredin von den inbrechinden gebresten der lande, die in bekant sin, und kunnent mit gesundim rade irre fur-sichtekeit heilsame helfe gebin und gemachesame widirbrengen solichin gebrestin.</p></div>
+                <div class="doc-col doc-translation"><p>第十二章：關於選帝侯的集會。鑑於眾多關切和共同福祉，我們的意志深切關注此點，故我們認為，神聖帝國的選帝侯——他們是帝國堅固的支柱與不可動搖的基石——應當如以往慣例般召集起來，討論和決定關於帝國及其福祉的諸事。由於各邦的地域相連，他們可以彼此交流，共同討論那些眾所皆知的邦國弊病，並能憑藉健全的理智與遠見，提供有益的幫助，共同糾正這些弊端。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Hievon ist, daz in dem hohin unserm hofe[45] zu Nurenberg, der durch unsir wirdekeit wirdeclichin begangen ist mit den irlichin geistlichin und herluchtin werntlichin kurfursten und mit andirn furstin und herrin, da han wir mit bedrachtim muode mit den seibin kurfursten und mit irim rade geordenerit umb ein gemeynne gut und heil, daz die seibin kurfursten furbaz me zuo eim male aller jar vier wochin nach dem ostirlichin dage selbir sullint zuosamenkomen in etzlichir stat des richis; und nuo zu der seibin zit dis geinwurtigen jaris sal von uns und den seibin furstin begangen werdin gespreche und hoff mit der seibin samenunge in unsir keisir-lichir stat zu Metze, und da sal von uns mit der furstin rade bescheden werdin stat der vorgenant samenunge, welchis dagis furbas me in dem nachgendem jare man zusamene sulle komen; dese ordenunge sal alleine werin zu unsirm und der furstin willen.</p></div>
+                <div class="doc-col doc-translation"><p>因此，我們決定在我們於紐倫堡帝國議會中，與所有合法精神和世俗的選帝侯，以及其他選帝侯和選帝侯們，審慎地決定，讓七位選帝侯及其議會，每年在東曆復活節後的某個時間，聚集在帝國的某個城市；並且在每年的這七次會面中，我們和七位選帝侯將在我們帝國的梅茨城舉行會議和議會，在該次會面中將向選帝侯的議會提出建議，這也是選帝侯在下一年將要聚集的場合；這些規定將完全依循我們和選帝侯的意願。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Diewile die ordenunge werit, so nemen wir die kurfursten in unsir keisirlich geleit zuo deme vorgenant hofe[45] 2222 zuo komen zuo blibin und auch wedir heim zu varin. Herumb [129] daz daz gespreche und rat gemeines gudis und fredin nit ge-hindird wurdin mit virziehin adir blibin in droste adir mit ubirmeßigeme fliße der wirtschafft[46], alse iz etwan gewonlich ist geschehin, so ordenerin wir mit gemeymme willin, daz fur-baz me, diewile der vorgenant keisirliche hoff adir samenunge werd, keim furstin irleibit ist gemeynne sproche[47] zu haltene; abir sundirlich gespreche, daz[48] die ordenunge der keisirlichin dingen, die zu dunde sint, nit irrint, die sint mit maßen virhenget[49].</p></div>
+                <div class="doc-col doc-translation"><p>當這些法令制定後，我們要求選帝侯前往我們帝國宮廷（在紐倫堡）的先前宮廷，居住並停留，之後再返回各自的領地。圍繞著這些協議、共同的利益和和平，並不會因為過度地或過分地忙於事務而受到阻礙，如同通常所發生的一樣，我們以共同的意願規定，在先前帝國宮廷舉行集會期間，選帝侯必須保持共同的語言；然而，關於帝國事務的特殊協議，不應被誤解，它們是經過適度考量的。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz XIII. capitel. Von deme wedirruffen der friheit.</p></div>
+                <div class="doc-col doc-translation"><p>第十三章 關於剝奪自由。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Andir werbe setzin wir und bestedegin mit desem keisir-lichim gebode, daz alle friheit und briefe, weichin personen, was wesins furnemekeit adir wirdekeit sie sint, adir stedin frien adir eygin, die von uns adir von unsirn seligin furfarn gebin sint, undir wilchim inthalteniße der worte ubir recht gnade friheit gewonheit adir gut, die von uns adir von unsirn seligin furfarn Romischin keisirn und konigen von eigin willin adir yn andirs virluhin sin adir hienach von uns und von unsirn nochkomen Romischin keisirn und konigen virluhin wurden, die insullint noch inmogint gentzlich an keinen dingin geletzin adir abegezihen den friheidin gerichtin rechtin eren adir hirschefftin der kurfursten geistlichir und werntlichir; were iz auch, daz in solichin friheiden und briefin etlichir personen, waz furnemekeit adir wirdekeit sie werin adir ge-meyne, alse e genant ist, uzgenomelichin besorgit were adir hienach virhut wurde, nit sullint sie wedirruffinlichin sin, ez inwere dan, daz von den seibin brieffin und friheit undir allin worten inen begriffin[50] nach einandir sundirlich rede geschehe von wortin zuo wortin.</p></div>
+                <div class="doc-col doc-translation"><p>我們並不是以這份帝國法令為基礎，主張所有自由和特權，那些依其本質和權利，屬於城市自由和固有權利，由我們神聖的皇帝所授予，並且這些權利內容包括關於法律、恩典、自由、習慣或慣例的言詞，這些權利是我們神聖的羅馬皇帝和國王憑藉自身意願所失去的，並且這些權利在我們和我們後來的羅馬皇帝和國王手中，不能被任何法律、權利或選帝侯的精神或世俗管轄權完全剝奪。即使在這些自由和特權中，某些被稱為「共同」的人，如果被剝奪或受到限制，它們也不能被撤銷，除非是根據雙方相互的協議，逐字逐句地達成。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Die seibin brieffe und friheit, nach dem und also vil alse sie abeziehinde sint den friheiten gerichten rechtin eren adir hirschafft der vorgenant kurfurstin adir ir ieglichim an deme ende, wedirruffin wir sie von sichirme wißin und dun sie abe und setzin von keisirlichim gewalte, daz man sie virste und halte, daz sie wedirruffen sin. [130] Daz XIV. capitel. In etwie vil landin iz geschicht, daz dinstman und ge-lehinte manne die lehen und die gulte, die sie von den seibin herrin hant, mit wortin und mit geverden uffsagin untzitlich und uffgebint; und so die selbe uffgabe geschehin ist, so weddirsagin sie boslich den seibin herrin und dunt in ir fintschafft kunt; und darnach dunt sie in großin schaden und die selbe gulte und lehin, die sie von der fintschafft und kriegis wegin hant uffgegebin, die griffin sie an und bekomern und haltin sie.</p></div>
+                <div class="doc-col doc-translation"><p>七項特權與自由，如同它們被賦予自由法庭的權利，以及選帝侯的統治權，在任何情況下都是不可撤銷的。我們確信並宣佈，這些權利和自由不受帝國權力的侵犯，不可被剝奪。</p>
+<p>第四章。在許多地區，僕人和知識分子將他們從選帝侯那裡獲得的封地和財產，以言詞和行為永久地交付和履行；一旦這些義務得到履行，他們便合法地對選帝侯負責，並在他們的領地內行使權力；之後，他們便擁有對他們從領地和戰爭中所交付的財產和封地的佔有權並加以保留。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Herumb setzin wir mit desem geinwurtigem gesetze ewecliche zuo werinde, daz die selbe uffgabe sal man virnicht han, als ob sie nie geschehin were, iz insy danne, daz die selbe uffgabe und uffsege von in frilich und mit werkin[52]geschehe, also daz daz selbe gut gulte und lehin den herrin von yn liplichin und redelich werde[53] uffgebin in solichir wise, daz die seibin wedirsagere die herren an den seibin guten und gulte und lehin nummer zuo keiner zyt betrubin adir schedigin von yn adir mit andirn, noch insullint darzuo rat helffe adir gunst nummer gebin[54].</p></div>
+                <div class="doc-col doc-translation"><p>我們藉由這份神聖的法律，進一步規定，若某人犯下了上述的過錯，則應當視其未曾發生，前提是該過錯和背棄是自願且有償地（或有條件地）發生的，並且該人將原本的財產、權利和封地，以口頭和誠實的方式歸還給領主，方式必須是使那些背棄者無法在任何時間內損害或侵害領主及其財產、權利和封地，亦不得提供任何建議、幫助或恩惠。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Wer darweddir dut adir die herrin an den seibin gutin lehin adir an andirn irren guten betrubit adir in schadin brengit adir wer dem, der soliche ding dut, rat und helfe irbudit, der virlusit zuo stunt die seibin lehin und gulte und ist irin loiz und fellit in des richis achte, und sullin furbaz me zuo allir zit kein weg uffin sin noch inmogint yme in keine wis von nuwem uffgeluhin werdin; waz hiewedir geschehe, daz hette keine krafft. Zuo leste begriffin wir mit desem gesetze, daz die, von den die uffgabe nicht geschicht und weddir ir herrin frefelichin dun und sie wissinlichin ane-griffint mit weddirsagin adir mit unwedirsagin[55], zuo stunt sint sie gefallin in alle vorgenant buße.</p></div>
+                <div class="doc-col doc-translation"><p>凡是損害領主之七項義務，或損害其他良善事物，或造成傷害者，以及任何對此等行為提供建議和協助者，皆將喪失七項義務與權利，並陷入帝國的懲罰之中。他們永遠不得復起，亦不得以任何方式重新復興；凡此等事，皆無任何效力。最後，本法定義：凡是未能履行職責，並惡意且知情地以言語或無言語攻擊領主者，則皆已落入上述所有懲罰之中。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Das XV. capitel.</p></div>
+                <div class="doc-col doc-translation"><p>第十五章。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Dye von den heiligin gesetzin virsmehetin und virwurffin eynunge und unzemeliche samenunge adir virbindunge in den [131] stedin und uzwendig adir zusscbin stat unde stat adir zusschin persone und stat adir zusschin persone und persone geslichtis[57] halb adir wilchirleie andir schinis[58]; darzuo globe[59] und eit, virbintteniße und gedinge und ynbrachte gewonheit zuo den seibin dingin, dye wir billichir schetzin ein stor[60], virwerffin wir und virdampnen und von sichirm wissen virnichtin wirs als; welliche stede adir persone, ez sy undir in adir mit andirn, was wirdekeit ardis adir wesins sie sint, soliche virbinteniße biz-her hant gedan adir hienach sich virmessen zu dunde ane irre herrin laube, der undirdan sie sint adir den sie sint dinstliche adir in der gebiede sie wonent, und die seibin herrin nit uz-nemen, alse die virbinteniße ane zwivel von den heiligen gesetzin der cristinlic</p></div>
+                <div class="doc-col doc-translation"><p>根據神聖律法所規定的、以及我們共同的約定和不可分割的結合，在城鎮之間，以及在邦國與邦國之間，在人與邦國之間，在人與人之間，以及在人與人之間的血緣關係中，以及在任何其他形式的結合中；我們將所有那些我們認為應當珍視的、並已由我們和祖先所確立、且我們確信不容否認的習慣，納入這七項規定之中，這些規定是：城鎮與人，無論他們是單獨存在，還是與他人共同存在，他們本質上就是何種存在，他們應當擁有何種結合，直到他們在某個地方，因為他們是那裡臣民，在他們居住的地域內，而那七位領主不介入，否則這些結合將受到基督教神聖律法中某種疑慮。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>hir merir unsir furfarn sint virbotin und abegetan, als virbiedin auch wir und dun sie abe; alleine uz-genomen die fursichtekeit und virbintniße, die die fursten und stede undir einandir umb gemeinen frede der lande kuntliche undir in bestedeget hant, die behaltin wir sundirlichin unsir herluchtenunge und laßin sie blibin, biz daz wir zuo rade werdin, waz wir davon ardenerin.</p></div>
+                <div class="doc-col doc-translation"><p>我們的諸侯被禁止並廢除，正如我們與諸君所廢除一般；唯獨那些諸侯與諸城之間，為維護諸邦共同和平而所建立的謹慎與盟約，我們獨自保留並允許其存續，直至我們就此事得到諮詢。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Waz abir sundirlich persone furbaz me soliche globede virbinteniße bose vireinnunge und gedinge anefinge weddir dis geinwurtige gesetze und alt recht, daz davon gemacht ist, der fellit zuo stunt in virlust siner erin und büße zehen phunt gultis; ist iz ein stat adir ein gemeine, die wedir daz gesetze dunt, die git hundirt phunt gultis und virliesin alle friheit und keisirliche wirdekeit; daz halbe deil der gultbuße fellit in keisirlichin sag[61], daz andir deil dem herrin des landes, zuo des schadin die virbinteniße geschehin ist; auch[62] fallint die vorgenant die mynre nit in buße der altin recht, die weddir die bosen einhelligin gesetze sint.</p></div>
+                <div class="doc-col doc-translation"><p>凡是個人因違背本著法律和古老法規的惡劣行為和不當舉動，而遭受懲罰者，其損失和罰款均為有效；若是在國家或共同體中，違背這些法律者，則需繳納一百枚金幣，並失去所有自由和帝國的尊嚴；罰款的一半歸屬於帝國，另一半歸屬於領土的君主，以彌補該違背行為所造成的損失；此外，如果上述者不遵守古老法規的罰款，則被視為違背惡劣的統一法律。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Das XVI. capitel. Von den palburgirn.</p></div>
+                <div class="doc-col doc-translation"><p>第十六章 論巴爾堡格人</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Vil clage hat uns furbracht, daz etliche burgere und undirdan der fursten der landisherrin und andir lute suchint von in zuo werffint die burdin geburtlichir undirdenekeit und smechlichin schaffin sie mit frefelichir gedurst, daz sie in andirn stedin inphangin werdin zu burgern, und hant daz [132] hievor me gedan und nyt mynre[63] wullin sie lipliche sitzin in landin stedin festin und dorffin der irstin herrin, die sie mit solicbir geverde gelaßen hant, und der seibin stede friheit, darin sye sich geburgert hant, wullint sie sich frauwen und hertriegint[64] schyerm von in: sie heißin palburgir in Dutschem lande; herurab wan nuo geverde und schalkeit nieman sulde zuo helfe komen, so setzin wir uz sichirm wißin keysirlichiz gewaltis mit gesundim rade allir kurfurstin geistlichir und werntlichir und bestedegin mit desem gesetze zuo ewigir weruonge, daz die vorgenant burgere und undirdan, di</p></div>
+                <div class="doc-col doc-translation"><p>我們收到許多申訴，指出某些市民及其下屬、領地主和其他人，憑藉惡毒的慾望，試圖否認他們的出生權利和法律地位，以便將他們轉變為其他城鎮的市民。他們此前已做出此舉，並非想要在最初的選帝侯所允許的、以及他們成為市民的七個城鎮、堡壘和村莊中，擁有合法的居所。他們想要逃離和擺脫這些限制：在德意志地區，他們被稱為「宮堡市民」（palburgir）。從今以後，任何人不得幫助或協助他們。因此，我們堅定地宣告，所有世俗和精神的選帝侯，應當以理智為依據，永遠遵守此法，以確保上述的市民及其下屬，他們...</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>e ir herrin also virspottint, in allin landin und stedin des heiligin richis von desem dage und hienach der stede friheit und recht nummer sullint genießin, in den sie sich in solichir geverde schaftint zuo burgern adir bizher geschaffint hant, ez sy dan, daz sie sich zuo den seibin steden lipliche ziehin und darinne eygin hert stedeclichin habin und werlich ane driegin[65] darinne wonnen und schuldigir burde und stede-stuore in den seibin stedin undirdenig sin.</p></div>
+                <div class="doc-col doc-translation"><p>因此，從今日起及以後，在神聖帝國的所有領地和城鎮中，那些已依據此種特權成為市民，或在此之前已成為市民的城鎮，應享有其城鎮的自由和權利，它們應當隸屬於七個城鎮，並在其中擁有自己的城鎮權利，並在七個城鎮中實際居住，並負擔市民的義務和城鎮稅。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Und welche weddir dis gesetze inphangin sint adir inphangin werdin, daz inphahin sal keine crafft han, und sullin noch inmogin in keinen sachin genießin friheit adir recht der stede, da sie inphangen sin, ane weddirrede rechtis friheit adir gewonheit, von weichin zitin sie inthalten sin, die wir alle widdirruffin, alse vil alse sie desem gesetze widdir sint, und herkennen sie ane crafft umb die vorgenant stucke: alle die recht der furstin der herrin und andir lute, die sie hant an übe und an gude yrre undirdan, die sie in vorgenant wise laßin, sal in alle zyt behaltin sin.</p></div>
+                <div class="doc-col doc-translation"><p>凡是違反本法者，或將來違反本法者，將不具備任何權力，在被捕時，亦不得享有任何城鎮的自由或權利。他們所擁有的任何法律自由或習俗，皆在他們被拘禁的期間內失效，而這些自由和習俗，皆是我們全部撤銷的，因為它們與本法相悖。我們對上述所有事物擁有權力。所有那些擁有領主、君主及其他世俗權力的貴族，只要他們按照上述方式行事，則在任何時候都應當保留這些權力。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Und me[66] [die], die vorgenant burgir und fromede[67] undirdan weddir dis gesetze inphahin, laßin sie sie nit in eyme mande, nachdem daz (lese geinwurtigen ding yn virkundit sint, so sint sie umb deu seibin ubirgang gefallin in virlust hundirt mark lodegis gultis, alse dicke sie iz furbaz duont; des gultis sal halb fallin in keisir-lichin sag, daz andir sal ane abelaßin den herrin der lude, die weddir diz gesetze inphangin sint.</p></div>
+                <div class="doc-col doc-translation"><p>凡是依照上述規定，接受這些法律的市民與外邦人，若不於同一月內完成（即：在文件上簽署或履行），則該等（文件）將在七日後失效，其價值為一百馬克金幣，如同先前所定；該等價值將由皇帝的法令平均分配，其餘則由接受這些法律的領主（君主）自行決定。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Das XVII. capitel. Von wedirsagen. Alle, die sich furbaz me virmeßin wedir ieman von rechtir sache zuo wedirsagen und den untzitlich in ir wonunge, adir [133] da sie gemeinliche nit wonen, weddirsagint, daz herluchtin wir, daz sie den wedirsagiten keynen schadin mit irin[68] mogent gedun an brande an raube an zuckin[69].</p></div>
+                <div class="doc-col doc-translation"><p>第十七章。關於作證。凡是誓言為某人就合法事宜作證者，並在自己的住所內，或在非共同居住的場所作證者，我們（諸侯）聲明，他們不得以火燒、搶劫或暴力等方式對被作證者造成任何損害。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Wan[70] nuo falsch[71] und geverde nieman sulde zuo helfe komen, so bestedigen wir mit desem gesetze ewecliche zuo werinde, daz die seibin weddir-sagunge, die also geschehin ist adir hienach geschicht, nit sal crafft han wedir herrin adir andir lute, mit den die weddirsagere hant gewonit in geselleschafft in heimelicbkeit adir in andir irlichir fintschafft; und sal auch nit sin, daz mit der wise eins iegelichins wedirsagins ieman angegriffin werde mit brande raube adir zuckin, ez sy dan, daz die wedirsagunge dry naturliche dage deme weddirsagetin vorhin lipliche virundit werde uffinlichin adir an die stat, da he gewonhchen wonit, und daz von dem seibin virkunden mit waren gezugin sichir bekennen moge geschehin.</p></div>
+                <div class="doc-col doc-translation"><p>若有人虛假且不公地不應提供援手，則本法規定了某些條款：若自衛行為發生並被記錄下來，但該自衛者與其相處的群體（無論是在社交、家庭或任何正直的關係中）之間存在不公，則該自衛行為將不具備效力；同時，也不得因為自衛的方式而對他人使用火攻、搶劫或毆打。然而，該自衛行為必須在三日之內，向自衛者習慣居住的場所公開宣告，並且必須有適當的證人來確認相關的七項事宜。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Wer andirs ieman weddirsagit und[72] anegriftit, der fellit zS stunt in unere, als ob kein weddirsagin were geschehin; und [wir] setzen auch, daz der selbe von eim iegelichim rittir als eyn virredir mit rechtir buße gepineget werde. Wir virbiedin auch alle unrechte kriege und alle unrecht brant raub zuckin und unrecht zulle und unrecht geleide und abedrucken gewonlichis schetzins umb daz geleide undir der büße der heiligin gesetze, die ubir dye vorgenant ding undir ieclichis sundirlich zu bußen gesetzit sint.</p></div>
+                <div class="doc-col doc-translation"><p>若有人攻擊另一位已發出宣言者，則視為未曾發出宣言而處以懲罰；我們亦規定，該人應由一名騎士作為罪犯進行適當的罰款懲處。我們同時禁止所有非法戰爭、非法焚燒、搶劫、掠奪、非法傷害和損害，並根據神聖律法，對這些損害處以慣例的賠償金，而這些律法已分別規定了對上述各項罪行的罰金。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz XVIII. capitel.</p></div>
+                <div class="doc-col doc-translation"><p>第十八章</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>„Uch hirluchten und großin furstin margrafen von Brannen-burg des heiligin richis irtzkamerer unserme medekurfurstin und liebin frunde dun wir irtzbischoff von Mentze kunt myt desir geinwurtigen batschafft, daz die kure eins Romischin konigis sich zuo dirre zit gebuorit zuo dunde; und von schulde unsirs amptis so ruffin wir uch zuo der seibin kure, alse wir sullin, daz ir von deme dage dis brieffis undir dren mandin nach einandir zuo rechen von uch selbir mit uwirn geweltigin boten, eyme adir me, die adir der fullenkomen gewalt habin, [134] komen zu der stat, die darzu gehorit nach der wise der heiligen gesetze, die darubir gemacht sint, alda zu beradin ubir-einzuokomen mit andirn unsirn medekurfursten von der kur eins kunfftigen Romischin konigis, der danach mit godes helfe gefurderd werde zu eyme keisir, und auch an der seibin stat zuo blibin, biz daz die selbe kure volbracht wird, und auch andir sachin zu dunde und uzzudragin, als man findet uzgeleit in den heiligin gesetzin, die darubir bedrechteclichin gemacht sint; und komen ir nit adir uwir botin, so furvarn wir doch uff ende mit unsirn medekurfursten in der vorgenant kur, alse die keisirlichin recht gesetzit hant.“</p></div>
+                <div class="doc-col doc-translation"><p>「黃金詔書」的選帝侯、大公、勃蘭登堡（Brannen-burg）的聖帝國領地管理者（irtzkamerer），我們與我們的共同皇帝及摯愛的朋友，美因茨主教（irtzbischoff von Mentze），因著這項崇高的職務，而召喚您，因為皇帝將在羅馬（Romischin）選出，且您應當在該日，根據我們的職責，與您的親信及我們權威的使者一同，前往所屬的城鎮。依據關於此事的聖律法所訂定之方式，您應當與其他共同皇帝，一同前往即將到來的羅馬皇帝，並協助他，在上帝的幫助下，被推舉為皇帝（keisir）。您也應當留在該城鎮，直到該次選舉完成，並處理所有在相關聖律法中被合法規定之其他事務；若您不親自前來，則我們仍將與前述的共同皇帝，在該次選舉中，依照帝國的法律規定，進行最終的決議。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz XIX. capitel.</p></div>
+                <div class="doc-col doc-translation"><p>第十九章</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>„Wir Lodewig[74] von gotz gnadin margrave zuo Brannen-burg duon kunt allin gemeine mit dirre geinwurtigen schrifft, sit daz die kure eins Romischin konigis anfellit zuo dunoe von redelichin sachen und wir mit sorgsame begerinde sin zuo be-denckin umb des heiligen richis ere, daz izit schedelichin swerin schadin undirlege, so machen wir und setzin und orde-nerin Johannem und Paulum[75] unsir liebin und getrewin, von den wir sichirlichen sundir getrewin haltin ane allin zwivel, unsir ware rechtliche procurator und sundirbar badin (mit allin rechten wise und furme, in den wirs allir best und creft-lichir mogin machin und kunen, sie beide und ieclichir[76] in gantze macht, alse daz des recht und gedinge, der die sache undir handin hat, nit beßir sin, und waz von ir yme an wird gefangin, daz mag durch den andirn geendit werdin und recht [135] liche ende nemen,) zuo dedingin an allin stedin mi</p></div>
+                <div class="doc-col doc-translation"><p>「我們洛德維希（Lodewig）[74]，憑藉上帝恩典，勃蘭登堡邊境伯（勃蘭登堡侯爵），特此以這份公正的文獻向您宣告：自從選出一位羅馬國王以來，我們一直就諸多重要事務進行討論，並竭力審慎考量著神聖帝國的福祉。如今，帝國正遭受著嚴重的損害，因此，我們特此指定並任命我們摯愛且忠誠的約翰（Johann）和保羅（Paul）[75] 為我們的合法代理人與代表（擁有所有權利和職權），（他們擁有完全的權力，可以以所有合法且有力的方式行事和處置，只要他們所掌握的權利和事務沒有更優的替代方案，且任何由他們所做出的決定都必須經過另一方審核並取得合法同意），以處理所有城鎮的相關事宜。」</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>t andirn unsirn kurfursten geistlich und werntlichen und mit yn ubir einandir zuo komen und zuo enden umb ein wole, geschickete, ungebresthafte personen zu kiesin zuo eyme Romischin konige, und daz die seibin procurator mogin geinwurtig sin den dedingin, zuo habin ubir die kur solichir persone und zuo handeln und bedrachtin, von unsirn wegin an unsir stat und namen die selben personen zuo nennen und an sie zuo gehellin und zu eyme Romischin konige zuo furdirn und zu kiesen und uff unsir sele eynen ieclichin eit zuo sweren, der darzu notdurfftig ist adir gewonlichin wird, zuo den vorgenant stuckin; und daz sie mogin eynen andirn adir andir scheffener setzin zu gantzir crafft und den seibin adir die selben zuo weddirruffin und zu tuone alle ding, sundirlich waz zuo den vorgeschrebin dingen notdurftig nuotze adir bequemeliche wirt zu dunde, geinwurtig zuo sinde uff ein fulbrachtis ende des</p></div>
+                <div class="doc-col doc-translation"><p>選帝侯應當聚會，無論是精神上還是實際上，彼此討論並決定一位合適、有才華、無瑕疵的人選，以選為羅馬皇帝。七位代理人必須被授權處理和審議這些人選，並代表我們、以我們的名義提名這些人選、將他們呈報，並選定他們為羅馬皇帝。每位代理人必須就上述條款宣誓，此誓言是必要且慣例的。他們必須有權將彼此或任何其他選帝侯設置為完全的權力者，並且七位代理人必須能夠召回並執行所有為上述規定事項所必需或便利的事項。他們必須承諾，直到完成該項目的為止。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>benennyns und des be-radis der seibin kure und auch, ob die vorgenant stucke adir ir ieclichis heischin ein sundirlich gebot, auch ob die seibin großir adir me sundirliche werin, dan die vorgenant ding adir wir selbir mochtin dun, obe wir dem gescheffte und der kunff-tigen kur mit unsirs selbis libe geinwurtig werin; und wullin stede und geneme habin und globin festeclichin zuo haltin eweclicbe, waz durch die seibin vorgenant unsir scheffener und bodin und von den, die sie gesetzit hant adir setzinde sint, von in adir von ir yme in den vorgenant stucken gewirekit wirt adir geschieht, adir in wilchir wise daz geordenerit wirt“</p></div>
+                <div class="doc-col doc-translation"><p>命名和委任這七位選民，以及前述條款是否是個別的命令，七位是否比前述事物更為偉大或更具權力，我們自身又能做些什麼；我們是否能憑藉自身的意願，配得上這門技藝與高貴的宮廷；以及是否願意擁有地位和聲譽，並堅定地維護它們。這七位先前的創始者和制定它們的人，在這些前述條款中將會產生什麼作用，以及如何被規定。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz XX. capitel.</p></div>
+                <div class="doc-col doc-translation"><p>第二十章</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Wan[77] alle furstindum, von der crafft[78] die werntlichen[79] kurfursten recht und stimme habin an der kure eins Romischin konigis, mit dem seibin recht ampt und wirdekeit mit andirn rechten, die in zugehorint und davon hangint, also gar sint zu-samen geschickit und unvirscheidenlichin vireynneget, daz recht stimme ampt wirdekeit, die zu iedem furstindum gehorit, nit ge-fallin mogin uff eynen andirn dan alleine an den, der daz furstindum mit lande und mit allim dem, daz darzu gehorit, kunt [136] liche besitze mit dinstbirkeit mit lehin und hirschafft; daz bestedegin wir, daz eim ieclichin der vorgenant furstindum mit recht mit stimme der kure und ampt und mit allir wirde-keit, die darzu gehorint, also sin vireinet und ungedeilit by einandir blibin zuo ewigin zitin, also daz der besitzir eins ieclichin furstindums sal sich frauwin eyner geruwigin frihin be-sitzunge recht stimme amptis w</p></div>
+                <div class="doc-col doc-translation"><p>當所有選帝侯領地，在擁有合法權力時，對於羅馬皇帝擁有權利與同意，並以其權力、職務與其他相關權利，皆被視為一個整體且不可分割的單元時，每個選帝侯領地所擁有的權利、同意、職務與所有相關的榮譽，不得單獨歸屬於某一人，而必須歸屬於能以領地及其所有附屬物為基礎，擁有服務權、領地權與農業產權的該選帝侯；我們確認，每個選帝侯領地都擁有合法權利、同意、職務，以及所有相關的榮譽，這些皆應永遠作為一個整體且不可分割地保留；因此，每個選帝侯領地的所有權，應當擁有某位有能力的自由公民的合法權利與同意，職務與權力。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>irdekeit und allir dinge, die darzu horint; und sal auch der selbe von allin kurfursten ein kurfurste gehaltin sin: der selbe unde nieman andirs sal von den kurfurstin zuo allir zit zuo der kure genomen werdin und zuo andirn gedetin, die umb ere und nutz des heiligin richis sint zu duone, und ane alle weddirrede sal man in zulaßin; noch ir keins der vorgenant dinge sullint von einandir gedeilit werdin, wan sie sint und sullint unscheitbirlichin sin, noch inmag sie auch nieman zu deilin gefordirn weddir an gerichte adir uz wendig an gerichte noch mit urteil ubirkomen; ez sal auch nieman den horen, der da eins fordert ane daz andir.</p></div>
+                <div class="doc-col doc-translation"><p>其權威及所有相關事物；且所有選帝侯都應由一位皇帝所統治：該皇帝及其任何其他人，在任何時候都不得被從選帝侯手中奪取，也不能被用於任何為神聖帝國的利益和用途而進行的其他事務，且任何人都不得被允許進行任何變動；上述事物中，任何事物都不應被彼此分割，因為它們是且應當是不可分割的，也不得被任何人在法庭上要求分割或訴訟；任何人都不得聽從要求分割其中任何事物的請求。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Geschehe iz abir von iruonge adir andirs, daz ieman virhort were, alle brieffe gerichte urteil, adir waz semelichis dingis davon uzginge weddir dese unse ordenunge, daz sal allis samt zuo stunt mit keiner crafft besten.</p></div>
+                <div class="doc-col doc-translation"><p>若有任何事情或任何其他事情發生，任何人都不得以任何判決書或任何類似的文書，來推翻我們這些規定中的任何事項，一切都必須在沒有任何權力的情況下進行。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz XXI. capitel. Wan[80] wir da abin an deine drittin capitel zuo rade wurdin fullinkommeclichin zuo virsegin umb die ordenunge des sitzins undir den geistlichin kurfurstin in rade und zuo dissche und andirs, alse dicke alse[81] keisirlichir hoff gaehaltin wirt mit hirschafft adir wan sich furbaz me geburit, daz die kurfurstin mit dem keisir adir mit eyme Romischin konige gesamint sint, davon wir gehorit han, daz hievor krieg darumb gewesin ist, nu gleibin wir, daz iz gut sy, daz wir endin und uzlegin die ordenunge vorgendis undir in.</p></div>
+                <div class="doc-col doc-translation"><p>第二十一章。當我們根據前三章的建議，完全同意了關於議會和精神選帝侯在議會中的秩序，以及選帝侯和其他各方在皇帝宮廷中所應享有的權利時，如果選帝侯與皇帝或羅馬國王共同統治，而我們已經同意了這項規定，並且此前發生了爭端，我們認為這是好的，我們將終結並確立上述的秩序。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Darumb so irkennen wir mit desem keisirlichim gebote, alse dicke in samenunge des keisirs adir eins Romischen konigis den vorgenant geistlichin kurfurstin mit dem keisir adir konige sich geburit zu gende und man keisirlich adir koniglich wapin fur yn droit, so sal der [137] irtzbischoff von Drere in glichir slechtir lynnegin gen vor dem keisir adir konige, und sal nieman zusschin in zwein gen, dan alleine die die keisirliche adir konigliche zeichin dragin; so abir der keisir adir konig ane die wapin get, so sal der selbe irtzbischof von Drere dem keisir adir konige vor gen, also daz nieman zusscbin in zweyn sy; dye andirn zwene irtzbischof sullin ewicliche ir stede behaltin, als iz da abinan mit undir-scheit irre provincien uzgeleit ist umb das sitzen.</p></div>
+                <div class="doc-col doc-translation"><p>因此，我們藉由這項帝國法令所確立，在皇帝或羅馬國王的大會中，先前提及的諸聖職公爵將與皇帝或國王一同就座，並且擁有帝國或王室的儀仗權。因此，特里爾大主教應與皇帝或國王並列就座，且無人可置於兩人之間；只有帝國或王室的標誌可被放置在兩人之間。當皇帝或國王接受了這些儀仗後，特里爾大主教也應將其呈獻給皇帝或國王，如此方能無人置於兩人之間。其他兩位大主教則必須保留其原有的席位，因為這些席位已與其他諸省份一同分配用於就座。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz XXII. capitel. Uzzuolegen die ordenunge des furgangis der kurfursten, davon wir for rede han gehabit, so setzen wir, daz in der geinwurtikeit des keisirs adir des konigis so erget, alse dicke den kurfursten geburit zuo gende nach der zile mit eim Romischin keisir adir konige: so ein uffinbar keisirlichir adir koniglichir hof ist, in waz sachin adir hirschafft daz sy, und man wirt dragin keisirliche gezirde, so sal der hirzauge von Sassin, der daz keisirliche adir königliche swert dreit, vor dem keisir adir konige anemittil gen, und sal zusschin yme und dem bischoff von Drere niemant damittin sin; der paltzgrave sal den keisirlichin apil dragen zuo der rechten siten; der margrave von Brannenburg sal daz ceptrum dragin zuo der linketin siten ie weddir siten des hirtzaugen von Sassin; der konig von Beheim sal anemittel nach dem keisir gen.</p></div>
+                <div class="doc-col doc-translation"><p>第二十二章。關於我們已提及的選帝侯（Kurfürsten）的儀式秩序，我們規定如下：在皇帝或國王舉行加冕儀式時，選帝侯必須按照規定，與羅馬皇帝或國王一同出席：薩克森公爵（Hirzauge von Sassin）將在皇帝或國王面前，手持皇帝或國王的寶劍；任何人不得與他或德雷雷主教並列；普法爾茨伯爵（Pfalzgraf）將在右側手持皇帝的權杖；勃蘭登堡邊疆伯爵（Margrave von Brannenburg）將在薩克森選帝侯右側手持權杖（cepter）；貝海姆國王（König von Beheim）將在皇帝身旁出席。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz XXIII. capitel. Alse dicke hirliche meße gehaltin wirt vor des keysirs adir Romischin koniges geinwurtekeit und den irtzbischofin von Mentze Drere und von Kollin adir ir zwein geinwurtig geburit zuo sinde, sullin sie undir in dese ordenunge haltin: [138] in der bichte, die geschicht vor der messe, an dem herbieden daz ewangelige zuo kossin, den freden nach dem „agnus dei" umb zuo dragen und an den segin, die nach der messe und f&amp;re dissche zuo thunde sint, und got zuo lobin noch dissche in soliche wise des irsten dagis sal iz der irste allis duon, des andirn dagis der andir, des drittin dagis der dritte. Den irsten den andirn und den dritten beduodin wir also zu vir-stende, nachdem daz ir ieglichir fuor adir noch zuo buschoffe irwihit ist. Und daz eynre den andern mit wirdigir zemelichir ire fuorkorae und den andirn gut bilde gebin, sich undir ein-andir zuo eren, so sal der, den der ordin rorit die vorgenant ding zu dunde des dagis, den andirn mit eyme mynsamen nigin und winkin darzu ladin, und sal darnach furdreden zuo den vorgenant dingen, alse iz sich danne heischicht.</p></div>
+                <div class="doc-col doc-translation"><p>第三十三章。當皇帝或羅馬國王、美因茨（Mentze）和科林（Kollin）的主教，以及兩位具有尊貴出身的貴族，在儀式中被召集時，他們應當遵守以下規定：在儀式中，在彌撒之前，於聖殿中，將福音帶到科辛（Kossin），並圍繞著「上帝之羔羊」的和平進行，以及在彌撒之後和節日期間要唱的讚美曲和頌歌，在最初的一天由第一位執行，第二天由第二位執行，第三天由第三位執行。因此，我們將第一位、第二位和第三位定義為四位，前提是每位都已獲得主教的認可。並且，第一位應當以尊貴的姿態和第二位建立良好的關係，相互尊重，那麼，由秩序所指定的負責執行該日事項的人，應當邀請其他人以共同的禮儀和手勢參與，並隨後就上述事項進行演講，這就是既定的慣例。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[II. Theil. Die Metzer Gesetze.] Daz XXIV. capitel. In[85] deme hofe zu Metze, den wir keisir Karle der vierde Romischis und Beheimschis richis ein merer hiltyn in deme jare, da man zalte von Crist geburte druzehinbundirt jar und in dem sehsundfunflzigisten jare und by uns warent alle kurfurstin des heiligin richis mit gein-wurtekeit der herrin des erwirdegen vatirs [Talayrand] bischoff zuo Albane der heiligin Romiscbin kirchin kardenal und Karle des konigis von Francrichis irste geborn son hirtzauge zu Normandi und delfin zu Fienne, in der herrin geginwurtekeit und zit, alse vor genant ist, so han wir die nach geschrebin gesetze gesagit uz.</p></div>
+                <div class="doc-col doc-translation"><p>【第二部分：梅茨法典】第 XXIV 章。在梅茨帝國議會中，我們在基督誕生後一百三十年及一百六十五年，頒布了一部法令。當時，所有神聖帝國的選帝侯，作為永恆之父的主人，包括阿爾巴恩聖羅馬教會的主教、卡迪納爾，以及法蘭西國王查理的長子、諾曼底與費尼的公爵，在上述的主人身份與時間內，制定了以下法律。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[1] Wer mit furstin adir mit rittirn mit sundirlichin per-sonen adir mit gemeyme fulke meyndedeclichin uffsatze dut adir mit eyden sich virbindit zu dunde uff dot der erwirdegin des heiligin richis kurfurstin geistlichir adir werntlichir adir eyme undir in, der sal billich gebußit werdin; (die recht [139] wultint, daz wille der meyndat mit dem seibin grymme ge-piniget wurde, alse die werk, und daz er mit dem seibin grimme gebußit wurde als ein schuldig man der almechtekeit, umb daz die vorgenant kurfurstin sint ein glet unsirs libis;) und sin gut in unsirn schatz geurteilit sy; [2] sine kint, den wir von keisirlichin gnaden virlihin daz lebin, sie suitin mit fedirlichir pine sterbin; daz bilde fedirlichir irbesunde sulte an in mit grymmer pine gemessin werdin: sie sullin virschaltin sin von mutirlichir zucht und von allim irbe irre nestin, und waz in von den mag gefallin, ensal auch nit</p></div>
+                <div class="doc-col doc-translation"><p>凡是與選帝侯、騎士、地方居民、以及普通民眾一同謀反，意圖推翻神聖帝國的皇帝，無論是精神上還是肉體上，皆將受到嚴厲的懲罰；（這項法律旨在確保民眾的意志能被嚴厲懲罰，如同被判處罪責的臣民，以維護上述皇帝的權威和尊嚴；並且他們的財產將被納入帝國的國庫）；其子女，若我們恩准他們活著，則必須以殘酷的痛苦死去；其殘酷的繼承權應當以嚴厲的痛苦來衡量：他們將被剝奪母族的教養，以及所有繼承的財產，以及任何從中獲得的利益，亦是如此。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>fulgin selgerede von andirn luten; arm und gebrestin sullin sie eweclichin sin, fedirliche schände sal in alle zyt nachfulgin, zuo keinen erin zu keiner werntlichir wirdekeit sullin sie nummer komen; sie sullin solich sin, daz in dot ein drost sy und daz lebin ein bittir pin, unde darin stinckende sin in ewigeme jamer; [3] danach heißin wir, [daz] alle die virlumunt sin und ane gnade, die fur soliche ummer virsuchint bede an uns zuo legin.</p></div>
+                <div class="doc-col doc-translation"><p>他們將被其他人的唾棄；他們將永遠是貧困和羞恥的，父親的恥辱將永遠追隨他們，他們永遠無法獲得任何榮譽或尊嚴；他們應當是詛咒，生命是痛苦的煎熬，他們將永遠在腐敗的悲嘆中受苦；[3] 之後，我們宣布，[任何] 那些遭受苦難並向我們乞求恩惠的人。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[4] Die dochtir, wie vil der ist, die sullin alle mit einandir nemen daz virde deil von der mudir gude, siege abe besetzit[86] adir unbesetzit, uff daz sie habin mittelmeßige narunge billichir, wan daz sie gantzin nütz adir irbe namen davon haltint; daz urteil sal miltir gein yn sin: wir getruwin, daz sie von krangheit frauwelichis ardis minre gedurstig[87] sin. [5] Friheit, die sonen und dochtirn sint nach desem gesetze gebin, daz sie ledig suitin sin von fedirlichen undirdenekeit, komit in nit zu helfe. [6] Wir setzin auch, daz wedemegabe und viranderunge wilchirhande gude, mit wilchir geferde adir recht man findet, daz sie geschehin sint von der zyt, da die vorgenant zum irsten gedachtin den uffsatz und geselleschaft anzugriffin, daz sal keine krafft han.</p></div>
+                <div class="doc-col doc-translation"><p>[4] 女兒，無論有多少，都應與彼此共同繼承母親財產的四分之一，無論該財產是否被佔有，只要她們擁有適度的生活所需，且能將其作為遺產持有；此判決應由法庭裁定：我們相信她們因女性的身體虛弱而缺乏精力[87]。[5] 根據本法，兒子和女兒所享有的自由，是免於世俗和土地的束縛，不應被侵犯。[6] 我們也規定，任何在先前被指定繼承人開始建立家庭與社會關係的時期之前，透過任何方式獲得或轉讓的財產，都將不具備任何法律效力。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[7] Der vorgenant uffsetzigin husfrauwin, die irin wedemen herkobirt hant, und die gut, die sie von irrin mannen inphangin hant in giftis recht, sint die in dem gedinge, daz sie den sonen sullint gefallin zu der zyt, so die[88] schare[89] ist abegenutzit, so sullin sie wißin, daz alle die gut, die den sonen nach dem gedinge sultint werdin, in unsen keisirlichin schatz horint; [8] doch sal den dochtirn von den seibin gutin daz vierde deil werdin und nit den sonen. [140] [9] Andir werbe waz wir von den vorgenant und iren kinden gesetzit han, daz wullin wir in hirtekeit gehalten han an irin knechtin an irin dienern, die der missetat midewissinde sint, und der seibin kinde.</p></div>
+                <div class="doc-col doc-translation"><p>前述已故的妻子，若她已獲得她的財產，且她從丈夫那裡繼承的財產擁有合法權利，則在子女繼承時，若兒子已逝，那麼她應知曉，所有根據繼承規定應屬於兒子的財產，都將歸入我們帝國的國庫；然而，女兒應從這七份財產中獲得四分之一的份額，而非兒子。另一個規定是，我們對於前述及其子女所設立的規定，是我們將其奴僕、僕從，以及七個孩子們，維持在受保護的狀態。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[10] Wer abir undir den von ursprunge der anegefangin missetat mit fliße eins waren labis die mein-dat meldit, der sal mit lone und mit erin von uns begabit werdin; abir der an dem ufflegin schuldig wirt, ob der doch undir unkuntlichir wise die heimelichkeit der rede uffinbarit, der sal losunge und gnadin wirdig sin. [11] Andir[90] werbe umb die seibin missetat, die sich driffit zu geletztir almechtekeit an den kurfurstin, sullint auch die knechte an des herrin houbit gepiniget werdin. [12] Hernach setzen wir, ob it uff-satzis geschehe weddir die vorgenant kurfurstin geistlichin und werntlichin und missetan wurde, daz auch noch dote des schuldegen daz lastir mag hernnuwit werdin.</p></div>
+                <div class="doc-col doc-translation"><p>凡是勤勉地報告源於最初罪行的過失者，將會得到獎賞和我們賜予的恩惠；然而，若有人被指控有罪，即使他是無辜地洩露了言談的秘密，也應當獲得釋放與仁慈。此外，對於那些最終屬於選帝侯至高權力的罪行，選帝侯的僕從也應當受到懲罰。再者，我們規定，若上述選帝侯遭受精神或肉體的侵害，那麼罪犯的死亡也應當由選帝侯承擔。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[13] Darzu be-stedegin wir mit desem gebode, daz nach dote der schuldegen die meyndat möoe beclagit werden, und des ubirwundio dotis gehugnißis sal man virdampnen und sin gut sal man den irben abenemen; [14] wan von dem, daz eynre ein meyndedegin rat [fassit], so ist er zuo stunt etlichir maße gepinget an sime gedancke; darzu bekennen wir mit deme, daz einre al soliche missetat an sich zuhit, daz der nit viruzsirn adir nieman fri von dinstbirkeit gelaßin mag, und yme sin schuldener von rechte nit geldin sal. [15] In der sache setzin wir, daz die knechte gepiniget werden den herrin zu leidin, daz ist umb die sache des virdamptin uffsatzis weddir die kurfurstin, alse vor geseit ist. [16] Und ob einre sturbe, daz nachkomen gut sal gehaltin werdin von der ingewollin[91] persone halb, ob er alse dot gewisit wirt, daz er gewesen ist in der seibin sache.</p></div>
+                <div class="doc-col doc-translation"><p>[13] 因此，我們藉此法令確立，在債務人逝世後，債務應當被追討，並且對於原始債務的清算，應當蒸發掉（或：消除）其義務，而其繼承人則可獲得財產；[14] 如果有人（或：某個團體）制定了某項債務規定，那麼他（或：該團體）應當就此決策承擔多種程度的責任；我們藉此宣誓，任何個人所承擔的此類債務，都不能被轉讓給他人，也不能使任何人免除其義務，且其債務人不得逃避其責任。[15] 在這件事上，我們規定，奴僕應當為主人承擔痛苦，這在於清算（或：消除）該債務的決策，是依照既定法律的。[16] 如果某人過世，其後代應當繼承一半的財產，前提是他（或：她）在該事宜中是依照既定法律的。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz XXV. capitel. Ez bekomit wol, daz andir furstindum by einandir gantz blibet, daz gerechtekeit gestirkit werde und die getruwin undirdan sich frauwin ruwe und frede: nichils me sullint die grossin furstindum hirschafft ere unde recht der kurfursten [141] ungeletzit by einandir blibin, wan da me schadin lit, da sal man helfe zulegin, so die sule fallin, daz die weddirsetze des buwis nit zusamen slahe; herumb stedegin wir und bekennen mit gebode ewige zit zuo werin, daz von nu furbaz me die edeln und grossin furstindum, daz rich von Beheim, paltz-graveschafft des Rines, hirtzaugedum von Sassin, margrafedum von Branncnburg, ir lant gebiede manschafft dinstbirkeit, und waz andirs darzu gehont, sullint nummer virsnidin adir vir-deilit werdin, me sie sullint billichir ewecliche blibin in irrim fullinkomen gantzheit.</p></div>
+                <div class="doc-col doc-translation"><p>第五章。我們希望，各選帝侯的領地能夠完整地保留在彼此手中，這樣正義才能得到鞏固，而臣民與其妻妾也能獲得安寧與和平：任何大選帝侯的領地和皇帝的權利，都不得在彼此之間被侵犯，若有人遭受損害，則應提供援助，直到危機解除，而權利關係不被破壞為止；我們在此宣誓並立下誓言，永遠地希望，從今以後，所有貴族和大選帝侯的領地、來自貝海姆的司法權、萊茵地區的領地管轄權、薩克森的牧羊權、布蘭恩堡的侯爵領地，以及其他所有相關的權利，都應被完整地保留在各自的領地中，並且應永遠保持其完整的完整性。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Der irste geborin son sal an den bir-schefftin und rechten irben[93]: der horit alleine darzu, er were dan nit by sinnen adir ein dor adir eins virmertin[94] mirglichis gebrestin, von des wegin er nit sulte noch inmochte ubir dfe lude nit ein furste gesiu; in der geschichte sal der andir geborin son irben, ob er ist in deme geslichte, adir darnach der andir alste brudir adir leies mag, der von fedirlichim stamme zuo dem nestin ist abekomen in rechtir lenige. Der selbe sal sich zu hant gein den andirn brudirn und swestirn minsame und gnedeclichin herbiedin nach der gnadin, also yme got git nach sime wolegefallin, und nach irbem macht, also umb in alle wise virbodin sy deilin unde intledin furstindum und allis, daz darzu horit. Das XXVI. capitel.</p></div>
+                <div class="doc-col doc-translation"><p>嫡長子應為首席及合法繼承人：若他獨承此位，而沒有其他男性繼承人，則他無法藉由其血脈成為諸侯；若嫡長子逝世，則應由其他出生之子繼承，無論他是否同屬血脈，或之後由其他出身於貴族血脈、合法進入家族的最年長兄弟或姊妹繼承。他應以仁慈和恩惠對待其其他兄弟姊妹，依循上帝的旨意與恩典，並依循其能力，使他們在各方面都能共同分享並分配諸侯地位及所有相關財產。第二十六章。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[1] An deme dage, so keisirlichir adir koniglichir hof in wirdekeit gehaltin wirt, so sullin die kurfurstin alle komen zuo prime zit zu des keisirs adir konigis hirburge, und sal der keisir adir der konig angedan sin mit allir keisirlichir wede[96], und ieder kurfurste uff sinem perde sullint mit deme keisir riten an die stat, da man sitzin sal: ir ieclichir sal gen in ordenunge und wise, alse iz vor gesetzit ist des furgangis der kurfursten und fullinkommeclich ist uzgedragin.</p></div>
+                <div class="doc-col doc-translation"><p>當帝國或王室的宮廷實際舉行之日，所有選帝侯皆須在適當時間前往皇帝或國王的居所，皇帝或國王將由所有帝國或王室的隨從侍奉，而每位選帝侯皆應騎馬與皇帝一同前往會晤之場所；各人皆須依循既定的秩序與方式，完全遵循選帝侯進場的規定。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Der irtz-kantzelir, in des irtzkantzelerie der hof gebaltin wird, sal brengin uff eyme silbirn stabe alle ingesigel unde keisirliche adir konigliche briefe-zeichen; die werntlichin kurfurstin sullint [142] brengen daz ceptrum den apil und daz swert; zum irstin sal man auch dragin vor deme irtzbischofe von Drere anemittel, so er fur get in siner ordenunge, zum irstin die krone von Ache, darnach die krone von Meilon von etlichin nedirn furstin, die der keisir adir der konig darzu schickit; daz dragen mit den kronen sal alleine geschehin deme, der mit keisirlichen adir mit koniglichir imfeln gezerit ist.</p></div>
+                <div class="doc-col doc-translation"><p>首席宰相（此人駐守於宮廷秘書處）應於銀色權杖上攜帶所有已封印的帝國與王室信函印章；合法的皇后應當攜帶權杖、蘋果（或儀式物）與劍；在起始之際，還應先將特里爾大主教呈上，以便他依據其規定，首先呈上阿亨王冠，隨後呈上來自諸多次級選帝侯的梅隆王冠，這些選帝侯皆由皇帝或國王派遣。這些王冠的呈獻，唯有被賦予帝國與王室權柄者方可執行。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[2] Die keisirynnen adir die Romische koniginnen sal mit irre keisirlichen adir koniglichir wede gecleidet zogin zu der sitzestat, von irren großin herrin geselgit mit yren nach-fulgerin juncfrauwin etwie ferre eyn zemeliche wide nach deme keisir adir Romischen konige und auch nach deme konige von Beheim, der dem keisir allirneste nachfulgit.</p></div>
+                <div class="doc-col doc-translation"><p>皇后或羅馬王后在前往宮廷時，必須穿上帝國或王室的盛裝，並由她們的大夫人及年輕侍女隨從，其儀式與皇帝或羅馬國王，以及最緊隨皇帝的波希米亞國王的方式相同。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Daz XXVII. capitel. Wir setzin, wan der keisir adir Romisch konig uffin hoff heldit, da die kurfurstin mit yrin amptin sullint dienen, so, sal die nachgeschrebin ordenunge gehaltin werdin: [1] Zum irstin, so der keisir adir der konig sitzit uf sime keisirlichin adir koniglichim trone, so sal der hirtzauge von Sassin sin ampt dun in dese wise: man sal schudin for daz keisirliche gesesse ein huffen habirn, der also hoch sy, daz er dem perde ge an die brust adir an den vordem reift; uff dem perde sal der hirtzauge sitzin und sal han eyne silbirn strichin in siner hant und ein silbirn summern[97], die beyde sullint han an gewiechte 12 marck silbirs; und also sitzinI uf dem perde sal er daz mas ful habirn nemen und sal den dem irstin knechte, der da komit, schudin in sinen sag.</p></div>
+                <div class="doc-col doc-translation"><p>第二十七章。當皇帝與羅馬國王在宮廷舉行朝會，而皇後需履行其職務時，應遵循以下規定：首先，當皇帝與國王坐在其帝國或王室的寶座上時，薩克森的宮廷侍從（hirtzauge von Sassin）應履行其職責，方式如下：他必須持有一堆穀物，使其高度足以抵達馬匹的胸部或前腿；侍從應騎在馬背上，並在手中持有銀製權杖和銀製手杖，兩者皆價值十二枚銀馬克；他應坐在馬背上，並將侍從的尺寸（或報告）記錄下來，然後將其交給隨侍而來的首席僕役。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>So er daz gedut, so sal er die strichin steckin in den habirn und sal abe-zogen, und sin undirmarschalg der von Pappinberg[98] der sal an sine stat adir des hofis marschalg, obe der von Pappinberg nit da inwere, den habirn furbaz uzmessin.</p></div>
+                <div class="doc-col doc-translation"><p>他完成此事後，應將銀條放入容器中，然後將其取出；並由來自帕平伯格的副軍官，前往他的領地或宮廷軍官處，若帕平伯格的副軍官不在，則測量該容器。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>So der keisir adir der konig inget zuo dissche, so sullin die geistlichin kurfursten irtzbischhofe sten for dem dissche mit andirn prelatin uode sullint den disch gesegin nach der ordenunge, alse darutf [143] vor geschrebin ist; so der disch gesegint ist, so sullint die seibin irtzbischofe, obe sie da sint, adir zwene adir eynre die ingesigel und keisirliche adir konigliche briefe-zeichin von deme hofekantzilir nemen an deme silbirn stabe, und der irtz-bischof, in des kantzelerie der hof gehalten wirt, sal mittin gen und die zwene ie wedir sit neben sit und sullint alle den stap, da die ingesigel anehangin, mit irin [handin] anegriffin und sullin sie dragin und wirdeclichin legin fur den keisir adir konig uf den disch; der keisir adir konig sal sie in zu stunt weddirgebin, und der irtzbischoff, in des kantzelarie daz geschicht, der sal daz große ingesigel dragin an sime halse, bis daz man gessin hat, und darnach bit daz er komit an sine hirburge von keisirlichim adir koniglichem hafe [!] geredin.</p></div>
+                <div class="doc-col doc-translation"><p>若皇帝或國王進入大廳，則教會選帝侯——即大主教們——必須與其他教士一同站在大廳前，並依循既定章程為大廳舉行祝聖儀式；大廳祝聖完畢後，七位大主教（無論是否在場）都必須從宮廷秘書長手中，將印章以及皇帝或國王的信件印記取置於銀製權杖之上。這位被召至宮廷秘書廳的大主教，將被帶出，兩位（大主教）會並肩而坐，他們必須共同握住承載著印章的權杖，將其真實地呈獻給皇帝或國王，放置於大廳之上；皇帝或國王將在兩小時內接見他們。這位在秘書廳完成儀式的（大主教），將佩戴著大印章直到宴會結束，宴會後，他便可從皇帝或國王的宮廷返回其居所。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Der stap, da die ingesigel anehangin, sal von 12 mark silbirs sin; des silbirs sal ieder irtzbischof gebin daz dritte deil; der stap mit den ingesigeln und briefe-zeichin sal zuogeantwurtit werdin des hofis kantzelir in sinen nuotz zuo kenn, wie iz yme selbir fugit. Und nachdem daz der irtzbischof, dem daz große ingesigel geburit zuo dragin, komit von keisirlichem hofe in sine hirburge, so sal he daz selbe ingesigel sendin mit eyme sinis gesindes uff eime perde deme hofekantzlir; daz pherd ist her schuldig zuo gebin dem seibin kantzilir nach zemelichkeit siner eigin wirdekeit und minne, die er zuo yme hat. [2] Der margrafe von Brannenburg sal komen uff eyme perde und sal han zwei silbirn beckin mit waßir in den hendin und eine schone hantwehil und sal sitzin von sime pherde und sal deme keisir adir deme konige waßir gebin ubir die hende; die beckin sullint halten 12 mark silbirs.</p></div>
+                <div class="doc-col doc-translation"><p>帶有印章的權杖價值十二馬克銀幣；每位大主教應給予其中的三分之一。帶有印章和信件標記的權杖，必須由宮廷秘書官在他的辦公室中妥善保管，直到銀幣被交付。當大主教將大印章佩戴完畢，從皇帝的宮廷返回自己的城堡後，他應派遣一名僕人騎馬將該印章送給宮廷秘書官。這匹馬的提供，應根據秘書官的職責和對他的親愛之情來承擔。勃蘭登堡伯爵應騎馬前來，雙手中拿著兩個裝有水的銀盆，以及一個精美的手帕。他應從馬背上下來，用雙手向皇帝或國王奉上水；這些銀盆的價值應為十二馬克銀幣。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[3] Der paltzgrave von Rine sal inriten uf eyme perde mit vir silbirn schusselin in sinen hendin, die sal iecliche haltin 3 mark silbirs, und sal abesten von dem perde und sal die schußelin setzin uf den disch fur den keisir adir konig. [4] Darnach sal der konig von Beheim komen uf eyme pherde und sal brengen eynen silbirn kop von 12 marck silbirs mit wine und mit waßir gemisschit und sal sten von sime pherde und sal den kop dem keysir adir konige zuo drinckin biedin.</p></div>
+                <div class="doc-col doc-translation"><p>萊恩伯爵應騎乘馬匹，雙手持四個銀杯，每個價值三馬克銀幣，隨後應下馬，將這些銀杯放置於皇帝或君王的桌上。接著，貝海姆的君王應騎乘馬匹前來，攜帶一個價值十二馬克銀幣的銀杯，其中混有葡萄酒與水，隨後應下馬，將此杯奉予皇帝或君王飲用。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[5] Alse wir funden han, daz bisher gehaltin ist, also setzin wir auch, so die werntlichin kurfursten ir ampt han [144] getan, so sal der von Falkinstein ein fitzkamerer des richis zuo eme nemen pherde und beckin des marggrafin von Brannen-burg; der kochinmeistir von Norttinberg sal nemen pherde und schußelin des paltzgrafen; der schencke von Limpburg sal nemen pherde und kop des konigis von Beheim; der von Pappinberg[99] der sal nemen pherde unde stap und summern des hirtzaugin von Sassin, ob die seibin sint zuogegin und ir iegelichir dinte yn sime ampte; ist abir, daz ir etlichir in deme hofe nit geinwurtig were, so sullin des keisirs adir des konigis dageliche hofediener, nachdem als iegelichir gemein-samt an dem amte mit dem, der nit zuogegin ist, als er daz ampt dreit, also sal er auch den nutz ufhebin.</p></div>
+                <div class="doc-col doc-translation"><p>既然我們發現了迄今為止的慣例，我們也規定，那些履行職責的合法選帝侯，法爾金斯坦的宮廷侍從應帶一匹馬和勃蘭登堡侯爵夫人的旗幟；諾特寧堡的廚師大師應帶一匹馬和萊茵行宮伯爵的酒杯；林普堡的管家應帶一匹馬和波希米亞國王的酒杯；而帕平堡的人應帶一匹馬和薩克森管家的權杖及儀式用品，前提是他們被召集並在職責中服務；但如果有人不配在宮廷中，那麼皇帝或國王的日常宮廷僕役，在與那些未被召集的人一同履行職務時，當他執行職務時，也應取消其特權。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Das XXVIII. capitel. [1] Keisirlichir adir koniglichir disch sal also gefugit sin, daz er ubir andir dische in dem sal sehs fuße hohir sy ge-setzit, an dem nieman sal sitzin in dem dage des birlichin hofis dan alleine der keisir adir konig. [2] Der stul und der disch der keisirynnen adir konigynnen sal bereit sin in dem sal, also daz ir disch dry fuße nedir sy dan des keisirs adir konigis und dri fuße hohir dan der kurfurstin disch; die kurfurstin sullen undir in in glichir hohe stule und dische han.</p></div>
+                <div class="doc-col doc-translation"><p>第二十八章。皇帝與國王的御座應當設置，使其高於其他御座，在宮殿內，在世俗宮廷的日子裡，除了皇帝或國王之外，沒有人可以獨自坐於此。皇帝或王后應當在宮殿內準備御座，使其高於皇帝或國王三英尺，而選帝侯的御座則高於三英尺；選帝侯應當擁有與皇帝和國王一樣高大的寶座和御座。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[3] Undir des keisirs geseße sins dischis sal man bereiten den seibin kurfurstin geistlichin und werntlichen zuo der rechtin hant dry, zuo der linketin hant dry geseßin; daz sebinde geseße sal man bereitin glich gein des keisirs adir konigis antlitzer als iz davor von dem sitzin der kurfurstin uzgesprochin ist; auch also daz nieman andirs, waz wirdekeit er ist, sitzin sal undir in adir zuo den dischin. [4] Iz zemit auch nit den werntlichin kurfurstin, daz ir eynre sich setze zuo sime dische, diewile der andir et'nre sin mitkurfurste sin amt noch dan zuo dunde hat; wan so ir einre sin ampt fullinbracht hat, so sal er gen zuo dem dische, der [145] eme bereit ist, und sal daby stende beidin[101], bis daz die andirn ir ampt bant gedan; danach sullin sie sich alle und sundir mit einandir setzin zu den disscbin, als in ir ieclicbim bereit ist.</p></div>
+                <div class="doc-col doc-translation"><p>皇帝的座位旁，必須為七位精神和世俗上的皇后準備椅子，右側三座，左側三座；這七座椅子必須與皇帝或國王的座位一樣高，正如先前關於皇后座位的規定所言；此外，任何其他人，無論其身份如何，都不得坐在這些椅子上。在同一時間，世俗上的皇后也不能各自坐在自己的椅子上，直到另一位共同皇后的職責完成為止；當其中一位完成了職責後，她應當坐在準備好的椅子上，並且兩位都必須站著，直到另一位完成職責為止；之後，她們所有人都應當一起坐在各自準備好的椅子上。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[Das XXIX. capitel.][102] [1] Wir han daz auch fundin von warir sage und gesetfee der altin, von der zit itzunt nieman andirs gedenckit, daz von unsirn seligin furfarin flißeclich gebaltin ist, daz eins Romischin konigis kure zuo Frankinfurd in der stat geschehin sal, zuo Ache gecronit werdin, sin irsten hof zuo Nurmberg haltin; darumb wullin wir von sichirn sachin, daz die seibin ding in kunftigin zitin gehaltin werdin, ez inwere dan, daz den vorgenant stuckin allin adir etlichen redeliche hindirniße begenten.</p></div>
+                <div class="doc-col doc-translation"><p>【第二十九章】吾等亦已從古代的言論與法律中查見，在當今之時，無人可忘記下列事項：吾等聖潔的選帝侯已嚴格命令，羅馬帝國的君主選舉應於法蘭克福城舉行，隨後於阿亨加冕，並在紐倫堡舉行其首次宮廷；因此，吾等欲確信，在未來之歲月裡，此七項事宜將得以舉行，且上述事項將不受任何法律上的阻礙。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[2] Wan iz auch geschehe, daz ein kurfurste geistlich adir werntlich mit rechtim hindirniße geirrit werde, so er geheischin were zu dem keisirlichin hofe, und nit komen mochte, der bode adir pro-curator, den er sendit und den man zuo sal laßin, nach dem alse sin gebot stet, waz wirdekeit adir wesins er ist, so sal er doch nit zu dische adir zuo stule sitzin, alse dem bereit ist, der in gesant hat. [3] So nuo alle ding fullinbracht sint, die zu keysirlichim adir zu koniglichim hofe zu richtin sint, so sal der hofemeistir zu eme nemen allin buo keisirlichis adir koniglichis geseßis, da keisir adir konig geseßen ist, mit den kurfurstin den hof zu halten adir lehin zu lihin, alse vor uzgegebin ist.</p></div>
+                <div class="doc-col doc-translation"><p>若有選帝侯因精神或世俗上的合法阻礙而無法出席皇帝宮廷，他所派遣的代理人或受託人，必須嚴格遵照其命令，無論其自身地位如何，但該代理人不得坐在為選帝侯預留的席位上。一旦所有需要由皇帝或王室宮廷裁決的事項都已完成，宮廷總管必須依據皇帝或王室的法律做出所有決定，並在皇帝或國王在場時，維持宮廷和領地如先前所授予的那樣。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[1] Wir setzin mit desem keisirlichin gesetze, daz die kurfurstin geistlichin und werntlich in, so sie konigliche lehin von keisir adir von konige inphahint, so sullin sie nieman ge-bundin sin icht zu gebin; wan daz gelt, daz in solichir wise gegebin wurde, daz hurte den amptluden zuo. Wan[105] nuo alle kurfursten in keisirlichem hofe ubir alle ampte sin, wan sie kamerer kochinmeistir schencke und marstellir sint und hant [146] undir in in den seibin amptin gesetzte undirdan, die ime von Romiscbin fursten gegebin und gewedemit sint, darumb were iz ein daube rede, daz die undirdane amptlude von irin obirstin amptherrin, und in wilchir wise daz geschehe, [geschenhe furdern], ez were dan villichte, das die seibin kurfurstin irin undirn amptluden etwaz frilich und willeclich wultin gebin.</p></div>
+                <div class="doc-col doc-translation"><p>依據此帝國法律，凡選帝侯在精神上和世俗上擁有皇帝或國王的封地，則無人有權強迫他們交付；若此等封地所給予的款項，被強制交付給官員，則不合規矩。當所有選帝侯皆在帝國宮廷中擔任各項職務，當他們是宮廷的廚師、管事以及被置於七個官職中的人員，而這些官職皆由羅馬選帝侯授予並附帶權力時，因此便會產生一個疑問，即這些下屬官員是否必須服從其上級官員的命令，以及這種情況如何發展？此時，或許選帝侯會自由且自願地授予其下屬官員某些權利。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[2] Abir dye andir furstin des richis geistlich adir wernt-lich, so ir eynre lehin inphehit von Romischin keisir adir konige, der sal gebin den amptludin in des keisirs adir konigis hofe 63 mark silbirs und eynen firdung, ez sy dan, daz ir einre mit friheit adir mit keisirlichir adir mit koniglichir laube sich beschirmen moge und bewerin, daz er ledig uzgenomen sy von solichir gulte und auch von andirn dingen, die von gewonheit sint zuo geltin umb soliche inphahin der lehin.</p></div>
+                <div class="doc-col doc-translation"><p>若帝國的其他諸侯，無論是精神上還是世俗上，從羅馬皇帝或國王領取了封地，則應向皇帝或國王的宮廷提供六十三馬克銀幣及一份封地，以便他們能夠自由地或憑藉皇帝或國王的恩准來保護自己，並要求從該封地以及所有與此類封地繼承有關的慣例中獲得解放。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Die vorgenant 63 marck und firdung silbirs sal der hofemeistir des keisirs adir konigis also deilin: er sal eme selbir zum irstin behaltin 10 mark, dem kantzelir zehin mark, den meistirn den schribirn den dicterern 3 mark, dem ingesigelir umb daz waz und birmynt den eynen firdung, also daz der kantzelir und die schribir dem furstin, der daz lehin inphangen hat, nit andirs sint schuldig zuo gebin dan gezug-brieffe des inphangen lehins adir eynen brieff eyner eynfeltigin inleidunge.</p></div>
+                <div class="doc-col doc-translation"><p>上述的六十三馬克和一份費爾杜ング（firdung）銀幣，應由皇帝或國王的宮廷總管（hofemeistir）進行分配：他應為自己保留十馬克，給秘書長（kantzelir）十馬克，給大師（meistirn）、書吏（schribir）和詩人（dicterern）三馬克，並給印章官（ingesigelir）一份費爾杜ング，這樣秘書長和書吏就無需向持有該封地的領主（furstin）支付其他費用，只需提供該封地的傳喚信函或一份單獨的邀請函即可。</p>
+<p><strong>重譯 1</strong></p>
+<p>上述的六十三馬克和一個俸祿，應由皇帝或國王的宮廷總管按以下方式分配：他應為自己保留十馬克，給書記官十馬克，給大師和詩人三馬克，給印章官一個俸祿，如此一來，書記官和秘書就不必向持有該封地的領主支付其他費用，只需提供該封地的通行證或一封由該封地代表簽署的邀請函即可。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[3] Auch sal der hofemeistir gebin dem schenkin von Limpburg 10 mark, dem kochinmeistir von Norttinberg 10 mark, dem undirmarschalke von Pappinheim 10 mark, dem kemmerer von Falkinstein 10 mark mit solichin gedingen, ob sie und ir iegelichir geinwurtig sint in den hohen hofen und iegelichir dinte sime ampte; were abir, daz die vorgenant undiramptlude adir ir iegelichir nit geinwurtig weren, so sullint die amptlude des keisirs adir konigis, die ubir solich ampt sint, der abesint, der stat sie virwesint, in des amptis namen und arbeit er dreit, also sal er nutz und gewin nemen.</p></div>
+                <div class="doc-col doc-translation"><p>[3] 此外，宮廷總管也必須向林普堡的贈予者（schenkin von Limpburg）支付 10 瑪克，向諾爾廷堡的廚師總管（kochinmeistir von Norttinberg）支付 10 瑪克，向帕平海姆的副軍事總管（undirmarschalke von Pappinheim）支付 10 瑪克，向法爾金斯坦的管家（kemmerer von Falkinstein）支付 10 瑪克，前提是他們及其各自的職位在皇室宮廷中是合格且正在履行職務的；然而，如果上述的職位或其各自的人員不合格，則由皇帝或國王的職位主管，在該職位空缺或職位人員缺席時，以該職位的名義和工作來填補，他便可從中獲取利益和收益。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[4] So auch ein furste lehin inphehit von keisir adir von konige und uf eyme pherde adir uf eyme andirn fiehe sitzit, daz phert adir daz fiehe, willichirleie iz ist, sal deme obirstin marschalke deme hirtzaugin von Sassin werdin, ob er geinwurtig ist; andirs iz wurde dem undirmarschalke von Pappinheim: ist er nit da, so wirt iz des keisirs adir konigis hofe-marschalg.</p></div>
+                <div class="doc-col doc-translation"><p>若有諸侯被皇帝或國王封領，並騎乘一匹馬與另一匹牲畜，凡是駕馭牲畜者，若其具備能力，則應成為薩克森的管家兼大軍參謀長；若不符合此條件，則應成為帕平海姆的副軍參謀長；倘若該職位空缺，則由皇帝或國王的宮廷軍參謀長擔任。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[147] Sit daz die wirdekeit Romischis richis hat zuo bedrachtin gesetze unde uzrichtin manigirhande lande, die undirscheidin sint an setin[108] an leben an sprache, so ist von urteil allir wise wirdig und nutze geachtit, daz die kurfursten, die da sint sule und gledir des richis, sin gelerit in undirscheit manigirhande sprache unde zungen, daz sie fele lude virsten, und auch daz man sie virste, und daz sie mit sorgsamkeit vil lutin ir not uffhebin; darumb setzin wir, daz der herluchtin kurfursten des konigis von Beheim, des paltzgraven[109] von Rine, des hirtzzaugin von Sassin und des margraven von Brannen-burg sone adir ir irbin adir ir nochkomen gelerit werdin in Latiner Lamparter und Slefener zuonge, anzufahin von deme jare irs altirs, wan iz dofur zu haltin ist, daz in Dutsche sprache zuo wißin naturlich ingeplantzt ist von kintheit zu lerin, also daz sie undir 14[110] jarin irs altirs gelerit sin in solichin zungen, alse sie dan gnade von gode darubir han in-phangin; daz wirt nit alleine nutze, iz wirt auch von vorgenant sachin gar hohe notdurftig gehaltin.</p></div>
+                <div class="doc-col doc-translation"><p>鑑於羅馬帝國的偉大，必須考慮並制定法律，而這個帝國由許多不同的領地組成，這些領地在語言和習俗上各不相同。因此，我們認為，所有賢明且有用的決策者都應該學習和掌握帝國各個不同領地的語言和方言，以便他們能夠理解他人的言論，同時也能被他人理解，並且他們應當謹慎地幫助人們解決困境。因此，我們規定，來自波希米亞國王、萊茵行宮伯爵（普法爾茨選侯）、薩克森公爵以及勃蘭登堡邊境伯（勃蘭登堡侯爵）等尊貴的選帝侯，應當從他們年紀開始學習拉丁語、倫巴底語（義大利語）和斯拉夫語，直到他們達到十四歲的年齡，這樣他們才能獲得上帝的恩寵。這不僅是有益的，同時也是為了滿足前面所述的極高需求。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Darumb daz die zungen dicke zuo nutze und notdurft des heiligin richis gewon-lich sint zuo ubin und in strengen sachin des richis me virjagit[111] werden dese wise zuo lernen, setzin wir also zu halten, daz iz blibe an fedir wille, ob sie sone hant adir ire nestin, von den sie sich virsehin, daz sie irben an den furstendum, schickin zuo den stedin, da sie die seibin zungen mogen lernen adir in zuo fugin in irin eygin husirn zuchtmeistir lerer und kinde-medegesellin, die auch darinne virstendig sint, mit der wandele und lere sie mit einandir mogint in den zungin undir-wisit werden. |</p></div>
+                <div class="doc-col doc-translation"><p>由於這些語言對於神聖帝國的利益和需求至關重要，在帝國嚴肅的事務中極為重要，故我們特此規定，無論他們是否有後代，他們都應將其繼承人送往城鎮，讓他們能夠學習七種語言，並與其家族的家庭教師和兒童夥伴（這些夥伴也精通這些語言）一同學習，使他們能夠互相在語言和知識上進行學習與傳授。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>Anmerkungen der Vorlage</p></div>
+                <div class="doc-col doc-translation"><p>原始文本註釋</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><p>[Bearbeiten]- ↑ Es ist mitunter zweifelhaft, ob nicht statt tz, wie ich immer drucke, cz zu lesen ist; ebenso kann uo mitunter auch für ue gehalten werden. Das tt der Hds. sieht einem ck sehr ahnlich.</p></div>
+                <div class="doc-col doc-translation"><p>有時令人懷疑，是否應讀作 cz，而非如我一直刊印的 tz；同樣地，uo 有時也可能被視為 ue。手稿中的 tt 與 ck 看起來極為相似。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Die 14 Hexameter, welche der Originalfassung der G. B. vorausgehen, boten dem Uebersetter solche Schwierigkeiten, dass er sie wegliess; doch stehen sie lateinisch auf der letzten Seite unserer Hds. (S. 72), von anderer Hand geschrieben. Weggelassen ist in der Uebersetzung auch die Zusammenstellung der Capitelüberschriften des I. Theiles.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>前置於《黃金詔書》原始版本之十四行六行詩，對譯者而言造成了極大的困難，故他將其省略了；然而，這些詩句以拉丁文形式出現在本譯本的最後一頁（第72頁），且是由另一位人士所書寫。此外，譯本中也省略了第一部分章節標題的彙編。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ stalpin (lat. palpent) stampfen, stolpern.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>↑ stalpin（拉丁語：palpent）踩踏、踉蹌。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Gestell für Leuchter; Leuchter.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>燭台；燭台架。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ rem publicam.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>公共體</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Tu quidem, invidia, christianum imperium!</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>確實，你便是基督教帝國的妒火！</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ fundamentum.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>基礎</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ septiformis.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>七方結構</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Sane cum</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>健全地與</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. von</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>諸侯家族的</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Kleidung (insigniis).</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>服飾（徽章）</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Für die Worte „recht zuo schuren“ keine Vorlage im Original; der ganze Satz ist in der Uebersetzung etwas umgestellt.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>關於「recht zuo schuren」這幾個詞，原始文本中沒有對應的依據；整句話在譯文中有所調整。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ „Dis ist geschehin“ vom Uebersetzer der Deutlichkeit wegen hinzugefügt.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>翻譯者為求清晰，增補了「Dis ist geschehin」。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hs. genudit.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>如手稿所述。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ ipso facto exnunc prout extunc.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>自此即刻生效，並永續不變。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ insine iudicio seu invocatione.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>共同的判決或申訴</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ rempublicam, s.o. S. 109 A. 3.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>共和國，參見 S. 109 A. 3。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ hostiles custodias.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>敵對者的看守</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ später meist: botin.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>後來通常稱之為 botin。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ ita videlicet.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>也就是說。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. richtir.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>規範繼承事宜。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ nichilominus.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>儘管如此。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ d. h. der Nürnberger Beschlüsse; unten Cap. 19.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>↑ 即指《紐倫堡決議》；詳見第19章。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ executio.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>執行</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ vero</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>確實地</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ cum effectu</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>即刻生效</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. von; s. auch S. 109 A. 8.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>依據手稿；亦參閱第 109 頁 A. 8。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ memoria</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>記憶</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ quorum presidio dextra imperialis potentie roboratur</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>皇帝的權力藉由其防衛與支持而得到鞏固。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. blibin die</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>既定的條文得以保留。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Umstellungen gegenüber dem Original.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>相對於原文的改動。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Im Or. nur: De principibus electoribus in communi.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>原文僅載：關於選舉諸侯的共同性。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Im Or.: De comparatione principum electorum ad alios principes communes.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>關於被選舉諸侯與其他普通諸侯的比較</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. dem.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>世襲領地</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ deo auctore.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>神聖所授</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ legitimos.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>正統之者</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Construction!</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>結構</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ successio.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>繼承制度</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. ampmit.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>確立繼承權的範圍</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ denique.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>最終地</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Sic! Or. De auri argenti et aliarum specierum mineris.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>如此！著作：《關於黃金、白銀及其他種類金屬的論著》。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Sic! Or. De monetis.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>貨幣條例</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ a iudieiis extraneis.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>關於外邦法官。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Die kaiserliche Interpretation dieses Capitels, welche in dem Böhmischen Exemplar der G. B. zwischen 1366 und 1378 in margine zugefügt worden ist, fehlt in dieser alten Uebersetzung.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>皇帝對本章節的詮釋，是在波希米亞黃金詔書的副本中，於1366年至1378年間被增補於頁邊的，然而這份舊譯本中卻缺失了該詮釋。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ a b Hds. hafe.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>參見手稿記載。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ frequentationem convivii.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>出席宴會</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ generales invitutas.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>應邀出席的諸侯</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ sic!</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>如此規定。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ permisse.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>許可</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. dahinter: wurde!</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>這些人之後，已然被如此處理。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Or. De hiis, quibus ut indignis auferuntur bona feudalia.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>關於這些人，其封建財產將被剝奪給不配之人。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ libere et realiter.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>自由且真實地。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. rede.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>諸侯獲得權利</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. gegebin.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>世襲權利。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ diffidacione obmissa.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>未對挑戰作出回應。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Or. nur: De conspirationibus.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>關於密謀事宜</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ pretextu parentele.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>以親屬為藉口。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ cuiuscunque coloris.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>無論其膚色如何</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. davor noch: dunt.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>這些事項，在先前亦應予授予。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ corruptela.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>賦課</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ fiscus.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>國庫</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Dieser Satz im Or. schon vorher in kürzerer Fassung.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>該句在原始文本中，早前已以簡潔版本出現。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ et nichilominus.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>且無他焉。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ contendunt defensare.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>他們致力於捍衛。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ non ficte.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>實質上</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Nichilominus hos.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>對他們而言，毫無例外。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ alienos.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>外人的。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ cum honore.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>秉持榮譽</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ rapinas.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>掠奪</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. von; vgl. S. 118 A. 1.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>參見 Hds. von；另參閱第 118 頁 A 卷第 1 行。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ fraus.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>參見弗勞斯（fraus.）</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. ane.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>繼承事宜</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Or. nur: Litera intimationis.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>原文僅為「通知函」。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Entsprechend der in Cap. 18 an den Kurfürsten von Brandenburg gerichteten Aufforderung zur Wahl wird in unsrer Uebersetzung (im Or. allgemein gefasst: „Nos ... talis dei gracia etc.“) in dieser Vollmacht der Kurfürst Ludwig d. Römer von Brandenburg († 17. Mai 1365) als Aussteller genannt; der Uebersetzer fingirt hier offenbar den zu seiner Zeit lebenden Kurfürsten von Brandenburg, welcher thatsächlich nie eine solche Vollmacht ausgestellt hat. Hatten wir früher (vgl. S. 128 A. 1) bereits das Jahr 1366 als möglichen Termin für die Abfassung unserer Uebersetzung gefunden, so ergiebt sich nun als Endtermin das erste Drittel des Jahres 1365.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>根據第十八章中針對布蘭登堡選帝侯的選舉請求，在本譯本中（原文則籠統地表述為「我們……天恩之下等」），該授權書的簽發者被列為布蘭登堡選帝侯路德維希·德·羅默（Ludwig d. Römer von Brandenburg，卒於 1365 年 5 月 17 日）；譯者顯然在此虛構了當時在世的布蘭登堡選帝侯，而他實際上從未簽發過此類授權書。我們先前（參見第 128 A. 1 頁）曾將 1366 年視為本譯本編纂的可能日期，但現在最終日期則確定為 1365 年的第一季度。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Diese Namen sind fingirt; im Or. stehen dafür je drei Punkte.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>這些名字是虛構的；在原文中，它們分別以三個點來表示。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ sic!</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>原文如此。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. von; vgl. S. 133 A.3.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>詳見主旨；請參照第 133 頁 A.3。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ quorum virtute.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>憑何權力。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. … chir.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>主要事項...</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. von; vgl. S. 135 A. 1.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>參見主要文件；比較第 135 頁 A. 1。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. asse.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>參見 Hds.</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Or.: De ordine processionis prineipum electorum et per quos in-signia deportentur.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>關於選舉諸侯的儀式巡行順序，以及誰負責運載其職務徽章。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Or.: De benedictionibus archiepiscoporum in presentia imperatoris.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>關於大主教在皇帝在場時的祝聖</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Diese Ueberschrift findet sich in keiner der sog. Original-Handschriften der G. B.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>該標題註並未出現在所謂的 G. B. 原始手稿中的任何一份。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Das klein Gedruckte ist ein späterer Zusatz, der als solcher im Kurmainzischen Exemplar kenntlich ist; in den Ausfertigungen für die Kurfürsten von Köln, Trier und der Pfalz fehlt dieser Zusatz, welcher eigentlich vor der Ueberschrift des Cap. 24 stehen müsste, gänzlich.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>較小的印刷文字是一個後加的補充內容，在美因茨選帝侯版本中可辨識；然而，在科隆、特里爾和普法爾茨選帝侯的副本中，缺少了此補充，而此補充實際上應當完整地置於第24章的標題之前。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ sive testata sive inteslata.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>無論是經證明的，抑或是未經證明的。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ minus ausuras.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>損失較少。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. sie.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>其核心要旨。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ ususfructus (Ertrag, Einkünfte).</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>應受用權（收益、收入）</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Die §§ 11 und 12 im Or. umgestellt.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>第11條與第12條在原文中已調整順序。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ incerta.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>存疑。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ In den Or.-Hdss keine Ueberschrift</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>在條例章節中沒有標題。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. noch: irbin.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>核心事項亦包括：繼承者。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ famosi et notabilis defectus.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>著名與顯赫者的瑕疵。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ In den Or.-Hdss. keine Ueberschrift.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>在條文主體中，沒有標題。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Oben (s.S. 110 A. l) wat</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>參見上方（第 110 A 頁）。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ = sumber, Korb; Or. mensura.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>↑ = 來源為 Korb；原文為 mensura。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ sic! später (S. 146) richtig.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>照原文！後續（第146頁）有更正。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ S. auch S. 142 A. 2.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>亦參見第 142 頁 A. 2。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Ueberschrift fehlt im Or.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>原文中缺乏標題。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ beiten = warten (exspectare).</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>「beiten」等同於「warten」（exspectare）。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Diese Ueberschrift (Abgrenzung) fehlt in der Hds.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>此標題（界定）在該手稿中缺失。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. XXIX, vgl. A. 2.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>參見史料第XXIX卷，以及資料A第2條。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Or.: De iuribus officialium, dum principes feuda sua ab imperatore Tel rege Romanorum recipiunt.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>關於職官的權利，當諸侯從羅馬國王皇帝泰奧多里克那裡接收他們的封地。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hs. von; vgl. S. 136 A. 1.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>參見 [Hs. von] 頁 136 A. 1。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. XXX; vgl. S. 145 A. 2.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>參見稿本 XXX；比較第 145 頁 A 面 2。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Ueberschrift fehlt im Or.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>原文缺少標題。</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ sic!</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>（原文如此）</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. der paltzgrave.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>神聖羅馬帝國的（某）地界</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ Hds. XXIV!</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>第 XXIV 條</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            
+            <div class="doc-3col-row">
+                <div class="doc-col doc-original"><ul>
+<li>↑ ventilantur.</li>
+</ul></div>
+                <div class="doc-col doc-translation"><p>得以行使</p></div>
+                <div class="doc-col doc-explanation"></div>
+            </div>
+            </div>
+        </div>
     </main>
 
     <!-- Right Sidebar / Floating Footer: Search & Version -->
@@ -1518,7 +3343,7 @@
             <div class="footer-version-col">
                 <div class="version-card">
                     <div style="font-weight: 600; margin-bottom: 8px; color: var(--primary-color);">📝 版本與課堂宣告</div>
-                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：3.0 (雙層導覽與響應式選單)</div>
+                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：3.1 (雙層導覽與三欄式對照文件)</div>
                     <div style="color: #718096; font-size: 0.75rem;">發布日期：2026-05-28</div>
                     <hr style="border: none; border-top: 1px dashed #cbd5e0; margin: 8px 0;">
                     <div id="dynamic-course-info" style="text-align: left; font-size: 0.8rem; line-height: 1.5;">
@@ -1567,6 +3392,14 @@
                 <b>👤 內容生成：</b>AI 深度研究<br>
                 <b>🛠️ 網頁工程：</b>Antigravity 協作
             </div>
+        `,
+        page04: `
+            <div style="font-size: 0.85rem; color: #4a5568; line-height: 1.6;">
+                <b>📚 當前文件：</b>神聖羅馬帝國：金璽詔書<br>
+                <b>🏷️ 內容版本：</b>1.0<br>
+                <b>👤 內容生成：</b>AI 深度研究<br>
+                <b>🛠️ 網頁工程：</b>Antigravity 協作
+            </div>
         `
     };
 
@@ -1576,6 +3409,14 @@
 
     function switchPage(pageId) {
         activePageId = pageId;
+        
+        // Handle full-width doc mode
+        const layout = document.querySelector('.layout');
+        if (pageId === 'page04') {
+            layout.classList.add('doc-mode');
+        } else {
+            layout.classList.remove('doc-mode');
+        }
         
         // Update active tab buttons
         document.querySelectorAll('.nav-tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -1821,7 +3662,7 @@
             return;
         }
 
-        const matchedPage = ['page01', 'page02', 'page03'].find(p => hash.startsWith(p));
+        const matchedPage = ['page01', 'page02', 'page03', 'page04'].find(p => hash.startsWith(p));
         if (matchedPage) {
             if (activePageId !== matchedPage) {
                 switchPage(matchedPage);
