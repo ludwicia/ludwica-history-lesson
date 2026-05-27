@@ -225,11 +225,10 @@ portal_template = """<!DOCTYPE html>
                 position: absolute;
                 top: 100%;
                 left: 0;
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
-                min-width: 200px;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-                border: 1px solid rgba(255,255,255,0.2);
+                background: #ffffff;
+                min-width: 220px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+                border: 1px solid rgba(0,0,0,0.05);
                 border-radius: 8px;
                 padding: 10px;
                 display: flex;
@@ -240,6 +239,9 @@ portal_template = """<!DOCTYPE html>
                 transform: translateY(10px);
                 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 z-index: 1000;
+                box-sizing: border-box;
+                height: auto;
+                min-height: min-content;
             }
             .nav-group:hover .nav-dropdown {
                 opacity: 1;
