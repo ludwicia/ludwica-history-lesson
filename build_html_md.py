@@ -950,14 +950,9 @@ portal_template = """<!DOCTYPE html>
                 });
             }
             
-            // Set initial state
-            if (isMobile) {
-                h2.classList.add('collapsed');
-                h2._contentElements.forEach(el => el.style.display = 'none');
-            } else {
-                h2.classList.remove('collapsed');
-                h2._contentElements.forEach(el => el.style.display = '');
-            }
+            // Set initial state - Default to EXPANDED on all devices
+            h2.classList.remove('collapsed');
+            h2._contentElements.forEach(el => el.style.display = '');
         });
     }
 
