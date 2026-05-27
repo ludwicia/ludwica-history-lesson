@@ -746,9 +746,9 @@ portal_template = """<!DOCTYPE html>
     <div class="nav-container">
         <div class="nav-mobile-header">
             <div class="nav-mobile-title">🏛️ 歷史課程導覽</div>
-            <button class="nav-mobile-toggle" id="navMobileToggle">收合 ▲</button>
+            <button class="nav-mobile-toggle" id="navMobileToggle">展開 ▼</button>
         </div>
-        <div class="nav-links" id="navLinks">
+        <div class="nav-links collapsed" id="navLinks">
             <!-- 歷史專題 -->
             <div class="nav-group">
                 <div class="nav-group-title">歷史專題 <span class="dropdown-arrow">▼</span></div>
