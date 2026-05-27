@@ -485,7 +485,34 @@
                 box-shadow: 0 2px 8px rgba(0,0,0,0.01);
             }
         }
+        .nav-mobile-header { display: none; }
         @media (max-width: 800px) {
+            .nav-mobile-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding-bottom: 5px;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+            .nav-mobile-title {
+                font-weight: 700;
+                color: var(--primary-color);
+                font-size: 1.05rem;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .nav-mobile-toggle {
+                background: var(--primary-color);
+                border: none;
+                color: white;
+                padding: 4px 12px;
+                border-radius: 20px;
+                font-size: 0.78rem;
+                font-weight: 600;
+                cursor: pointer;
+            }
             .top-nav {
                 height: auto;
                 padding: 10px 0;
@@ -495,15 +522,15 @@
                 gap: 10px;
                 padding: 0 15px;
             }
-            .nav-brand {
-                font-size: 1.15rem;
-            }
             .nav-links {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
                 gap: 15px;
                 align-items: flex-start;
+            }
+            .nav-links.collapsed {
+                display: none;
             }
             .nav-group {
                 flex-direction: column;
@@ -624,7 +651,11 @@
 <!-- Glassmorphism 置頂導覽列 -->
 <nav class="top-nav">
     <div class="nav-container">
-        <div class="nav-links">
+        <div class="nav-mobile-header">
+            <div class="nav-mobile-title">🏛️ 歷史課程導覽</div>
+            <button class="nav-mobile-toggle" id="navMobileToggle">收合 ▲</button>
+        </div>
+        <div class="nav-links" id="navLinks">
             <!-- 歷史專題 -->
             <div class="nav-group">
                 <div class="nav-group-title">歷史專題 <span class="dropdown-arrow">▼</span></div>
@@ -1759,6 +1790,26 @@
             footerToggleBtn.innerText = isCollapsed ? '展開 ▲' : '收合 ▼';
         };
         footerHeader.addEventListener('click', toggleFooter);
+    }
+
+    // 7.5 Mobile Top Nav Toggle
+    const navMobileToggle = document.getElementById('navMobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navMobileToggle && navLinks) {
+        navMobileToggle.addEventListener('click', () => {
+            const isCollapsed = navLinks.classList.toggle('collapsed');
+            navMobileToggle.innerText = isCollapsed ? '展開 ▼' : '收合 ▲';
+        });
+        
+        // Auto-close menu when a link is clicked on mobile
+        document.querySelectorAll('.nav-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (window.innerWidth <= 800 && !navLinks.classList.contains('collapsed')) {
+                    navLinks.classList.add('collapsed');
+                    navMobileToggle.innerText = '展開 ▼';
+                }
+            });
+        });
     }
 
     // 8. Hash routing listener
