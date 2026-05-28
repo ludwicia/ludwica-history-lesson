@@ -432,7 +432,10 @@ portal_template = """<!DOCTYPE html>
             max-width: 1400px;
         }
         .layout.doc-mode .sidebar-left { display: none !important; }
-        .layout.doc-mode .sidebar-right { display: none !important; }
+        /* Only hide sidebar-right on desktop; on mobile it's the floating footer */
+        @media (min-width: 1201px) {
+            .layout.doc-mode .sidebar-right { display: none !important; }
+        }
         
         .doc-3col-container {
             display: flex;

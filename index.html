@@ -284,7 +284,10 @@
             max-width: 1400px;
         }
         .layout.doc-mode .sidebar-left { display: none !important; }
-        .layout.doc-mode .sidebar-right { display: none !important; }
+        /* Only hide sidebar-right on desktop; on mobile it's the floating footer */
+        @media (min-width: 1201px) {
+            .layout.doc-mode .sidebar-right { display: none !important; }
+        }
         
         .doc-3col-container {
             display: flex;
@@ -1583,8 +1586,7 @@
 <li>Wikisource → 维基文库</li>
 <li>Deutschland → 德国</li>
 <li>Greifswald → 格赖夫斯瓦尔德</li>
-<li>Kaiser → 凱撒 (德國)</li>
-<li>Des → D♭ (音名)</li>
+<li>Kaiser → 皇帝</li>
 </ul>
 <p>Goldene Bulle (Frankfurter Übersetzung)</p></div>
                 <div class="doc-col doc-translation"><p>黃金詔書（法蘭克福譯本）</p></div>
@@ -1649,7 +1651,7 @@
             
             <div class="doc-3col-row">
                 <div class="doc-col doc-original"><p>Jahrhunderts noch häufig bemerkbaren Frankfurter Schreibers ist und somit nicht aus der Reichskanzlei stammt, so glaube ich unten bei Cap. 19 nachweisen zu können, dass diese Uebersetzung spätestens vor Mai 1365 entstanden sein muss; auch liegt ihr nicht, wie die Capitelüberschriften erkennen lassen, das Exemplar der G. B. zu Grunde, welches die Stadt Frankfurt im Jahre 1366 vom Kaiser erworben hat. Der folgende Abdruck schliesst sich aufs Engste an die Handschrift[1] an, doch sind grosse Anfangsbuchstaben nur nach Punkten gesetzt, i und j, u und v, welche in der Hds. willkürlich durcheinandergehen, geschieden worden. Betreffs der Interpunction, Satzabtheilung u. s. w. folge ich der Ausgabe in: „Ausgewählte Urkunden zur Erläuterung der Verfassungsgeschichte Deutschlands im Mittelalter. Herausgegeben von Wilh. Altmann und E. Bernheim. 2. Auflage.</p></div>
-                <div class="doc-col doc-translation"><p>這份手稿是當時在法蘭克福常見的書寫風格，並非來自帝國秘書處，因此我認為可以在第19章證明，這份譯本最遲必須在1365年5月之前產生；而且，正如章節標題所顯示，它並非是法蘭克福市在1366年從凱撒 (德國) 那裡獲得的《黃金詔書》範本。接下來的複印件與手稿[1]極為相似，但由於手稿中大寫字母僅以點號標記，即 i 和 j、u 和 v，這些字母在手稿中是隨意混用的，因此我將其分開了。關於標點符號、句法劃分等問題，我遵循了以下出版物：維爾赫姆·阿特曼（Wilh. Altmann）和埃里希·伯恩海姆（E. Bernheim）編纂的《中世紀德國憲法史選集文件》。第二版。</p></div>
+                <div class="doc-col doc-translation"><p>這份手稿是當時在法蘭克福常見的書寫風格，並非來自帝國秘書處，因此我認為可以在第19章證明，這份譯本最遲必須在1365年5月之前產生；而且，正如章節標題所顯示，它並非是法蘭克福市在1366年從皇帝那裡獲得的《黃金詔書》範本。接下來的複印件與手稿[1]極為相似，但由於手稿中大寫字母僅以點號標記，即 i 和 j、u 和 v，這些字母在手稿中是隨意混用的，因此我將其分開了。關於標點符號、句法劃分等問題，我遵循了以下出版物：維爾赫姆·阿特曼（Wilh. Altmann）和埃里希·伯恩海姆（E. Bernheim）編纂的《中世紀德國憲法史選集文件》。第二版。</p></div>
                 <div class="doc-col doc-explanation"></div>
             </div>
             
@@ -1673,7 +1675,7 @@
             
             <div class="doc-3col-row">
                 <div class="doc-col doc-original"><p>In druoen[9] wan[10] wir von amptes wegin, von dem wir gebruchen keisirliche wirdekeit, schuldig sin zuo begegen kuonftigem schadin der zurdeilunge missehelle undir den kurfursten, in der zal wir auch [sint] alse ein konig von Beheim, von zweyn sachin, beide von keisirduom und von recht der kure, der wir gewon-lichin nutzen: so han wir in unserm uffin hofe zuo Nurenberg, da alle kurfursten geistlich und werntlich by uns sassin mit zallichir menige andern fursten grefin baneren frien edelen [110] und der stede uf dem stule keisirlichir almechtekeit, gezerit mit keisirlichir ymfeln wat[11] und krone, mit sedegemme baoradin muode von fullenkomenheit keisirlichis gewaltis gemacht gesetzit und mit keisirlichem bekanteniße bestedigit die nach-geschrebenen gesetze, recht zuo schuoren[12] und zuo fuoren einbir-keit undir den kurfursten und ein eynmuoge wal inzulegene und auch zuo furbeslißin den zuogang der vorgenant virsmehit zurdrennunge und manigirhande schadin, die daruz nochfulgent.</p></div>
-                <div class="doc-col doc-translation"><p>我們因職務之故，對於分配權力給選帝侯，若未能預防可能發生的損害，負有責任。選帝侯的數量，我們亦視為波希米亞國王。我們有兩項事宜，皆與帝國及選帝侯的權利有關，即我們在紐倫堡帝國議會中，所有精神和世俗的選帝侯，與眾多其他選帝侯、貴族一同聚集，並在帝國權力的寶座上，裝飾著帝國的紋章和皇冠，並以完整的帝國權力鑄造了這本法典，並以帝國的認可予以確認，其中載有以下法律，旨在保障選帝侯的團結，並為選帝侯的選舉提供一個統一的途徑，同時也旨在防止上述選帝侯在分配權力時，發生任何隨之而來的損害。</p></div>
+                <div class="doc-col doc-translation"><p>我們因職務之故，對於分配權力給選帝侯，若未能預防可能發生的損害，負有責任。選帝侯的數量，我們亦視為波希米亞國王。我們有兩項事宜，皆與帝國及選帝侯的權利有關，即我們在紐倫堡帝國議會中，所有精神和世俗的選帝侯，與眾多其他諸侯、伯爵、男爵、自由領主、貴族一同聚集，並在帝國權力的寶座上，裝飾著帝國的紋章和皇冠，並以完整的帝國權力鑄造了這本法典，並以帝國的認可予以確認，其中載有以下法律，旨在保障選帝侯的團結，並為選帝侯的選舉提供一個統一的途徑，同時也旨在防止上述選帝侯在分配權力時，發生任何隨之而來的損害。</p></div>
                 <div class="doc-col doc-explanation"></div>
             </div>
             
@@ -1697,7 +1699,7 @@
             
             <div class="doc-3col-row">
                 <div class="doc-col doc-original"><p>[2] Darubir setzen wir und gebiedin andirn fursten ge-meinlichin, wie sie genant sin, die gelehint sin von deme heiligen Romischen riche, und auch allin grefin landishern rittern knechten edel und unedel burgeren und gemeynen und allen insesses der bürge und stede und allen steden des heiligen richis, daz sie zuo der seibin zit, so man die kur duon sal eyns [111] Romischin konigis zuo eyme kunfftigen keisir, eynen iegelichin kurfursten, so ers an sie forderd, adir sine boten, die er zuo der kuor sendit, sullen geleidin durch ir gebiede und so sie ferste mogen, alse vor bedacht ist, ane alle geverde.</p></div>
-                <div class="doc-col doc-translation"><p>因此，我們同時規定並命令所有被稱為「神聖羅馬帝國」的選帝侯，以及所有領地貴族、騎士、僕從、貴賤市民、以及神聖帝國所有城鎮和定居點的居民，在選舉時間，當他們需選出一位羅馬國王作為未來的皇帝、一位選帝侯時，應當聽從他們派遣的使者，通過他們的領地，並在他們能夠控制的範圍內，按照既定方式，提供所有必要的支持。</p></div>
+                <div class="doc-col doc-translation"><p>因此，我們同時規定並命令所有被稱為「神聖羅馬帝國」的諸侯，以及所有領地貴族、騎士、僕從、貴賤市民、以及神聖帝國所有城鎮和定居點的居民，在選舉時間，當他們需選出一位羅馬國王作為未來的皇帝、一位選帝侯時，應當護送他們派遣的使者，通過他們的領地，並在他們能夠控制的範圍內，按照既定方式，提供所有必要的支持。</p></div>
                 <div class="doc-col doc-explanation"></div>
             </div>
             
@@ -1714,44 +1716,44 @@
             </div>
             
             <div class="doc-3col-row">
-                <div class="doc-col doc-original"><p>[3] Wir setzin und gebiedin, daz burger und gemeynne den vorgenant kurfursten, so sie iz von in fordern, schuldig sin zuo virkeiffin und schaffin, daz man yn virkeiffe spise, so ir und iren boten und irs fulkys notdurfft, noch gemeyme lauffe und werd, so sie farn zuo der stat, da man die kur begen sal, unde auch, so sie von dannen farin; zuo den vor- geschreben dingen sal niemans kein geverde legin; wer andirs darweddir dete, so wullen wir, daz er mit der gedede falle in die buße, die in dem vorgesetzen widdir burgir und gemeinne von uns uzgekundit sint.</p></div>
+                <div class="doc-col doc-original"><p>[3] Wir setzin und gebiedin, daz burger und gemeynne den vorgenant kurfursten, so sie iz von in fordern, schuldig sin zuo virkeiffin und schaffin, daz man yn virkeiffe spise, so ir und iren boten und irs fulkys notdurfft, noch gemeyme lauffe und werd, so sie farn zuo der stat, da man die kur begen sal, unde auch, so sie von dannen farin; zuo den vorgeschreben dingen sal niemans kein geverde legin; wer andirs darweddir dete, so wullen wir, daz er mit der gedede falle in die buße, die in dem vorgesetzen widdir burgir und gemeinne von uns uzgekundit sint.</p></div>
                 <div class="doc-col doc-translation"><p>我們規定並命令，當上述選帝侯被召集時，公民和民眾有義務出席並聚集，以便他們、他們的使者以及全體民眾的需求，能遵循群眾的引導，前往舉行選舉的城鎮，以及若他們離開該處。任何人不得妨礙上述事宜；若有人違背此規定，我們命令他將因此行為而受到先前已向公民和民眾公布的罰款。</p></div>
                 <div class="doc-col doc-explanation"></div>
             </div>
             
             <div class="doc-3col-row">
                 <div class="doc-col doc-original"><p>Welchir herubir von fursten grefin landisherren rittern burgern und gemeynnen eyme kurfursten, so er ferit zuo der kure eynen Romischen konig zuuo kiesin adir, [112] so er von dannen ferit, fintliche hude[18] furmachit adir sicb virmissit loge zuo legen adir sie adir etlicbeme undir in an sinre adir sinre lude lip adir gut anegriffit, anebetrubit adir ir vorgenant badin[19] (sie beischin geleide adir nit), den urteilen wir furfallin an der gedat in die vorgenant buße mit allin gesellin siner bosheit, also zu wise[20], daz iecliche persone in die buße falle, die wir nach undirscheit der personen hievor han uf-gesetzit.</p></div>
-                <div class="doc-col doc-translation"><p>凡是從選帝侯、領地貴族、騎士、市民和公民中選出一位選帝侯的人，如果他前往選舉，選出一位羅馬國王，而從此之後，他對他人發動了戰爭，或對其盟友進行了攻擊，或對其領地（不包括其附屬領地）進行了侵犯，那麼我們裁定他應受先前規定的懲罰，並連同他所有的罪惡一起受罰，也就是說，每個人都應受我們根據各人所制定的懲罰。</p></div>
+                <div class="doc-col doc-translation"><p>凡是從諸侯、伯爵、領地貴族、騎士、市民和公民中，有人對一位選帝侯，如果他前往選舉，選出一位羅馬國王，而從此之後，他對他人發動了戰爭，或對其盟友進行了攻擊，或對其領地（不包括其附屬領地）進行了侵犯，那麼我們裁定他應受先前規定的懲罰，並連同他所有的罪惡一起受罰，也就是說，每個人都應受我們根據各人所制定的懲罰。</p></div>
                 <div class="doc-col doc-explanation"></div>
             </div>
             
             <div class="doc-3col-row">
                 <div class="doc-col doc-original"><p>[4] Wer auch, daz etzlicbir kurfurste mit etwemme sime mitdekurfursten fintschafft druge und undir in wellichirleye krieg widdirsache adir missehellunge lieffe, die ding sullen in keine wis daweddir sin: eynre sy deme andirn gebunden zuo geleidin und sine boten, die er zuo der seibin kure sendet, mit vorgesatztir wiße by der pene meynneidis und virluste sundir zuo dem male siner stimme in der kure, alse for uzgesprochin ist.</p></div>
-                <div class="doc-col doc-translation"><p>若有任何一位選帝侯與其他選帝侯共同參與某項事宜，而由此引發戰爭或軍事行動，則此等事宜不得由任何一方單方面決定：必須由其所約束的各方，派遣代表前往相關的選帝侯會議，並依照事先約定的方式，在會議中就相關的權利與損失達成共識。</p></div>
+                <div class="doc-col doc-translation"><p>若有任何一位選帝侯與其同僚選帝侯之間某項事宜，而由此引發戰爭或軍事行動，則此等事宜不得由任何一方單方面決定：必須由其所約束的各方，派遣代表前往相關的選帝侯會議，並依照事先約定的方式，在會議中就相關的權利與損失達成共識。</p></div>
                 <div class="doc-col doc-explanation"></div>
             </div>
             
             <div class="doc-3col-row">
                 <div class="doc-col doc-original"><p>[5] Wellichir auch andir furste grefe landishern ritter knecht edel adir unedel burgir adir gemeynne von den steden mit etlichem kurfursten adir mit me uzsir in widdir würdigen willin dinge adir wilchirleie zweyunge krieg adir missehelle lieffe, doch so sullent die seibin dem seibin adir den seibin kurfursten adir yrin boten, die sie zuo der seibin kure sendin, dar zu farino und her widdirumb zuo komen geleide geben ane alle widdirrede und geverde, alse ir ieclichir sundirlich vir-midin wulle die egenant buße, die von uns uf sie gesprochin sint; und wer darweddir dete, den urteylin wir zuo stunt gefallin in die seibin buße.</p></div>
-                <div class="doc-col doc-translation"><p>此外，若其他選帝侯也徵召地方的騎士、僕人、貴族或平民，以及城鎮的居民，在需要為某位皇帝或某位選帝侯提供軍事服務或參與戰爭時，則他們也必須向各自的選帝侯或他們派往選帝侯會議的使者，提供所有必要的軍備和資糧，如同他們各自承擔的特定罰款一樣；若他們未能如此，我們將判決他們必須繳納該等罰款。</p></div>
+                <div class="doc-col doc-translation"><p>此外，若其他諸侯、伯爵、領地貴族、騎士、僕人、貴族或平民，以及城鎮的居民，在需要為某位皇帝或某位選帝侯提供軍事服務或參與戰爭時，則他們也必須向該選帝侯或他們派往選舉的使者，提供所有必要的軍備和資糧，如同他們各自承擔的特定罰款一樣；若他們未能如此，我們將判決他們必須繳納該等罰款。</p></div>
                 <div class="doc-col doc-explanation"></div>
             </div>
             
             <div class="doc-3col-row">
                 <div class="doc-col doc-original"><p>Zuo eyner witern sichirheit und festekeit allir vorgesetz so heißin wir und wullin, daz alle kurfursten und andir fursten grefin landishern edele stede und ir gemeynne bestedegin mit briffin und mit yren eyden alle vorgesetze, und sullin sich, darzuo virbinden mit guten trewin und ane argelist kreffteclichin zuo fullinbrengen. Und wer sich hindirzüge die selben briffe zuo gebin, der fellit mit der dat in die buße, die wir nach undirscheit der personen ieclichim be-sundir uffgelegit hant mit den vorgesetzen.</p></div>
-                <div class="doc-col doc-translation"><p>為確保所有前述各方擁有進一步的保障與穩固，吾等特此宣佈並決議，所有選帝侯、選帝侯、伯爵、選帝侯、貴族、城市及其社群，皆須以文契與誓言，對所有前述各方承諾，並應以誠信與堅決之力來履行此承諾。若有任何人阻礙這些文契的頒發，則該人將受罰款，此罰款即為吾等已針對前述各方，個別所施加的懲罰。</p></div>
+                <div class="doc-col doc-translation"><p>為確保所有前述各方擁有進一步的保障與穩固，吾等特此宣佈並決議，所有選帝侯及其他諸侯、伯爵、領地貴族、城市及其社群，皆須以文契與誓言，對所有前述各方承諾，並應以誠信與堅決之力來履行此承諾。若有任何人阻礙這些文契的頒發，則該人將受罰款，此罰款即為吾等已針對前述各方，個別所施加的懲罰。</p></div>
                 <div class="doc-col doc-explanation"></div>
             </div>
             
             <div class="doc-3col-row">
-                <div class="doc-col doc-original"><p>[6] Auch willich kurfurste [adir furste], wilchis ardis adir wirdekeit er ist, lebin beldit von deme heiligin riche, adir [113] grefe landishern adir edel adir der nachkomen adir irben die vor- adir nachgeschrebin unsir keisirlich gesetze und recht nit wullint haltin adir in frefeliche widdirsprechin, ist is, daz her ein kurfurste ist, zuo stunt so sullint die andirn sine medekurfursten den selben furbaz me uz ir geselleschafft sließin, und sal darbin [der] stymme der kure und der kurfursten stat wirdekeit und recht und sal auch nit ingesetzit werdin von der lehin wegin, die er von deme riche heldit.</p></div>
+                <div class="doc-col doc-original"><p>[6] Auch willich kurfurste [adir furste], wilchis ardis adir wirdekeit er ist, lebin beldit von deme heiligin riche, adir [113] grefe landishern adir edel adir der nachkomen adir irben die voradir nachgeschrebin unsir keisirlich gesetze und recht nit wullint haltin adir in frefeliche widdirsprechin, ist is, daz her ein kurfurste ist, zuo stunt so sullint die andirn sine medekurfursten den selben furbaz me uz ir geselleschafft sließin, und sal darbin [der] stymme der kure und der kurfursten stat wirdekeit und recht und sal auch nit ingesetzit werdin von der lehin wegin, die er von deme riche heldit.</p></div>
                 <div class="doc-col doc-translation"><p>若有選帝侯（或君主）實為君主，並在神聖羅馬帝國之下生活，卻拒絕遵守先前所載的帝國法律與權利，並以犯罪方式加以違背，則由於其身份為君主，其他共同君主必須將其排除於他們的共同體之外。在此過程中，選帝侯議會與選帝侯的尊嚴及權利必須保持團結，且他亦不得失去其從帝國所擁有的地位與權益。</p></div>
                 <div class="doc-col doc-explanation"></div>
             </div>
             
             <div class="doc-3col-row">
                 <div class="doc-col doc-original"><p>Abir ein andir furste adir ein edel man, als vor geseit ist, der da missedjit an den seibin unsirn gesetzin, den sal auch glichirwiz nieman in lehin setzin, die er von dem heiligen riche adir von iemans andirs heldit; unde darzü fellit er zu stunt in alle vorgesetzite buße, die sine persone anedreffint. [7] Wie wir doch unvirscheidenlichin wullen und gesetzit han, daz alle fursten greffin landishern edele rittir[21] knecht stede und ir gemeyne virbundin sin daz vorgesprochene geleide zu lihenne eyme iegelichin kurfursten adir sime boten, alse vor geredit ist, so han wir doch ir ieclichem die mynre[22] nit sundirlich geleide und geleidis lude zuogeordenerit, die allir-meist darzuo geschickit sint nach deme gelegir der gegin und stede, alz iz sich zuo hant fullecliche ufinberit mit der nachgeschrebin rede.</p></div>
-                <div class="doc-col doc-translation"><p>任何其他選帝侯或貴族，只要如慣例般遵守我們的七項法律，便不應被任何人置於封臣地位，無論他是從聖羅馬帝國還是從他人的領地而持有該地位；在此情況下，他仍須接受所有涉及其個人的既定稅賦。我們無例外地希望並已規定，所有選帝侯、貴族領地騎士及其共同團體，都應被納入上述選帝侯之列，以協助任何一位選帝侯或其使者，正如先前所述。因此，我們已為各位指定了各自的特定選帝侯及相關選帝侯，他們最適合根據地域和地點來擔任此職，此細節已完整地載於後文。</p></div>
+                <div class="doc-col doc-translation"><p>任何其他選帝侯或貴族，只要如慣例般遵守我們的七項法律，便不應被任何人置於封臣地位，無論他是從聖羅馬帝國還是從他人的領地而持有該地位；在此情況下，他仍須接受所有涉及其個人的既定稅賦。我們無例外地希望並已規定，所有諸侯、伯爵、領地貴族、騎士及其共同團體，皆有義務為上述選帝侯，以協助任何一位選帝侯或其使者，正如先前所述。因此，我們已為各選帝侯指定了各自的特定護送人員及護送隊伍，他們最適合根據地域和地點來擔任此職，此細節已完整地載於後文。</p></div>
                 <div class="doc-col doc-explanation"></div>
             </div>
             
@@ -1781,7 +1783,7 @@
             
             <div class="doc-3col-row">
                 <div class="doc-col doc-original"><p>[15] Andir werbe setzin wir und ordeneren, daz der irtzbischoff von Mentze, der dan zuo ziten ist, sal iedem kurfursten besundir die kure virkunden mit sinen botin und mit sinen uffin brieffin; in den brieffin sal uzgeleit sin dag und zil, zusschin den die selbin brieffe zuo den selbin fursten nach gemeyme geduncke komen mogin; die seibin brieffe sullint haldin, daz von dem dage in den brieffen uzgeleit innewendig [115] dreyn den nesten manden sullin alle kurfursten und iegelichir besundir zuo Frankinfurd uf den Meyn geinwurtig sin adir sullint iren guden glauphaftigen badin zuo der seibin zyt und stat sendin mit irm fullin gantzen gewalde mit irin uffin brieffin mit ir iegelichis großem ingesegel besegelt, eynen Romischin konig zuo kiesen zu fuordirn in daz keisirduom.</p></div>
-                <div class="doc-col doc-translation"><p>[15] 我們並規定和命令，美因茨大主教（Mentze）在屆期時，必須透過其使者和信函，特別向每一位選帝侯宣佈選舉事宜；信函中應註明日期和目的地，以便這些信函能按時送達各選帝侯手中；這些信函必須保持，從信函中所註明的日期起，在接下來的兩個月內，所有選帝侯和選帝侯必須特別前往法蘭克福（Frankinfurd）的梅恩（Meyn）地區，並必須帶著他們所有的財富、信函，以及各自印有大印章的信件，在指定的時間和地點，以全部的權力前往，以推選一位羅馬國王進入帝國。</p></div>
+                <div class="doc-col doc-translation"><p>[15] 我們並規定和命令，美因茨大主教（Mentze）在屆期時，必須透過其使者和信函，特別向每一位選帝侯宣佈選舉事宜；信函中應註明日期和目的地，以便這些信函能按時送達各選帝侯手中；這些信函必須保持，從信函中所註明的日期起，在接下來的兩個月內，所有選帝侯必須特別前往法蘭克福（Frankinfurd）的梅恩（Meyn）地區，並必須帶著他們所有的財富、信函，以及各自印有大印章的信件，在指定的時間和地點，以全部的權力前往，以推選一位羅馬國王進入帝國。</p></div>
                 <div class="doc-col doc-explanation"></div>
             </div>
             
