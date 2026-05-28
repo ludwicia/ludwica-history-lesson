@@ -72,16 +72,26 @@ def process_3col_document(file_path, content_version):
         if "**原文**" in block and "**譯文**" in block:
             parts = block.split("**譯文**")
             original_part = parts[0].replace("**原文**", "").strip()
-            translated_part = parts[1].strip()
+            
+            # Check if there is an explanation part
+            translated_part_raw = parts[1]
+            if "**解釋**" in translated_part_raw:
+                trans_parts = translated_part_raw.split("**解釋**")
+                translated_part = trans_parts[0].strip()
+                explanation_part = trans_parts[1].strip()
+            else:
+                translated_part = translated_part_raw.strip()
+                explanation_part = ""
             
             original_text = markdown.markdown(original_part)
             translated_text = markdown.markdown(translated_part)
+            explanation_text = markdown.markdown(explanation_part) if explanation_part else ""
             
             html += f'''
             <div class="doc-3col-row">
                 <div class="doc-col doc-original">{original_text}</div>
                 <div class="doc-col doc-translation">{translated_text}</div>
-                <div class="doc-col doc-explanation"></div>
+                <div class="doc-col doc-explanation">{explanation_text}</div>
             </div>
             '''
         else:
@@ -141,8 +151,8 @@ html_body_p2 = process_markdown(file_p2, images_p2, "1.0", map_p2)
 print("Processing Page 3 (Hussite)...")
 html_body_p3 = process_markdown(file_p3, images_p3, "1.0", map_p3)
 
-print("Processing Page 4 (Golden Bull)...")
-file_p4 = r'4.金璽詔書.md'
+print("Processing Page 4 (Imperial Archives)...")
+file_p4 = r'4.德意志帝國檔案譯文解析(一).md'
 html_body_p4 = process_3col_document(file_p4, "1.0")
 
 # Full Portal HTML Template
@@ -893,7 +903,7 @@ portal_template = """<!DOCTYPE html>
             <div class="nav-group">
                 <div class="nav-group-title">歷史文件 <span class="dropdown-arrow">▼</span></div>
                 <div class="nav-dropdown">
-                    <a href="#page04" id="nav-btn-page04" class="nav-tab-btn" style="text-decoration: none;">神聖羅馬帝國：金璽詔書</a>
+                    <a href="#page04" id="nav-btn-page04" class="nav-tab-btn" style="text-decoration: none;">德意志帝國檔案譯文解析(一)</a>
                 </div>
             </div>
         </div>
@@ -932,7 +942,7 @@ portal_template = """<!DOCTYPE html>
             __HTML_BODY_PAGE03__
         </div>
 
-        <!-- 歷史文件一：金璽詔書 -->
+        <!-- 歷史文件一：德意志帝國檔案 -->
         <div id="course-page04" class="course-page" style="display: none;">
             __HTML_BODY_PAGE04__
         </div>
