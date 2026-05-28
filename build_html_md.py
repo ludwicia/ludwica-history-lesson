@@ -50,12 +50,29 @@ def process_3col_document(file_path, content_version):
     except Exception as e:
         return f"<p>Error loading document: {e}</p>"
 
-    # Split by '---'
-    blocks = text.split('---')
+    blocks = [b.strip() for b in text.split('---') if b.strip()]
+    if not blocks:
+        return ""
+        
+    title_block = blocks[0]
+    # Clean up double title if present
+    lines = title_block.split('\n')
+    cleaned_lines = []
+    for line in lines:
+        stripped = line.strip()
+        if stripped == "金璽詔書(德)" and not stripped.startswith('#'):
+            continue # skip the redundant plain first line
+        cleaned_lines.append(line)
+    cleaned_title_block = '\n'.join(cleaned_lines)
+    
+    title_html = markdown.markdown(cleaned_title_block)
     
     html = f'''
-    <div style="text-align: center; color: #718096; margin-top: 10px; margin-bottom: 25px; font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <div style="text-align: center; color: #718096; margin-top: 10px; margin-bottom: 10px; font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;">
         <span style="background-color: #ebf8ff; color: #2b6cb0; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; border: 1px solid #bee3f8;">內容版本：{content_version}</span>
+    </div>
+    <div class="doc-title-section" style="margin-bottom: 30px; text-align: center;">
+        {title_html}
     </div>
     <div class="doc-3col-container">
         <div class="doc-3col-header">
@@ -65,23 +82,32 @@ def process_3col_document(file_path, content_version):
         </div>
     '''
     
-    for block in blocks:
+    for block in blocks[1:]:
         block = block.strip()
         if not block: continue
         
         if "**原文**" in block and "**譯文**" in block:
             parts = block.split("**譯文**")
             original_part = parts[0].replace("**原文**", "").strip()
-            translated_part = parts[1].strip()
+            
+            # Check if there is an **解釋** block
+            if "**解釋**" in parts[1]:
+                sub_parts = parts[1].split("**解釋**")
+                translated_part = sub_parts[0].strip()
+                explanation_part = sub_parts[1].strip()
+            else:
+                translated_part = parts[1].strip()
+                explanation_part = ""
             
             original_text = markdown.markdown(original_part)
             translated_text = markdown.markdown(translated_part)
+            explanation_text = markdown.markdown(explanation_part) if explanation_part else ""
             
             html += f'''
             <div class="doc-3col-row">
                 <div class="doc-col doc-original">{original_text}</div>
                 <div class="doc-col doc-translation">{translated_text}</div>
-                <div class="doc-col doc-explanation"></div>
+                <div class="doc-col doc-explanation">{explanation_text}</div>
             </div>
             '''
         else:
@@ -143,7 +169,7 @@ html_body_p3 = process_markdown(file_p3, images_p3, "1.0", map_p3)
 
 print("Processing Page 4 (Golden Bull)...")
 file_p4 = r'4.金璽詔書.md'
-html_body_p4 = process_3col_document(file_p4, "1.0")
+html_body_p4 = process_3col_document(file_p4, "1.1")
 
 # Full Portal HTML Template
 portal_template = """<!DOCTYPE html>
@@ -432,9 +458,17 @@ portal_template = """<!DOCTYPE html>
             max-width: 1400px;
         }
         .layout.doc-mode .sidebar-left { display: none !important; }
-        /* Only hide sidebar-right on desktop; on mobile it's the floating footer */
+        /* Display sidebar-right at the bottom of the page in doc-mode on desktop */
         @media (min-width: 1201px) {
-            .layout.doc-mode .sidebar-right { display: none !important; }
+            .layout.doc-mode .sidebar-right {
+                display: block !important;
+                position: relative !important;
+                top: 0 !important;
+                height: auto !important;
+                width: 100% !important;
+                margin-top: 40px !important;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.02) !important;
+            }
         }
         
         .doc-3col-container {
@@ -445,7 +479,7 @@ portal_template = """<!DOCTYPE html>
         }
         .doc-3col-header {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1.2fr 1.2fr 0.6fr;
             gap: 20px;
             font-weight: 700;
             color: var(--primary-color);
@@ -460,7 +494,7 @@ portal_template = """<!DOCTYPE html>
         }
         .doc-3col-row {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1.2fr 1.2fr 0.6fr;
             gap: 20px;
             border-bottom: 1px dashed #e2e8f0;
             padding-bottom: 15px;
@@ -481,10 +515,69 @@ portal_template = """<!DOCTYPE html>
             padding: 12px;
         }
         .doc-explanation {
-            background: #fffff0;
-            padding: 12px;
+            background: #fffdf5;
+            padding: 10px;
             border-radius: 8px;
             border: 1px dashed #ecc94b;
+            font-size: 0.8rem;
+        }
+        
+        /* Collapsible Explanation Accordion Styles inside a single unified card */
+        .doc-explanation ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .explanation-details {
+            margin-bottom: 6px;
+            border-bottom: 1px dashed rgba(229, 196, 75, 0.3);
+            background: transparent;
+            transition: all 0.2s ease;
+        }
+        .explanation-details:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .explanation-summary {
+            padding: 5px 0;
+            font-weight: 600;
+            color: #2d3748;
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            list-style: none;
+            font-size: 0.78rem;
+        }
+        .explanation-summary::-webkit-details-marker {
+            display: none;
+        }
+        .explanation-summary::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 6px;
+            font-size: 0.65rem;
+            color: #ecc94b;
+            transition: transform 0.2s ease;
+        }
+        .explanation-details[open] .explanation-summary::before {
+            transform: rotate(90deg);
+        }
+        .explanation-summary:hover {
+            color: #b7791f;
+        }
+        .explanation-content {
+            padding: 6px 10px;
+            background: rgba(255, 255, 240, 0.5);
+            color: #4a5568;
+            font-size: 0.75rem;
+            line-height: 1.5;
+            border-radius: 4px;
+            margin-bottom: 6px;
+        }
+        .explanation-term strong {
+            color: #2d3748;
         }
         
         @keyframes contentFadeIn {
@@ -865,7 +958,7 @@ portal_template = """<!DOCTYPE html>
             }
             .doc-original::before { content: "原文："; font-weight: bold; color: var(--primary-color); display: block; margin-bottom: 8px; font-family: sans-serif; }
             .doc-translation::before { content: "譯文："; font-weight: bold; color: var(--secondary-color); display: block; margin-bottom: 8px; }
-            .doc-explanation::before { content: "解釋筆記："; font-weight: bold; color: #d69e2e; display: block; margin-bottom: 8px; }
+            .doc-explanation::before { content: "解釋筆記："; font-weight: bold; color: #d69e2e; display: block; margin-bottom: 12px; }
         }
     </style>
 </head>
@@ -968,7 +1061,7 @@ portal_template = """<!DOCTYPE html>
             <div class="footer-version-col">
                 <div class="version-card">
                     <div style="font-weight: 600; margin-bottom: 8px; color: var(--primary-color);">📝 版本與課堂宣告</div>
-                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：3.1 (雙層導覽與三欄式對照文件)</div>
+                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：3.2 (折疊解釋與桌機全寬自適應頁尾)</div>
                     <div style="color: #718096; font-size: 0.75rem;">發布日期：2026-05-28</div>
                     <hr style="border: none; border-top: 1px dashed #cbd5e0; margin: 8px 0;">
                     <div id="dynamic-course-info" style="text-align: left; font-size: 0.8rem; line-height: 1.5;">
@@ -1021,7 +1114,7 @@ portal_template = """<!DOCTYPE html>
         page04: `
             <div style="font-size: 0.85rem; color: #4a5568; line-height: 1.6;">
                 <b>📚 當前文件：</b>神聖羅馬帝國：金璽詔書<br>
-                <b>🏷️ 內容版本：</b>1.0<br>
+                <b>🏷️ 內容版本：</b>1.1<br>
                 <b>👤 內容生成：</b>AI 深度研究<br>
                 <b>🛠️ 網頁工程：</b>Antigravity 協作
             </div>
@@ -1278,7 +1371,47 @@ portal_template = """<!DOCTYPE html>
         });
     }
 
-    // 8. Hash routing listener
+    // 8. Collapsible Explanations Accordion Transform
+    function makeExplanationsCollapsible() {
+        document.querySelectorAll('.doc-explanation ul').forEach(ul => {
+            ul.querySelectorAll('li').forEach(li => {
+                const strong = li.querySelector('strong');
+                if (strong) {
+                    const termHtml = strong.outerHTML;
+                    
+                    // Clone and remove strong element to get explanation content
+                    const clone = li.cloneNode(true);
+                    const cloneStrong = clone.querySelector('strong');
+                    if (cloneStrong) cloneStrong.remove();
+                    
+                    let contentHtml = clone.innerHTML.trim();
+                    
+                    // Clean up leading colons or spacing
+                    if (contentHtml.startsWith('：') || contentHtml.startsWith(':')) {
+                        contentHtml = contentHtml.substring(1).trim();
+                    }
+                    
+                    // Construct beautiful collapsible details structure
+                    li.innerHTML = `
+                        <details class="explanation-details">
+                            <summary class="explanation-summary">
+                                <span class="explanation-term">${termHtml}</span>
+                            </summary>
+                            <div class="explanation-content">${contentHtml}</div>
+                        </details>
+                    `;
+                }
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        window.addEventListener('DOMContentLoaded', makeExplanationsCollapsible);
+    } else {
+        makeExplanationsCollapsible();
+    }
+
+    // 9. Hash routing listener
     function handleHashRouting() {
         const hash = window.location.hash.substring(1);
         
