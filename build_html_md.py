@@ -1061,8 +1061,8 @@ portal_template = """<!DOCTYPE html>
             <div class="footer-version-col">
                 <div class="version-card">
                     <div style="font-weight: 600; margin-bottom: 8px; color: var(--primary-color);">📝 版本與課堂宣告</div>
-                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：3.2 (折疊解釋與桌機全寬自適應頁尾)</div>
-                    <div style="color: #718096; font-size: 0.75rem;">發布日期：2026-05-28</div>
+                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：3.3 (全局跨頁關鍵字搜尋與無縫路由載入)</div>
+                    <div style="color: #718096; font-size: 0.75rem;">發布日期：2026-05-29</div>
                     <hr style="border: none; border-top: 1px dashed #cbd5e0; margin: 8px 0;">
                     <div id="dynamic-course-info" style="text-align: left; font-size: 0.8rem; line-height: 1.5;">
                         <!-- Dynamic metadata loaded by JS -->
@@ -1149,10 +1149,7 @@ portal_template = """<!DOCTYPE html>
         // Re-generate TOC for the active page
         generateTOC(pageId);
         
-        // Re-index searchable elements for the active page
-        updateSearchIndex(pageId);
-        
-        // Clear search inputs & results
+        // Clear search inputs & results when manually switching tabs
         document.getElementById('searchInput').value = '';
         document.getElementById('searchResults').innerHTML = '<div style="color:#a0aec0; text-align:center; margin-top:30px; font-size: 0.9rem;">輸入關鍵字以尋找內文段落</div>';
         
@@ -1197,14 +1194,34 @@ portal_template = """<!DOCTYPE html>
         });
     }
 
-    // 4. Update Search Indexing Target
-    function updateSearchIndex(pageId) {
-        const activePage = document.getElementById('course-' + pageId);
-        if (!activePage) return;
-        searchableElements = activePage.querySelectorAll('p, h2, h3, li, td');
+    // 4. Global Search Indexing
+    function initGlobalSearchIndex() {
+        searchableElements = [];
+        const pages = [
+            { id: 'page01', name: '荷蘭建國與地緣政經' },
+            { id: 'page02', name: '美國的誕生(一)' },
+            { id: 'page03', name: '宗教戰爭(一)：胡斯戰爭' },
+            { id: 'page04', name: '神聖羅馬帝國：金璽詔書' }
+        ];
+        
+        pages.forEach(p => {
+            const pageEl = document.getElementById('course-' + p.id);
+            if (pageEl) {
+                const elements = pageEl.querySelectorAll('p, h2, h3, li, td');
+                elements.forEach((el, index) => {
+                    if (!el.id) el.id = p.id + '-search-match-' + index;
+                    searchableElements.push({
+                        element: el,
+                        pageId: p.id,
+                        pageName: p.name,
+                        text: el.innerText
+                    });
+                });
+            }
+        });
     }
 
-    // 5. Keyword Search Engine
+    // 5. Keyword Search Engine (Global Cross-Page Search)
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
 
@@ -1218,13 +1235,11 @@ portal_template = """<!DOCTYPE html>
         }
 
         let count = 0;
-        searchableElements.forEach((el, index) => {
-            const text = el.innerText;
+        searchableElements.forEach((item) => {
+            const text = item.text;
             if (text.toLowerCase().includes(keyword)) {
                 count++;
                 if (count > 50) return; // Cap results to prevent lag
-                
-                if (!el.id) el.id = activePageId + '-search-match-' + index;
                 
                 const res = document.createElement('div');
                 res.className = 'search-result-item';
@@ -1240,8 +1255,17 @@ portal_template = """<!DOCTYPE html>
                 const regex = new RegExp('(' + keyword + ')', 'gi');
                 snippet = snippet.replace(regex, '<mark>$1</mark>');
                 
-                res.innerHTML = snippet;
+                const el = item.element;
+                
+                // Prepend with the page name to show where the result belongs
+                res.innerHTML = `<span style="font-size: 0.72rem; display: block; font-weight: 600; color: var(--primary-color); margin-bottom: 3px;">📌 ${item.pageName}</span>` + snippet;
+                
                 res.onclick = () => {
+                    // Switch to the target page if it is not the active page
+                    if (activePageId !== item.pageId) {
+                        switchPage(item.pageId);
+                    }
+                    
                     // Mobile auto-expand collapsed heading if hidden inside one
                     if (window.innerWidth <= 800) {
                         const parentH2 = getParentH2(el);
@@ -1435,7 +1459,10 @@ portal_template = """<!DOCTYPE html>
     }
     
     window.addEventListener('hashchange', handleHashRouting);
-    window.addEventListener('DOMContentLoaded', handleHashRouting);
+    window.addEventListener('DOMContentLoaded', () => {
+        initGlobalSearchIndex();
+        handleHashRouting();
+    });
 </script>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
