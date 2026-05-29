@@ -158,6 +158,21 @@ images_p3 = [
     (r'(<h2.*?>四、.*?</h2>)', 'images/hussite_wagenburg.png', '歷史文獻中記載的經典「戰車壘」（Wagenburg）野戰工事與早期火炮協同防禦防線的精細還原圖')
 ]
 
+# Page 5 (Hirsau Abbey) Config
+file_p5 = r'希爾紹修道院研究報告：雙軌解析.md'
+map_p5 = '<figure class="image-left" style="width: 38%; margin-bottom: 20px;"><img src="images/hirsau_main_wilhelm.jpg" alt="Wilhelm von Hirsau" loading="lazy"><figcaption class="caption">威廉大院長肖像，十一世紀下半葉領導希爾紹修道院走向改革黃金時代的靈魂人物</figcaption></figure>\n'
+images_p5 = [
+    (r'(<h3.*?>十一世紀前夕的教會亂象與世俗糾葛</h3>)', 'images/hirsau_st_aurelius.jpg', '聖奧雷利烏斯教堂外觀，見證了十世紀中葉由教宗良九世指示、卡爾夫伯爵阿達爾貝特主導的第二次重建歷史'),
+    (r'(<h3.*?>爭取絕對獨立與教宗的豁免特權</h3>)', 'images/hirsau_interior_historical.jpg', '聖奧雷利烏斯教堂歷史剖面圖，描繪了在敘任權之爭爆發前夕，希爾紹修道院所呈現的經典早期羅馬式空間佈局'),
+    (r'(<h3.*?>九年戰爭與梅拉克將軍的焦土政策</h3>)', 'images/hirsau_ruins_overview.jpg', '今日希爾紹修道院（聖彼得與保羅修道院）宏偉的廢墟全景，1692年九年戰爭中遭法國將軍梅拉克的焦土政策付之一炬'),
+    (r'(<h3.*?>報告二：文化、建築與藝術的深遠遺產</h3>)', 'images/hirsau_bausubstanz_map.jpg', '希爾紹修道院大教堂建築年代與地基結構分佈圖，完美體現了威廉大院長將幾何比例與宇宙秩序無縫轉化為石造空間的卓越才華'),
+    (r'(<h2.*?>第二章：「希爾紹建築學派」的羅馬式巔峰</h2>)', 'images/hirsau_cubic_capitals.jpg', '聖奧雷利烏斯教堂內的羅馬式骰子柱頭，其上帶有希爾紹建築學派極具代表性的「希爾紹鼻」角狀突起特徵'),
+    (r'(<h3.*?>神學隱喻與核心特徵</h3>)', 'images/hirsau_interior_gesims.jpg', '聖奧雷利烏斯教堂內牆的羅馬式石雕橫飾帶（Gesims），呈現出精確的幾何對稱與極簡紋飾，完美契合克呂尼改革倡導的禁慾美學'),
+    (r'(<h3.*?>建築學派的廣泛傳播與後期演變</h3>)', 'images/hirsau_kreuzgang.jpg', '聖彼得與保羅修道院的雙層迴廊（Kreuzgang），其結構佈局緊密圍繞中殿，反映了修道院空間為數百名修士的日常靈修與盛大禮拜儀式所做的精密規劃'),
+    (r'(<h2.*?>第三章：文藝復興狩獵小屋的興建：權力的世俗化展示</h2>)', 'images/hirsau_hunting_lodge.jpg', '文藝復興式狩獵小屋與門塔廢墟，由符騰堡公爵在16世紀末建造，展現了世俗新教權力對前天主教修道院教產的接管與主權宣示'),
+    (r'(<h3.*?>宗教空間的修復與現代藝術</h3>)', 'images/hirsau_modern_madonna.jpg', '修復後的聖奧雷利烏斯教堂內部，將古老的木雕聖母像與現代空間元素並置，展現了戰後廢墟中宗教空間與現代藝術完美交融的重生魅力')
+]
+
 print("Processing Page 1 (Holland)...")
 html_body_p1 = process_markdown(file_p1, images_p1, "1.1", map_p1)
 
@@ -170,6 +185,9 @@ html_body_p3 = process_markdown(file_p3, images_p3, "1.0", map_p3)
 print("Processing Page 4 (Golden Bull)...")
 file_p4 = r'4.金璽詔書.md'
 html_body_p4 = process_3col_document(file_p4, "1.1")
+
+print("Processing Page 5 (Hirsau Abbey)...")
+html_body_p5 = process_markdown(file_p5, images_p5, "1.0", map_p5)
 
 # Full Portal HTML Template
 portal_template = """<!DOCTYPE html>
@@ -979,6 +997,7 @@ portal_template = """<!DOCTYPE html>
                     <a href="#page01" id="nav-btn-page01" class="nav-tab-btn active" style="text-decoration: none;">荷蘭建國與地緣政經</a>
                     <a href="#page02" id="nav-btn-page02" class="nav-tab-btn" style="text-decoration: none;">美國的誕生(一)</a>
                     <a href="#page03" id="nav-btn-page03" class="nav-tab-btn" style="text-decoration: none;">宗教戰爭(一)：胡斯戰爭</a>
+                    <a href="#page05" id="nav-btn-page05" class="nav-tab-btn" style="text-decoration: none;">希爾紹修道院</a>
                 </div>
             </div>
             
@@ -1028,6 +1047,11 @@ portal_template = """<!DOCTYPE html>
         <!-- 歷史文件一：金璽詔書 -->
         <div id="course-page04" class="course-page" style="display: none;">
             __HTML_BODY_PAGE04__
+        </div>
+
+        <!-- 課堂四：希爾紹修道院研究 -->
+        <div id="course-page05" class="course-page" style="display: none;">
+            __HTML_BODY_PAGE05__
         </div>
     </main>
 
@@ -1118,6 +1142,14 @@ portal_template = """<!DOCTYPE html>
                 <b>👤 內容生成：</b>AI 深度研究<br>
                 <b>🛠️ 網頁工程：</b>Antigravity 協作
             </div>
+        `,
+        page05: `
+            <div style="color: #4a5568;">
+                <b>📚 當前課堂：</b>希爾紹修道院<br>
+                <b>🏷️ 內容版本：</b>1.0<br>
+                <b>👤 內容生成：</b>AI 深度研究<br>
+                <b>🛠️ 網頁工程：</b>Antigravity 協作
+            </div>
         `
     };
 
@@ -1201,7 +1233,8 @@ portal_template = """<!DOCTYPE html>
             { id: 'page01', name: '荷蘭建國與地緣政經' },
             { id: 'page02', name: '美國的誕生(一)' },
             { id: 'page03', name: '宗教戰爭(一)：胡斯戰爭' },
-            { id: 'page04', name: '神聖羅馬帝國：金璽詔書' }
+            { id: 'page04', name: '神聖羅馬帝國：金璽詔書' },
+            { id: 'page05', name: '希爾紹修道院' }
         ];
         
         pages.forEach(p => {
@@ -1444,7 +1477,7 @@ portal_template = """<!DOCTYPE html>
             return;
         }
 
-        const matchedPage = ['page01', 'page02', 'page03', 'page04'].find(p => hash.startsWith(p));
+        const matchedPage = ['page01', 'page02', 'page03', 'page04', 'page05'].find(p => hash.startsWith(p));
         if (matchedPage) {
             if (activePageId !== matchedPage) {
                 switchPage(matchedPage);
@@ -1474,6 +1507,7 @@ final_html = portal_template.replace('__HTML_BODY_PAGE01__', html_body_p1)
 final_html = final_html.replace('__HTML_BODY_PAGE02__', html_body_p2)
 final_html = final_html.replace('__HTML_BODY_PAGE03__', html_body_p3)
 final_html = final_html.replace('__HTML_BODY_PAGE04__', html_body_p4)
+final_html = final_html.replace('__HTML_BODY_PAGE05__', html_body_p5)
 
 # Write to file
 print("Writing build output to index.html...")
