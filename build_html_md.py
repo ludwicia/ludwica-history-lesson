@@ -184,7 +184,7 @@ html_body_p3 = process_markdown(file_p3, images_p3, "1.0", map_p3)
 
 print("Processing Page 4 (Golden Bull)...")
 file_p4 = r'4.金璽詔書.md'
-html_body_p4 = process_3col_document(file_p4, "1.1")
+html_body_p4 = process_3col_document(file_p4, "1.2")
 
 print("Processing Page 5 (Hirsau Abbey)...")
 html_body_p5 = process_markdown(file_p5, images_p5, "1.0", map_p5)
