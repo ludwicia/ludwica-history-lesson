@@ -189,6 +189,10 @@ html_body_p4 = process_3col_document(file_p4, "1.3")
 print("Processing Page 5 (Hirsau Abbey)...")
 html_body_p5 = process_markdown(file_p5, images_p5, "1.0", map_p5)
 
+print("Processing Page 6 (Benedict Rule)...")
+file_p6 = r'5.聖本篤會規.md'
+html_body_p6 = process_3col_document(file_p6, "1.0")
+
 # Full Portal HTML Template
 portal_template = """<!DOCTYPE html>
 <html lang="zh-TW">
@@ -1006,6 +1010,7 @@ portal_template = """<!DOCTYPE html>
                 <div class="nav-group-title">歷史文件 <span class="dropdown-arrow">▼</span></div>
                 <div class="nav-dropdown">
                     <a href="#page04" id="nav-btn-page04" class="nav-tab-btn" style="text-decoration: none;">神聖羅馬帝國：金璽詔書</a>
+                    <a href="#page06" id="nav-btn-page06" class="nav-tab-btn" style="text-decoration: none;">修道院制度：聖本篤會規</a>
                 </div>
             </div>
         </div>
@@ -1053,6 +1058,11 @@ portal_template = """<!DOCTYPE html>
         <div id="course-page05" class="course-page" style="display: none;">
             __HTML_BODY_PAGE05__
         </div>
+
+        <!-- 歷史文件二：聖本篤會規 -->
+        <div id="course-page06" class="course-page" style="display: none;">
+            __HTML_BODY_PAGE06__
+        </div>
     </main>
 
     <!-- Right Sidebar / Floating Footer: Search & Version -->
@@ -1085,8 +1095,8 @@ portal_template = """<!DOCTYPE html>
             <div class="footer-version-col">
                 <div class="version-card">
                     <div style="font-weight: 600; margin-bottom: 8px; color: var(--primary-color);">📝 版本與課堂宣告</div>
-                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：3.3 (全局跨頁關鍵字搜尋與無縫路由載入)</div>
-                    <div style="color: #718096; font-size: 0.75rem;">發布日期：2026-05-29</div>
+                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：3.4 (新增「聖本篤會規」歷史文件與雙文檔路由模組)</div>
+                    <div style="color: #718096; font-size: 0.75rem;">發布日期：2026-05-31</div>
                     <hr style="border: none; border-top: 1px dashed #cbd5e0; margin: 8px 0;">
                     <div id="dynamic-course-info" style="text-align: left; font-size: 0.8rem; line-height: 1.5;">
                         <!-- Dynamic metadata loaded by JS -->
@@ -1150,6 +1160,14 @@ portal_template = """<!DOCTYPE html>
                 <b>👤 內容生成：</b>AI 深度研究<br>
                 <b>🛠️ 網頁工程：</b>Antigravity 協作
             </div>
+        `,
+        page06: `
+            <div style="font-size: 0.85rem; color: #4a5568; line-height: 1.6;">
+                <b>📚 當前文件：</b>修道院制度：聖本篤會規<br>
+                <b>🏷️ 內容版本：</b>1.0<br>
+                <b>👤 內容生成：</b>AI 深度研究<br>
+                <b>🛠️ 網頁工程：</b>Antigravity 協作
+            </div>
         `
     };
 
@@ -1162,7 +1180,7 @@ portal_template = """<!DOCTYPE html>
         
         // Handle full-width doc mode
         const layout = document.querySelector('.layout');
-        if (pageId === 'page04') {
+        if (pageId === 'page04' || pageId === 'page06') {
             layout.classList.add('doc-mode');
         } else {
             layout.classList.remove('doc-mode');
@@ -1477,7 +1495,7 @@ portal_template = """<!DOCTYPE html>
             return;
         }
 
-        const matchedPage = ['page01', 'page02', 'page03', 'page04', 'page05'].find(p => hash.startsWith(p));
+        const matchedPage = ['page01', 'page02', 'page03', 'page04', 'page05', 'page06'].find(p => hash.startsWith(p));
         if (matchedPage) {
             if (activePageId !== matchedPage) {
                 switchPage(matchedPage);
@@ -1508,6 +1526,7 @@ final_html = final_html.replace('__HTML_BODY_PAGE02__', html_body_p2)
 final_html = final_html.replace('__HTML_BODY_PAGE03__', html_body_p3)
 final_html = final_html.replace('__HTML_BODY_PAGE04__', html_body_p4)
 final_html = final_html.replace('__HTML_BODY_PAGE05__', html_body_p5)
+final_html = final_html.replace('__HTML_BODY_PAGE06__', html_body_p6)
 
 # Write to file
 print("Writing build output to index.html...")
