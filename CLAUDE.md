@@ -39,3 +39,28 @@
    * **先解釋、後詢問、再執行**：當在代碼或文章中發現疑似非功能性冗餘（例如第三方工具的自動頁尾、生成時間戳記）、元數據，或者不確定是否需要保留的歷史遺留文字時，**嚴禁直接私自刪除**。
    * **標準作業流程**：AI 必須「先向使用者解釋該內容的來源、用途與潛在影響」，接著「明確詢問使用者是否同意刪除或修改」，在獲得使用者明示的回覆同意後，方可執行代碼修改或檔案刪除。
 
+## 🔍 SEO 優化守則 (SEO Checklist for New Content)
+每次新增或修改歷史專題頁面時，**必須同步完成以下 SEO 項目**：
+
+1. **靜態 Meta Tags 同步更新**：
+   * 更新 `<title>` 標籤，確保涵蓋所有現存主題名稱。
+   * 更新 `<meta name="description">` 內容，納入新增主題的簡要描述。
+   * 更新 `<meta name="keywords">`，補充新主題相關的中文關鍵字。
+   * 同步更新 `og:title`、`og:description`、`twitter:title`、`twitter:description`。
+
+2. **JSON-LD 結構化資料更新**：
+   * 在 `<head>` 中的 `CollectionPage` JSON-LD 區塊，於 `hasPart` 陣列中新增對應的 `Article` 條目（含 name 和 url）。
+
+3. **動態 SEO (`pageSEO`) 更新**：
+   * 在 JavaScript 的 `pageSEO` 物件中，新增對應頁面的 `title` 和 `desc` 欄位。
+   * 確保 title 格式為：`[頁面主題] — Ludwica 的簡單歷史課`。
+   * 確保 desc 為 50-160 字的精確內容摘要。
+
+4. **搜尋索引 (`initGlobalSearchIndex`) 註冊**：
+   * 在 `initGlobalSearchIndex()` 函式中的 `pages` 陣列新增對應的 `{ id: 'pageXX', name: '頁面名稱' }` 條目。
+
+5. **Sitemap 更新**：
+   * 在 `build_html_md.py` 底部的 `sitemap_content` 中，新增對應頁面的 `<url>` 條目（使用 hash 路由格式 `#pageXX`）。
+
+6. **`courseInfo` 元資料更新**：
+   * 在 JavaScript 的 `courseInfo` 物件中，新增對應頁面的版本、生成來源與工程資訊。

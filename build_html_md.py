@@ -213,15 +213,52 @@ portal_template = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="lueGudczLbvVhtRPh-JU6w8b3eu_yu5XCguU6RvfMxY" />
-    <title>Ludwica 的簡單歷史課 - 三課堂動態門戶</title>
-    <meta name="description" content="Ludwica 的簡單歷史課，帶你深入了解荷蘭建國史與東印度公司、前哥倫布時期美洲歷史，以及波希米亞宗教衝突與胡斯戰爭。專為歷史專題研究與報告打造的精緻長文。">
-    <meta name="keywords" content="歷史, 歷史課, 荷蘭史, 東印度公司, 美國史, 宗教戰爭, 胡斯戰爭, 揚胡斯, 捷克歷史, 大航海時代, Ludwica, 歷史專題">
-    <meta property="og:title" content="Ludwica 的簡單歷史課 - 三課堂動態門戶">
-    <meta property="og:description" content="Ludwica 的簡單歷史課，帶你深入了解荷蘭建國史、東印度公司、前哥倫布時期美洲歷史，以及波希米亞宗教衝突與胡斯戰爭。">
+    <title>Ludwica 的簡單歷史課 — 荷蘭建國史、胡斯戰爭、金璽詔書、聖本篤會規等歷史專題研究</title>
+    <meta name="description" content="Ludwica 的簡單歷史課：涵蓋荷蘭建國史與東印度公司、前哥倫布時期美洲、胡斯戰爭、金璽詔書德中對照、希爾紹修道院、聖本篤會規三欄解析、奧托-薩利安帝國教會體制。專為深度歷史專題研究打造的學術級長文網站。">
+    <meta name="keywords" content="歷史, 歷史課, 荷蘭史, 東印度公司, 美國史, 前哥倫布時期, 宗教戰爭, 胡斯戰爭, 揚胡斯, 捷克歷史, 大航海時代, 金璽詔書, 神聖羅馬帝國, 選帝侯, 希爾紹修道院, 克呂尼改革, 聖本篤會規, 修道院制度, 奧托王朝, 薩利安王朝, 帝國教會體制, 敘任權之爭, Ludwica, 歷史專題">
+    <link rel="canonical" href="https://ludwicia.github.io/ludwica-history-lesson/">
+    <meta property="og:title" content="Ludwica 的簡單歷史課 — 荷蘭建國史、胡斯戰爭、金璽詔書、聖本篤會規等歷史專題研究">
+    <meta property="og:description" content="涵蓋荷蘭建國史與東印度公司、前哥倫布時期美洲、胡斯戰爭、金璽詔書德中對照、希爾紹修道院、聖本篤會規三欄解析、奧托-薩利安帝國教會體制。專為深度歷史專題研究打造的學術級長文網站。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ludwicia.github.io/ludwica-history-lesson/">
     <meta property="og:image" content="https://ludwicia.github.io/ludwica-history-lesson/history_banner_bg.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ludwica 的簡單歷史課 — 歷史專題研究">
+    <meta name="twitter:description" content="涵蓋荷蘭建國史、胡斯戰爭、金璽詔書、聖本篤會規等七大歷史專題的學術級深度研究網站。">
+    <meta name="twitter:image" content="https://ludwicia.github.io/ludwica-history-lesson/history_banner_bg.png">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Ludwica 的簡單歷史課",
+      "url": "https://ludwicia.github.io/ludwica-history-lesson/",
+      "description": "深度歷史專題研究與報告，涵蓋荷蘭建國史、胡斯戰爭、金璽詔書、聖本篤會規等主題",
+      "inLanguage": "zh-TW",
+      "publisher": {
+        "@type": "Person",
+        "name": "Ludwica"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Ludwica 的簡單歷史課",
+      "url": "https://ludwicia.github.io/ludwica-history-lesson/",
+      "description": "涵蓋七大歷史專題的深度學術研究網站",
+      "hasPart": [
+        {"@type": "Article", "name": "荷蘭建國史與東印度公司興衰", "url": "https://ludwicia.github.io/ludwica-history-lesson/#page01"},
+        {"@type": "Article", "name": "三個世界的交會與前哥倫布時期的美洲", "url": "https://ludwicia.github.io/ludwica-history-lesson/#page02"},
+        {"@type": "Article", "name": "胡斯戰爭：信仰衝突、軍事變革與波希米亞國家認同", "url": "https://ludwicia.github.io/ludwica-history-lesson/#page03"},
+        {"@type": "Article", "name": "神聖羅馬帝國：金璽詔書德中對照翻譯", "url": "https://ludwicia.github.io/ludwica-history-lesson/#page04"},
+        {"@type": "Article", "name": "希爾紹修道院研究報告", "url": "https://ludwicia.github.io/ludwica-history-lesson/#page05"},
+        {"@type": "Article", "name": "聖本篤會規三欄解析", "url": "https://ludwicia.github.io/ludwica-history-lesson/#page06"},
+        {"@type": "Article", "name": "奧托-薩利安帝國教會體制", "url": "https://ludwicia.github.io/ludwica-history-lesson/#page07"}
+      ]
+    }
+    </script>
     <style>
         :root { 
             --primary-color: #0055A4; 
@@ -1224,7 +1261,31 @@ portal_template = """<!DOCTYPE html>
         `
     };
 
-    // 2. Navigation Page Switching
+    // 2. SEO Dynamic Meta Tags (per-page title & description)
+    const pageSEO = {
+        'page01': { title: '荷蘭建國史與東印度公司興衰 — Ludwica 的簡單歷史課', desc: '深入解析荷蘭從低地十七省到聯省共和國的建國歷程、東印度公司的全球貿易帝國、黃金時代的藝術巅峰與當代政經轉型。' },
+        'page02': { title: '前哥倫布時期美洲與三個世界的交會 — Ludwica 的簡單歷史課', desc: '探索1607年以前美洲原住民的文明成就、大航海時代的技術革命、哥倫布大交換，以及西班牙、法國、英國的早期殖民衝突。' },
+        'page03': { title: '胡斯戰爭：信仰衝突與波希米亞國家認同 — Ludwica 的簡單歷史課', desc: '揚·胡斯的宗教改革先驅運動、波希米亞的宗教衝突與軍事變革、戰車壘戰術革新，以及對歐洲宗教格局的深遠影響。' },
+        'page04': { title: '金璽詔書：神聖羅馬帝國德中對照翻譯 — Ludwica 的簡單歷史課', desc: '1356年《金璽詔書》全文德文原文、中文翻譯與學術註解三欄對照，解析選帝侯制度與帝國憲政體制的基石文件。' },
+        'page05': { title: '希爾紹修道院研究報告 — Ludwica 的簡單歷史課', desc: '希爾紹修道院的千年歷史、威廉大院長的改革運動、希爾紹建築學派的羅馬式美學巅峰，以及九年戰爭後的廢墟重生。' },
+        'page06': { title: '聖本篤會規三欄解析 — Ludwica 的簡單歷史課', desc: '公元6世紀西方隱修制度基石《聖本篤會規》德文原文、中文翻譯與專業學術註釋三欄並列解析。' },
+        'page07': { title: '奧托-薩利安帝國教會體制 — Ludwica 的簡單歷史課', desc: '奧托王朝與薩利安王朝的帝國教會體制、政教合一的運作機制、巡迴朝廷制度，以及敘任權之爭的歷史根源。' }
+    };
+
+    function updatePageSEO(pageId) {
+        const seo = pageSEO[pageId];
+        if (seo) {
+            document.title = seo.title;
+            const descMeta = document.querySelector('meta[name="description"]');
+            if (descMeta) descMeta.setAttribute('content', seo.desc);
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) ogTitle.setAttribute('content', seo.title);
+            const ogDesc = document.querySelector('meta[property="og:description"]');
+            if (ogDesc) ogDesc.setAttribute('content', seo.desc);
+        }
+    }
+
+    // 3. Navigation Page Switching & Dynamic SEO
     let activePageId = null;
     let searchableElements = [];
 
@@ -1275,9 +1336,12 @@ portal_template = """<!DOCTYPE html>
         if (!currentHash.startsWith(pageId)) {
             window.history.pushState(null, null, '#' + pageId);
         }
+
+        // Update dynamic SEO meta tags
+        updatePageSEO(pageId);
     }
 
-    // 3. Generate Table of Contents on the Fly
+    // 4. Generate Table of Contents on the Fly
     function generateTOC(pageId) {
         const tocContainer = document.getElementById('toc');
         tocContainer.innerHTML = '';
@@ -1297,7 +1361,7 @@ portal_template = """<!DOCTYPE html>
         });
     }
 
-    // 4. Global Search Indexing
+    // 5. Global Search Indexing
     function initGlobalSearchIndex() {
         searchableElements = [];
         const pages = [
@@ -1305,7 +1369,9 @@ portal_template = """<!DOCTYPE html>
             { id: 'page02', name: '美國的誕生(一)' },
             { id: 'page03', name: '宗教戰爭(一)：胡斯戰爭' },
             { id: 'page04', name: '神聖羅馬帝國：金璽詔書' },
-            { id: 'page05', name: '希爾紹修道院' }
+            { id: 'page05', name: '希爾紹修道院' },
+            { id: 'page06', name: '修道院制度：聖本篤會規' },
+            { id: 'page07', name: '奧托-薩利安帝國教會體制' }
         ];
         
         pages.forEach(p => {
@@ -1325,7 +1391,7 @@ portal_template = """<!DOCTYPE html>
         });
     }
 
-    // 5. Keyword Search Engine (Global Cross-Page Search)
+    // 6. Keyword Search Engine (Global Cross-Page Search)
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
 
@@ -1410,7 +1476,7 @@ portal_template = """<!DOCTYPE html>
         }
     });
 
-    // 6. Mobile Collapse Utilities
+    // 7. Mobile Collapse Utilities
     function getParentH2(element) {
         let prev = element.previousElementSibling;
         while (prev) {
@@ -1466,7 +1532,7 @@ portal_template = """<!DOCTYPE html>
         }
     });
 
-    // 7. Mobile Floating Drawer Collapse Toggle
+    // 8. Mobile Floating Drawer Collapse Toggle
     const sidebarRight = document.getElementById('sidebarRight');
     const footerHeader = document.getElementById('footerHeader');
     const footerToggleBtn = document.getElementById('footerToggleBtn');
@@ -1479,7 +1545,7 @@ portal_template = """<!DOCTYPE html>
         footerHeader.addEventListener('click', toggleFooter);
     }
 
-    // 7.5 Mobile Top Nav Toggle
+    // 8.5 Mobile Top Nav Toggle
     const navMobileToggle = document.getElementById('navMobileToggle');
     const navLinks = document.getElementById('navLinks');
     if (navMobileToggle && navLinks) {
@@ -1499,7 +1565,7 @@ portal_template = """<!DOCTYPE html>
         });
     }
 
-    // 8. Collapsible Explanations Accordion Transform
+    // 9. Collapsible Explanations Accordion Transform
     function makeExplanationsCollapsible() {
         document.querySelectorAll('.doc-explanation ul').forEach(ul => {
             ul.querySelectorAll('li').forEach(li => {
@@ -1539,7 +1605,7 @@ portal_template = """<!DOCTYPE html>
         makeExplanationsCollapsible();
     }
 
-    // 9. Hash routing listener
+    // 10. Hash routing listener
     function handleHashRouting() {
         const hash = window.location.hash.substring(1);
         
@@ -1588,13 +1654,59 @@ with open(r'index.html', 'w', encoding='utf-8') as f:
     f.write(final_html)
 
 # Generate sitemap.xml for SEO
-sitemap_content = """\
+from datetime import date
+today = date.today().isoformat()
+
+sitemap_content = f"""\
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ludwicia.github.io/ludwica-history-lesson/</loc>
+    <lastmod>{today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ludwicia.github.io/ludwica-history-lesson/#page01</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ludwicia.github.io/ludwica-history-lesson/#page02</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ludwicia.github.io/ludwica-history-lesson/#page03</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ludwicia.github.io/ludwica-history-lesson/#page04</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ludwicia.github.io/ludwica-history-lesson/#page05</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ludwicia.github.io/ludwica-history-lesson/#page06</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ludwicia.github.io/ludwica-history-lesson/#page07</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>"""
 
@@ -1613,4 +1725,4 @@ with open(r'robots.txt', 'w', encoding='utf-8') as f:
     f.write(robots_content)
 print("Generated robots.txt")
 
-print("Done! Site successfully built as dynamic triple-lesson portal.")
+print("Done! Site successfully built as dynamic 7-topic history portal with full SEO.")
