@@ -71,7 +71,7 @@ def process_3col_document(file_path, content_version):
     <div style="text-align: center; color: #718096; margin-top: 10px; margin-bottom: 10px; font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;">
         <span style="background-color: #ebf8ff; color: #2b6cb0; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; border: 1px solid #bee3f8;">內容版本：{content_version}</span>
     </div>
-    <div class="doc-title-section" style="margin-bottom: 30px; text-align: center;">
+    <div class="doc-title-section">
         {title_html}
     </div>
     <div class="doc-3col-container">
@@ -167,10 +167,20 @@ images_p5 = [
     (r'(<h3.*?>九年戰爭與梅拉克將軍的焦土政策</h3>)', 'images/hirsau_ruins_overview.jpg', '今日希爾紹修道院（聖彼得與保羅修道院）宏偉的廢墟全景，1692年九年戰爭中遭法國將軍梅拉克的焦土政策付之一炬'),
     (r'(<h3.*?>報告二：文化、建築與藝術的深遠遺產</h3>)', 'images/hirsau_bausubstanz_map.jpg', '希爾紹修道院大教堂建築年代與地基結構分佈圖，完美體現了威廉大院長將幾何比例與宇宙秩序無縫轉化為石造空間的卓越才華'),
     (r'(<h2.*?>第二章：「希爾紹建築學派」的羅馬式巔峰</h2>)', 'images/hirsau_cubic_capitals.jpg', '聖奧雷利烏斯教堂內的羅馬式骰子柱頭，其上帶有希爾紹建築學派極具代表性的「希爾紹鼻」角狀突起特徵'),
-    (r'(<h3.*?>神學隱喻與核心特徵</h3>)', 'images/hirsau_interior_gesims.jpg', '聖奧雷利烏斯教堂內牆的羅馬式石雕橫飾帶（Gesims），呈現出精確的幾何對稱與極簡紋飾，完美契合克呂尼改革倡導的禁慾美學'),
+    (r'(<h3.*?>神學隱喻與核心特徵</h3>)', 'images/hirsau_interior_gesims.jpg', '聖奧雷利烏斯教堂内牆的羅馬式石雕橫飾帶（Gesims），呈現出精確的幾何對稱與極簡紋飾，完美契合克呂尼改革倡導的禁慾美學'),
     (r'(<h3.*?>建築學派的廣泛傳播與後期演變</h3>)', 'images/hirsau_kreuzgang.jpg', '聖彼得與保羅修道院的雙層迴廊（Kreuzgang），其結構佈局緊密圍繞中殿，反映了修道院空間為數百名修士的日常靈修與盛大禮拜儀式所做的精密規劃'),
     (r'(<h2.*?>第三章：文藝復興狩獵小屋的興建：權力的世俗化展示</h2>)', 'images/hirsau_hunting_lodge.jpg', '文藝復興式狩獵小屋與門塔廢墟，由符騰堡公爵在16世紀末建造，展現了世俗新教權力對前天主教修道院教產的接管與主權宣示'),
     (r'(<h3.*?>宗教空間的修復與現代藝術</h3>)', 'images/hirsau_modern_madonna.jpg', '修復後的聖奧雷利烏斯教堂內部，將古老的木雕聖母像與現代空間元素並置，展現了戰後廢墟中宗教空間與現代藝術完美交融的重生魅力')
+]
+
+# Page 7 (Ottonian System) Config
+file_p7 = r'奧托-薩利安帝國教會體制.md'
+map_p7 = '<figure class="image-left" style="width: 38%; margin-bottom: 20px;"><img src="images/ottonian_hre_map.svg" alt="Ottonian HRE Map" loading="lazy"><figcaption class="caption">西元1000年左右奧托-薩利安王朝時期的神聖羅馬帝國地圖，呈現德意志各部落公爵領與主教區錯綜複雜的疆域分佈</figcaption></figure>\n'
+images_p7 = [
+    (r'(<h2.*?>關鍵歷史人物與王權的神聖化重塑</h2>)', 'images/ottonian_otto1.jpg', '德國馬格德堡著名雕塑《馬格德堡騎馬人》（Magdeburger Reiter），生動展現了神聖羅馬帝國皇帝奧托一世的威嚴之姿'),
+    (r'(<p>在奧托一世的統治後期，其胞弟科隆大主教布魯諾)', 'images/ottonian_bruno.jpg', '科隆聖潘塔萊翁修道院大教堂外的布魯諾大主教雕像，他將教會改革、宮廷教堂人才培養與國家行政體系進行了深度的歷史性融合'),
+    (r'(<h3.*?>巡迴朝廷與空間動態治理</h3>)', 'images/ottonian_goslar.jpg', '宏偉的戈斯拉爾帝國皇室行宮（Kaiserpfalz Goslar），由皇帝亨利三世建造，是薩利安王朝巡迴朝廷與政治中樞的核心後勤與行政基地之一'),
+    (r'(<h2.*?>內部矛盾：政教合一的內耗與改革運動的興起</h2>)', 'images/ottonian_canossa.jpg', '德國歷史畫家 Eduard Schwoiser 經典油畫巨作《亨利前進卡諾莎》（Heinrich vor Canossa），生動再現了皇帝亨利四世向教宗格列高利七世低頭乞求赦免的史詩場景')
 ]
 
 print("Processing Page 1 (Holland)...")
@@ -191,7 +201,10 @@ html_body_p5 = process_markdown(file_p5, images_p5, "1.0", map_p5)
 
 print("Processing Page 6 (Benedict Rule)...")
 file_p6 = r'5.聖本篤會規.md'
-html_body_p6 = process_3col_document(file_p6, "1.0")
+html_body_p6 = process_3col_document(file_p6, "2.0")
+
+print("Processing Page 7 (Ottonian System)...")
+html_body_p7 = process_markdown(file_p7, images_p7, "1.0", map_p7)
 
 # Full Portal HTML Template
 portal_template = """<!DOCTYPE html>
@@ -674,6 +687,32 @@ portal_template = """<!DOCTYPE html>
         a { color: var(--primary-color); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
+        /* ===== Document Title Section Style Adjustments ===== */
+        .doc-title-section {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        .doc-title-section h1 {
+            text-align: center;
+        }
+        .doc-title-section h2 {
+            text-align: left;
+        }
+        .doc-title-section p {
+            text-align: justify;
+        }
+        .doc-title-section ul, .doc-title-section ol {
+            text-align: left;
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        .doc-title-section li {
+            text-align: left;
+        }
+        .doc-title-section blockquote {
+            text-align: left;
+        }
+
         /* ===== Responsive Media Queries ===== */
         @media (max-width: 1200px) {
             .layout { grid-template-columns: 280px 1fr; }
@@ -1002,6 +1041,7 @@ portal_template = """<!DOCTYPE html>
                     <a href="#page02" id="nav-btn-page02" class="nav-tab-btn" style="text-decoration: none;">美國的誕生(一)</a>
                     <a href="#page03" id="nav-btn-page03" class="nav-tab-btn" style="text-decoration: none;">宗教戰爭(一)：胡斯戰爭</a>
                     <a href="#page05" id="nav-btn-page05" class="nav-tab-btn" style="text-decoration: none;">希爾紹修道院</a>
+                    <a href="#page07" id="nav-btn-page07" class="nav-tab-btn" style="text-decoration: none;">奧托-薩利安帝國教會體制</a>
                 </div>
             </div>
             
@@ -1059,6 +1099,11 @@ portal_template = """<!DOCTYPE html>
             __HTML_BODY_PAGE05__
         </div>
 
+        <!-- 課堂五：奧托-薩利安帝國教會體制 -->
+        <div id="course-page07" class="course-page" style="display: none;">
+            __HTML_BODY_PAGE07__
+        </div>
+
         <!-- 歷史文件二：聖本篤會規 -->
         <div id="course-page06" class="course-page" style="display: none;">
             __HTML_BODY_PAGE06__
@@ -1095,7 +1140,7 @@ portal_template = """<!DOCTYPE html>
             <div class="footer-version-col">
                 <div class="version-card">
                     <div style="font-weight: 600; margin-bottom: 8px; color: var(--primary-color);">📝 版本與課堂宣告</div>
-                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：3.4 (新增「聖本篤會規」歷史文件與雙文檔路由模組)</div>
+                    <div style="font-weight: 500; margin-bottom: 6px;">版面設計：3.5 (新增「奧托-薩利安帝國教會體制」歷史專題)</div>
                     <div style="color: #718096; font-size: 0.75rem;">發布日期：2026-05-31</div>
                     <hr style="border: none; border-top: 1px dashed #cbd5e0; margin: 8px 0;">
                     <div id="dynamic-course-info" style="text-align: left; font-size: 0.8rem; line-height: 1.5;">
@@ -1156,6 +1201,14 @@ portal_template = """<!DOCTYPE html>
         page05: `
             <div style="color: #4a5568;">
                 <b>📚 當前課堂：</b>希爾紹修道院<br>
+                <b>🏷️ 內容版本：</b>1.0<br>
+                <b>👤 內容生成：</b>AI 深度研究<br>
+                <b>🛠️ 網頁工程：</b>Antigravity 協作
+            </div>
+        `,
+        page07: `
+            <div style="color: #4a5568;">
+                <b>📚 當前課堂：</b>奧托-薩利安帝國教會體制<br>
                 <b>🏷️ 內容版本：</b>1.0<br>
                 <b>👤 內容生成：</b>AI 深度研究<br>
                 <b>🛠️ 網頁工程：</b>Antigravity 協作
@@ -1495,7 +1548,7 @@ portal_template = """<!DOCTYPE html>
             return;
         }
 
-        const matchedPage = ['page01', 'page02', 'page03', 'page04', 'page05', 'page06'].find(p => hash.startsWith(p));
+        const matchedPage = ['page01', 'page02', 'page03', 'page04', 'page05', 'page06', 'page07'].find(p => hash.startsWith(p));
         if (matchedPage) {
             if (activePageId !== matchedPage) {
                 switchPage(matchedPage);
@@ -1527,6 +1580,7 @@ final_html = final_html.replace('__HTML_BODY_PAGE03__', html_body_p3)
 final_html = final_html.replace('__HTML_BODY_PAGE04__', html_body_p4)
 final_html = final_html.replace('__HTML_BODY_PAGE05__', html_body_p5)
 final_html = final_html.replace('__HTML_BODY_PAGE06__', html_body_p6)
+final_html = final_html.replace('__HTML_BODY_PAGE07__', html_body_p7)
 
 # Write to file
 print("Writing build output to index.html...")
