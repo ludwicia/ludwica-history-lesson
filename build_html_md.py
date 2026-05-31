@@ -183,6 +183,9 @@ images_p7 = [
     (r'(<h2.*?>內部矛盾：政教合一的內耗與改革運動的興起</h2>)', 'images/ottonian_canossa.jpg', '德國歷史畫家 Eduard Schwoiser 經典油畫巨作《亨利前進卡諾莎》（Heinrich vor Canossa），生動再現了皇帝亨利四世向教宗格列高利七世低頭乞求赦免的史詩場景')
 ]
 
+# Page 8 (Concordat of Worms) Config
+file_p8 = r'沃姆斯協約.md'
+
 print("Processing Page 1 (Holland)...")
 html_body_p1 = process_markdown(file_p1, images_p1, "1.1", map_p1)
 
@@ -205,6 +208,9 @@ html_body_p6 = process_3col_document(file_p6, "2.0")
 
 print("Processing Page 7 (Ottonian System)...")
 html_body_p7 = process_markdown(file_p7, images_p7, "1.0", map_p7)
+
+print("Processing Page 8 (Concordat of Worms)...")
+html_body_p8 = process_3col_document(file_p8, "1.0")
 
 # Full Portal HTML Template
 portal_template = """<!DOCTYPE html>
@@ -255,7 +261,8 @@ portal_template = """<!DOCTYPE html>
         {"@type": "Article", "name": "神聖羅馬帝國：金璽詔書德中對照翻譯", "url": "https://ludwicia.github.io/ludwica-history-lesson/#page04"},
         {"@type": "Article", "name": "希爾紹修道院研究報告", "url": "https://ludwicia.github.io/ludwica-history-lesson/#page05"},
         {"@type": "Article", "name": "聖本篤會規三欄解析", "url": "https://ludwicia.github.io/ludwica-history-lesson/#page06"},
-        {"@type": "Article", "name": "奧托-薩利安帝國教會體制", "url": "https://ludwicia.github.io/ludwica-history-lesson/#page07"}
+        {"@type": "Article", "name": "奧托-薩利安帝國教會體制", "url": "https://ludwicia.github.io/ludwica-history-lesson/#page07"},
+        {"@type": "Article", "name": "沃姆斯協約", "url": "https://ludwicia.github.io/ludwica-history-lesson/#page08"}
       ]
     }
     </script>
@@ -1088,6 +1095,7 @@ portal_template = """<!DOCTYPE html>
                 <div class="nav-dropdown">
                     <a href="#page04" id="nav-btn-page04" class="nav-tab-btn" style="text-decoration: none;">神聖羅馬帝國：金璽詔書</a>
                     <a href="#page06" id="nav-btn-page06" class="nav-tab-btn" style="text-decoration: none;">修道院制度：聖本篤會規</a>
+                    <a href="#page08" id="nav-btn-page08" class="nav-tab-btn" style="text-decoration: none;">敘任權之爭：沃姆斯協約</a>
                 </div>
             </div>
         </div>
@@ -1139,6 +1147,9 @@ portal_template = """<!DOCTYPE html>
         <!-- 課堂五：奧托-薩利安帝國教會體制 -->
         <div id="course-page07" class="course-page" style="display: none;">
             __HTML_BODY_PAGE07__
+        </div>
+        <div id="course-page08" class="course-page" style="display: none;">
+            __HTML_BODY_PAGE08__
         </div>
 
         <!-- 歷史文件二：聖本篤會規 -->
@@ -1251,6 +1262,14 @@ portal_template = """<!DOCTYPE html>
                 <b>🛠️ 網頁工程：</b>Antigravity 協作
             </div>
         `,
+        page08: `
+            <div style="color: #4a5568;">
+                <b>📚 當前課堂：</b>沃姆斯協約<br>
+                <b>🏷️ 內容版本：</b>1.0<br>
+                <b>👤 內容生成：</b>AI 深度研究<br>
+                <b>🛠️ 網頁工程：</b>Antigravity 協作
+            </div>
+        `,
         page06: `
             <div style="font-size: 0.85rem; color: #4a5568; line-height: 1.6;">
                 <b>📚 當前文件：</b>修道院制度：聖本篤會規<br>
@@ -1269,7 +1288,8 @@ portal_template = """<!DOCTYPE html>
         'page04': { title: '金璽詔書：神聖羅馬帝國德中對照翻譯 — Ludwica 的簡單歷史課', desc: '1356年《金璽詔書》全文德文原文、中文翻譯與學術註解三欄對照，解析選帝侯制度與帝國憲政體制的基石文件。' },
         'page05': { title: '希爾紹修道院研究報告 — Ludwica 的簡單歷史課', desc: '希爾紹修道院的千年歷史、威廉大院長的改革運動、希爾紹建築學派的羅馬式美學巅峰，以及九年戰爭後的廢墟重生。' },
         'page06': { title: '聖本篤會規三欄解析 — Ludwica 的簡單歷史課', desc: '公元6世紀西方隱修制度基石《聖本篤會規》德文原文、中文翻譯與專業學術註釋三欄並列解析。' },
-        'page07': { title: '奧托-薩利安帝國教會體制 — Ludwica 的簡單歷史課', desc: '奧托王朝與薩利安王朝的帝國教會體制、政教合一的運作機制、巡迴朝廷制度，以及敘任權之爭的歷史根源。' }
+        'page07': { title: '奧托-薩利安帝國教會體制 — Ludwica 的簡單歷史課', desc: '奧托王朝與薩利安王朝的帝國教會體制、政教合一的運作機制、巡迴朝廷制度，以及敘任權之爭的歷史根源。' },
+        'page08': { title: '沃姆斯協約 — Ludwica 的簡單歷史課', desc: '結束敘任權之爭的歷史性協約，區分神權與世俗權力，奠定中古世紀政教關係新局。' }
     };
 
     function updatePageSEO(pageId) {
@@ -1294,7 +1314,7 @@ portal_template = """<!DOCTYPE html>
         
         // Handle full-width doc mode
         const layout = document.querySelector('.layout');
-        if (pageId === 'page04' || pageId === 'page06') {
+        if (pageId === 'page04' || pageId === 'page06' || pageId === 'page08') {
             layout.classList.add('doc-mode');
         } else {
             layout.classList.remove('doc-mode');
@@ -1371,7 +1391,8 @@ portal_template = """<!DOCTYPE html>
             { id: 'page04', name: '神聖羅馬帝國：金璽詔書' },
             { id: 'page05', name: '希爾紹修道院' },
             { id: 'page06', name: '修道院制度：聖本篤會規' },
-            { id: 'page07', name: '奧托-薩利安帝國教會體制' }
+            { id: 'page07', name: '奧托-薩利安帝國教會體制' },
+            { id: 'page08', name: '敘任權之爭：沃姆斯協約' }
         ];
         
         pages.forEach(p => {
@@ -1614,7 +1635,7 @@ portal_template = """<!DOCTYPE html>
             return;
         }
 
-        const matchedPage = ['page01', 'page02', 'page03', 'page04', 'page05', 'page06', 'page07'].find(p => hash.startsWith(p));
+        const matchedPage = ['page01', 'page02', 'page03', 'page04', 'page05', 'page06', 'page07', 'page08'].find(p => hash.startsWith(p));
         if (matchedPage) {
             if (activePageId !== matchedPage) {
                 switchPage(matchedPage);
@@ -1647,6 +1668,7 @@ final_html = final_html.replace('__HTML_BODY_PAGE04__', html_body_p4)
 final_html = final_html.replace('__HTML_BODY_PAGE05__', html_body_p5)
 final_html = final_html.replace('__HTML_BODY_PAGE06__', html_body_p6)
 final_html = final_html.replace('__HTML_BODY_PAGE07__', html_body_p7)
+final_html = final_html.replace('__HTML_BODY_PAGE08__', html_body_p8)
 
 # Write to file
 print("Writing build output to index.html...")
@@ -1708,6 +1730,12 @@ sitemap_content = f"""\
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://ludwicia.github.io/ludwica-history-lesson/#page08</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>"""
 
 with open(r'sitemap.xml', 'w', encoding='utf-8', newline='\n') as f:
@@ -1725,4 +1753,4 @@ with open(r'robots.txt', 'w', encoding='utf-8') as f:
     f.write(robots_content)
 print("Generated robots.txt")
 
-print("Done! Site successfully built as dynamic 7-topic history portal with full SEO.")
+print("Done! Site successfully built as dynamic 8-topic history portal with full SEO.")
