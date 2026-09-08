@@ -370,9 +370,17 @@
                 <button class="tab-btn active" data-tab="europe">歐洲</button>
                 <button class="tab-btn" data-tab="new-world">新大陸</button>
                 <button class="tab-btn" data-tab="far-east">遠東</button>
-                <a href="europe_map.html" target="_blank" class="tab-btn" style="text-decoration: none; color: #2b6cb0; border: 1px solid #bee3f8; background-color: #ebf8ff; border-radius: 6px; margin-left: auto; display: inline-flex; align-items: center; gap: 6px;">
-                    🗺️ 歐洲互動地圖
-                </a>
+                <div style="margin-left: auto; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                    <a href="characters_database.html" target="_blank" class="tab-btn" style="text-decoration: none; color: #2b6cb0; border: 1px solid #bee3f8; background-color: #ebf8ff; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;">
+                        👤 歷史人物庫
+                    </a>
+                    <a href="character_relationship.html" target="_blank" class="tab-btn" style="text-decoration: none; color: #2b6cb0; border: 1px solid #bee3f8; background-color: #ebf8ff; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;">
+                        🕸️ 關係網絡圖
+                    </a>
+                    <a href="europe_map.html" target="_blank" class="tab-btn" style="text-decoration: none; color: #2b6cb0; border: 1px solid #bee3f8; background-color: #ebf8ff; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;">
+                        🗺️ 歐洲互動地圖
+                    </a>
+                </div>
             </div>
 
             <!-- Dynamic Catalog Grid container -->
@@ -607,11 +615,15 @@
     // 2. SEO Dynamic Meta Tags (per-page title & description)
     function updatePageSEO(pageId) {
         if (pageId === 'home') {
-            const homeTitle = 'Ludwica 的簡單歷史課 — 荷蘭建國史、胡斯戰爭、金璽詔書、聖本篤會規等歷史專題研究';
-            const homeDesc = 'Ludwica 的簡單歷史課：包含荷蘭建國史、胡斯戰爭、神聖羅馬帝國金璽詔書中德對照、希爾紹修道院與聖本篤會規等深度歷史專題研究。';
+            const homeTitle = 'Ludwica 的簡單歷史課';
+            const homeDesc = '包含古羅馬、中世紀歐洲、教宗權、法蘭克、神聖羅馬帝國、教會與隱修、美利堅合眾國、荷蘭、大清帝國等十三大歷史專題之深度學術研究網站。';
             document.title = homeTitle;
             const descMeta = document.querySelector('meta[name="description"]');
             if (descMeta) descMeta.setAttribute('content', homeDesc);
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) ogTitle.setAttribute('content', homeTitle);
+            const ogDesc = document.querySelector('meta[property="og:description"]');
+            if (ogDesc) ogDesc.setAttribute('content', homeDesc);
             return;
         }
         const article = allArticlesList.find(a => a.id === pageId);

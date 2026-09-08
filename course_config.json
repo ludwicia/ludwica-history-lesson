@@ -4,7 +4,7 @@
     "publish_date": "2026-07-26",
     "site_name": "Ludwica 的簡單歷史課",
     "site_url": "https://ludwica-history-lesson.pages.dev/",
-    "description": "涵蓋七大歷史專題的深度學術研究網站"
+    "description": "涵蓋十三大歷史專題之深度學術研究網站"
   },
   "categories": [
     {
@@ -249,7 +249,7 @@
     "page13": {
       "title": "美國的誕生(二)",
       "file_path": "course/第二階段：殖民地的建立、定居與大西洋世界的形塑（1607年－1754年）.md",
-      "ver": "1.1",
+      "ver": "1.2",
       "doc": false,
       "img": "images/us2_map.jpg",
       "bg_pos": "center",
@@ -472,12 +472,12 @@
     "page10": {
       "title": "卡洛林教育基建與知識復興",
       "file_path": "course/聖神統治與知識復興：卡洛林王朝教育基建、制度體系及其深遠歷史遺產之研究.md",
-      "ver": "1.1",
+      "ver": "1.2",
       "doc": false,
       "img": "images/carolingian_main.jpg",
       "bg_pos": "center",
       "seo_title": "卡洛林王朝教育基建與知識復興 — Ludwica 的簡單歷史課",
-      "seo_desc": "探討卡洛林王朝教育基建與宗教變革、手抄室與卡洛林小草體書寫革命、跨國學者網絡、基督教化七藝與課堂實踐，以及文明火種對後世中世紀大學的深遠影響。",
+      "seo_desc": "探討卡洛林王朝教育基建與宗教變革、手抄室與卡洛林小寫體書寫革命、跨國學者網絡、基督教化七藝與課堂實踐，以及文明火種對後世中世紀大學的深遠影響。",
       "map_html": "<figure class=\"image-left\" style=\"width: 38%; margin-bottom: 20px;\"><img src=\"images/carolingian_main.jpg\" alt=\"Carolingian Minuscule\" loading=\"lazy\"><figcaption class=\"caption\">八世紀末《達古爾夫詩篇》（Dagulf Psalter）之手抄頁面，以優美典雅的卡洛林小寫體金字書寫，展現了早期帝國書寫標準化的極致美學。</figcaption></figure>\n",
       "image_replacements": [
         {
@@ -898,7 +898,7 @@
     "page29": {
       "title": "阿德里安堡戰役",
       "file_path": "course/阿德里安堡戰役.md",
-      "ver": "1.1",
+      "ver": "1.2",
       "doc": false,
       "img": "images/battle_of_adrianople.png",
       "bg_pos": "center",
@@ -980,7 +980,7 @@
     "page36": {
       "title": "晚清中樞權力變革與肅順之死",
       "file_path": "course/晚清中樞權力變革與肅順之死：資歷、政務整肅與辛酉政變之歷史學解構.md",
-      "ver": "1.1",
+      "ver": "1.2",
       "doc": false,
       "img": "images/xinyou_coup.png",
       "bg_pos": "center",
