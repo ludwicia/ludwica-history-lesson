@@ -1,5 +1,5 @@
 // Historical Places Data for Europe Map
-// Total places: 380
+// Total places: 443
 const HISTORICAL_PLACES = [
   {
     "id": "rome",
@@ -454,6 +454,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page47",
         "title": "東羅馬權力轉移與迪奧多西接掌君士坦丁堡"
+      },
+      {
+        "id": "page24",
+        "title": "帝國糧秣、租稅枷鎖與農奴的誕生：晚期羅馬阿諾納制度、土地附籍與西歐封建化轉型研究"
       }
     ],
     "category": "geography"
@@ -577,6 +581,14 @@ const HISTORICAL_PLACES = [
       {
         "id": "page45",
         "title": "費爾穆斯叛亂與北非防務危機"
+      },
+      {
+        "id": "page24",
+        "title": "帝國糧秣、租稅枷鎖與農奴的誕生：晚期羅馬阿諾納制度、土地附籍與西歐封建化轉型研究"
+      },
+      {
+        "id": "page46",
+        "title": "阿薩納里克家族與特爾文吉哥德人的統治演變：政治結構、三代反羅馬立場與權力崩解研究"
       }
     ],
     "category": "rome"
@@ -797,6 +809,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page29",
         "title": "阿德里安堡戰役"
+      },
+      {
+        "id": "page24",
+        "title": "帝國糧秣、租稅枷鎖與農奴的誕生：晚期羅馬阿諾納制度、土地附籍與西歐封建化轉型研究"
       }
     ],
     "category": "geography"
@@ -1825,6 +1841,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page41",
         "title": "君士坦丁三世政權興衰"
+      },
+      {
+        "id": "page24",
+        "title": "帝國糧秣、租稅枷鎖與農奴的誕生：晚期羅馬阿諾納制度、土地附籍與西歐封建化轉型研究"
       }
     ],
     "category": "medieval"
@@ -3502,6 +3522,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page38",
         "title": "阿陶爾夫與西哥德轉型"
+      },
+      {
+        "id": "page46",
+        "title": "阿薩納里克家族與特爾文吉哥德人的統治演變：政治結構、三代反羅馬立場與權力崩解研究"
       }
     ],
     "category": "medieval"
@@ -3734,6 +3758,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page38",
         "title": "阿陶爾夫與哥德大遷徙(二)"
+      },
+      {
+        "id": "page46",
+        "title": "阿薩納里克家族與特爾文吉哥德人的統治演變：政治結構、三代反羅馬立場與權力崩解研究"
       }
     ],
     "category": "medieval"
@@ -4124,6 +4152,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page08",
         "title": "沃姆斯協約"
+      },
+      {
+        "id": "page40",
+        "title": "歐陸地緣裂變與整合的雙軸命脈：萊茵河－多瑙河連線的政治、經濟與歷史戰略研究"
       }
     ],
     "category": "medieval"
@@ -4323,7 +4355,12 @@ const HISTORICAL_PLACES = [
       1.0789
     ],
     "desc": "英格蘭教會的母堂與樞紐，坎特伯里大主教的駐地。",
-    "articles": [],
+    "articles": [
+      {
+        "id": "page07",
+        "title": "奧托-薩利安帝國教會體制"
+      }
+    ],
     "category": "medieval"
   },
   {
@@ -4335,7 +4372,12 @@ const HISTORICAL_PLACES = [
       3.2247
     ],
     "desc": "漢薩同盟重要商埠，西歐中世紀國際貿易的樞紐。",
-    "articles": [],
+    "articles": [
+      {
+        "id": "page01",
+        "title": "荷蘭建國史、東印度公司興衰與當代地緣政經轉型研究報告"
+      }
+    ],
     "category": "medieval"
   },
   {
@@ -4376,6 +4418,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page29",
         "title": "阿德里安堡戰役"
+      },
+      {
+        "id": "page24",
+        "title": "帝國糧秣、租稅枷鎖與農奴的誕生：晚期羅馬阿諾納制度、土地附籍與西歐封建化轉型研究"
       }
     ],
     "category": "rome"
@@ -4895,6 +4941,14 @@ const HISTORICAL_PLACES = [
       {
         "id": "page41",
         "title": "君士坦丁三世與五世紀初邊疆危機"
+      },
+      {
+        "id": "page09",
+        "title": "丕平獻土的地緣政治體系研究：背景、權力機制、法理偽造與深遠歷史影響"
+      },
+      {
+        "id": "page30",
+        "title": "東羅馬帝國的權力重組與蠻族危機：西元399-400年蓋納斯事件研究"
       }
     ]
   },
@@ -5966,6 +6020,14 @@ const HISTORICAL_PLACES = [
       {
         "id": "page44",
         "title": "羅馬與波斯地緣關係"
+      },
+      {
+        "id": "page30",
+        "title": "東羅馬帝國的權力重組與蠻族危機：西元399-400年蓋納斯事件研究"
+      },
+      {
+        "id": "page46",
+        "title": "阿薩納里克家族與特爾文吉哥德人的統治演變：政治結構、三代反羅馬立場與權力崩解研究"
       }
     ]
   },
@@ -5987,6 +6049,14 @@ const HISTORICAL_PLACES = [
       {
         "id": "page29",
         "title": "阿德里安堡戰役"
+      },
+      {
+        "id": "page46",
+        "title": "阿薩納里克家族與特爾文吉哥德人的統治演變：政治結構、三代反羅馬立場與權力崩解研究"
+      },
+      {
+        "id": "page47",
+        "title": "瓦倫斯陣亡至迪奧多西接掌君士坦丁堡：東羅馬權力轉移、哥德戰線演變與政治謀略研究"
       }
     ]
   },
@@ -6079,6 +6149,14 @@ const HISTORICAL_PLACES = [
       {
         "id": "page43",
         "title": "第一章：黑海落日，狂風中的火種"
+      },
+      {
+        "id": "page46",
+        "title": "阿薩納里克家族與特爾文吉哥德人的統治演變：政治結構、三代反羅馬立場與權力崩解研究"
+      },
+      {
+        "id": "page47",
+        "title": "瓦倫斯陣亡至迪奧多西接掌君士坦丁堡：東羅馬權力轉移、哥德戰線演變與政治謀略研究"
       }
     ]
   },
@@ -9334,5 +9412,1088 @@ const HISTORICAL_PLACES = [
       }
     ],
     "category": "rome"
+  },
+  {
+    "id": "oescus",
+    "name_zh": "奧埃斯庫斯",
+    "name_en": "Oescus / Ulpia Oescus",
+    "coords": [
+      43.7083,
+      24.4756
+    ],
+    "desc": "多瑙河下游重要羅馬軍團要塞（位於今保加利亞吉根），第五馬其頓軍團駐地。君士坦丁大帝曾在此建造橫跨多瑙河的宏偉石造軍事浮橋以威懾哥德人。",
+    "articles": [
+      {
+        "id": "page46",
+        "title": "阿薩納里克家族與特爾文吉哥德人的統治演變"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "sestos",
+    "name_zh": "塞斯托斯",
+    "name_en": "Sestos",
+    "coords": [
+      40.2456,
+      26.3986
+    ],
+    "desc": "色雷斯赫爾松半島（今加里波利半島）扼守達達尼爾海峽的古代重鎮與要塞，與對岸阿比多斯隔海相望，控制歐亞水陸咽喉。",
+    "articles": [
+      {
+        "id": "page30",
+        "title": "東羅馬權力重組與蠻族危機"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "abydos",
+    "name_zh": "阿比多斯",
+    "name_en": "Abydos",
+    "coords": [
+      40.1956,
+      26.4056
+    ],
+    "desc": "小亞細亞西北部赫勒斯滂海峽南岸的戰略港口與軍事要塞，與塞斯托斯扼守海峽最狹窄處，為帝國東西部戰略調動之要衝。",
+    "articles": [
+      {
+        "id": "page30",
+        "title": "東羅馬權力重組與蠻族危機"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "heraclea_perinthus",
+    "name_zh": "赫拉克利亞 (佩林圖斯)",
+    "name_en": "Heraclea / Perinthus",
+    "coords": [
+      40.9703,
+      27.9547
+    ],
+    "desc": "馬爾馬拉海北岸色雷斯重要港口城市（今馬爾馬拉埃雷利西），君士坦丁堡西側的軍事海防要衝與糧秣轉運站。",
+    "articles": [
+      {
+        "id": "page30",
+        "title": "東羅馬權力重組與蠻族危機"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "santana_de_mures",
+    "name_zh": "桑塔納-德-穆列什",
+    "name_en": "Sântana de Mureș",
+    "coords": [
+      46.5772,
+      24.5583
+    ],
+    "desc": "位於今羅馬尼亞特蘭西瓦尼亞穆列什河畔的考古遺址，為四世紀「切爾尼亞霍夫－桑塔納-德-穆列什文化」的命名地，見證哥德人遷入羅馬帝國前的物質與聚落文明。",
+    "articles": [
+      {
+        "id": "page46",
+        "title": "阿薩納里克家族與特爾文吉哥德人的統治演變"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "poetovio",
+    "name_zh": "波托維奧",
+    "name_en": "Poetovio / Ptuj",
+    "coords": [
+      46.4201,
+      15.87
+    ],
+    "desc": "上潘諾尼亞行省的古老羅馬軍團要塞與城市（今斯洛維尼亞普圖伊），扼守德拉瓦河走廊，公元388年狄奧多西一世在此擊破僭主馬克西穆斯的主力部隊。",
+    "articles": [
+      {
+        "id": "page27",
+        "title": "冷河戰役及其歷史學再闡釋"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "postojna_gate",
+    "name_zh": "波斯托伊納隘口",
+    "name_en": "Postojna Gate / Claustra Alpium Iuliarum",
+    "coords": [
+      45.7758,
+      14.2144
+    ],
+    "desc": "喀斯特高原與尤利安阿爾卑斯山脈間的戰略隘口，羅馬晚期「尤利安阿爾卑斯壁壘」縱深防禦體系的核心監控點，控制由巴爾幹通往義大利本土地峽的咽喉。",
+    "articles": [
+      {
+        "id": "page27",
+        "title": "冷河戰役及其歷史學再闡釋"
+      }
+    ],
+    "category": "geography"
+  },
+  {
+    "id": "osroene",
+    "name_zh": "奧斯若恩",
+    "name_en": "Osroene",
+    "coords": [
+      37.15,
+      38.7833
+    ],
+    "desc": "美索不達米亞西北部歷史王國與羅馬行省，首府為埃德薩，長期作為羅馬與帕提亞、薩珊波斯激烈爭奪的近東緩衝地帶。",
+    "articles": [
+      {
+        "id": "page44",
+        "title": "羅馬與波斯地緣關係"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "sophene",
+    "name_zh": "索芬尼",
+    "name_en": "Sophene",
+    "coords": [
+      38.67,
+      39.22
+    ],
+    "desc": "幼發拉底河上游及美索不達米亞北部的古老行省與薩特拉普領地，為羅馬帝國東陲與亞美尼亞高地的關鍵戰略走廊。",
+    "articles": [
+      {
+        "id": "page44",
+        "title": "羅馬與波斯地緣關係"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "caprarienses",
+    "name_zh": "卡普拉里恩塞斯山脈",
+    "name_en": "Caprarienses montes / Djebel Dira",
+    "coords": [
+      35.85,
+      3.65
+    ],
+    "desc": "北非茅利塔尼亞南部的崎嶇山脈（今阿爾及利亞迪拉山一帶），西元372年費爾穆斯叛亂期間依託此地險要地形展開長期的荒漠游擊戰。",
+    "articles": [
+      {
+        "id": "page45",
+        "title": "費爾穆斯叛亂與北非防務危機"
+      }
+    ],
+    "category": "geography"
+  },
+  {
+    "id": "rusguniae",
+    "name_zh": "魯斯古尼亞埃",
+    "name_en": "Rusguniae / Matifou",
+    "coords": [
+      36.7978,
+      3.2389
+    ],
+    "desc": "羅馬北非茅利塔尼亞凱撒利亞行省的沿海殖民重鎮與海軍港口（位於今阿爾及爾東郊馬蒂富角），費爾穆斯反羅馬起義之策源地之一。",
+    "articles": [
+      {
+        "id": "page45",
+        "title": "費爾穆斯叛亂與北非防務危機"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "vindelicia",
+    "name_zh": "溫德利西亞",
+    "name_en": "Vindelicia",
+    "coords": [
+      48.3665,
+      10.8944
+    ],
+    "desc": "多瑙河南岸與阿爾卑斯山北麓的古代歷史區域，後併入羅馬雷蒂亞行省，首府為奧古斯塔·溫德利科倫（今奧格斯堡），為帝國北部防線的重要墾殖帶。",
+    "articles": [
+      {
+        "id": "page40",
+        "title": "萊茵河－多瑙河地緣戰略"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "portus",
+    "name_zh": "波爾圖斯港",
+    "name_en": "Portus Augusti et Traiani",
+    "coords": [
+      41.7764,
+      12.2592
+    ],
+    "desc": "羅馬帝國由克勞狄與圖拉真皇帝在台伯河口北側擴建的宏大人工海港（今菲烏米奇諾），為晚期羅馬阿諾納（Annona）糧船艦隊抵達首都的核心樞紐港。",
+    "articles": [
+      {
+        "id": "page24",
+        "title": "帝國糧秣、租稅枷鎖與農奴的誕生：晚期羅馬阿諾納制度、土地附籍與西歐封建化轉型研究"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "via_flaminia",
+    "name_zh": "弗拉米尼亞大道",
+    "name_en": "Via Flaminia",
+    "coords": [
+      42.6,
+      12.5
+    ],
+    "desc": "連接羅馬城與亞得里亞海濱阿里米努姆（里米尼）的古羅馬執政官大道，貫穿亞平寧山脈，為拜占庭拉文納走廊與教宗國領土形成的骨幹動脈。",
+    "articles": [
+      {
+        "id": "page09",
+        "title": "丕平獻土與教宗國誕生"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "gubbio",
+    "name_zh": "古比奧",
+    "name_en": "Gubbio / Iguvium",
+    "coords": [
+      43.3524,
+      12.5772
+    ],
+    "desc": "翁布里亞大區依山而建的古老設防市鎮，扼守弗拉米尼亞走廊支線，為丕平獻土中確立歸屬羅馬教廷的中義大利軍事戰略重鎮。",
+    "articles": [
+      {
+        "id": "page09",
+        "title": "丕平獻土與教宗國誕生"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "cagli",
+    "name_zh": "卡利",
+    "name_en": "Cagli / Cale",
+    "coords": [
+      43.5475,
+      12.6508
+    ],
+    "desc": "馬爾凱大區亞平寧山谷中的歷史要塞，坐落於弗拉米尼亞大道上，自羅馬時代起即為穿越山脈的關鍵要衝與要塞城鎮。",
+    "articles": [
+      {
+        "id": "page09",
+        "title": "丕平獻土與教宗國誕生"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "comacchio",
+    "name_zh": "科馬基奧",
+    "name_en": "Comacchio",
+    "coords": [
+      44.6942,
+      12.1831
+    ],
+    "desc": "波河三角洲南緣的著名潟湖島城，掌控波河河口水運航道與珍貴鹽稅，在倫巴底與拜占庭角力中為丕平獻土條約所涵蓋的重要市鎮。",
+    "articles": [
+      {
+        "id": "page09",
+        "title": "丕平獻土與教宗國誕生"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "cesena",
+    "name_zh": "切塞納",
+    "name_en": "Cesena / Curva Caesena",
+    "coords": [
+      44.1391,
+      12.2431
+    ],
+    "desc": "艾米利亞-羅馬涅大區艾米利亞大道上的要衝，拉文納總督區的南部屏障與農業核心市鎮，名列丕平向聖伯多祿捐贈的教宗國領土。",
+    "articles": [
+      {
+        "id": "page09",
+        "title": "丕平獻土與教宗國誕生"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "forli",
+    "name_zh": "佛利",
+    "name_en": "Forlì / Forum Livii",
+    "coords": [
+      44.2227,
+      12.0407
+    ],
+    "desc": "艾米利亞大道上的古羅馬市鎮與中世紀主教座堂所在地，拉文納總督區的重要組成部分，西元754年丕平承諾收復並移交教宗管轄。",
+    "articles": [
+      {
+        "id": "page09",
+        "title": "丕平獻土與教宗國誕生"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "pentapolis",
+    "name_zh": "彭塔波利斯",
+    "name_en": "Pentapolis / Ducatus Pentapolis",
+    "coords": [
+      43.91,
+      12.91
+    ],
+    "desc": "拜占庭拉文納總督區管轄下的亞得里亞海五座盟城（里米尼、佩薩羅、法諾、塞尼加利亞、安科納），丕平獻土條約中教宗國海疆主權的核心地帶。",
+    "articles": [
+      {
+        "id": "page09",
+        "title": "丕平獻土與教宗國誕生"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "amalfi",
+    "name_zh": "阿馬爾菲",
+    "name_en": "Amalfi",
+    "coords": [
+      40.634,
+      14.6027
+    ],
+    "desc": "南義大利第勒尼安海畔著名的中世紀海事共和國，最早引進並改良阿拉伯造紙技術建立水力造紙作坊的歐洲先驅城市之一。",
+    "articles": [
+      {
+        "id": "page11",
+        "title": "歐洲造紙術的歷史演變"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "cremona",
+    "name_zh": "克雷莫納",
+    "name_en": "Cremona",
+    "coords": [
+      45.1333,
+      10.0333
+    ],
+    "desc": "北義大利倫巴底平原波河北岸的歷史重鎮，倫巴底王國的重要防禦節點與天主教主教區，八世紀多次見證教宗國與法蘭克王國的政治角力。",
+    "articles": [
+      {
+        "id": "page09",
+        "title": "丕平獻土與教宗國誕生"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "liege",
+    "name_zh": "列日",
+    "name_en": "Liège",
+    "coords": [
+      50.6326,
+      5.5684
+    ],
+    "desc": "比利時默茲河畔的歷史大城，卡洛林王朝發源地周邊的核心教區與後來的神聖羅馬帝國采邑主教區，低地國家的重要學術中心。",
+    "articles": [
+      {
+        "id": "page09",
+        "title": "丕平獻土與教宗國誕生"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "brescia",
+    "name_zh": "布雷西亞",
+    "name_en": "Brescia / Brixia",
+    "coords": [
+      45.5416,
+      10.2118
+    ],
+    "desc": "北義大利倫巴底重鎮，擁有著名的聖薩爾瓦多/聖朱利亞皇家修道院，為卡洛林時期女性貴族教育與文化繁衍的標誌性據點。",
+    "articles": [
+      {
+        "id": "page10",
+        "title": "卡洛林教育基建與知識復興"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "gandersheim",
+    "name_zh": "甘德斯海姆修道院",
+    "name_en": "Gandersheim Abbey / Bad Gandersheim",
+    "coords": [
+      51.8703,
+      10.0264
+    ],
+    "desc": "下薩克森的奧圖王朝王家女子修道院，王室紀念與家族追思的核心節點，著名中世紀女作家赫羅斯維塔（Hrotsvitha）在此創作劇本與史詩。",
+    "articles": [
+      {
+        "id": "page16",
+        "title": "中世紀巡行王權的權力運作"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "recknitz",
+    "name_zh": "雷克尼茨河",
+    "name_en": "Recknitz River / Raxa",
+    "coords": [
+      54.2189,
+      12.4839
+    ],
+    "desc": "梅克倫堡與波美拉尼亞的界河，西元955年10月奧圖大帝親征於雷克尼茨河戰役重創斯拉夫阿博德利特人與拉尼同盟，確保德意志東部邊境安全。",
+    "articles": [
+      {
+        "id": "page16",
+        "title": "中世紀巡行王權的權力運作"
+      }
+    ],
+    "category": "geography"
+  },
+  {
+    "id": "andernach",
+    "name_zh": "安德納赫",
+    "name_en": "Andernach / Antunnacum",
+    "coords": [
+      50.4411,
+      7.4011
+    ],
+    "desc": "萊茵河左岸古老的羅馬要塞與中世紀城鎮，西元939年奧圖大帝的軍隊在此擊潰叛亂的法蘭克尼亞公爵與洛林公爵，確立了薩克森王權對德意志的控制。",
+    "articles": [
+      {
+        "id": "page07",
+        "title": "奧托-薩利安帝國教會體制"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "birten",
+    "name_zh": "比爾滕",
+    "name_en": "Birten / Xanten",
+    "coords": [
+      51.6433,
+      6.4756
+    ],
+    "desc": "下萊茵桑騰附近的歷史市鎮，西元939年春奧圖一世以寡擊眾在比爾滕戰役取得神蹟般的勝利，扭轉了反對其集權統治的諸侯內戰。",
+    "articles": [
+      {
+        "id": "page07",
+        "title": "奧托-薩利安帝國教會體制"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "peyrepertuse",
+    "name_zh": "佩爾佩蒂斯城堡",
+    "name_en": "Peyrepertuse Castle",
+    "coords": [
+      42.8711,
+      2.6869
+    ],
+    "desc": "南法科比埃山區險峰之巔的著名「眩暈之城」，阿爾比十字軍時期卡特里派的重要避難所與要塞，後成為法蘭西王國南部國境五大要塞之一。",
+    "articles": [
+      {
+        "id": "page12",
+        "title": "宗教戰爭(二)：卡特里派"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "queribus",
+    "name_zh": "克里比斯城堡",
+    "name_en": "Quéribus Castle",
+    "coords": [
+      42.8369,
+      2.6214
+    ],
+    "desc": "科比埃山脈險峻石灰岩峰頂的中世紀城堡，為阿爾比十字軍東征中最後陷落的卡特里派要塞（1255年），象徵著朗格多克抵抗運動的落幕。",
+    "articles": [
+      {
+        "id": "page12",
+        "title": "宗教戰爭(二)：卡特里派"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "comtat_venaissin",
+    "name_zh": "孔塔-維內辛",
+    "name_en": "Comtat Venaissin",
+    "coords": [
+      44.05,
+      5.05
+    ],
+    "desc": "法國東南部普羅旺斯的歷史采邑，阿爾比十字軍戰爭後經巴黎條約由土魯斯伯爵割讓予教廷，自1274年至1791年長期為教宗國管轄的飛地領土。",
+    "articles": [
+      {
+        "id": "page12",
+        "title": "宗教戰爭(二)：卡特里派"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "maastricht",
+    "name_zh": "馬斯特里赫特",
+    "name_en": "Maastricht / Traiectum ad Mosam",
+    "coords": [
+      50.8514,
+      5.691
+    ],
+    "desc": "荷蘭最南端跨越默茲河的古羅馬要衝城鎮，八十年戰爭中經歷多次激烈圍城戰（1579年帕爾馬公爵圍城），為低地國家天主教與新教力量角逐的戰略前哨。",
+    "articles": [
+      {
+        "id": "page01",
+        "title": "荷蘭建國與地緣政經"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "nijmegen",
+    "name_zh": "奈梅亨",
+    "name_en": "Nijmegen / Ulpia Noviomagus",
+    "coords": [
+      51.8427,
+      5.8635
+    ],
+    "desc": "荷蘭現存最古老的城市，坐落於瓦爾河畔，羅馬第十雙子軍團駐地與查理曼大帝皇家行宮所在地，八十年戰爭期間的防禦重鎮。",
+    "articles": [
+      {
+        "id": "page01",
+        "title": "荷蘭建國與地緣政經"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "arnhem",
+    "name_zh": "阿納姆",
+    "name_en": "Arnhem",
+    "coords": [
+      51.9851,
+      5.8987
+    ],
+    "desc": "荷蘭下萊茵河北岸古城，海爾德蘭公國首府，1579年加入烏特勒支同盟反抗西班牙統治，為荷蘭聯省共和國東部防線樞紐。",
+    "articles": [
+      {
+        "id": "page01",
+        "title": "荷蘭建國與地緣政經"
+      }
+    ],
+    "category": "modern"
+  },
+  {
+    "id": "zeeland",
+    "name_zh": "西蘭",
+    "name_en": "Zeeland",
+    "coords": [
+      51.49,
+      3.82
+    ],
+    "desc": "荷蘭西南部萊茵-默茲-斯海爾德三角洲群島省份，八十年戰爭中海上乞丐（Geuzen）起義的堅固基地，控制通往安特衛普的海上航道命脈。",
+    "articles": [
+      {
+        "id": "page01",
+        "title": "荷蘭建國與地緣政經"
+      }
+    ],
+    "category": "geography"
+  },
+  {
+    "id": "pergamon",
+    "name_zh": "帕加馬 (別迦摩)",
+    "name_en": "Pergamon / Bergama",
+    "coords": [
+      39.1325,
+      27.1842
+    ],
+    "desc": "小亞細亞西北部輝煌的希臘化王國首都與羅馬亞細亞行省大都會，擁有著名的帕加馬大祭壇與二十萬冊手抄羊皮紙圖書館，新約啟示錄七教會之一。",
+    "articles": [
+      {
+        "id": "page33",
+        "title": "一世紀羅馬行省治權與社會"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "smyrna",
+    "name_zh": "士每拿 (伊茲密爾)",
+    "name_en": "Smyrna / Izmir",
+    "coords": [
+      38.4192,
+      27.1287
+    ],
+    "desc": "愛琴海東岸優良的天然海港城市，希臘化與羅馬時代繁榮的商業中心，早期基督教著名主教坡旅甲（Polycarp）殉道之地，啟示錄七教會之一。",
+    "articles": [
+      {
+        "id": "page33",
+        "title": "一世紀羅馬行省治權與社會"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "sardis",
+    "name_zh": "撒狄",
+    "name_en": "Sardis / Sart",
+    "coords": [
+      38.4883,
+      28.0403
+    ],
+    "desc": "古代呂底亞王國首都與羅馬亞細亞行省著名城市，坐落於帕克托洛斯河畔，擁有古代世界最大規模的猶太會堂遺址與戴克里先浴場群。",
+    "articles": [
+      {
+        "id": "page33",
+        "title": "一世紀羅馬行省治權與社會"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "philadelphia_lydia",
+    "name_zh": "非拉鐵非",
+    "name_en": "Philadelphia / Alaşehir",
+    "coords": [
+      38.3517,
+      28.5186
+    ],
+    "desc": "小亞細亞西部呂底亞地區的希臘化要衝城市，得名於別迦摩國王阿塔羅斯二世的友愛，羅馬時代貿易集散地與早期基督教重鎮。",
+    "articles": [
+      {
+        "id": "page33",
+        "title": "一世紀羅馬行省治權與社會"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "laodicea",
+    "name_zh": "老底嘉",
+    "name_en": "Laodicea on the Lycus / Denizli",
+    "coords": [
+      37.8358,
+      29.1078
+    ],
+    "desc": "小亞細亞佛呂家與呂卡奧尼亞交界處的大都市，羅馬帝國著名的金融、黑羊毛紡織業與眼藥醫學中心，以富裕著稱，啟示錄七教會之一。",
+    "articles": [
+      {
+        "id": "page33",
+        "title": "一世紀羅馬行省治權與社會"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "alexandria_troas",
+    "name_zh": "亞歷山大特羅亞",
+    "name_en": "Alexandria Troas",
+    "coords": [
+      39.7547,
+      26.1558
+    ],
+    "desc": "小亞細亞西北部特羅阿斯地區的重要羅馬港口城市與殖民地（Colonia），坐落於達達尼爾海峽西南，為羅馬往返馬其頓與希臘的關鍵海陸中轉站。",
+    "articles": [
+      {
+        "id": "page33",
+        "title": "一世紀羅馬行省治權與社會"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "caesarea_philippi",
+    "name_zh": "凱撒利亞·腓立比",
+    "name_en": "Caesarea Philippi / Banias",
+    "coords": [
+      33.2483,
+      35.6933
+    ],
+    "desc": "黑門山南麓約旦河源頭的希臘化與羅馬城市，分封王腓力為獻給奧古斯都皇帝而擴建，新約聖經中彼得認耶穌為基督的重要歷史場景地。",
+    "articles": [
+      {
+        "id": "page33",
+        "title": "一世紀羅馬行省治權與社會"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "pisidia",
+    "name_zh": "皮西迪亞",
+    "name_en": "Pisidia",
+    "coords": [
+      37.5,
+      30.5
+    ],
+    "desc": "小亞細亞南部托羅斯山脈腹地的羅馬內陸行省，山區部落民風剽悍，西元399年崔比吉爾德率領哥德叛軍在此大肆洗劫並席捲周邊。",
+    "articles": [
+      {
+        "id": "page30",
+        "title": "東羅馬權力重組與蠻族危機"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "pamphylia",
+    "name_zh": "潘菲利亞",
+    "name_en": "Pamphylia",
+    "coords": [
+      36.9,
+      31.0
+    ],
+    "desc": "小亞細亞南部瀕臨地中海的羅馬沿海行省，首府為佩爾蓋，西元399年遭哥德將領崔比吉爾德部隊掠奪，爆發激烈的軍民衝突。",
+    "articles": [
+      {
+        "id": "page30",
+        "title": "東羅馬權力重組與蠻族危機"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "selge",
+    "name_zh": "塞爾格",
+    "name_en": "Selge",
+    "coords": [
+      37.2289,
+      31.1278
+    ],
+    "desc": "皮西迪亞山區險峻的古代設防城邦，西元399年當地居民與民兵領袖瓦倫提努斯在此重創進犯的崔比吉爾德哥德叛軍。",
+    "articles": [
+      {
+        "id": "page30",
+        "title": "東羅馬權力重組與蠻族危機"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "westphalia",
+    "name_zh": "威斯特法倫",
+    "name_en": "Westphalia",
+    "coords": [
+      51.9607,
+      7.6261
+    ],
+    "desc": "德意志西北部歷史核心大區，薩克森公國西翼，奧圖王朝巡行王權防衛帝國西部邊疆與行使王權司法的重鎮聚集區。",
+    "articles": [
+      {
+        "id": "page16",
+        "title": "中世紀巡行王權的權力運作"
+      }
+    ],
+    "category": "geography"
+  },
+  {
+    "id": "chersonesus",
+    "name_zh": "赫爾松 (切爾索尼蘇斯)",
+    "name_en": "Chersonesus / Korsun",
+    "coords": [
+      44.6111,
+      33.4933
+    ],
+    "desc": "克里米亞半島西南端的古代希臘殖民城邦與東羅馬拜占庭重鎮，控制黑海北部航線，為克里米亞哥德人與草原遊牧民族和帝國交流的樞紐。",
+    "articles": [
+      {
+        "id": "page43",
+        "title": "第一章：黑海落日，狂風中的火種"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "isonzo",
+    "name_zh": "伊松佐河",
+    "name_en": "Isonzo / Sontius",
+    "coords": [
+      45.7567,
+      13.5261
+    ],
+    "desc": "阿爾卑斯山脈通往義大利東北平原的界河，西元489年8月東哥德王狄奧多里克在伊松佐河戰役中擊破奧多亞塞軍隊，打開進軍義大利的大門。",
+    "articles": [
+      {
+        "id": "page22",
+        "title": "羅馬秩序的終結與日耳曼王權的奠定"
+      }
+    ],
+    "category": "geography"
+  },
+  {
+    "id": "saxon_shore",
+    "name_zh": "撒克遜海岸",
+    "name_en": "Saxon Shore / Litus Saxonicum",
+    "coords": [
+      51.3,
+      1.3
+    ],
+    "desc": "羅馬晚期在不列顛東南部與高盧西北沿海建立的設防要塞體系與軍事管區，旨在抵禦北海撒克遜海盜的劫掠，五世紀初因軍隊被調往內地而空虛。",
+    "articles": [
+      {
+        "id": "page41",
+        "title": "君士坦丁三世與五世紀初邊疆危機"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "donaueschingen",
+    "name_zh": "多瑙艾辛根",
+    "name_en": "Donaueschingen",
+    "coords": [
+      47.9547,
+      8.5033
+    ],
+    "desc": "德國巴登-符騰堡邦黑森林東麓城鎮，布雷格河與布里加赫河匯流形成多瑙河之處，標誌著多瑙河水系的源頭與歐洲陸地軸線起點。",
+    "articles": [
+      {
+        "id": "page40",
+        "title": "萊茵河－多瑙河地緣戰略"
+      }
+    ],
+    "category": "geography"
+  },
+  {
+    "id": "breg_river",
+    "name_zh": "布雷格河",
+    "name_en": "Breg River",
+    "coords": [
+      48.095,
+      8.155
+    ],
+    "desc": "多瑙河兩大源流中最長的一支，發源於黑森林中部富特旺根附近海拔1078公尺的高地，自古為連通萊茵河谷與多瑙河上游的重要地理標誌。",
+    "articles": [
+      {
+        "id": "page40",
+        "title": "萊茵河－多瑙河地緣戰略"
+      }
+    ],
+    "category": "geography"
+  },
+  {
+    "id": "jouarre",
+    "name_zh": "茹阿爾修道院",
+    "name_en": "Jouarre Abbey",
+    "coords": [
+      48.9272,
+      3.1311
+    ],
+    "desc": "法國塞納-馬恩省著名的墨洛溫王朝女修道院，擁有歐洲現存最古老、雕飾最精美的七世紀地下墓穴石棺群，為卡洛林知識復興時期的女性修院教育重鎮。",
+    "articles": [
+      {
+        "id": "page10",
+        "title": "卡洛林教育基建與知識復興"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "nassau",
+    "name_zh": "拿騷",
+    "name_en": "Nassau",
+    "coords": [
+      50.315,
+      7.8008
+    ],
+    "desc": "萊茵蘭-普法爾茨拉恩河畔的古老城鎮與城堡，拿騷家族（奧蘭治-拿騷王朝）的發祥地，金璽詔書中名列萊茵河流域的重要伯爵領地。",
+    "articles": [
+      {
+        "id": "page04",
+        "title": "神聖羅馬帝國：金璽詔書"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "katzenelnbogen",
+    "name_zh": "卡岑埃倫博根",
+    "name_en": "Katzenelnbogen",
+    "coords": [
+      50.2681,
+      7.9786
+    ],
+    "desc": "萊茵河中游陶努斯山區的歷史伯爵領地與城堡，金璽詔書中提及的德意志核心諸侯領地之一，掌控萊茵河通行關稅與葡萄酒貿易。",
+    "articles": [
+      {
+        "id": "page04",
+        "title": "神聖羅馬帝國：金璽詔書"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "kingdom_of_arles",
+    "name_zh": "阿爾勒王國 (勃艮第王國)",
+    "name_en": "Kingdom of Arles / Arelat",
+    "coords": [
+      43.6766,
+      4.6278
+    ],
+    "desc": "神聖羅馬帝國三大附屬王國之一（與德意志王國、義大利王國並列），涵蓋隆河流域與普羅旺斯，特里爾總主教依法兼任其帝國大書記長。",
+    "articles": [
+      {
+        "id": "page04",
+        "title": "神聖羅馬帝國：金璽詔書"
+      }
+    ],
+    "category": "medieval"
+  },
+  {
+    "id": "goejanverwellesluis",
+    "name_zh": "戈揚韋勒斯勒伊斯",
+    "name_en": "Goejanverwellesluis / Hekendorp",
+    "coords": [
+      52.0125,
+      4.8117
+    ],
+    "desc": "荷蘭豪達附近的歷史運河水閘，1787年愛國者民兵在此拘捕執政之妻普魯士公主威廉明娜，直接引發普魯士軍隊入侵並改寫荷蘭近代政局。",
+    "articles": [
+      {
+        "id": "page01",
+        "title": "荷蘭建國與地緣政經"
+      }
+    ],
+    "category": "modern"
+  },
+  {
+    "id": "valence",
+    "name_zh": "瓦朗斯",
+    "name_en": "Valence / Valentia",
+    "coords": [
+      44.9333,
+      4.8917
+    ],
+    "desc": "隆河左岸的羅馬高盧行省防禦重鎮，五世紀初君士坦丁三世在此擊潰斯提里科派出的哥德將領薩魯斯，確立對高盧的控制。",
+    "articles": [
+      {
+        "id": "page41",
+        "title": "君士坦丁三世與五世紀初邊疆危機"
+      }
+    ],
+    "category": "rome"
+  },
+  {
+    "id": "moselle",
+    "name_zh": "摩澤爾河",
+    "name_en": "Moselle / Mosel",
+    "coords": [
+      49.75,
+      6.6333
+    ],
+    "desc": "萊茵河左岸重要支流，貫穿高盧-日耳曼邊境，流經帝國名都特里爾與科布倫茨，為羅馬軍運與卡洛林王國的運輸命脈。",
+    "articles": [
+      {
+        "id": "page40",
+        "title": "萊茵河－多瑙河地緣戰略"
+      }
+    ],
+    "category": "geography"
+  },
+  {
+    "id": "meuse",
+    "name_zh": "默茲河",
+    "name_en": "Meuse / Maas",
+    "coords": [
+      50.4667,
+      4.8667
+    ],
+    "desc": "西歐重要河流，流經法國、比利時與荷蘭注入北海，串聯列日、馬斯特里赫特與那慕爾，為低地國家八十年戰爭的重要防禦天塹。",
+    "articles": [
+      {
+        "id": "page01",
+        "title": "荷蘭建國與地緣政經"
+      },
+      {
+        "id": "page09",
+        "title": "丕平獻土與教宗國誕生"
+      }
+    ],
+    "category": "geography"
+  },
+  {
+    "id": "ijssel",
+    "name_zh": "艾瑟爾河",
+    "name_en": "IJssel River / Isala",
+    "coords": [
+      52.25,
+      6.1667
+    ],
+    "desc": "萊茵河向北流入須德海的分流，古代薩利安法蘭克人發源地（Isala），中世紀孕育了德芬特、聚特芬等漢薩同盟商貿名城。",
+    "articles": [
+      {
+        "id": "page01",
+        "title": "荷蘭建國與地緣政經"
+      },
+      {
+        "id": "page23",
+        "title": "蠻族崛起的政治重塑與克洛維霸權"
+      }
+    ],
+    "category": "geography"
+  },
+  {
+    "id": "vltava",
+    "name_zh": "伏爾塔瓦河",
+    "name_en": "Vltava River / Moldau",
+    "coords": [
+      50.0878,
+      14.4205
+    ],
+    "desc": "波希米亞地區的母親河，貫穿布拉格市區與高堡、卡爾什特因城堡，為胡斯戰爭與捷克民族歷史認同的地理核心。",
+    "articles": [
+      {
+        "id": "page03",
+        "title": "宗教戰爭(一)：胡斯戰爭"
+      }
+    ],
+    "category": "geography"
+  },
+  {
+    "id": "tiber",
+    "name_zh": "台伯河",
+    "name_en": "Tiber River",
+    "coords": [
+      41.8931,
+      12.4828
+    ],
+    "desc": "貫穿羅馬城的母親河，連接外港波爾圖斯與奧斯提亞，為晚期羅馬阿諾納（Annona）糧船艦隊將埃及與北非糧食溯流運抵帝都的命脈。",
+    "articles": [
+      {
+        "id": "page24",
+        "title": "帝國糧秣、租稅枷鎖與農奴的誕生：晚期羅馬阿諾納制度、土地附籍與西歐封建化轉型研究"
+      }
+    ],
+    "category": "geography"
+  },
+  {
+    "id": "hebrus",
+    "name_zh": "馬里查河 (埃布羅斯河)",
+    "name_en": "Hebrus / Maritsa River",
+    "coords": [
+      41.67,
+      26.56
+    ],
+    "desc": "巴爾幹半島色雷斯大平原的核心水系，流經菲利波波利斯（普羅夫迪夫）與哈德良堡（埃迪爾內），為阿德里安堡戰役及哥德戰爭的戰略主戰場。",
+    "articles": [
+      {
+        "id": "page29",
+        "title": "阿德里安堡戰役"
+      },
+      {
+        "id": "page47",
+        "title": "瓦倫斯陣亡至迪奧多西接掌君士坦丁堡"
+      }
+    ],
+    "category": "geography"
   }
 ];

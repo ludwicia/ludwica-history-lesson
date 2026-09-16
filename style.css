@@ -1184,6 +1184,8 @@
 .category-container[data-category="holland"] .article-card:hover { border-color: #dd6b20; box-shadow: 0 10px 20px rgba(221, 107, 32, 0.12); }
 .category-container[data-category="qing"] .article-card:hover { border-color: #d69e2e; box-shadow: 0 10px 20px rgba(214, 158, 46, 0.12); }
 .category-container[data-category="pre-3rd-century-rome"] .article-card:hover { border-color: #9c4221; box-shadow: 0 10px 20px rgba(156, 66, 33, 0.12); }
+.category-container[data-category="novel"] .article-card:hover { border-color: #3182ce; box-shadow: 0 10px 20px rgba(49, 130, 206, 0.12); }
+.category-container[data-category="han"] .article-card:hover { border-color: #c53030; box-shadow: 0 10px 20px rgba(197, 48, 48, 0.12); }
 
 /* Loading Spinner */
 .loading-spinner {

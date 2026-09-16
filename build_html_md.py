@@ -79,20 +79,34 @@ def process_markdown(file_path, image_replacements, content_version, main_img_ht
     text = text.split('Source: https://gemini')[0].strip(' -\n')
 
     # Preprocess markdown to fix MS Word style paragraph breaks (single newlines)
+    # Be careful not to insert empty lines inside fenced code blocks (```...```)
     lines = text.split('\n')
     new_lines = []
+    in_code_block = False
     for i, line in enumerate(lines):
+        if line.strip().startswith('```'):
+            in_code_block = not in_code_block
+            new_lines.append(line)
+            continue
         new_lines.append(line)
-        if i < len(lines) - 1:
+        if not in_code_block and i < len(lines) - 1:
             next_line = lines[i+1]
-            if line.strip() and next_line.strip():
-                # If neither line is a list item, table row, or heading
-                if not re.match(r'^[\-\*\#\|]', line.lstrip()) and not re.match(r'^\d+\.', line.lstrip()):
-                    if not re.match(r'^[\-\*\#\|]', next_line.lstrip()) and not re.match(r'^\d+\.', next_line.lstrip()):
-                        new_lines.append('')
+            if not next_line.strip().startswith('```'):
+                if line.strip() and next_line.strip():
+                    # If neither line is a list item, table row, or heading
+                    if not re.match(r'^[\-\*\#\|]', line.lstrip()) and not re.match(r'^\d+\.', line.lstrip()):
+                        if not re.match(r'^[\-\*\#\|]', next_line.lstrip()) and not re.match(r'^\d+\.', next_line.lstrip()):
+                            new_lines.append('')
 
     text = '\n'.join(new_lines)
-    html_body = markdown.markdown(text, extensions=['tables', 'toc'])
+
+    # Convert fenced mermaid blocks to standards-compliant container per AGENTS.md
+    def mermaid_replace(m):
+        code = m.group(1).strip()
+        return f'<div class="diagram-container"><pre class="mermaid">\n{code}\n</pre></div>'
+    text = re.sub(r'```mermaid\s*\n(.*?)\n```', mermaid_replace, text, flags=re.DOTALL)
+
+    html_body = markdown.markdown(text, extensions=['tables', 'toc', 'fenced_code'])
 
     # Add content version badge and update date badge
     version_badge = f'<div style="text-align: center; color: #718096; margin-top: -15px; margin-bottom: 25px; font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;"><span style="background-color: #ebf8ff; color: #2b6cb0; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; border: 1px solid #bee3f8;">內容版本：{content_version}</span><span style="background-color: #f0fff4; color: #38a169; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; border: 1px solid #c6f6d5;">最近更新：{update_date}</span></div>\n'
@@ -227,6 +241,7 @@ with open("course_config.json", "r", encoding="utf-8") as f:
 
 pages_data = _course_cfg.get("articles", {})
 categories = _course_cfg.get("categories", [])
+layout_version = _course_cfg.get("site_config", {}).get("layout_version", "8.3")
 
 # Parse worklog.md for the latest 10 updates
 worklog_html = ""
@@ -419,12 +434,11 @@ def write_site_outputs():
     <priority>1.0</priority>
   </url>""")
 
-    # 獨立功能頁面
+    # 獨立功能頁面 (移除已整合至 page32 的重複文獻頁面，避免 SEO 衝突)
     standalone_pages = [
         ("characters_database.html", 0.8),
         ("europe_map.html", 0.8),
         ("character_relationship.html", 0.7),
-        ("constitutio_antoniniana_bilingual.html", 0.7),
     ]
     for page_file, priority in standalone_pages:
         if os.path.exists(page_file):
@@ -454,6 +468,8 @@ def write_site_outputs():
 
     # Generate robots.txt for SEO
     robots_content = """User-agent: *
+Disallow: /admin.html
+Disallow: /translation_editor.html
 Allow: /
 
 Sitemap: https://ludwica-history-lesson.pages.dev/sitemap.xml
@@ -556,6 +572,25 @@ Sitemap: https://ludwica-history-lesson.pages.dev/sitemap.xml
                 "inLanguage": "zh-TW"
             }, ensure_ascii=False, indent=None)
 
+            mermaid_script = """<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+<script>
+    if (window.mermaid) {
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#e3f2fd',
+                primaryTextColor: '#0d47a1',
+                primaryBorderColor: '#1565c0',
+                lineColor: '#718096',
+                fontSize: '18px',
+                fontFamily: 'system-ui, -apple-system, sans-serif'
+            }
+        });
+    }
+</script>
+""" if ('class="mermaid"' in body_html or "class='mermaid'" in body_html) else ""
+
             article_html = f"""<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -578,7 +613,7 @@ Sitemap: https://ludwica-history-lesson.pages.dev/sitemap.xml
     <meta name="twitter:description" content="{desc}">
     <meta name="twitter:image" content="{image_url}">
 
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css?v={layout_version}">
     <script type="application/ld+json">{json_ld}</script>
     <style>
         body {{ background: #f7fafc; margin: 0; }}
@@ -623,6 +658,7 @@ Sitemap: https://ludwica-history-lesson.pages.dev/sitemap.xml
         }}
     }}
 </script>
+{mermaid_script}
 </body>
 </html>
 """

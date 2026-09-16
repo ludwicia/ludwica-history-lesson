@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>歷史文獻三欄式編輯器</title>
+    <meta name="robots" content="noindex, nofollow">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -23,7 +24,7 @@
             padding: 0;
             font-family: 'Inter', 'Noto Sans TC', sans-serif;
             background: var(--bg-color);
-            background-image: 
+            background-image:
                 radial-gradient(circle at 15% 50%, var(--accent-glow), transparent 25%),
                 radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15), transparent 25%);
             color: var(--text-main);
@@ -277,7 +278,7 @@
             }
 
             let markdown = "\n---\n\n";
-            
+
             if (original) {
                 markdown += "**原文**\n\n" + original + "\n\n";
             }

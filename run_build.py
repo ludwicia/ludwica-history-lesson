@@ -35,8 +35,41 @@ def find_service_account_key():
             return matches[0]
     return None
 
+def sync_version_numbers():
+    import json
+    import re
+    try:
+        with open('course_config.json', 'r', encoding='utf-8') as f:
+            cfg = json.load(f)
+        ver = str(cfg.get('site_config', {}).get('layout_version', '8.3')).strip()
+
+        # 1. Sync js/firestore-service.js APP_VERSION
+        fs_path = 'js/firestore-service.js'
+        if os.path.exists(fs_path):
+            with open(fs_path, 'r', encoding='utf-8') as f:
+                fs_code = f.read()
+            new_fs = re.sub(r"const APP_VERSION\s*=\s*['\"][^'\"]+['\"];", f"const APP_VERSION = '{ver}';", fs_code)
+            if new_fs != fs_code:
+                with open(fs_path, 'w', encoding='utf-8', newline='\n') as f:
+                    f.write(new_fs)
+                print(f"[OK] Synchronized js/firestore-service.js APP_VERSION to {ver}")
+
+        # 2. Sync index_db.html style.css?v=
+        idb_path = 'index_db.html'
+        if os.path.exists(idb_path):
+            with open(idb_path, 'r', encoding='utf-8') as f:
+                idb_code = f.read()
+            new_idb = re.sub(r'href="style\.css\?v=[^"]+"', f'href="style.css?v={ver}"', idb_code)
+            if new_idb != idb_code:
+                with open(idb_path, 'w', encoding='utf-8', newline='\n') as f:
+                    f.write(new_idb)
+                print(f"[OK] Synchronized index_db.html style.css?v= to {ver}")
+    except Exception as e:
+        print(f"[WARNING] Version sync check skipped: {e}")
+
 def main():
     print("=== STARTING LUDWICA HISTORY PORTAL COMPILATION PIPELINE ===")
+    sync_version_numbers()
 
     # ------------------------------------------------------------------
     # [2026-07-21 修正] 步驟 1、2 合併為單一行程，消除重複建置。

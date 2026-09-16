@@ -1,4 +1,6 @@
 User-agent: *
+Disallow: /admin.html
+Disallow: /translation_editor.html
 Allow: /
 
 Sitemap: https://ludwica-history-lesson.pages.dev/sitemap.xml
