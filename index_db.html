@@ -426,7 +426,7 @@
                 <div class="version-card">
                     <div style="font-weight: 600; margin-bottom: 8px; color: var(--primary-color);">📝 版本與課堂宣告</div>
                     <div style="font-weight: 500; margin-bottom: 6px;">版面設計：8.3 (全站外觀、資料庫與單一真實來源架構優化發布)</div>
-                    <div style="color: #718096; font-size: 0.75rem;">發布日期：2026-08-08</div>
+                    <div style="color: #718096; font-size: 0.75rem;">發布日期：2026-07-26</div>
                     <hr style="border: none; border-top: 1px dashed #cbd5e0; margin: 8px 0;">
                     <div id="dynamic-course-info" style="text-align: left; font-size: 0.8rem; line-height: 1.5;">
                         <!-- Dynamic metadata loaded by JS -->
@@ -799,9 +799,9 @@
             return;
         }
 
-        // Lazy load search index once (from Firestore)
+        // Lazy load search index once (from Local API / Firestore fallback)
         if (searchIndex === null) {
-            searchResults.innerHTML = '<div style="text-align: center; padding: 20px 0;"><div class="loading-spinner"></div><div style="font-size:0.8rem;color:#718096;margin-top:8px;">正在從 Firestore 載入搜尋索引...</div></div>';
+            searchResults.innerHTML = '<div style="text-align: center; padding: 20px 0;"><div class="loading-spinner"></div><div style="font-size:0.8rem;color:#718096;margin-top:8px;">正在載入全文搜尋索引...</div></div>';
             getSearchIndex()
                 .then(data => {
                     searchIndex = data;

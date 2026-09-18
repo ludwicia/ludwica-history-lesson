@@ -672,7 +672,7 @@ Sitemap: https://ludwica-history-lesson.pages.dev/sitemap.xml
 
     generate_static_article_pages()
 
-    print("Done! Site successfully built as dynamic 23-topic history portal with full SEO.")
+    print(f"Done! Site successfully built with {len(categories)} categories and {len(pages_data)} articles with full SEO.")
 
 
 

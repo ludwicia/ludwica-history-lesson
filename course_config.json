@@ -627,13 +627,13 @@
     "page17": {
       "title": "從皇帝稱號看羅馬政教關係演變",
       "file_path": "course/從戴克里先、君士坦丁到迪奧多西：從皇帝的稱號看歷史背景與政教關係的演變.md",
-      "ver": "1.1",
+      "ver": "1.2",
       "doc": false,
       "img": "images/ambrose_and_theodosius.png",
       "bg_pos": "center",
       "seo_title": "從皇帝的稱號看歷史背景與政教關係的演變 — Ludwica 的簡單歷史課",
-      "seo_desc": "從三世紀危機後的戴克里先確立君主制，到君士坦丁大帝開啟基督教的寬容時代，再到格拉提安與迪奧多西一世將尼西亞信仰確立為國教，解析皇帝稱號的演變如何折射出羅馬帝國晚期的政教關係與政治神學。",
-      "map_html": "<figure class=\"image-left\" style=\"width: 38%; margin-bottom: 20px;\"><img src=\"images/ambrose_and_theodosius.png\" alt=\"Ambrose and Theodosius\" loading=\"lazy\"><figcaption class=\"caption\">聖安波羅修在米蘭大教堂前阻擋皇帝迪奧多西一世的歷史想像圖，象徵世俗權力必須臣服於上帝的屬靈裁判，是政教關係史上的關鍵分水嶺。</figcaption></figure>\n",
+      "seo_desc": "從三世紀危機後的戴克里先確立君主制，到君士坦丁大帝開啟基督教的寬容時代，再到格拉提安與狄奧多西一世將尼西亞信仰確立為國教，解析皇帝稱號的演變如何折射出羅馬帝國晚期的政教關係與政治神學。",
+      "map_html": "<figure class=\"image-left\" style=\"width: 38%; margin-bottom: 20px;\"><img src=\"images/ambrose_and_theodosius.png\" alt=\"Ambrose and Theodosius\" loading=\"lazy\"><figcaption class=\"caption\">聖安波羅修在米蘭主教座堂前阻擋皇帝狄奧多西一世的歷史想像圖（源自後世教會傳記），象徵世俗權力必須臣服於上帝的屬靈裁判，是政教關係史上的關鍵分水嶺。</figcaption></figure>\n",
       "image_replacements": [
         {
           "pattern": "(<h2.*?>戴克里先與君主制的創立：從「第一公民」到「君主與神」</h2>)",
@@ -643,10 +643,10 @@
         {
           "pattern": "(<h2.*?>君士坦丁大帝的雙重神聖：大祭司與「外部事務主教」</h2>)",
           "url": "images/p17_constantine_head.jpg",
-          "caption": "羅馬卡比托利歐博物館收藏 of 君士坦丁大帝青銅巨像頭部（約公元4世紀），其巨大的雙眼凝視著遠方，展現出晚期羅馬帝國君主超越凡人、神聖不可侵犯的專制權威。"
+          "caption": "羅馬卡比托利歐博物館收藏的君士坦丁大帝青銅巨像頭部（約公元4世紀），其巨大的雙眼凝視著遠方，展現出晚期羅馬帝國君主超越凡人、神聖不可侵犯的專制權威。"
         },
         {
-          "pattern": "(<h2.*?>格拉提安的信仰抉擇：拒絕「大祭司」與「榮譽祭司」的轉向</h2>)",
+          "pattern": "(<h2.*?>格拉提安的信仰抉擇：拒絕「大祭司」與「顯赫祭司」的轉向</h2>)",
           "url": "images/p17_curia_julia.jpg",
           "caption": "位於羅馬廣場的庫里亞·朱利亞（羅馬元老院議事堂），格拉提安皇帝曾下令將其中的「勝利女神祭壇」拆除，徹底引發了傳統多神教精英與基督教主教的政論博弈。"
         }
@@ -1101,7 +1101,7 @@
       "img": "images/firmus_rebellion.png",
       "bg_pos": "center",
       "seo_title": "費爾穆斯叛亂與北非防務危機 — Ludwica 的簡單歷史課",
-      "seo_desc": "深入研究西元372年柏柏爾裔羅馬軍官之子費爾穆斯在北非發起的僭越叛亂，剖析地方系統性腐敗、老狄奧多西平叛經過、多納圖斯派的宗教交鋒，以及其對老狄奧多西之死、吉爾do之戰與北非淪陷的深遠影響。",
+      "seo_desc": "深入研究西元372年柏柏爾裔羅馬軍官之子費爾穆斯在北非發起的僭越叛亂，剖析地方系統性腐敗、老狄奧多西平叛經過、多納圖斯派的宗教交鋒，以及其對老狄奧多西之死、吉爾多之戰與北非淪陷的深遠影響。",
       "map_html": "<figure class=\"image-left\" style=\"width: 38%; margin-bottom: 20px;\"><img src=\"images/firmus_rebellion.png\" alt=\"Firmus Rebellion\" loading=\"lazy\"><figcaption class=\"caption\">費爾穆斯叛亂：四世紀晚期，柏柏爾親王費爾穆斯在北非發動叛亂並僭越稱帝，這是帝國防線內爆與部族力量博弈的微觀縮影（本圖為 AI 模擬歷史繪畫）。</figcaption></figure>\n",
       "image_replacements": []
     },

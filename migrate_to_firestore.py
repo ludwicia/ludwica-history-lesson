@@ -216,7 +216,7 @@ def migrate_site_config(db, catalog_data=None):
     config = {
         'layout_version': version,
         'publish_date': site_cfg.get('publish_date', date.today().isoformat()),
-        'site_name': site_cfg.get('title', 'Ludwica 的簡單歷史課'),
+        'site_name': site_cfg.get('site_name', site_cfg.get('title', 'Ludwica 的簡單歷史課')),
         'site_url': site_cfg.get('site_url', 'https://ludwica-history-lesson.pages.dev/'),
         'description': site_cfg.get('description', '深度歷史專題研究與報告')
     }
@@ -235,7 +235,7 @@ def main():
     catalog_path = "api/articles.json"
     if not os.path.exists(catalog_path):
         print(f"[ERROR] 找不到 {catalog_path}")
-        print("   請先執行 python build_static_chunks.py 生成 API 資料")
+        print("   請先執行 python run_build.py 生成全站資料與 API 切片")
         sys.exit(1)
 
     # 讀取文章目錄
