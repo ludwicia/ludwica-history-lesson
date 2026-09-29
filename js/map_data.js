@@ -1,5 +1,5 @@
 // Historical Places Data for Europe Map
-// Total places: 443
+// Total places: 489
 const HISTORICAL_PLACES = [
   {
     "id": "rome",
@@ -1062,6 +1062,14 @@ const HISTORICAL_PLACES = [
       {
         "id": "page41",
         "title": "君士坦丁三世政權興衰"
+      },
+      {
+        "id": "page07",
+        "title": "奧托-薩利安帝國教會體制"
+      },
+      {
+        "id": "page19",
+        "title": "米蘭敕令時代與李錫尼覆滅"
       }
     ],
     "category": "geography"
@@ -1702,6 +1710,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page47",
         "title": "東羅馬權力轉移與迪奧多西接掌君士坦丁堡"
+      },
+      {
+        "id": "page30",
+        "title": "東羅馬權力重組與蠻族危機"
       }
     ],
     "category": "rome"
@@ -1894,6 +1906,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page25",
         "title": "羅馬晚期軍制變遷與哥德人崛起"
+      },
+      {
+        "id": "page46",
+        "title": "阿薩納里克家族與特爾文吉哥德人的統治演變"
       }
     ],
     "category": "geography"
@@ -2275,6 +2291,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page44",
         "title": "羅馬與波斯地緣關係"
+      },
+      {
+        "id": "page30",
+        "title": "東羅馬權力重組與蠻族危機"
       }
     ],
     "category": "geography"
@@ -3300,6 +3320,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page16",
         "title": "中世紀巡行王權的權力運作"
+      },
+      {
+        "id": "page40",
+        "title": "萊茵河－多瑙河地緣戰略"
       }
     ],
     "category": "medieval"
@@ -3851,6 +3875,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page20",
         "title": "羅馬帝國：米蘭敕令"
+      },
+      {
+        "id": "page17",
+        "title": "從皇帝稱號看羅馬政教關係演變"
       }
     ],
     "category": "rome"
@@ -4025,6 +4053,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page04",
         "title": "神聖羅馬帝國：金璽詔書"
+      },
+      {
+        "id": "page40",
+        "title": "萊茵河－多瑙河地緣戰略"
       }
     ],
     "category": "geography"
@@ -5828,6 +5860,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page31",
         "title": "塞維魯王朝與安東尼努斯敕令"
+      },
+      {
+        "id": "page19",
+        "title": "米蘭敕令時代與李錫尼覆滅"
       }
     ]
   },
@@ -7116,6 +7152,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page33",
         "title": "一世紀羅馬行省治權與社會"
+      },
+      {
+        "id": "page19",
+        "title": "米蘭敕令時代與李錫尼覆滅"
       }
     ]
   },
@@ -7676,6 +7716,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page15",
         "title": "聖職與婚娶"
+      },
+      {
+        "id": "page11",
+        "title": "歐洲造紙術的歷史演變"
       }
     ]
   },
@@ -9783,6 +9827,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page09",
         "title": "丕平獻土與教宗國誕生"
+      },
+      {
+        "id": "page22",
+        "title": "羅馬秩序的終結與日耳曼王權的奠定"
       }
     ],
     "category": "medieval"
@@ -10310,6 +10358,10 @@ const HISTORICAL_PLACES = [
       {
         "id": "page04",
         "title": "神聖羅馬帝國：金璽詔書"
+      },
+      {
+        "id": "page01",
+        "title": "荷蘭建國與地緣政經"
       }
     ],
     "category": "medieval"
@@ -10495,5 +10547,799 @@ const HISTORICAL_PLACES = [
       }
     ],
     "category": "geography"
+  },
+  {
+    "id": "cauca",
+    "name_zh": "考卡",
+    "name_en": "Cauca / Coca",
+    "coords": [
+      41.2167,
+      -4.5242
+    ],
+    "desc": "西班牙塞哥維亞省的歷史古城，羅馬帝國塔拉科行省城邦。為狄奧多西大帝（Theodosius I）的誕生地與家族封邑；西元376年老狄奧多西遭冤殺後，小狄奧多西曾在此解職隱退避禍，直至阿德里安堡戰後受格拉提安徵召力挽狂瀾。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page45",
+        "title": "費爾穆斯叛亂與北非防務危機"
+      },
+      {
+        "id": "page47",
+        "title": "瓦倫斯陣亡至迪奧多西接掌君士坦丁堡"
+      }
+    ]
+  },
+  {
+    "id": "tabraca",
+    "name_zh": "塔布拉卡",
+    "name_en": "Tabraca / Tabarka",
+    "coords": [
+      36.9544,
+      8.7581
+    ],
+    "desc": "北非突尼西亞西北部沿海港口，地處努米底亞與阿非利加行省交界。羅馬晚期北非軍事伯爵吉爾多（Gildo）叛亂失敗後逃抵此港試圖乘船出海，走投無路下在此自縊身亡。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page45",
+        "title": "費爾穆斯叛亂與北非防務危機"
+      }
+    ]
+  },
+  {
+    "id": "tubusuctu",
+    "name_zh": "圖布蘇克圖",
+    "name_en": "Tubusuctu / Tubusuptum / Tiklat",
+    "coords": [
+      36.6833,
+      4.8833
+    ],
+    "desc": "阿爾及利亞北部蘇馬姆河谷的羅馬奧古斯都殖民要塞（Colonia Iulia Augusta Tubusuctu）。四世紀費爾穆斯叛亂期間為老狄奧多西遠征軍的重要後勤基地與軍事出擊點。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page45",
+        "title": "費爾穆斯叛亂與北非防務危機"
+      }
+    ]
+  },
+  {
+    "id": "pancharia",
+    "name_zh": "潘查里亞 (溫泉驛站)",
+    "name_en": "Pancharia / Hammam Righa",
+    "coords": [
+      36.3792,
+      2.3967
+    ],
+    "desc": "阿爾及利亞北部祖卡爾山腳下的羅馬軍事驛站與溫泉療養地。西元372年費爾穆斯叛亂爆發後，費爾穆斯曾進駐該站並在此接見羅馬軍事將領與使團展開斡旋。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page45",
+        "title": "費爾穆斯叛亂與北非防務危機"
+      }
+    ]
+  },
+  {
+    "id": "weh_ardashir",
+    "name_zh": "韋·阿爾達希爾 (塞琉西亞)",
+    "name_en": "Weh Ardashir / Kokhe",
+    "coords": [
+      33.0944,
+      44.575
+    ],
+    "desc": "底格里斯河右岸的薩珊波斯大都會，由阿爾達希爾一世在古塞琉西亞廢墟旁重建，與左岸泰西封隔河相望構成帝都雙子城，為美索不達米亞的核心防衛圈與東方教會宗座所在地。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page44",
+        "title": "羅馬與波斯地緣關係"
+      }
+    ]
+  },
+  {
+    "id": "acilisene",
+    "name_zh": "阿奇利塞內",
+    "name_en": "Acilisene / Erzincan",
+    "coords": [
+      39.75,
+      39.5
+    ],
+    "desc": "幼發拉底河畔的亞美尼亞西部要地。西元387年羅馬皇帝狄奧多西一世與波斯沙阿沙普爾三世在此簽署《阿奇利塞內和約》，將亞美尼亞王國五分之四劃歸波斯、五分之一劃歸羅馬，奠定了長達兩個世紀的近東地緣分界。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page44",
+        "title": "羅馬與波斯地緣關係"
+      }
+    ]
+  },
+  {
+    "id": "pallantia",
+    "name_zh": "帕倫西亞",
+    "name_en": "Pallantia / Palencia",
+    "coords": [
+      42.0167,
+      -4.5333
+    ],
+    "desc": "西班牙北部卡斯提爾平原的羅馬城邦，原為瓦卡埃人首府。西元408年君士坦丁三世之子康斯坦斯二世遠征伊比利半島擊潰狄奧多西家族勢力後，縱容其蠻族野戰軍霍諾里亞西（Honoriaci）在此肆意洗劫掠奪，引發西班牙防線的連鎖崩潰。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page41",
+        "title": "君士坦丁三世與五世紀初邊疆危機"
+      }
+    ]
+  },
+  {
+    "id": "asti",
+    "name_zh": "阿斯蒂",
+    "name_en": "Asti / Hasta",
+    "coords": [
+      44.9,
+      8.2069
+    ],
+    "desc": "北義大利皮埃蒙特地區的羅馬殖民城邦。西元402年初，西哥德首領阿拉里克大軍長驅直入北義大利，驚恐的西羅馬皇帝霍諾留自米蘭南逃途中被哥德騎兵重重圍困於阿斯蒂，直至斯提里科率精兵馳援解圍。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page26",
+        "title": "阿拉里克與哥德大遷徙"
+      },
+      {
+        "id": "page39",
+        "title": "斯提里科與晚期羅馬瓦解"
+      }
+    ]
+  },
+  {
+    "id": "rhegium",
+    "name_zh": "雷吉烏姆 (雷焦卡拉布里亞)",
+    "name_en": "Rhegium / Reggio Calabria",
+    "coords": [
+      38.1114,
+      15.6472
+    ],
+    "desc": "義大利半島最南端、扼守墨西拿海峽的重要港口。西元410年阿拉里克洗劫羅馬後率全族南下抵達雷吉烏姆，試圖渡海佔領西西里並奪取帝國糧倉北非，但艦隊在海峽遭遇風暴毀滅，阿拉里克隨後北撤並猝逝於科森扎。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page38",
+        "title": "阿陶爾夫與西哥德轉型"
+      }
+    ]
+  },
+  {
+    "id": "actium",
+    "name_zh": "亞克興",
+    "name_en": "Actium / Aktion",
+    "coords": [
+      38.9542,
+      20.7694
+    ],
+    "desc": "希臘西北部安布拉基亞灣入口處的歷史岬角。西元前31年9月2日爆發決定性的亞克興海戰，屋大維部將阿格里帕在此徹底擊敗馬克·安東尼與克麗奧佩脫拉聯軍，奠定了羅馬元首制帝國的誕生。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page33",
+        "title": "一世紀羅馬行省治權與社會"
+      }
+    ]
+  },
+  {
+    "id": "caledonia",
+    "name_zh": "卡萊多尼亞 (蘇格蘭高地)",
+    "name_en": "Caledonia / Scotland",
+    "coords": [
+      56.7969,
+      -4.2253
+    ],
+    "desc": "不列顛島哈德良長城與安東尼長城以北的古老地理區域，皮克特人與卡萊多尼亞部落的聚居地。羅馬皇帝塞普蒂米烏斯·塞維魯與卡拉卡拉於西元208–211年間在此發動大規模軍事征伐。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page31",
+        "title": "卡拉卡拉與《安東尼努斯敕令》"
+      }
+    ]
+  },
+  {
+    "id": "emesa",
+    "name_zh": "埃梅薩 (霍姆斯)",
+    "name_en": "Emesa / Homs",
+    "coords": [
+      34.7333,
+      36.7167
+    ],
+    "desc": "敘利亞奧龍特斯河畔名城，古羅馬太陽神埃拉伽巴路斯（Elagabalus）聖地。塞維魯王朝皇太后茱莉亞·多姆娜之故鄉與祭司家族大本營；西元218年茱莉亞·邁薩在此發動兵變擁立埃拉伽巴路斯奪取羅馬皇位。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page31",
+        "title": "卡拉卡拉與《安東尼努斯敕令》"
+      }
+    ]
+  },
+  {
+    "id": "thracian_chersonese",
+    "name_zh": "色雷斯切爾索尼斯 (加里波利半島)",
+    "name_en": "Thracian Chersonese / Gallipoli",
+    "coords": [
+      40.3667,
+      26.55
+    ],
+    "desc": "巴爾幹半島扼守達達尼爾海峽（赫勒斯滂）的狹長半島。西元400年東羅馬哥德將領蓋納斯起事失敗後率部南逃至此，企圖強渡海峽退往小亞細亞，遭到名將弗拉維塔斯率領的羅馬艦隊重創殲滅。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page30",
+        "title": "東羅馬權力重組與蠻族危機"
+      }
+    ]
+  },
+  {
+    "id": "augustaion",
+    "name_zh": "奧古斯太翁廣場",
+    "name_en": "Augustaion (Constantinople)",
+    "coords": [
+      41.0075,
+      28.979
+    ],
+    "desc": "君士坦丁堡最核心的帝國禮儀廣場，坐落於聖索菲亞大教堂、大皇宮與賽馬場之間。西元403年底此地豎立起阿卡狄烏斯皇后尤多克西亞的銀質雕像，因喧鬧祭典引發大主教聖金口約翰抗議，激化了政教衝突並導致約翰被流放。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page30",
+        "title": "東羅馬權力重組與蠻族危機"
+      }
+    ]
+  },
+  {
+    "id": "lampsacus",
+    "name_zh": "蘭普薩庫斯",
+    "name_en": "Lampsacus / Lapseki",
+    "coords": [
+      40.3431,
+      26.6853
+    ],
+    "desc": "小亞細亞達達尼爾海峽（赫勒斯滂）亞洲側要衝古城。西元324年羅馬內戰期間，李錫尼拔擢馬提尼亞努斯為共治奧古斯都並派其駐防蘭普薩庫斯以封鎖海峽，但君士坦丁之子克里斯普斯海戰大勝後攻克該城。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page19",
+        "title": "米蘭敕令時代與李錫尼覆滅"
+      }
+    ]
+  },
+  {
+    "id": "mardia",
+    "name_zh": "馬爾迪亞 (阿爾迪恩西斯平原)",
+    "name_en": "Mardia / Campus Ardiensis",
+    "coords": [
+      41.9333,
+      25.9
+    ],
+    "desc": "色雷斯哈爾曼利附近的馬里查河支流阿爾達河流域平原。西元316年底–317年初，君士坦丁大帝與李錫尼在此爆發馬爾迪亞戰役（Battle of Mardia），雙方血戰至夜幕降臨，迫使李錫尼簽署塞爾迪卡和約。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page19",
+        "title": "米蘭敕令時代與李錫尼覆滅"
+      }
+    ]
+  },
+  {
+    "id": "rheinbrohl",
+    "name_zh": "萊茵布羅爾",
+    "name_en": "Rheinbrohl / Caput Limitis",
+    "coords": [
+      50.4975,
+      7.3364
+    ],
+    "desc": "萊茵河右岸的古羅馬軍事重鎮，被尊為「邊牆之首」（Caput Limitis）——全長550公里的上日耳曼-雷蒂安界牆（Limes Germanicus）從此處的第一號瞭望塔（Wachturm 1/1）起點向東南延伸至多瑙河畔。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page40",
+        "title": "萊茵河－多瑙河地緣戰略"
+      }
+    ]
+  },
+  {
+    "id": "kinzigtal",
+    "name_zh": "金齊希河谷",
+    "name_en": "Kinzigtal / Kinzig Valley",
+    "coords": [
+      48.2833,
+      8.1667
+    ],
+    "desc": "貫穿黑森林核心的戰略深谷通道。西元73–74年韋斯巴薌皇帝派將領克萊門斯開闢穿山軍道，將十合之地（Agri Decumates）併入版圖，大幅縮短了美因茨軍團基地與雷蒂安首府奧格斯堡之間的行軍補給路徑。",
+    "category": "geography",
+    "articles": [
+      {
+        "id": "page40",
+        "title": "萊茵河－多瑙河地緣戰略"
+      }
+    ]
+  },
+  {
+    "id": "ripa_gothica",
+    "name_zh": "哥德河岸 (多瑙河戰場)",
+    "name_en": "Ripa Gothica (Danube)",
+    "coords": [
+      44.0333,
+      27.2667
+    ],
+    "desc": "多瑙河下游莫西亞與斯基泰邊境防線。西元386年東羅馬名將普羅莫圖斯（Promotus）在此依託多瑙河內河艦隊全殲企圖強渡多瑙河的格勞通基哥德部落奧多休斯大軍，切斷了巴爾幹蠻族與歐亞草原的後援。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page47",
+        "title": "瓦倫斯陣亡至迪奧多西接掌君士坦丁堡"
+      }
+    ]
+  },
+  {
+    "id": "buzau_river",
+    "name_zh": "布澤烏河",
+    "name_en": "Buzău River / Mouseos",
+    "coords": [
+      45.15,
+      26.8167
+    ],
+    "desc": "羅馬尼亞瓦拉幾亞東部的多瑙河左岸支流，古稱穆塞奧斯河（Mouseos）。西元372年阿薩納里克在特爾文吉哥德領地發動迫害基督徒運動期間，著名哥德殉道者聖尼西塔斯（St. Nicetas the Goth）在此河流域遭火刑與溺斃殉道。",
+    "category": "geography",
+    "articles": [
+      {
+        "id": "page46",
+        "title": "阿薩納里克家族與特爾文吉哥德人的統治演變"
+      }
+    ]
+  },
+  {
+    "id": "angers",
+    "name_zh": "昂熱",
+    "name_en": "Angers / Juliomagus",
+    "coords": [
+      47.4728,
+      -0.555
+    ],
+    "desc": "羅亞爾河支流曼恩河畔的高盧羅馬名城。西元464/465年羅馬將領埃吉迪烏斯死後，保羅伯爵與法蘭克國王希爾德里克一世在此並肩作戰，於昂熱之役中大敗撒克遜海盜掠奪部隊。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page23",
+        "title": "蠻族崛起的政治重塑與克洛維霸權"
+      }
+    ]
+  },
+  {
+    "id": "cambrai",
+    "name_zh": "康布雷",
+    "name_en": "Cambrai / Camaracum",
+    "coords": [
+      50.1764,
+      3.2356
+    ],
+    "desc": "北高盧斯海爾德河畔古城，西元五世紀後半葉為薩利安法蘭克重要小王國首府。國王拉格納哈爾曾協助克洛維進攻蘇瓦松，但隨後遭克洛維收買叛將斬殺並吞併其領地。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page23",
+        "title": "蠻族崛起的政治重塑與克洛維霸權"
+      }
+    ]
+  },
+  {
+    "id": "le_mans",
+    "name_zh": "勒芒",
+    "name_en": "Le Mans / Vindunum",
+    "coords": [
+      48.0061,
+      0.1996
+    ],
+    "desc": "高盧薩爾特河畔名城，塞諾曼尼人故都。克洛維一世統一法蘭克諸部的殘酷鬥爭中，在此處決了薩利安法蘭克王族里格諾默（Rignomer），消除了西部邊陲的潛在王權競爭者。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page23",
+        "title": "蠻族崛起的政治重塑與克洛維霸權"
+      }
+    ]
+  },
+  {
+    "id": "luceoli",
+    "name_zh": "盧切奧利",
+    "name_en": "Luceoli / Cantiano",
+    "coords": [
+      43.4739,
+      12.6281
+    ],
+    "desc": "義大利翁布里亞穿越亞平寧山脈的弗拉米尼亞大道要塞，扼守連接羅馬城與拉文納總督區的「拜占庭走廊」。西元754/756年《丕平獻土》（Donatio Pippini）中被明確列為歸還聖座的關鍵要衝之一。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page09",
+        "title": "丕平獻土與教宗國誕生"
+      }
+    ]
+  },
+  {
+    "id": "susa_piemont",
+    "name_zh": "蘇薩",
+    "name_en": "Susa / Segusio",
+    "coords": [
+      45.1386,
+      7.0494
+    ],
+    "desc": "北義大利皮埃蒙特阿爾卑斯山腳下、扼守塞尼山隘口的戰略重鎮。西元755年法蘭克國王矮子丕平親率大軍翻越阿爾卑斯山，在蘇薩隘口擊潰倫巴底國王阿斯圖爾夫的防線，迫使其簽署條約歸還羅馬教廷土地。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page09",
+        "title": "丕平獻土與教宗國誕生"
+      }
+    ]
+  },
+  {
+    "id": "essen",
+    "name_zh": "埃森修道院",
+    "name_en": "Essen Abbey / Stift Essen",
+    "coords": [
+      51.4556,
+      7.0131
+    ],
+    "desc": "魯爾河流域著名的帝國女子修道院，約西元845年由薩克森貴族阿特弗里德創立。在奧托王朝時期成為王室女貴族教育與文化繁榮的中心，珍藏著名的「埃森金色聖母像」與奧托王朝珍寶。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page10",
+        "title": "卡洛林教育基建與知識復興"
+      }
+    ]
+  },
+  {
+    "id": "herford",
+    "name_zh": "赫爾福德修道院",
+    "name_en": "Herford Abbey / Stift Herford",
+    "coords": [
+      52.1158,
+      8.6719
+    ],
+    "desc": "薩克森公國境內最古老的王家女子帝國修道院（創立於西元789年），直屬帝國皇帝保護。卡洛林與奧托時期為貴族女性神學研修與經典手抄教育的最高重鎮，享有直屬帝國自治特權。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page10",
+        "title": "卡洛林教育基建與知識復興"
+      },
+      {
+        "id": "page16",
+        "title": "中世紀巡行王權的權力運作"
+      }
+    ]
+  },
+  {
+    "id": "sainte_croix_poitiers",
+    "name_zh": "普瓦捷聖十字修道院",
+    "name_en": "Sainte-Croix Abbey (Poitiers)",
+    "coords": [
+      46.5794,
+      0.3508
+    ],
+    "desc": "法國普瓦捷著名的古老女子修道院，西元552年由法蘭克王后聖拉德貢德（Radegund）創立，為高盧最早的女子隱修院之一。在卡洛林教育基建中長期承擔古典文法、拉丁手抄與聖樂傳承任務。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page10",
+        "title": "卡洛林教育基建與知識復興"
+      }
+    ]
+  },
+  {
+    "id": "saint_felix_lauragais",
+    "name_zh": "聖費利克斯-洛拉蓋",
+    "name_en": "Saint-Félix-Lauragais",
+    "coords": [
+      43.4492,
+      1.8844
+    ],
+    "desc": "法國朗格多克洛拉蓋地區的山丘古鎮。西元1167年在此召開具有分水嶺意義的「聖費利克斯會議」，由君士坦丁堡二元論牧首尼西塔斯主持，確立了南法卡特里派教區建制與嚴格二元論神學系統。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page12",
+        "title": "宗教戰爭(二)：卡特里派"
+      }
+    ]
+  },
+  {
+    "id": "zatec",
+    "name_zh": "扎泰茨",
+    "name_en": "Žatec / Saaz",
+    "coords": [
+      50.3283,
+      13.5458
+    ],
+    "desc": "捷克西北部奧赫熱河畔古城。胡斯戰爭期間，扎泰茨市民堅定擁護布拉格四條款，在1421年第二次反胡斯十字軍東征中頑強阻擊數萬帝國軍隊的圍城，以劣勢兵力迫使十字軍解圍潰退。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page03",
+        "title": "宗教戰爭(一)：胡斯戰爭"
+      }
+    ]
+  },
+  {
+    "id": "aussig",
+    "name_zh": "奧西格 (拉貝河畔烏斯季)",
+    "name_en": "Aussig / Ústí nad Labem",
+    "coords": [
+      50.6608,
+      14.0322
+    ],
+    "desc": "波希米亞北部易北河畔名城。1426年6月16日爆發奧西格戰役，大普羅科普統率的胡斯聯軍利用戰車堡壘（Wagenburg）與輕型火炮，全殲來犯的德意志邁森與薩克森十字軍騎士大軍。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page03",
+        "title": "宗教戰爭(一)：胡斯戰爭"
+      }
+    ]
+  },
+  {
+    "id": "stribro",
+    "name_zh": "斯特日布羅",
+    "name_en": "Stříbro / Mies",
+    "coords": [
+      49.7542,
+      13.0039
+    ],
+    "desc": "西波希米亞著名銀礦與要塞古城。1427年7月第四次反胡斯十字軍傾國圍攻斯特日布羅，久攻不克之際聞大普羅科普大軍馳援，十字軍不戰自潰並於隨後的塔霍夫戰役中遭毀滅性打擊。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page03",
+        "title": "宗教戰爭(一)：胡斯戰爭"
+      }
+    ]
+  },
+  {
+    "id": "tachov",
+    "name_zh": "塔霍夫",
+    "name_en": "Tachov / Tachau",
+    "coords": [
+      49.7958,
+      12.6331
+    ],
+    "desc": "捷克西波希米亞邊境要塞。1427年8月4日爆發塔霍夫戰役，大普羅科普麾下的胡斯戰車兵團在此追殲第四次十字軍潰軍並攻破塔霍夫城，奠定了胡斯派轉入境外遠征（Spanilé jízdy）的戰略反攻態勢。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page03",
+        "title": "宗教戰爭(一)：胡斯戰爭"
+      }
+    ]
+  },
+  {
+    "id": "jihlava",
+    "name_zh": "伊格勞 (伊赫拉瓦)",
+    "name_en": "Jihlava / Iglau",
+    "coords": [
+      49.3961,
+      15.5906
+    ],
+    "desc": "波希米亞與摩拉維亞交界的歷史採礦名城。1436年7月5日波希米亞議會與巴塞爾公會議代表在此正式公布《巴塞爾協定》（Compacts of Basel），法理確立了兩形派教會的合法性，宣告胡斯戰爭正式落幕。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page03",
+        "title": "宗教戰爭(一)：胡斯戰爭"
+      }
+    ]
+  },
+  {
+    "id": "nemecky_brod",
+    "name_zh": "內梅茨基布羅德 (哈夫利奇庫夫布羅德)",
+    "name_en": "Německý Brod / Havlíčkův Brod",
+    "coords": [
+      49.6078,
+      15.5806
+    ],
+    "desc": "波希米亞薩扎瓦河畔的重要商道市鎮。1422年1月揚·傑式卡在此發動內梅茨基布羅德之役，盲將傑式卡利用戰車陣痛擊西吉斯蒙德親率的匈牙利與帝國騎兵，取得第二次反胡斯聖戰的決定性大捷。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page03",
+        "title": "宗教戰爭(一)：胡斯戰爭"
+      }
+    ]
+  },
+  {
+    "id": "blenheim",
+    "name_zh": "盲海姆 (布倫亨)",
+    "name_en": "Blenheim / Blindheim",
+    "coords": [
+      48.63,
+      10.65
+    ],
+    "desc": "多瑙河北岸的巴伐利亞歷史村落。1704年8月13日西班牙王位繼承戰爭期間，英格蘭馬爾博羅公爵與奧地利歐根親王在此聯手重創法國-巴伐利亞聯軍，粉碎路易十四直搗維也納的企圖，扭轉了歐陸戰略格局。",
+    "category": "modern",
+    "articles": [
+      {
+        "id": "page40",
+        "title": "萊茵河－多瑙河地緣戰略"
+      }
+    ]
+  },
+  {
+    "id": "ulm",
+    "name_zh": "烏爾姆",
+    "name_en": "Ulm",
+    "coords": [
+      48.4011,
+      9.9876
+    ],
+    "desc": "多瑙河上游通航起點的帝國自由城市，擁有世界最高教堂尖塔的烏爾姆大教堂。1805年烏爾姆戰役中，拿破崙的大軍團在此實施教科書式的戰略大包抄，迫使奧地利名將馬克將軍全軍投降。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page40",
+        "title": "萊茵河－多瑙河地緣戰略"
+      }
+    ]
+  },
+  {
+    "id": "kaub",
+    "name_zh": "考布",
+    "name_en": "Kaub / Pfalzgrafenstein",
+    "coords": [
+      50.0864,
+      7.7631
+    ],
+    "desc": "萊茵峽谷世界遺產核心區的歷史名鎮，江心建有著名的普法爾茨伯爵石堡（Pfalzgrafenstein Toll Station）。該處為萊茵河吃水最淺的戰略咽喉；1814年元旦布呂歇爾普魯士大軍在此搭設浮橋跨越萊茵河直逼巴黎。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page40",
+        "title": "萊茵河－多瑙河地緣戰略"
+      }
+    ]
+  },
+  {
+    "id": "hertford",
+    "name_zh": "赫特福德 (塞爾磨坊)",
+    "name_en": "Hertford / Sele Mill",
+    "coords": [
+      51.7972,
+      -0.0789
+    ],
+    "desc": "英國赫特福德郡首府，利河（River Lea）畔古鎮。約西元1494/1495年，倫敦商人約翰·泰特（John Tate）在此建立了英格蘭歷史上第一座造紙水磨坊——塞爾磨坊（Sele Mill），開啟了英國自製紙張的歷史。",
+    "category": "modern",
+    "articles": [
+      {
+        "id": "page11",
+        "title": "歐洲造紙術的歷史演變"
+      }
+    ]
+  },
+  {
+    "id": "palermo",
+    "name_zh": "巴勒莫",
+    "name_en": "Palermo / Panormus",
+    "coords": [
+      38.1157,
+      13.3615
+    ],
+    "desc": "西西里島首府與地中海航運樞紐。阿拉伯統治時期於十世紀前引進造紙術；巴勒莫國家檔案館至今妥善珍藏著歐洲本土現存最古老的紙質文件——西元1109年西西里女伯爵阿德萊德的雙語特許狀。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page11",
+        "title": "歐洲造紙術的歷史演變"
+      }
+    ]
+  },
+  {
+    "id": "diez",
+    "name_zh": "迪茨",
+    "name_en": "Diez",
+    "coords": [
+      50.3703,
+      8.0142
+    ],
+    "desc": "萊茵蘭拉恩河畔的歷史伯爵領地與城堡，迪茨伯爵家族的權力中心。西元1356年查理四世頒布的《金璽詔書》中，將其名列為萊茵河流域具有帝國代表性的世俗貴族伯國之一。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page04",
+        "title": "神聖羅馬帝國：金璽詔書"
+      }
+    ]
+  },
+  {
+    "id": "wertheim",
+    "name_zh": "韋特海姆",
+    "name_en": "Wertheim am Main",
+    "coords": [
+      49.7589,
+      9.5178
+    ],
+    "desc": "美因河與陶伯河交匯處的法蘭克尼亞歷史伯國與雄偉山頂石造城堡。《金璽詔書》第十一章明文列舉的德意志核心世俗諸侯伯爵領地，控扼美因河水路商貿命脈。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page04",
+        "title": "神聖羅馬帝國：金璽詔書"
+      }
+    ]
+  },
+  {
+    "id": "hohenlohe",
+    "name_zh": "霍恩洛厄",
+    "name_en": "Hohenlohe",
+    "coords": [
+      49.2,
+      9.6833
+    ],
+    "desc": "士瓦本與法蘭克尼亞交界的歷史諸侯邦國與伯爵領地。在西元1356年《金璽詔書》中作為德意志南部擁有廣泛封建特權與帝國直轄地位的顯赫領地載入帝國憲章。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page04",
+        "title": "神聖羅馬帝國：金璽詔書"
+      }
+    ]
+  },
+  {
+    "id": "hanau",
+    "name_zh": "哈瑙",
+    "name_en": "Hanau",
+    "coords": [
+      50.1333,
+      8.9167
+    ],
+    "desc": "法蘭克福以東金齊希河注入美因河處的歷史領地與伯爵居城。《金璽詔書》中確認的重要帝國貴族領地之一，掌控法蘭克尼亞通往萊茵中游的陸路商道。",
+    "category": "medieval",
+    "articles": [
+      {
+        "id": "page04",
+        "title": "神聖羅馬帝國：金璽詔書"
+      }
+    ]
+  },
+  {
+    "id": "ancyra",
+    "name_zh": "安基拉 (安卡拉)",
+    "name_en": "Ancyra / Ankara",
+    "coords": [
+      39.9333,
+      32.8597
+    ],
+    "desc": "小亞細亞安納托利亞高原中央的羅馬加拉太行省首府。西元314年召開著名的安基拉宗教會議；約西元340年該城主教馬塞路在呈交羅馬主教的抗辯信中留下了《古羅馬信經》現存最古老的希臘文原版記錄。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page21",
+        "title": "使徒信經的歷史演變與神學建構"
+      }
+    ]
+  },
+  {
+    "id": "lucullanum",
+    "name_zh": "盧庫魯斯莊園 (蛋堡)",
+    "name_en": "Castellum Lucullanum (Naples)",
+    "coords": [
+      40.8282,
+      14.2476
+    ],
+    "desc": "那不勒斯灣海岬上的古羅馬奢華濱海堡壘莊園（今著名的蛋堡所在地）。西元476年西羅馬帝國終結時，日耳曼將領奧多亞塞廢黜末代幼帝羅慕路斯·奧古斯都，賜予其每年六千索里達金幣年金並安置於此莊園終老。",
+    "category": "rome",
+    "articles": [
+      {
+        "id": "page22",
+        "title": "羅馬秩序的終結與日耳曼王權的奠定"
+      }
+    ]
   }
 ];
